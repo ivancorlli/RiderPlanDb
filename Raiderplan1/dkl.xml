@@ -1,0 +1,878 @@
+<?xml version='1.0' encoding='iso-8859-1'?> <ExportFile>
+  <KMW>
+    <MajorVersion>1</MajorVersion>
+    <MinorVersion>8</MinorVersion>
+  </KMW>
+ <GXObject>
+  <Menu>
+    <Info>
+      <Name>Viajes</Name>
+      <Description>Viajes</Description>
+      <Folder>BusinessComponents</Folder>
+    </Info>
+    <LastUpdate>2023-06-14 02:28:23GMT</LastUpdate>
+    <Documentation>
+      <Source><![CDATA[]]> </Source>
+    </Documentation>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_CUSTOM_PROPERTIES</Name>
+  <Value><![CDATA[<Properties></Properties>]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_BUILTIN_PROPERTIES</Name>
+  <Value><![CDATA[<Properties></Properties>]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DEKLARIT_TYPE</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_DISTINCT</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_VERSION</Name>
+  <Value>4000</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_CACHE_FREQUENCY</Name>
+  <Value>1</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_CACHE_PRIORITY</Name>
+  <Value>2</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_PERMISSION_BASE_ID</Name>
+  <Value>2014</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_COMMAND_TIMEOUT</Name>
+  <Value>30</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_OPTIMISTIC_LOCKTYPE</Name>
+  <Value>1</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_DATASET_TOUSE</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>id_OBJ_TIMESTAMP</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_CHECK_INTEGRITY</Name>
+  <Value>2</Value>
+ </Property>
+ <Property>
+  <Type>objxml</Type>
+  <Name>OBJECT_METADATA</Name>
+  <Value><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<NML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>2.2.0.0</Version>
+  <Graph>
+    <GraphInformation>
+      <Description />
+      <Author />
+      <CreationDate>14/6/2023 02:17:29</CreationDate>
+      <Subject />
+      <Title />
+    </GraphInformation>
+    <Shape>
+      <InstanceKey>a9E37E11-1B57-4580-B7DE-3018911BE1DD</InstanceKey>
+      <connector UID="9bd486db-d42f-4b47-b69b-703dcba3e310" Name="" />
+      <connector UID="723c2474-f060-4032-a4c5-8f36cc1507a5" Name="" />
+      <property Name="ShowIndexes" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Procesed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="CollapseState" IsCollection="false">
+        <string>-5</string>
+      </property>
+      <property Name="ObjectName" IsCollection="false">
+        <string>TrayectoTipoDetalle</string>
+      </property>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="CanMove" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="X" IsCollection="false">
+        <string>485</string>
+      </property>
+      <property Name="Y" IsCollection="false">
+        <string>-23</string>
+      </property>
+      <property Name="IsFixed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="ShapeColor" IsCollection="false">
+        <string>-744352</string>
+      </property>
+      <property Name="Width" IsCollection="false">
+        <string>100</string>
+      </property>
+      <property Name="Height" IsCollection="false">
+        <string>50</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>[Not set]</string>
+      </property>
+      <UID>4169261a-efac-45b5-9e33-99610d7e3403</UID>
+    </Shape>
+    <Shape>
+      <InstanceKey>a9E37E11-1B57-4580-B7DE-3018911BE1DD</InstanceKey>
+      <connector UID="bd076bda-c20e-4fdb-93b7-363c8ecb7520" Name="" />
+      <connector UID="6dbabad1-6efd-49af-a7a0-36c8297452cf" Name="" />
+      <property Name="ShowIndexes" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Procesed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="CollapseState" IsCollection="false">
+        <string>-5</string>
+      </property>
+      <property Name="ObjectName" IsCollection="false">
+        <string>TrayectoViaje</string>
+      </property>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="CanMove" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="X" IsCollection="false">
+        <string>544</string>
+      </property>
+      <property Name="Y" IsCollection="false">
+        <string>-75</string>
+      </property>
+      <property Name="IsFixed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="ShapeColor" IsCollection="false">
+        <string>-744352</string>
+      </property>
+      <property Name="Width" IsCollection="false">
+        <string>100</string>
+      </property>
+      <property Name="Height" IsCollection="false">
+        <string>50</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>[Not set]</string>
+      </property>
+      <UID>6302080f-ea9d-4ab2-a9e3-2babea24c6ca</UID>
+    </Shape>
+    <Shape>
+      <InstanceKey>a9E37E11-1B57-4580-B7DE-3018911BE1DD</InstanceKey>
+      <connector UID="4632bbed-55c8-4ba9-b637-2bfb7806c302" Name="" />
+      <connector UID="d3cc3985-316f-4e12-84d4-66730e6e6583" Name="" />
+      <property Name="ShowIndexes" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Procesed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="CollapseState" IsCollection="false">
+        <string>-5</string>
+      </property>
+      <property Name="ObjectName" IsCollection="false">
+        <string>TrayectoViajeTrayecto</string>
+      </property>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="CanMove" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="X" IsCollection="false">
+        <string>544</string>
+      </property>
+      <property Name="Y" IsCollection="false">
+        <string>-20</string>
+      </property>
+      <property Name="IsFixed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="ShapeColor" IsCollection="false">
+        <string>-744352</string>
+      </property>
+      <property Name="Width" IsCollection="false">
+        <string>100</string>
+      </property>
+      <property Name="Height" IsCollection="false">
+        <string>50</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>[Not set]</string>
+      </property>
+      <UID>955919ea-f408-49e8-a38b-4b4bb7b813fd</UID>
+    </Shape>
+    <Shape>
+      <InstanceKey>a9E37E11-1B57-4580-B7DE-3018911BE1DD</InstanceKey>
+      <connector UID="f1f9e6fc-8a0c-47c3-ab17-62b8a64a25bb" Name="" />
+      <connector UID="511ab2a4-648b-4a5f-b216-5ab5b0b477ad" Name="" />
+      <property Name="ShowIndexes" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Procesed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="CollapseState" IsCollection="false">
+        <string>-5</string>
+      </property>
+      <property Name="ObjectName" IsCollection="false">
+        <string>Viaje</string>
+      </property>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="CanMove" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="X" IsCollection="false">
+        <string>623</string>
+      </property>
+      <property Name="Y" IsCollection="false">
+        <string>143</string>
+      </property>
+      <property Name="IsFixed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="ShapeColor" IsCollection="false">
+        <string>-744352</string>
+      </property>
+      <property Name="Width" IsCollection="false">
+        <string>100</string>
+      </property>
+      <property Name="Height" IsCollection="false">
+        <string>50</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>[Not set]</string>
+      </property>
+      <UID>8e652fe8-ef33-4f3c-8fab-0bb2cead962a</UID>
+    </Shape>
+    <Shape>
+      <InstanceKey>F9E27E11-1B57-4580-B7DE-3018911BE1DD</InstanceKey>
+      <connector UID="e7b68af2-3618-4111-8718-efb25fa3f548" Name="" />
+      <connector UID="b72ffeda-91cf-4ba7-8f9f-9b1601faf33e" Name="TrayectoTipoDetalle:TrayectoViaje" />
+      <property Name="ProcessStatus" IsCollection="false">
+        <string>-1</string>
+      </property>
+      <property Name="ShowAssociatedTables" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="ShowTables" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Procesed" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="CollapseState" IsCollection="false">
+        <string>-1</string>
+      </property>
+      <property Name="ObjectName" IsCollection="false">
+        <string>TrayectoTipoDetalle</string>
+      </property>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="CanMove" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="X" IsCollection="false">
+        <string>781</string>
+      </property>
+      <property Name="Y" IsCollection="false">
+        <string>46</string>
+      </property>
+      <property Name="IsFixed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="ShapeColor" IsCollection="false">
+        <string>-657931</string>
+      </property>
+      <property Name="Width" IsCollection="false">
+        <string>193,1225</string>
+      </property>
+      <property Name="Height" IsCollection="false">
+        <string>100</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>TrayectoTipoDetalle</string>
+      </property>
+      <UID>e703dda1-2f50-4fc3-8ab4-c96337fd2b3c</UID>
+    </Shape>
+    <Shape>
+      <InstanceKey>F9E27E11-1B57-4580-B7DE-3018911BE1DD</InstanceKey>
+      <connector UID="772cfc8e-acd8-422f-b7c2-64b3f4b9b74a" Name="" />
+      <connector UID="9ee75b34-5369-4785-9fd7-9985d2b6bcf0" Name="" />
+      <connector UID="3f6f1f93-3591-44ce-ab4b-fc3b70ad1184" Name="TrayectoTipoDetalle:TrayectoViaje" />
+      <connector UID="42551d78-088d-4922-bec0-c30a389fc8d9" Name="Viaje:TrayectoViaje" />
+      <property Name="ProcessStatus" IsCollection="false">
+        <string>-1</string>
+      </property>
+      <property Name="ShowAssociatedTables" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="ShowTables" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Procesed" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="CollapseState" IsCollection="false">
+        <string>-1</string>
+      </property>
+      <property Name="ObjectName" IsCollection="false">
+        <string>TrayectoViaje</string>
+      </property>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="CanMove" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="X" IsCollection="false">
+        <string>493</string>
+      </property>
+      <property Name="Y" IsCollection="false">
+        <string>32</string>
+      </property>
+      <property Name="IsFixed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="ShapeColor" IsCollection="false">
+        <string>-657931</string>
+      </property>
+      <property Name="Width" IsCollection="false">
+        <string>220,2753</string>
+      </property>
+      <property Name="Height" IsCollection="false">
+        <string>340</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>TrayectoViaje</string>
+      </property>
+      <UID>fd9c7329-2a01-46f5-8374-65fb2aef029c</UID>
+    </Shape>
+    <Shape>
+      <InstanceKey>F9E27E11-1B57-4580-B7DE-3018911BE1DD</InstanceKey>
+      <connector UID="bbfb2b59-2af3-4e06-9763-a4a837621625" Name="" />
+      <connector UID="fee75cb0-4e00-49bb-bad7-1c11280152d8" Name="Viaje:TrayectoViaje" />
+      <connector UID="27733987-3c45-443f-b30c-4921f8741d84" Name="Usuario:Viaje" />
+      <property Name="ProcessStatus" IsCollection="false">
+        <string>-1</string>
+      </property>
+      <property Name="ShowAssociatedTables" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="ShowTables" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Procesed" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="CollapseState" IsCollection="false">
+        <string>-1</string>
+      </property>
+      <property Name="ObjectName" IsCollection="false">
+        <string>Viaje</string>
+      </property>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="CanMove" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="X" IsCollection="false">
+        <string>231</string>
+      </property>
+      <property Name="Y" IsCollection="false">
+        <string>50</string>
+      </property>
+      <property Name="IsFixed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="ShapeColor" IsCollection="false">
+        <string>-657931</string>
+      </property>
+      <property Name="Width" IsCollection="false">
+        <string>211,4647</string>
+      </property>
+      <property Name="Height" IsCollection="false">
+        <string>295</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>Viaje</string>
+      </property>
+      <UID>44b7f373-3965-4ded-9f12-7d3a242af708</UID>
+    </Shape>
+    <Shape>
+      <InstanceKey>F9E27E11-1B57-4580-B7DE-3018911BE1DD</InstanceKey>
+      <connector UID="a4365a5f-9188-4497-b9d2-8c2b7ac506db" Name="" />
+      <connector UID="33b8707e-0ec8-48f0-b46e-bae078f7a738" Name="Usuario:Viaje" />
+      <property Name="ProcessStatus" IsCollection="false">
+        <string>-1</string>
+      </property>
+      <property Name="ShowAssociatedTables" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="ShowTables" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Procesed" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="CollapseState" IsCollection="false">
+        <string>-1</string>
+      </property>
+      <property Name="ObjectName" IsCollection="false">
+        <string>Usuario</string>
+      </property>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="CanMove" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="X" IsCollection="false">
+        <string>25</string>
+      </property>
+      <property Name="Y" IsCollection="false">
+        <string>45</string>
+      </property>
+      <property Name="IsFixed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="ShapeColor" IsCollection="false">
+        <string>-657931</string>
+      </property>
+      <property Name="Width" IsCollection="false">
+        <string>166,3608</string>
+      </property>
+      <property Name="Height" IsCollection="false">
+        <string>175</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>Usuario</string>
+      </property>
+      <UID>785b7857-6d33-401b-bd91-69cdeccfff07</UID>
+    </Shape>
+    <Shape>
+      <InstanceKey>a9E37E11-1B57-4580-B7DE-3018911BE1DD</InstanceKey>
+      <connector UID="3cb37393-10cc-44f6-b87e-56d5f7e976f0" Name="" />
+      <property Name="ShowIndexes" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Procesed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="CollapseState" IsCollection="false">
+        <string>-5</string>
+      </property>
+      <property Name="ObjectName" IsCollection="false">
+        <string>Usuario</string>
+      </property>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="CanMove" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="X" IsCollection="false">
+        <string>155</string>
+      </property>
+      <property Name="Y" IsCollection="false">
+        <string>100</string>
+      </property>
+      <property Name="IsFixed" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="ShapeColor" IsCollection="false">
+        <string>-744352</string>
+      </property>
+      <property Name="Width" IsCollection="false">
+        <string>100</string>
+      </property>
+      <property Name="Height" IsCollection="false">
+        <string>50</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>True</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>[Not set]</string>
+      </property>
+      <UID>4ab4a4d9-0b4d-492b-a978-d357647c7419</UID>
+    </Shape>
+    <Connection>
+      <InstanceKey>A0BDE8D6-A95C-45ec-8081-A28E487F38A6</InstanceKey>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="LinePath" IsCollection="false">
+        <string>Default</string>
+      </property>
+      <property Name="LineColor" IsCollection="false">
+        <string>-360334</string>
+      </property>
+      <property Name="LineWeight" IsCollection="false">
+        <string>Thin</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>[Not set]</string>
+      </property>
+      <UID>2d85eeaa-0579-4a04-b708-ee9e773ddfa5</UID>
+      <source>e703dda1-2f50-4fc3-8ab4-c96337fd2b3c</source>
+      <target>4169261a-efac-45b5-9e33-99610d7e3403</target>
+      <sourceport>e7b68af2-3618-4111-8718-efb25fa3f548</sourceport>
+      <targetport>723c2474-f060-4032-a4c5-8f36cc1507a5</targetport>
+    </Connection>
+    <Connection>
+      <InstanceKey>A0BDE8D6-A95C-45ec-8081-A28E487F38A6</InstanceKey>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="LinePath" IsCollection="false">
+        <string>Default</string>
+      </property>
+      <property Name="LineColor" IsCollection="false">
+        <string>-360334</string>
+      </property>
+      <property Name="LineWeight" IsCollection="false">
+        <string>Thin</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>[Not set]</string>
+      </property>
+      <UID>eaa160ef-2f0f-4407-a54c-a0c33f7b724e</UID>
+      <source>fd9c7329-2a01-46f5-8374-65fb2aef029c</source>
+      <target>6302080f-ea9d-4ab2-a9e3-2babea24c6ca</target>
+      <sourceport>772cfc8e-acd8-422f-b7c2-64b3f4b9b74a</sourceport>
+      <targetport>6dbabad1-6efd-49af-a7a0-36c8297452cf</targetport>
+    </Connection>
+    <Connection>
+      <InstanceKey>A0BDE8D6-A95C-45ec-8081-A28E487F38A6</InstanceKey>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="LinePath" IsCollection="false">
+        <string>Default</string>
+      </property>
+      <property Name="LineColor" IsCollection="false">
+        <string>-360334</string>
+      </property>
+      <property Name="LineWeight" IsCollection="false">
+        <string>Thin</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>[Not set]</string>
+      </property>
+      <UID>dc2da27d-7dac-4664-909a-c164e548d530</UID>
+      <source>fd9c7329-2a01-46f5-8374-65fb2aef029c</source>
+      <target>955919ea-f408-49e8-a38b-4b4bb7b813fd</target>
+      <sourceport>9ee75b34-5369-4785-9fd7-9985d2b6bcf0</sourceport>
+      <targetport>d3cc3985-316f-4e12-84d4-66730e6e6583</targetport>
+    </Connection>
+    <Connection>
+      <InstanceKey>A0BDE8D6-A95C-45ec-8081-A28E487F38A6</InstanceKey>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="LinePath" IsCollection="false">
+        <string>Rectangular</string>
+      </property>
+      <property Name="LineColor" IsCollection="false">
+        <string>-16777216</string>
+      </property>
+      <property Name="LineWeight" IsCollection="false">
+        <string>Thin</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string />
+      </property>
+      <UID>3d3a122f-7787-4c49-82db-ad28ddb07275</UID>
+      <source>e703dda1-2f50-4fc3-8ab4-c96337fd2b3c</source>
+      <target>fd9c7329-2a01-46f5-8374-65fb2aef029c</target>
+      <sourceport>b72ffeda-91cf-4ba7-8f9f-9b1601faf33e</sourceport>
+      <targetport>3f6f1f93-3591-44ce-ab4b-fc3b70ad1184</targetport>
+    </Connection>
+    <Connection>
+      <InstanceKey>A0BDE8D6-A95C-45ec-8081-A28E487F38A6</InstanceKey>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="LinePath" IsCollection="false">
+        <string>Default</string>
+      </property>
+      <property Name="LineColor" IsCollection="false">
+        <string>-360334</string>
+      </property>
+      <property Name="LineWeight" IsCollection="false">
+        <string>Thin</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>[Not set]</string>
+      </property>
+      <UID>759fe9ea-e287-40a5-be90-25ccb9bf5c9e</UID>
+      <source>44b7f373-3965-4ded-9f12-7d3a242af708</source>
+      <target>8e652fe8-ef33-4f3c-8fab-0bb2cead962a</target>
+      <sourceport>bbfb2b59-2af3-4e06-9763-a4a837621625</sourceport>
+      <targetport>511ab2a4-648b-4a5f-b216-5ab5b0b477ad</targetport>
+    </Connection>
+    <Connection>
+      <InstanceKey>A0BDE8D6-A95C-45ec-8081-A28E487F38A6</InstanceKey>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="LinePath" IsCollection="false">
+        <string>Rectangular</string>
+      </property>
+      <property Name="LineColor" IsCollection="false">
+        <string>-16777216</string>
+      </property>
+      <property Name="LineWeight" IsCollection="false">
+        <string>Thin</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string />
+      </property>
+      <UID>0147c2d4-d81c-4d33-8e6c-757bfb9be739</UID>
+      <source>44b7f373-3965-4ded-9f12-7d3a242af708</source>
+      <target>fd9c7329-2a01-46f5-8374-65fb2aef029c</target>
+      <sourceport>fee75cb0-4e00-49bb-bad7-1c11280152d8</sourceport>
+      <targetport>42551d78-088d-4922-bec0-c30a389fc8d9</targetport>
+    </Connection>
+    <Connection>
+      <InstanceKey>A0BDE8D6-A95C-45ec-8081-A28E487F38A6</InstanceKey>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="LinePath" IsCollection="false">
+        <string>Default</string>
+      </property>
+      <property Name="LineColor" IsCollection="false">
+        <string>-360334</string>
+      </property>
+      <property Name="LineWeight" IsCollection="false">
+        <string>Thin</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string>[Not set]</string>
+      </property>
+      <UID>21341348-6db8-416b-b9b9-24966901c760</UID>
+      <source>785b7857-6d33-401b-bd91-69cdeccfff07</source>
+      <target>4ab4a4d9-0b4d-492b-a978-d357647c7419</target>
+      <sourceport>a4365a5f-9188-4497-b9d2-8c2b7ac506db</sourceport>
+      <targetport>3cb37393-10cc-44f6-b87e-56d5f7e976f0</targetport>
+    </Connection>
+    <Connection>
+      <InstanceKey>A0BDE8D6-A95C-45ec-8081-A28E487F38A6</InstanceKey>
+      <property Name="ZOrder" IsCollection="false">
+        <string>0</string>
+      </property>
+      <property Name="LinePath" IsCollection="false">
+        <string>Rectangular</string>
+      </property>
+      <property Name="LineColor" IsCollection="false">
+        <string>-16777216</string>
+      </property>
+      <property Name="LineWeight" IsCollection="false">
+        <string>Thin</string>
+      </property>
+      <property Name="PenWidth" IsCollection="false">
+        <string>1</string>
+      </property>
+      <property Name="ShowLabel" IsCollection="false">
+        <string>False</string>
+      </property>
+      <property Name="Text" IsCollection="false">
+        <string />
+      </property>
+      <UID>aeafc798-ec1d-4840-8393-3917b2b4b2b4</UID>
+      <source>785b7857-6d33-401b-bd91-69cdeccfff07</source>
+      <target>44b7f373-3965-4ded-9f12-7d3a242af708</target>
+      <sourceport>33b8707e-0ec8-48f0-b46e-bae078f7a738</sourceport>
+      <targetport>27733987-3c45-443f-b30c-4921f8741d84</targetport>
+    </Connection>
+  </Graph>
+</NML>]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_ALLOW_PK_UPD</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_EXTERNAL_NAME</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>objxml</Type>
+  <Name>DKL_DEPENDENCIES_PROPS</Name>
+  <Value><![CDATA[<Items xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gx="www.genexus.com" ></Items>]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_REF_BY_CANDIDATE</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_READ_UNCOMMITED_BC</Name>
+  <Value><![CDATA[UMPV]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_READ_UNCOMMITED_DP</Name>
+  <Value><![CDATA[UMPV]]> </Value>
+ </Property>
+ <Property>
+  <Type>objxml</Type>
+  <Name>DKL_LAYOUT</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_IMAGE</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_SMALL_IMAGE</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_BIG_IMAGE</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_ACTIONS</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_STOREDPROCEDURE</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+  </Menu>
+ </GXObject>
+ </ExportFile>

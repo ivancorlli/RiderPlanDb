@@ -1,0 +1,519 @@
+ <DeKlaritProject>
+  <Modified>2023-06-14 02:22:33GMT</Modified>
+  <Version>4000</Version>
+  <General>
+ <ProjectIdGuid>{989A8F7E-C6E0-4602-B021-6A4AF705541A}</ProjectIdGuid>
+  </General>
+  <Files>
+ <Object>
+  <Name>dpUsuarioXEmailXusuarioIDCollection</Name>
+  <Class>2</Class>
+  <Folder>dpUsuario</Folder>
+ </Object>
+ <Object>
+  <Name>Localidad</Name>
+  <Class>0</Class>
+  <Folder>Geografia</Folder>
+ </Object>
+ <Object>
+  <Name>Pais</Name>
+  <Class>0</Class>
+  <Folder>Geografia</Folder>
+ </Object>
+ <Object>
+  <Name>Persona</Name>
+  <Class>0</Class>
+  <Folder>Persona</Folder>
+ </Object>
+ <Object>
+  <Name>Provincia</Name>
+  <Class>0</Class>
+  <Folder>Geografia</Folder>
+ </Object>
+ <Object>
+  <Name>relacionPersonaUsuario</Name>
+  <Class>3</Class>
+  <Folder>BusinessComponents</Folder>
+ </Object>
+ <Object>
+  <Name>RolUsuario</Name>
+  <Class>0</Class>
+  <Folder>Usuario</Folder>
+ </Object>
+ <Object>
+  <Name>TrayectoTipoDetalle</Name>
+  <Class>0</Class>
+  <Folder>Vaijes</Folder>
+ </Object>
+ <Object>
+  <Name>TrayectoViaje</Name>
+  <Class>0</Class>
+  <Folder>Vaijes</Folder>
+ </Object>
+ <Object>
+  <Name>Usuario</Name>
+  <Class>0</Class>
+  <Folder>Usuario</Folder>
+ </Object>
+ <Object>
+  <Name>Viaje</Name>
+  <Class>0</Class>
+  <Folder>Vaijes</Folder>
+ </Object>
+ <Object>
+  <Name>Viajes</Name>
+  <Class>3</Class>
+  <Folder>BusinessComponents</Folder>
+ </Object>
+ <Object>
+  <Name>BusinessComponents</Name>
+  <Class>8</Class>
+  <Folder/>
+ </Object>
+ <Object>
+  <Name>DataProviders</Name>
+  <Class>8</Class>
+  <Folder/>
+ </Object>
+ <Object>
+  <Name>dpUsuario</Name>
+  <Class>8</Class>
+  <Folder>DataProviders</Folder>
+ </Object>
+ <Object>
+  <Name>Geografia</Name>
+  <Class>8</Class>
+  <Folder>BusinessComponents</Folder>
+ </Object>
+ <Object>
+  <Name>Persona</Name>
+  <Class>8</Class>
+  <Folder>BusinessComponents</Folder>
+ </Object>
+ <Object>
+  <Name>Usuario</Name>
+  <Class>8</Class>
+  <Folder>BusinessComponents</Folder>
+ </Object>
+ <Object>
+  <Name>Vaijes</Name>
+  <Class>8</Class>
+  <Folder>BusinessComponents</Folder>
+ </Object>
+ <Object>
+  <Name>Sexo</Name>
+  <Class>11</Class>
+ </Object>
+ <Object>
+  <Name>UsuarioRol</Name>
+  <Class>11</Class>
+ </Object>
+ <Object>
+  <Name>Persona</Name>
+  <Class>7</Class>
+ </Object>
+ <Object>
+  <Name>RolUsuario</Name>
+  <Class>7</Class>
+ </Object>
+ <Object>
+  <Name>Pais</Name>
+  <Class>7</Class>
+ </Object>
+ <Object>
+  <Name>Localidad</Name>
+  <Class>7</Class>
+ </Object>
+ <Object>
+  <Name>Provincia</Name>
+  <Class>7</Class>
+ </Object>
+ <Object>
+  <Name>Usuario</Name>
+  <Class>7</Class>
+ </Object>
+ <Object>
+  <Name>Viaje</Name>
+  <Class>7</Class>
+ </Object>
+ <Object>
+  <Name>TrayectoViaje</Name>
+  <Class>7</Class>
+ </Object>
+ <Object>
+  <Name>TrayectoViajeTrayecto</Name>
+  <Class>7</Class>
+ </Object>
+ <Object>
+  <Name>TrayectoTipoDetalle</Name>
+  <Class>7</Class>
+ </Object>
+  </Files>
+  <Versions>
+  </Versions>
+  <Attributes>
+ <Attribute>
+  <Name>PersonaNombre</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PersonaApellido</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PersonaFechaNacimiento</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PersonaID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PersonaSexo</Name>
+ </Attribute>
+ <Attribute>
+  <Name>UsuarioNombre</Name>
+ </Attribute>
+ <Attribute>
+  <Name>UsuarioEmail</Name>
+ </Attribute>
+ <Attribute>
+  <Name>UsuarioPasword</Name>
+ </Attribute>
+ <Attribute>
+  <Name>UsuarioActivo</Name>
+ </Attribute>
+ <Attribute>
+  <Name>UsuarioID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>RolUsuarioID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>Rol</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PaisNombre</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PaisID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>LocalidadNombre</Name>
+ </Attribute>
+ <Attribute>
+  <Name>LocalidadCodPos</Name>
+ </Attribute>
+ <Attribute>
+  <Name>LoacaliadID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ProvinciaNombre</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ProvinciaID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>Localidadid</Name>
+ </Attribute>
+ <Attribute>
+  <Name>UsuarioFechaAlta</Name>
+ </Attribute>
+ <Attribute>
+  <Name>UsuarioCodigoValidacion</Name>
+ </Attribute>
+ <Attribute>
+  <Name>UsuarioCodValido</Name>
+ </Attribute>
+ <Attribute>
+  <Name>usuarioValidation</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CodigoValidation</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ImagenPerfil</Name>
+ </Attribute>
+ <Attribute>
+  <Name>FechaSalidaProgramada</Name>
+ </Attribute>
+ <Attribute>
+  <Name>FechaLlegadaProgramada</Name>
+ </Attribute>
+ <Attribute>
+  <Name>FechaSalidaEfectiva</Name>
+ </Attribute>
+ <Attribute>
+  <Name>FechaLlegadaEfectiva</Name>
+ </Attribute>
+ <Attribute>
+  <Name>LugarPartida</Name>
+ </Attribute>
+ <Attribute>
+  <Name>Lugarllegada</Name>
+ </Attribute>
+ <Attribute>
+  <Name>LongitudPartida</Name>
+ </Attribute>
+ <Attribute>
+  <Name>LatitudPartida</Name>
+ </Attribute>
+ <Attribute>
+  <Name>LongitudLegada</Name>
+ </Attribute>
+ <Attribute>
+  <Name>LatitudLlegada</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ViajeTipoViaje</Name>
+ </Attribute>
+ <Attribute>
+  <Name>kmTotalesEstimado</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ViajeID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TipoViajeID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>MotocilcetaMarca</Name>
+ </Attribute>
+ <Attribute>
+  <Name>MotociletaModelo</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TrayectoOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TrayectoViajeID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>VaijeNombre</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TipoDetalleID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TayectoLatitudOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TrayectoLongitudOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TrayectoLatidudDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TrayectoLongitudDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>Trayectokm</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TiempoEstimado</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CombustibleConsumido</Name>
+ </Attribute>
+ <Attribute>
+  <Name>EstadoCarretera</Name>
+ </Attribute>
+ <Attribute>
+  <Name>NombreCategoriaDetalle</Name>
+ </Attribute>
+ <Attribute>
+  <Name>IconoCategoria</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TrrayectDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TrayectoDetalleID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TrayectoDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TTipoDetalleCategoria</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TrayectoDetalleTipoID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TrayectoTipoDetalleID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TTipoDetalleIcono</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TDDescripcion</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TDLatitud</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TDLongitud</Name>
+ </Attribute>
+ <Attribute>
+  <Name>TDCosto</Name>
+ </Attribute>
+  </Attributes>
+  <Globals>
+  </Globals>
+  <References>
+  </References>
+ <Properties>
+  <ConnectionString>Server=DESKTOP-CM1DMPN\SQLEXPRESS01;Database=RaiderPlanDB1;User Id=usuario;Password=usuario;</ConnectionString>
+  <Language>C#</Language>
+  <DBMS>SQLServer</DBMS>
+  <LanguageSupport/>
+  <DatabaseSchema/>
+  <Addins><![CDATA[&lt;DeklaritAddins&gt; &lt;Addin&gt;  &lt;Name&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Name&gt;  &lt;Path&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Path&gt;  &lt;OutputPath/&gt;  &lt;OutputProjectName&gt;RaiderPlan1BO&lt;/OutputProjectName&gt;  &lt;Language&gt;0&lt;/Language&gt;  &lt;Guid/&gt;  &lt;RunningSet&gt;BusinessComponents,Vaijes,TrayectoTipoDetalle,TrayectoViaje,Viaje,Geografia,Localidad,Pais,Provincia,Persona,Persona,Usuario,RolUsuario,Usuario,DataProviders,dpUsuario,dpUsuarioXEmailXusuarioIDCollection&lt;/RunningSet&gt;  &lt;RunningDate&gt;2023-05-28 05:32:45GMT&lt;/RunningDate&gt;  &lt;InBuild&gt;0&lt;/InBuild&gt;  &lt;Hidden&gt;0&lt;/Hidden&gt;  &lt;Data&gt;&lt;![CDATA[]]&gt; &lt;/Data&gt; &lt;/Addin&gt;&lt;/DeklaritAddins&gt;]]> </Addins>
+  <SQLVersion>9</SQLVersion>
+  <TargetFramework>1</TargetFramework>
+  <ProjectName>Raiderplan1BusinessFramework</ProjectName>
+  <Property>
+    <Name>Name</Name>
+    <Value><![CDATA[{ProjectName}]]> </Value>
+  </Property>
+  <Property>
+    <Name>Description</Name>
+    <Value><![CDATA[{ProjectName}]]> </Value>
+  </Property>
+  <Property>
+    <Name>Read Uncommited For BusinessComponent</Name>
+    <Value><![CDATA[Yes]]> </Value>
+  </Property>
+  <Property>
+    <Name>Use OLAP functions for paging</Name>
+    <Value><![CDATA[Yes]]> </Value>
+  </Property>
+  <Property>
+    <Name>Read Uncommited For DataProvider</Name>
+    <Value><![CDATA[No]]> </Value>
+  </Property>
+  <Property>
+    <Name>Significant Table and Attribute Name Length</Name>
+    <Value><![CDATA[30]]> </Value>
+  </Property>
+  <Property>
+    <Name>Multiple Projects</Name>
+    <Value><![CDATA[false]]> </Value>
+  </Property>
+  <Property>
+    <Name>DataAdapters Project</Name>
+    <Value><![CDATA[Raiderplan1DataAdapters]]> </Value>
+  </Property>
+  <Property>
+    <Name>Namespace for DataAdapter Project</Name>
+    <Value><![CDATA[Raiderplan1]]> </Value>
+  </Property>
+  <Property>
+    <Name>DataSets Project</Name>
+    <Value><![CDATA[Raiderplan1DataSets]]> </Value>
+  </Property>
+  <Property>
+    <Name>Namespace for DataSet Project</Name>
+    <Value><![CDATA[Raiderplan1]]> </Value>
+  </Property>
+  <Property>
+    <Name>Throw Generic Exceptions</Name>
+    <Value><![CDATA[false]]> </Value>
+  </Property>
+  <Property>
+    <Name>Target Namespace</Name>
+    <Value><![CDATA[]]> </Value>
+  </Property>
+  <Property>
+    <Name>Enable Caching</Name>
+    <Value><![CDATA[false]]> </Value>
+  </Property>
+  <Property>
+    <Name>Almost Never</Name>
+    <Value><![CDATA[360]]> </Value>
+  </Property>
+  <Property>
+    <Name>Hardly Ever</Name>
+    <Value><![CDATA[180]]> </Value>
+  </Property>
+  <Property>
+    <Name>Time to Time</Name>
+    <Value><![CDATA[60]]> </Value>
+  </Property>
+  <Property>
+    <Name>Pretty Often</Name>
+    <Value><![CDATA[0]]> </Value>
+  </Property>
+  <Property>
+    <Name>Enterprise Library CacheManager Name</Name>
+    <Value><![CDATA[CacheManager]]> </Value>
+  </Property>
+  <Property>
+    <Name>Enable Permission Based Authorization</Name>
+    <Value><![CDATA[false]]> </Value>
+  </Property>
+  <Property>
+    <Name>Authorization Store</Name>
+    <Value><![CDATA[0]]> </Value>
+  </Property>
+  <Property>
+    <Name>DBMS</Name>
+    <Value><![CDATA[12]]> </Value>
+  </Property>
+  <Property>
+    <Name>Connection String</Name>
+    <Value><![CDATA[server=(local);database=Deklarit.Security;Integrated Security=yes]]> </Value>
+  </Property>
+  <Property>
+    <Name>Authorization Provider Name</Name>
+    <Value><![CDATA[AuthorizationProvider]]> </Value>
+  </Property>
+  <Property>
+    <Name>Roles Provider</Name>
+    <Value><![CDATA[RolesProvider]]> </Value>
+  </Property>
+  <Property>
+    <Name>Hash Provider</Name>
+    <Value><![CDATA[HashProvider]]> </Value>
+  </Property>
+  <Property>
+    <Name>Encryption Provider</Name>
+    <Value><![CDATA[EncryptionProvider]]> </Value>
+  </Property>
+  <Property>
+    <Name>Membership Provider Name</Name>
+    <Value><![CDATA[MembershipProvider]]> </Value>
+  </Property>
+  <Property>
+    <Name>Authentication Provider Type</Name>
+    <Value><![CDATA[1]]> </Value>
+  </Property>
+  <Property>
+    <Name>Microsoft Authorization Manager Store</Name>
+    <Value><![CDATA[]]> </Value>
+  </Property>
+  <Property>
+    <Name>Manually configure Enterprise Library</Name>
+    <Value><![CDATA[false]]> </Value>
+  </Property>
+  <Property>
+    <Name>Connection String Key</Name>
+    <Value><![CDATA[]]> </Value>
+  </Property>
+  <Property>
+    <Name>Check referential integrity for External Tables</Name>
+    <Value><![CDATA[false]]> </Value>
+  </Property>
+  <Property>
+    <Name>Schema Serialization Mode</Name>
+    <Value><![CDATA[1]]> </Value>
+  </Property>
+  <Property>
+    <Name>Remoting Serialization Format</Name>
+    <Value><![CDATA[1]]> </Value>
+  </Property>
+  <Property>
+    <Name>Remove table prefix from table names</Name>
+    <Value><![CDATA[]]> </Value>
+  </Property>
+  <ObjCustomProperties><![CDATA[<Properties></Properties>]]> </ObjCustomProperties>
+  <AttCustomProperties><![CDATA[<Properties></Properties>]]> </AttCustomProperties>
+  <SecurityRoles><![CDATA[<Roles></Roles>]]> </SecurityRoles>
+ </Properties>
+ </DeKlaritProject>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Objects>
+   <Object>
+      <FileName>Tables.resx</FileName>
+      <Type>resx</Type>
+   </Object>
+   <Object>
+      <FileName>Framework.xml</FileName>
+      <Type>resx</Type>
+   </Object>
+   <Object>
+      <FileName>Configuration.cs</FileName>
+      <Type>cs</Type>
+   </Object>
+   <Object>
+      <FileName>DataAdapterFactory.cs</FileName>
+      <Type>cs</Type>
+   </Object>
+   <Object>
+      <FileName>SimpleDataAdapterFactory.cs</FileName>
+      <Type>cs</Type>
+   </Object>
+   <Object>
+      <FileName>DeklaritTransaction.cs</FileName>
+      <Type>cs</Type>
+   </Object>
+   <Object>
+      <FileName>IDataAdapterFactory.cs</FileName>
+      <Type>cs</Type>
+   </Object>
+   <Object>
+      <FileName>SexoEnumeration.cs</FileName>
+      <Type>cs</Type>
+   </Object>
+   <Object>
+      <FileName>UsuarioRolEnumeration.cs</FileName>
+      <Type>cs</Type>
+   </Object>
+   <Object>
+      <FileName>EnterpriseLibrary.cs</FileName>
+      <Type>cs</Type>
+   </Object>
+   <Object>
+      <FileName>BusinessFrameworkContext.cs</FileName>
+      <Type>cs</Type>
+   </Object>
+</Objects>

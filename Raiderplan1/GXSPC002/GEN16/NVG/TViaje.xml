@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ObjectSpec>
+<SpecVersion>4_5_0-002</SpecVersion>
+<Object>
+<ObjCls>0</ObjCls>
+<ObjId>8</ObjId>
+<ObjName>Viaje</ObjName>
+<ObjDesc>Viaje</ObjDesc>
+<ObjPgmName>TViaje</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>16</GenId>
+<GenName>Deklarit</GenName></Generator>
+<FormClass>Graphic</FormClass>
+<Parameters></Parameters>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>8</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>8</TableId>
+<TableName>VIAJE</TableName>
+<Description>Viaje</Description></Table></BaseTable>
+<NavigationTree>
+<Table>
+<TableId>8</TableId>
+<TableName>VIAJE</TableName>
+<Description>Viaje</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>42</AttriId>
+<AttriName>ViajeID</AttriName>
+<Description>Viaje ID</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>7</TableId>
+<TableName>USUARIO</TableName>
+<Description>Usuario</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>11</AttriId>
+<AttriName>UsuarioID</AttriName>
+<Description>Usuario ID</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>8</TableId>
+<TableName>VIAJE</TableName>
+<Description>Viaje</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>48</AttriId>
+<AttriName>VaijeNombre</AttriName>
+<Description>Vaije Nombre</Description></Attribute>
+<Attribute>
+<AttriId>30</AttriId>
+<AttriName>FechaSalidaProgramada</AttriName>
+<Description>Fecha Salida</Description></Attribute>
+<Attribute>
+<AttriId>31</AttriId>
+<AttriName>FechaLlegadaProgramada</AttriName>
+<Description>Fecha Llegada</Description></Attribute>
+<Attribute>
+<AttriId>32</AttriId>
+<AttriName>FechaSalidaEfectiva</AttriName>
+<Description>Fecha Salida Efectiva</Description></Attribute>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>FechaLlegadaEfectiva</AttriName>
+<Description>Fecha Llegada Efectiva</Description></Attribute>
+<Attribute>
+<AttriId>34</AttriId>
+<AttriName>LugarPartida</AttriName>
+<Description>Lugar Partida</Description></Attribute>
+<Attribute>
+<AttriId>35</AttriId>
+<AttriName>Lugarllegada</AttriName>
+<Description>Lugarllegada</Description></Attribute>
+<Attribute>
+<AttriId>36</AttriId>
+<AttriName>LongitudPartida</AttriName>
+<Description>Longitud Partida</Description></Attribute>
+<Attribute>
+<AttriId>37</AttriId>
+<AttriName>LatitudPartida</AttriName>
+<Description>Latitud Partida</Description></Attribute>
+<Attribute>
+<AttriId>38</AttriId>
+<AttriName>LongitudLegada</AttriName>
+<Description>Longitud Legada</Description></Attribute>
+<Attribute>
+<AttriId>39</AttriId>
+<AttriName>LatitudLlegada</AttriName>
+<Description>Latitud Llegada</Description></Attribute>
+<Attribute>
+<AttriId>41</AttriId>
+<AttriName>kmTotalesEstimado</AttriName>
+<Description>km Totales Estimado</Description></Attribute>
+<Attribute>
+<AttriId>44</AttriId>
+<AttriName>MotocilcetaMarca</AttriName>
+<Description>Motocilceta</Description></Attribute>
+<Attribute>
+<AttriId>45</AttriId>
+<AttriName>MotociletaModelo</AttriName>
+<Description>Motocileta</Description></Attribute>
+<Attribute>
+<AttriId>11</AttriId>
+<AttriName>UsuarioID</AttriName>
+<Description>Usuario ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>8</TableId>
+<TableName>VIAJE</TableName>
+<Description>Viaje</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>48</AttriId>
+<AttriName>VaijeNombre</AttriName>
+<Description>Vaije Nombre</Description></Attribute>
+<Attribute>
+<AttriId>30</AttriId>
+<AttriName>FechaSalidaProgramada</AttriName>
+<Description>Fecha Salida</Description></Attribute>
+<Attribute>
+<AttriId>31</AttriId>
+<AttriName>FechaLlegadaProgramada</AttriName>
+<Description>Fecha Llegada</Description></Attribute>
+<Attribute>
+<AttriId>32</AttriId>
+<AttriName>FechaSalidaEfectiva</AttriName>
+<Description>Fecha Salida Efectiva</Description></Attribute>
+<Attribute>
+<AttriId>33</AttriId>
+<AttriName>FechaLlegadaEfectiva</AttriName>
+<Description>Fecha Llegada Efectiva</Description></Attribute>
+<Attribute>
+<AttriId>34</AttriId>
+<AttriName>LugarPartida</AttriName>
+<Description>Lugar Partida</Description></Attribute>
+<Attribute>
+<AttriId>35</AttriId>
+<AttriName>Lugarllegada</AttriName>
+<Description>Lugarllegada</Description></Attribute>
+<Attribute>
+<AttriId>36</AttriId>
+<AttriName>LongitudPartida</AttriName>
+<Description>Longitud Partida</Description></Attribute>
+<Attribute>
+<AttriId>37</AttriId>
+<AttriName>LatitudPartida</AttriName>
+<Description>Latitud Partida</Description></Attribute>
+<Attribute>
+<AttriId>38</AttriId>
+<AttriName>LongitudLegada</AttriName>
+<Description>Longitud Legada</Description></Attribute>
+<Attribute>
+<AttriId>39</AttriId>
+<AttriName>LatitudLlegada</AttriName>
+<Description>Latitud Llegada</Description></Attribute>
+<Attribute>
+<AttriId>41</AttriId>
+<AttriName>kmTotalesEstimado</AttriName>
+<Description>km Totales Estimado</Description></Attribute>
+<Attribute>
+<AttriId>44</AttriId>
+<AttriName>MotocilcetaMarca</AttriName>
+<Description>Motocilceta</Description></Attribute>
+<Attribute>
+<AttriId>45</AttriId>
+<AttriName>MotociletaModelo</AttriName>
+<Description>Motocileta</Description></Attribute>
+<Attribute>
+<AttriId>11</AttriId>
+<AttriName>UsuarioID</AttriName>
+<Description>Usuario ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>8</TableId>
+<TableName>VIAJE</TableName>
+<Description>Viaje</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AfterInsertRules></AfterInsertRules>
+<AfterUpdateRules></AfterUpdateRules>
+<AfterDeleteRules></AfterDeleteRules>
+<TablesToControlOnDelete>
+<Table>
+<TableId>10</TableId>
+<TableName>TRAYECTOVIAJE</TableName>
+<Description>TrayectoViaje</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>42</AttriId>
+<AttriName>ViajeID</AttriName>
+<Description>Viaje ID</Description></Attribute></KeyAttributes></Table></TablesToControlOnDelete>
+<Levels></Levels>
+<AfterTrnRules></AfterTrnRules>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
+<Prompts></Prompts>
+<Suggests></Suggests></ObjectSpec>

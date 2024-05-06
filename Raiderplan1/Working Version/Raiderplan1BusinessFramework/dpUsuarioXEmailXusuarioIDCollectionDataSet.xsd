@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<xs:schema  id="dpUsuarioXEmailXusuarioIDCollectionDataSet" targetNamespace="http://www.tempuri.org/dpUsuarioXEmailXusuarioIDCollection" xmlns:mstns="http://www.tempuri.org/dpUsuarioXEmailXusuarioIDCollection" xmlns="http://www.tempuri.org/dpUsuarioXEmailXusuarioIDCollection" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:dkdata="http://www.deklarit.com/XMLSchema">
+   <xs:element  name="dpUsuarioXEmailXusuarioIDCollectionDataSet" msdata:IsDataSet="true" msprop:DataAdapterName="dpUsuarioXEmailXusuarioIDCollectionDataAdapter" msprop:BigImage=" " msprop:SmallImage=" " msprop:Image=" " msprop:Deklarit.PermissionBaseId="2007" msprop:DataSetName="dpUsuarioXEmailXusuarioIDCollectionDataSet" msprop:DataAdapterInterfaceName="IdpUsuarioXEmailXusuarioIDCollectionDataAdapter" msprop:ObjectName="dpUsuarioXEmailXusuarioIDCollection" msprop:ObjectDescription="dpUsuarioXEmailXusuarioIDCollection" msprop:ObjectType="DataProvider" msprop:ObjectPath="\DataProviders\dpUsuario" msprop:NameSpace="Raiderplan1" msprop:DataChangeFrequency="PrettyOften" msprop:CachePriority="Medium" msprop:DefaultBusinessComponent="Usuario" msprop:Deklarit.BCForNewOption="" msprop:Deklarit.DescriptionAttribute="" msprop:Deklarit.MenuPath="" msprop:Deklarit.ShowInMenu="True" msprop:Deklarit.LowCardinality="False">
+      <xs:complexType>
+         <xs:choice  maxOccurs="unbounded">
+            <xs:element  name="Usuario" msprop:ParentLvl="" msprop:LevelName="dpUsuarioXEmailXusuarioIDCollection" msprop:Description="Usuario" msprop:HasOrder="true" msprop:OrderAttributes="" msprop:Deklarit.NumberOfRows="0">
+               <xs:complexType >
+                  <xs:sequence >
+                     <xs:element  name="UsuarioID" msprop:Caption="Usuario ID" default="0" msprop:AutoNumber="true" msprop:IsKey="false" msprop:ReadOnly="true" msprop:DeklaritType="int" msprop:Description="Usuario ID" msprop:Length="8" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="UsuarioID" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:int"/>
+                     <xs:element  name="UsuarioNombre" msprop:Caption="Usuario Nombre" default="" msprop:IsKey="false" msprop:ReadOnly="true" msprop:DeklaritType="svchar" msprop:Description="Usuario Nombre" msprop:Length="50" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="UsuarioNombre" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                     <xs:element  name="UsuarioEmail" msprop:Caption="Usuario Email" default="" msprop:IsKey="false" msprop:ReadOnly="true" msprop:DeklaritType="svchar" msprop:Description="Usuario Email" msprop:Length="60" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="UsuarioEmail" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                     <xs:element  name="UsuarioPasword" msprop:Caption="Usuario Pasword" default="" msprop:IsKey="false" msprop:ReadOnly="true" msprop:DeklaritType="svchar" msprop:Description="Usuario Pasword" msprop:Length="70" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="UsuarioPasword" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                     <xs:element  name="UsuarioActivo" msprop:Caption="Usuario Activo" default="" msprop:IsKey="false" msprop:ReadOnly="true" msprop:DeklaritType="svchar" msprop:Description="Usuario Activo" msprop:Length="1" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="UsuarioActivo" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                     <xs:element  name="PersonaID" msprop:Caption="Persona ID" default="0" msprop:IsKey="false" msprop:ReadOnly="true" msprop:DeklaritType="int" msprop:Description="Persona ID" msprop:Length="8" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="PersonaID" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:int"/>
+                     <xs:element  name="PersonaApellido" msprop:Caption="Persona Apellido" default="" msprop:IsKey="false" msprop:ReadOnly="true" msprop:DeklaritType="svchar" msprop:Description="Persona Apellido" msprop:Length="120" msprop:Decimals="0" msprop:AllowDBNulls="true" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="PersonaApellido" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                     <xs:element  name="PersonaNombre" msprop:Caption="Persona Nombre" default="" msprop:IsKey="false" msprop:ReadOnly="true" msprop:DeklaritType="svchar" msprop:Description="Persona Nombre" msprop:Length="120" msprop:Decimals="0" msprop:AllowDBNulls="true" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="PersonaNombre" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                     <xs:element  name="CodigoValidation" msprop:Caption="Codigo Validation" default="" msprop:IsKey="false" msprop:ReadOnly="true" msprop:DeklaritType="svchar" msprop:Description="Codigo Validation" msprop:Length="4" msprop:Decimals="0" msprop:AllowDBNulls="true" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="CodigoValidation" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:choice>
+      </xs:complexType>
+   </xs:element>
+   <xs:annotation >
+      <xs:appinfo >
+         <dkdata:relations>
+            <dkdata:manyToOne>
+            </dkdata:manyToOne>
+         </dkdata:relations>
+         <dkdata:parameters>
+            <dkdata:parameter  name="Email" type="xs:string" dkdata:length="60" dkdata:decimals="0" dkdata:description="Email  " dkdata:type="svchar" msprop:Deklarit.DataProviderForValueList="" msprop:Deklarit.FixedValue="" msprop:Deklarit.DefaultValue=""/>
+            <dkdata:parameter  name="NombreUsuario" type="xs:string" dkdata:length="50" dkdata:decimals="0" dkdata:description="Usuario Nombre  " dkdata:type="svchar" msprop:Deklarit.DataProviderForValueList="" msprop:Deklarit.FixedValue="" msprop:Deklarit.DefaultValue=""/>
+         </dkdata:parameters>
+         <dkdata:Dependencies>
+         </dkdata:Dependencies>
+         <dkdata:LookupInfo>
+         </dkdata:LookupInfo>
+         <dkdata:FillMethods  dkdata:Lvl="2">
+         </dkdata:FillMethods>
+         <dkdata:objectLinks>
+            <dkdata:relation  name="PersonaPersonaID" dkdata:BusinessComponent="Persona" dkdata:Description="Persona" dkdata:DataSetName="PersonaDataSet" dkdata:DataAdapterName="PersonaDataAdapter" dkdata:DataAdapterInterfaceName="IPersonaDataAdapter">
+               <dkdata:foreignKey>
+                  <dkdata:attribute  name="PersonaID" type="int"/>
+               </dkdata:foreignKey>
+               <dkdata:foreignTableAttributes>
+                  <dkdata:attribute  name="PersonaNombre" type="String"/>
+                  <dkdata:attribute  name="PersonaApellido" type="String"/>
+               </dkdata:foreignTableAttributes>
+            </dkdata:relation>
+         </dkdata:objectLinks>
+      </xs:appinfo>
+   </xs:annotation>
+</xs:schema>

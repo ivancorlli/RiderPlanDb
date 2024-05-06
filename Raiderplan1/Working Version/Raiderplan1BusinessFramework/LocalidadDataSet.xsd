@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<xs:schema  id="LocalidadDataSet" targetNamespace="http://www.tempuri.org/Localidad" xmlns:mstns="http://www.tempuri.org/Localidad" xmlns="http://www.tempuri.org/Localidad" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:dkdata="http://www.deklarit.com/XMLSchema">
+   <xs:element  name="LocalidadDataSet" msdata:IsDataSet="true" msprop:DataAdapterName="LocalidadDataAdapter" msprop:BigImage=" " msprop:SmallImage=" " msprop:Image=" " msprop:Deklarit.PermissionBaseId="2005" msprop:DataSetName="LocalidadDataSet" msprop:DataAdapterInterfaceName="ILocalidadDataAdapter" msprop:ObjectName="Localidad" msprop:ObjectDescription="Localidad" msprop:ObjectType="BusinessComponent" msprop:ObjectPath="\BusinessComponents\Geografia" msprop:NameSpace="Raiderplan1" msprop:DataChangeFrequency="PrettyOften" msprop:CachePriority="Medium" msprop:Deklarit.AddNewOptionToLowCardinality="True" msprop:Deklarit.HiddenInRelations="" msprop:Deklarit.DataProviderForForeignKeys="" msprop:Deklarit.DescriptionAttribute="" msprop:Deklarit.MenuPath="" msprop:Deklarit.ShowInMenu="True" msprop:Deklarit.DataProviderForWW="" msprop:Deklarit.LowCardinality="False">
+      <xs:complexType>
+         <xs:choice  maxOccurs="unbounded">
+            <xs:element  name="Localidad" msprop:ParentLvl="" msprop:LevelName="Localidad" msprop:Description="Localidad" msprop:AllowInsert="true" msprop:AllowUpdate="true" msprop:AllowDelete="true" msprop:Deklarit.EditInDataGrid="True">
+               <xs:complexType >
+                  <xs:sequence >
+                     <xs:element  name="LoacaliadID" msprop:Caption="Loacaliad ID" default="0" msprop:AutoNumber="true" msprop:IsKey="true" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="Loacaliad ID" msprop:Length="8" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="LoacaliadID" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:int"/>
+                     <xs:element  name="LocalidadNombre" msprop:Caption="Localidad Nombre" default="" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="svchar" msprop:Description="Localidad Nombre" msprop:Length="60" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="LocalidadNombre" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                     <xs:element  name="LocalidadCodPos" msprop:Caption="Localidad Cod Pos" default="" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="svchar" msprop:Description="Localidad Cod Pos" msprop:Length="7" msprop:Decimals="0" msprop:AllowDBNulls="true" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="LocalidadCodPos" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                     <xs:element  name="ProvinciaID" msprop:Caption="Provincia ID" default="0" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="Provincia ID" msprop:Length="5" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="ProvinciaID" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:int"/>
+                     <xs:element  name="ProvinciaNombre" msprop:Caption="Provincia Nombre" default="" msprop:IsKey="false" msprop:ReadOnly="true" msprop:DeklaritType="svchar" msprop:Description="Provincia Nombre" msprop:Length="60" msprop:Decimals="0" msprop:AllowDBNulls="true" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="ProvinciaNombre" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:choice>
+      </xs:complexType>
+      <xs:unique  name="LocalidadConstraint1" msdata:ConstraintName="LocalidadConstraint1" msdata:PrimaryKey="true">
+         <xs:selector  xpath=".//Localidad"/>
+         <xs:field  xpath="LoacaliadID"/>
+      </xs:unique>
+   </xs:element>
+   <xs:annotation >
+      <xs:appinfo >
+         <dkdata:relations>
+            <dkdata:oneToMany>
+               <dkdata:relation  name="Persona" dkdata:Description="Persona" dkdata:DataSetName="PersonaDataSet" dkdata:DataAdapterName="PersonaDataAdapter" dkdata:DataAdapterInterfaceName="IPersonaDataAdapter">
+                  <dkdata:attribute  name="LoacaliadID"/>
+               </dkdata:relation>
+            </dkdata:oneToMany>
+            <dkdata:manyToOne>
+               <dkdata:relation  name="ProvinciaProvinciaID" dkdata:BusinessComponent="Provincia" dkdata:Description="Provincia" dkdata:DataSetName="ProvinciaDataSet" dkdata:DataAdapterName="ProvinciaDataAdapter" dkdata:DataAdapterInterfaceName="IProvinciaDataAdapter">
+                  <dkdata:foreignKey>
+                     <dkdata:attribute  name="ProvinciaID" type="int"/>
+                  </dkdata:foreignKey>
+                  <dkdata:foreignTableAttributes>
+                     <dkdata:attribute  name="ProvinciaNombre" type="String"/>
+                  </dkdata:foreignTableAttributes>
+               </dkdata:relation>
+            </dkdata:manyToOne>
+         </dkdata:relations>
+         <dkdata:Dependencies>
+         </dkdata:Dependencies>
+         <dkdata:LookupInfo>
+         </dkdata:LookupInfo>
+         <dkdata:FillMethods  dkdata:Lvl="5">
+            <dkdata:FillMethod  dkdata:FillString="ProvinciaID" dkdata:IndexName="ILocalidad1" dkdata:Unique="false">
+               <dkdata:Attribute  dkdata:AttributeName="ProvinciaID"/>
+            </dkdata:FillMethod>
+         </dkdata:FillMethods>
+      </xs:appinfo>
+   </xs:annotation>
+</xs:schema>

@@ -1,0 +1,42 @@
+[Model 000]
+DataSource=12
+Generator=16
+PromptDefaults=1
+[Preferences 000]
+CS_CNTDLG=2
+DCL_REF_INT_DB=Yes
+NULLVALUE_AS_NULL=Yes
+DS_DBMS_ADDINFO=
+SQLSERVER_VERSION=9
+DKL_CLR_STORE_PROCS=0
+VS_VERSION=2008
+DKL_AUTHENTIC_PROVIDER_TYPE=1
+DKL_ENTLIB_CACHE_MGR=CacheManager
+DKL_PERMISSION_DB_CONNSTR=server=(local);database=Deklarit.Security;Integrated Security=yes
+DKL_ENT_AUTH_PROVIDER=AuthorizationProvider
+DKL_ENT_ROLES_PROVIDER=RolesProvider
+DKL_ENT_HASH_PROVIDER=HashProvider
+DKL_ENT_ENCR_PROVIDER=EncryptionProvider
+DKL_ENT_AUTHENTIC_PROVIDER=MembershipProvider
+DKL_APPLICATION_NAME={ProjectName}
+DKL_APPLICATION_DESCRIPTION={ProjectName}
+DKL_ROLES=
+DKL_ADDINS=<DeklaritAddins> <Addin>  <Name>C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\GeneralProperties\DeklaritProperties.dktp</Name>  <Path>C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\GeneralProperties\DeklaritProperties.dktp</Path>  <OutputPath/>  <OutputProjectName>C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\GeneralProperties\DeklaritProperties.dktp</OutputProjectName>  <Language>0</Language>  <Guid/>  <RunningSet/>  <RunningDate/>  <InBuild>0</InBuild>  <Hidden>1</Hidden>  <Data><![CDATA[]]> </Data> </Addin> <Addin>  <Name>C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp</Name>  <Path>C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp</Path>  <OutputPath/>  <OutputProjectName>RaiderPlan1BO</OutputProjectName>  <Language>0</Language>  <Guid/>  <RunningSet>BusinessComponents,Vaijes,TrayectoTipoDetalle,TrayectoViaje,Viaje,Geografia,Localidad,Pais,Provincia,Persona,Persona,Usuario,RolUsuario,Usuario,DataProviders,dpUsuario,dpUsuarioXEmailXusuarioIDCollection</RunningSet>  <RunningDate>2023-05-28 05:32:45GMT</RunningDate>  <InBuild>0</InBuild>  <Hidden>0</Hidden>  <Data><![CDATA[]]> </Data> </Addin></DeklaritAddins>
+DKL_MDL_PERMISSION_BASE_ID=2014
+DKL_OUTPUT_PROJECT=Raiderplan1BusinessFramework
+DKL_DATAADAPTER_PROJECT=Raiderplan1DataAdapters
+DKL_DATASET_PROJECT=Raiderplan1DataSets
+[Gens0000]
+Gen0001=16
+Gen0002=16
+[DSs0000]
+DatSto0001=12
+[Class0000]
+[GenTypes0001]
+[DataStores0001]
+[Classes0001]
+Class0001=Graphic 1 1 1
+Class0002=Text 0 0 0
+Last=4
+[Class0000 16]
+[Preferences 000 DS:01]

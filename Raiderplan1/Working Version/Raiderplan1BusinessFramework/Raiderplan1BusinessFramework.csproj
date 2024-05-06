@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0AF0F779-7BEF-4460-B5D3-FF8DD780D75C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Deklarit</RootNamespace>
+    <AssemblyName>Raiderplan1BusinessFramework</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="DeklaritLibrary">
+      <Name>DeklaritLibrary</Name>
+      <HintPath>..\bin\DeklaritLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <Name>Microsoft.Practices.ObjectBuilder</Name>
+      <HintPath>..\bin\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <Name>Microsoft.Practices.EnterpriseLibrary.Common</Name>
+      <HintPath>..\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.PolicyInjection">
+      <Name>Microsoft.Practices.EnterpriseLibrary.PolicyInjection</Name>
+      <HintPath>..\bin\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cryptography">
+      <Name>Microsoft.Practices.EnterpriseLibrary.Security.Cryptography</Name>
+      <HintPath>..\bin\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security">
+      <Name>Microsoft.Practices.EnterpriseLibrary.Security</Name>
+      <HintPath>..\bin\Microsoft.Practices.EnterpriseLibrary.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Deklarit.EnterpriseLibrary.Security">
+      <Name>Deklarit.EnterpriseLibrary.Security</Name>
+      <HintPath>..\bin\Deklarit.EnterpriseLibrary.Security.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="dpUsuarioXEmailXusuarioIDCollectionDataAdapter.cs" />
+    <Compile Include="dpUsuarioXEmailXusuarioIDCollectionDataSet.cs">
+      <DependentUpon>dpUsuarioXEmailXusuarioIDCollectionDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IdpUsuarioXEmailXusuarioIDCollectionDataAdapter.cs" />
+    <Compile Include="ILocalidadDataAdapter.cs" />
+    <Compile Include="IPaisDataAdapter.cs" />
+    <Compile Include="IPersonaDataAdapter.cs" />
+    <Compile Include="IProvinciaDataAdapter.cs" />
+    <Compile Include="IRolUsuarioDataAdapter.cs" />
+    <Compile Include="ITrayectoTipoDetalleDataAdapter.cs" />
+    <Compile Include="ITrayectoViajeDataAdapter.cs" />
+    <Compile Include="IUsuarioDataAdapter.cs" />
+    <Compile Include="IViajeDataAdapter.cs" />
+    <Compile Include="LocalidadDataAdapter.cs" />
+    <Compile Include="LocalidadDataSet.cs">
+      <DependentUpon>LocalidadDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PaisDataAdapter.cs" />
+    <Compile Include="PaisDataSet.cs">
+      <DependentUpon>PaisDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PersonaDataAdapter.cs" />
+    <Compile Include="PersonaDataSet.cs">
+      <DependentUpon>PersonaDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="DataAdapterFactory.cs" />
+    <Compile Include="ProvinciaDataAdapter.cs" />
+    <Compile Include="ProvinciaDataSet.cs">
+      <DependentUpon>ProvinciaDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RolUsuarioDataAdapter.cs" />
+    <Compile Include="RolUsuarioDataSet.cs">
+      <DependentUpon>RolUsuarioDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SimpleDataAdapterFactory.cs" />
+    <Compile Include="DeklaritTransaction.cs" />
+    <Compile Include="IDataAdapterFactory.cs" />
+    <Compile Include="SexoEnumeration.cs" />
+    <Compile Include="EnterpriseLibrary.cs" />
+    <Compile Include="BusinessFrameworkContext.cs" />
+    <Compile Include="TrayectoTipoDetalleDataAdapter.cs" />
+    <Compile Include="TrayectoTipoDetalleDataSet.cs">
+      <DependentUpon>TrayectoTipoDetalleDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrayectoViajeDataAdapter.cs" />
+    <Compile Include="TrayectoViajeDataSet.cs">
+      <DependentUpon>TrayectoViajeDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UsuarioDataAdapter.cs" />
+    <Compile Include="UsuarioDataSet.cs">
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UsuarioRolEnumeration.cs" />
+    <Compile Include="ViajeDataAdapter.cs" />
+    <Compile Include="ViajeDataSet.cs">
+      <DependentUpon>ViajeDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LocalidadDataSet.xsd">
+      <LastGenOutput>LocalidadDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PaisDataSet.xsd">
+      <LastGenOutput>PaisDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProvinciaDataSet.xsd">
+      <LastGenOutput>ProvinciaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RolUsuarioDataSet.xsd">
+      <LastGenOutput>RolUsuarioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dpUsuarioXEmailXusuarioIDCollectionDataSet.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UsuarioDataSet.xsd">
+      <LastGenOutput>UsuarioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TrayectoTipoDetalleDataSet.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TrayectoViajeDataSet.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ViajeDataSet.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <EmbeddedResource Include="PersonaDataSet.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tables.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Framework.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

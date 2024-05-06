@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<References>
+   <Reference  type="gac">
+      <Name>System.Configuration.dll</Name>
+   </Reference>
+   <Reference >
+      <Name>Microsoft.Practices.ObjectBuilder.dll</Name>
+   </Reference>
+   <Reference >
+      <Name>Microsoft.Practices.EnterpriseLibrary.Common.dll</Name>
+   </Reference>
+   <Reference >
+      <Name>Microsoft.Practices.EnterpriseLibrary.PolicyInjection.dll</Name>
+   </Reference>
+   <Reference >
+      <Name>Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll</Name>
+   </Reference>
+   <Reference >
+      <Name>Microsoft.Practices.EnterpriseLibrary.Security.dll</Name>
+   </Reference>
+   <Reference >
+      <Name>Deklarit.EnterpriseLibrary.Security.dll</Name>
+   </Reference>
+</References>
