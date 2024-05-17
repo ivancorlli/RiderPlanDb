@@ -472,6 +472,7 @@ namespace Raiderplan1 {
             m__UsuarioPaswordOriginal = rowUsuario["UsuarioPasword", System.Data.DataRowVersion.Original] ;
             m__UsuarioFechaAltaOriginal = rowUsuario["UsuarioFechaAlta", System.Data.DataRowVersion.Original] ;
             m__CodigoValidationOriginal = rowUsuario["CodigoValidation", System.Data.DataRowVersion.Original] ;
+            m__CodigoRecuperacionOriginal = rowUsuario["CodigoRecuperacion", System.Data.DataRowVersion.Original] ;
             m__PersonaIDOriginal = rowUsuario["PersonaID", System.Data.DataRowVersion.Original] ;
          }
          else
@@ -482,6 +483,7 @@ namespace Raiderplan1 {
             m__UsuarioPaswordOriginal = rowUsuario["UsuarioPasword"] ;
             m__UsuarioFechaAltaOriginal = rowUsuario["UsuarioFechaAlta"] ;
             m__CodigoValidationOriginal = rowUsuario["CodigoValidation"] ;
+            m__CodigoRecuperacionOriginal = rowUsuario["CodigoRecuperacion"] ;
             m__PersonaIDOriginal = rowUsuario["PersonaID"] ;
          }
          _Gxremove = (bool)((rowUsuario.RowState==System.Data.DataRowState.Deleted)) ;
@@ -515,7 +517,7 @@ namespace Raiderplan1 {
       {
           IDataReader UsuarioSelect3 ;
           ReadWriteCommand cmUsuarioSelect3 ;
-         cmUsuarioSelect3 = connDefault.GetCommand("SELECT [UsuarioID], [UsuarioNombre], [UsuarioActivo], [UsuarioEmail], [UsuarioPasword], [UsuarioFechaAlta], [CodigoValidation], [PersonaID] FROM [Usuario] WITH (NOLOCK) WHERE [UsuarioID] = @UsuarioID ", false) ;
+         cmUsuarioSelect3 = connDefault.GetCommand("SELECT [UsuarioID], [UsuarioNombre], [UsuarioActivo], [UsuarioEmail], [UsuarioPasword], [UsuarioFechaAlta], [CodigoValidation], [CodigoRecuperacion], [PersonaID] FROM [Usuario] WITH (NOLOCK) WHERE [UsuarioID] = @UsuarioID ", false) ;
          if ( ( cmUsuarioSelect3.IDbCommand.Parameters.Count == 0 ) )
          {
             cmUsuarioSelect3.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
@@ -532,7 +534,8 @@ namespace Raiderplan1 {
             rowUsuario["UsuarioPasword"] = dsDefault.Db.GetString(UsuarioSelect3, 4) ;
             rowUsuario["UsuarioFechaAlta"] = dsDefault.Db.GetDateTime(UsuarioSelect3, 5) ;
             rowUsuario["CodigoValidation"] = dsDefault.Db.GetString(UsuarioSelect3, 6) ;
-            rowUsuario["PersonaID"] = dsDefault.Db.GetInt32(UsuarioSelect3, 7) ;
+            rowUsuario["CodigoRecuperacion"] = dsDefault.Db.GetString(UsuarioSelect3, 7) ;
+            rowUsuario["PersonaID"] = dsDefault.Db.GetInt32(UsuarioSelect3, 8) ;
             sMode7 = Gx_mode ;
             Gx_mode = Mode.Display ;
             Gx_mode = sMode7 ;
@@ -550,7 +553,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmUsuarioSelect4 ;
          if ( ( Gx_mode != Mode.Insert ) )
          {
-            cmUsuarioSelect4 = connDefault.GetCommand("SELECT [UsuarioID], [UsuarioNombre], [UsuarioActivo], [UsuarioEmail], [UsuarioPasword], [UsuarioFechaAlta], [CodigoValidation], [PersonaID] FROM [Usuario] WITH (UPDLOCK) WHERE [UsuarioID] = @UsuarioID ", false) ;
+            cmUsuarioSelect4 = connDefault.GetCommand("SELECT [UsuarioID], [UsuarioNombre], [UsuarioActivo], [UsuarioEmail], [UsuarioPasword], [UsuarioFechaAlta], [CodigoValidation], [CodigoRecuperacion], [PersonaID] FROM [Usuario] WITH (UPDLOCK) WHERE [UsuarioID] = @UsuarioID ", false) ;
             if ( ( cmUsuarioSelect4.IDbCommand.Parameters.Count == 0 ) )
             {
                cmUsuarioSelect4.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
@@ -567,7 +570,7 @@ namespace Raiderplan1 {
             {
                _Condition = true ;
             }
-            if ( _Condition || ( ! StringUtil.ObjectStringEquals(m__CodigoValidationOriginal,dsDefault.Db.GetString(UsuarioSelect4, 6)) ) || ( ! m__PersonaIDOriginal.Equals(dsDefault.Db.GetInt32(UsuarioSelect4, 7)) ) )
+            if ( _Condition || ( ! StringUtil.ObjectStringEquals(m__CodigoValidationOriginal,dsDefault.Db.GetString(UsuarioSelect4, 6)) ) || ( ! StringUtil.ObjectStringEquals(m__CodigoRecuperacionOriginal,dsDefault.Db.GetString(UsuarioSelect4, 7)) ) || ( ! m__PersonaIDOriginal.Equals(dsDefault.Db.GetInt32(UsuarioSelect4, 8)) ) )
             {
                UsuarioSelect4.Close();
                throw new UsuarioDataChangedException( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("waschg"), new   object[]  {resourceManagerTables.GetString("Usuario")})) ;
@@ -582,7 +585,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmUsuarioInsert1 ;
          CheckOptimisticConcurrencyUsuario( ) ;
          AfterConfirmUsuario( ) ;
-         cmUsuarioInsert1 = connDefault.GetCommand("INSERT INTO [Usuario] ([UsuarioNombre], [UsuarioActivo], [UsuarioEmail], [UsuarioPasword], [UsuarioFechaAlta], [CodigoValidation], [PersonaID]) VALUES (@UsuarioNombre, @UsuarioActivo, @UsuarioEmail, @UsuarioPasword, @UsuarioFechaAlta, @CodigoValidation, @PersonaID); SELECT SCOPE_IDENTITY()", false) ;
+         cmUsuarioInsert1 = connDefault.GetCommand("INSERT INTO [Usuario] ([UsuarioNombre], [UsuarioActivo], [UsuarioEmail], [UsuarioPasword], [UsuarioFechaAlta], [CodigoValidation], [CodigoRecuperacion], [PersonaID]) VALUES (@UsuarioNombre, @UsuarioActivo, @UsuarioEmail, @UsuarioPasword, @UsuarioFechaAlta, @CodigoValidation, @CodigoRecuperacion, @PersonaID); SELECT SCOPE_IDENTITY()", false) ;
          if ( ( cmUsuarioInsert1.IDbCommand.Parameters.Count == 0 ) )
          {
             cmUsuarioInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioNombre", System.Data.DbType.AnsiString,50));
@@ -591,6 +594,7 @@ namespace Raiderplan1 {
             cmUsuarioInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioPasword", System.Data.DbType.AnsiString,70));
             cmUsuarioInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioFechaAlta", System.Data.DbType.Date));
             cmUsuarioInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@CodigoValidation", System.Data.DbType.AnsiString,4));
+            cmUsuarioInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@CodigoRecuperacion", System.Data.DbType.AnsiString,4));
             cmUsuarioInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@PersonaID", System.Data.DbType.Int32));
          }
          cmUsuarioInsert1.ErrorMask = cmUsuarioInsert1.ErrorMask  |  ErrorMask.ForeignKeyError;
@@ -601,7 +605,8 @@ namespace Raiderplan1 {
          cmUsuarioInsert1.SetParameter(3, rowUsuario["UsuarioPasword"]);
          cmUsuarioInsert1.SetParameterDateObject(4, rowUsuario["UsuarioFechaAlta"]);
          cmUsuarioInsert1.SetParameter(5, rowUsuario["CodigoValidation"]);
-         cmUsuarioInsert1.SetParameter(6, rowUsuario["PersonaID"]);
+         cmUsuarioInsert1.SetParameter(6, rowUsuario["CodigoRecuperacion"]);
+         cmUsuarioInsert1.SetParameter(7, rowUsuario["PersonaID"]);
          UsuarioInsert1 = cmUsuarioInsert1.FetchData() ;
          if ( ! ( cmUsuarioInsert1.ForeignKeyError || cmUsuarioInsert1.DupKey ) )
          {
@@ -624,7 +629,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmUsuarioUpdate1 ;
          CheckOptimisticConcurrencyUsuario( ) ;
          AfterConfirmUsuario( ) ;
-         cmUsuarioUpdate1 = connDefault.GetCommand("UPDATE [Usuario] SET [UsuarioNombre]=@UsuarioNombre, [UsuarioActivo]=@UsuarioActivo, [UsuarioEmail]=@UsuarioEmail, [UsuarioPasword]=@UsuarioPasword, [UsuarioFechaAlta]=@UsuarioFechaAlta, [CodigoValidation]=@CodigoValidation, [PersonaID]=@PersonaID  WHERE [UsuarioID] = @UsuarioID", false) ;
+         cmUsuarioUpdate1 = connDefault.GetCommand("UPDATE [Usuario] SET [UsuarioNombre]=@UsuarioNombre, [UsuarioActivo]=@UsuarioActivo, [UsuarioEmail]=@UsuarioEmail, [UsuarioPasword]=@UsuarioPasword, [UsuarioFechaAlta]=@UsuarioFechaAlta, [CodigoValidation]=@CodigoValidation, [CodigoRecuperacion]=@CodigoRecuperacion, [PersonaID]=@PersonaID  WHERE [UsuarioID] = @UsuarioID", false) ;
          if ( ( cmUsuarioUpdate1.IDbCommand.Parameters.Count == 0 ) )
          {
             cmUsuarioUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioNombre", System.Data.DbType.AnsiString,50));
@@ -633,6 +638,7 @@ namespace Raiderplan1 {
             cmUsuarioUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioPasword", System.Data.DbType.AnsiString,70));
             cmUsuarioUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioFechaAlta", System.Data.DbType.Date));
             cmUsuarioUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@CodigoValidation", System.Data.DbType.AnsiString,4));
+            cmUsuarioUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@CodigoRecuperacion", System.Data.DbType.AnsiString,4));
             cmUsuarioUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@PersonaID", System.Data.DbType.Int32));
             cmUsuarioUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
          }
@@ -644,8 +650,9 @@ namespace Raiderplan1 {
          cmUsuarioUpdate1.SetParameter(3, rowUsuario["UsuarioPasword"]);
          cmUsuarioUpdate1.SetParameterDateObject(4, rowUsuario["UsuarioFechaAlta"]);
          cmUsuarioUpdate1.SetParameter(5, rowUsuario["CodigoValidation"]);
-         cmUsuarioUpdate1.SetParameter(6, rowUsuario["PersonaID"]);
-         cmUsuarioUpdate1.SetParameter(7, rowUsuario["UsuarioID"]);
+         cmUsuarioUpdate1.SetParameter(6, rowUsuario["CodigoRecuperacion"]);
+         cmUsuarioUpdate1.SetParameter(7, rowUsuario["PersonaID"]);
+         cmUsuarioUpdate1.SetParameter(8, rowUsuario["UsuarioID"]);
          cmUsuarioUpdate1.ExecuteStmt();
          if ( cmUsuarioUpdate1.ForeignKeyError )
          {
@@ -691,6 +698,21 @@ namespace Raiderplan1 {
       {
           IDataReader RolUsuarioSelect1 ;
           ReadWriteCommand cmRolUsuarioSelect1 ;
+          IDataReader ViajeSelect1 ;
+          ReadWriteCommand cmViajeSelect1 ;
+         cmViajeSelect1 = connDefault.GetCommand("SELECT TOP 1 [ViajeID] FROM [Viaje] WITH (NOLOCK) WHERE [UsuarioID] = @UsuarioID ", false) ;
+         if ( ( cmViajeSelect1.IDbCommand.Parameters.Count == 0 ) )
+         {
+            cmViajeSelect1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
+         }
+         cmViajeSelect1.SetParameter(0, rowUsuario["UsuarioID"]);
+         ViajeSelect1 = cmViajeSelect1.FetchData() ;
+         if ( cmViajeSelect1.HasMoreRows )
+         {
+            ViajeSelect1.Close();
+            throw new ViajeInvalidDeleteException( string.Format(resourceManager.GetString("del"), new   object[]  {"Viaje"})) ;
+         }
+         ViajeSelect1.Close();
          cmRolUsuarioSelect1 = connDefault.GetCommand("SELECT TOP 1 [RolUsuarioID] FROM [RolUsuario] WITH (NOLOCK) WHERE [UsuarioID] = @UsuarioID ", false) ;
          if ( ( cmRolUsuarioSelect1.IDbCommand.Parameters.Count == 0 ) )
          {
@@ -823,7 +845,8 @@ namespace Raiderplan1 {
             rowUsuario["UsuarioPasword"] = dsDefault.Db.GetString(UsuarioSelect5, 4) ;
             rowUsuario["UsuarioFechaAlta"] = dsDefault.Db.GetDateTime(UsuarioSelect5, 5) ;
             rowUsuario["CodigoValidation"] = dsDefault.Db.GetString(UsuarioSelect5, 6) ;
-            rowUsuario["PersonaID"] = dsDefault.Db.GetInt32(UsuarioSelect5, 7) ;
+            rowUsuario["CodigoRecuperacion"] = dsDefault.Db.GetString(UsuarioSelect5, 7) ;
+            rowUsuario["PersonaID"] = dsDefault.Db.GetInt32(UsuarioSelect5, 8) ;
          }
       }
 
@@ -912,7 +935,7 @@ namespace Raiderplan1 {
          UsuarioSet.Usuario.AddUsuarioRow( rowUsuario) ;
       }
 
-      private readonly string m_SelectString7 = "TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioActivo], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioFechaAlta], TM1.[CodigoValidation], TM1.[PersonaID]" ;
+      private readonly string m_SelectString7 = "TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioActivo], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioFechaAlta], TM1.[CodigoValidation], TM1.[CodigoRecuperacion], TM1.[PersonaID]" ;
 
 
       public delegate  void UsuarioUpdateEventHandler( object sender ,
@@ -1086,6 +1109,29 @@ namespace Raiderplan1 {
       }
 
       [Serializable()]
+      public class ViajeInvalidDeleteException : Deklarit.InvalidDeleteException
+      {
+         public ViajeInvalidDeleteException( )
+         {
+         }
+
+         public ViajeInvalidDeleteException( string message ) : base(message)
+         {
+         }
+
+         public ViajeInvalidDeleteException( string message ,
+                                             Exception inner ) : base(message, inner)
+         {
+         }
+
+         protected ViajeInvalidDeleteException( SerializationInfo info ,
+                                                StreamingContext context ) : base(info, context)
+         {
+         }
+
+      }
+
+      [Serializable()]
       public class RolUsuarioInvalidDeleteException : Deklarit.InvalidDeleteException
       {
          public RolUsuarioInvalidDeleteException( )
@@ -1129,6 +1175,7 @@ namespace Raiderplan1 {
          m__UsuarioPaswordOriginal = new object();
          m__UsuarioFechaAltaOriginal = new object();
          m__CodigoValidationOriginal = new object();
+         m__CodigoRecuperacionOriginal = new object();
          m__PersonaIDOriginal = new object();
          _Condition = false ;
          IsModified = 0 ;
@@ -1164,6 +1211,7 @@ namespace Raiderplan1 {
       private object m__UsuarioPaswordOriginal ;
       private object m__UsuarioFechaAltaOriginal ;
       private object m__CodigoValidationOriginal ;
+      private object m__CodigoRecuperacionOriginal ;
       private object m__PersonaIDOriginal ;
    }
 
@@ -1203,7 +1251,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmUsuarioSelect6 = connDefault.GetCommand("SELECT TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioActivo], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioFechaAlta], TM1.[CodigoValidation], TM1.[PersonaID] FROM [Usuario] TM1 WITH (NOLOCK) ORDER BY TM1.[UsuarioID] ", false) ;
+         cmUsuarioSelect6 = connDefault.GetCommand("SELECT TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioActivo], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioFechaAlta], TM1.[CodigoValidation], TM1.[CodigoRecuperacion], TM1.[PersonaID] FROM [Usuario] TM1 WITH (NOLOCK) ORDER BY TM1.[UsuarioID] ", false) ;
          UsuarioSelect6 = cmUsuarioSelect6.ExecuteReader(((daCurrentTransaction==null) ? Configuration.ReaderCommandBehavior : CommandBehavior.Default)) ;
          return UsuarioSelect6 ;
       }
@@ -1213,7 +1261,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmUsuarioSelect6 = connDefault.GetCommand("SELECT TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioActivo], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioFechaAlta], TM1.[CodigoValidation], TM1.[PersonaID] FROM [Usuario] TM1 WITH (NOLOCK) WHERE TM1.[UsuarioID] = @UsuarioID ORDER BY TM1.[UsuarioID] ", false) ;
+         cmUsuarioSelect6 = connDefault.GetCommand("SELECT TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioActivo], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioFechaAlta], TM1.[CodigoValidation], TM1.[CodigoRecuperacion], TM1.[PersonaID] FROM [Usuario] TM1 WITH (NOLOCK) WHERE TM1.[UsuarioID] = @UsuarioID ORDER BY TM1.[UsuarioID] ", false) ;
          if ( ( cmUsuarioSelect6.IDbCommand.Parameters.Count == 0 ) )
          {
             cmUsuarioSelect6.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
@@ -1228,7 +1276,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmUsuarioSelect6 = connDefault.GetCommand("SELECT TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioActivo], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioFechaAlta], TM1.[CodigoValidation], TM1.[PersonaID] FROM [Usuario] TM1 WITH (NOLOCK) WHERE TM1.[PersonaID] = @PersonaID ORDER BY TM1.[UsuarioID] ", false) ;
+         cmUsuarioSelect6 = connDefault.GetCommand("SELECT TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioActivo], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioFechaAlta], TM1.[CodigoValidation], TM1.[CodigoRecuperacion], TM1.[PersonaID] FROM [Usuario] TM1 WITH (NOLOCK) WHERE TM1.[PersonaID] = @PersonaID ORDER BY TM1.[UsuarioID] ", false) ;
          if ( ( cmUsuarioSelect6.IDbCommand.Parameters.Count == 0 ) )
          {
             cmUsuarioSelect6.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@PersonaID", System.Data.DbType.Int32));

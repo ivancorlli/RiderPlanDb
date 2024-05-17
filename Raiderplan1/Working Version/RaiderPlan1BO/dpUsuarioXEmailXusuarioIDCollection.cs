@@ -193,6 +193,21 @@ namespace Raiderplan1
 			}
 		}
 		
+		/// <summary>
+		/// Gets or sets the Codigo Recuperacion
+		/// </summary>        
+		public System.String CodigoRecuperacion
+		{
+			get 
+			{
+				return m_DataRow.CodigoRecuperacion;
+			}
+			set
+			{
+				m_DataRow.CodigoRecuperacion = value;
+			}
+		}
+		
 
 
 

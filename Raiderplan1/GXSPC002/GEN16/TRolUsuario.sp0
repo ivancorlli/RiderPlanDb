@@ -2,9 +2,9 @@ spec_i([ trn,3,'RolUsuario','RolUsuario',[],eng,'4_5_0-002' ]).
  
 struct_i(3,0,[],[]).
  
-level_i(3,[ 3,[ [ 3,many ] ],[ 13 ],[],[],[],[ 13 ],'IRolUsuario',[ 3,[] ],[] ]).
+level_i(3,[ 3,[ [ 3,many ],[ 7,one ] ],[ 13 ],[],[],[],[ 13 ],'IRolUsuario',[ 3,[] ],[] ]).
  
-tw_i(3,[]).
+tw_i(3,[ [ 7,[ [ 3,11,11 ] ] ] ]).
  
 lwi_i(3,[ [] ]).
  
@@ -55,7 +55,7 @@ rule_i(0,datastore(1,'PoolRWEnabled','-1')).
 rule_i(0,datastore(1,'CS_RPCPGML','')).
 rule_i(0,datastore(1,'JDBC_DATASOURCE','')).
 rule_i(0,datastore(1,'USE_JDBC_DATASOURCE','0')).
-rule_i(0,datastore(1,'DS_DBMS_ADDINFO','Server=DESKTOP-CM1DMPN\SQLEXPRESS01;Database=RaiderPlanDB1;User Id=usuario;Password=usuario;')).
+rule_i(0,datastore(1,'DS_DBMS_ADDINFO','Provider=SQLOLEDB;Data Source=ICORLLI\SQLEXPRESS01;Integrated Security=SSPI;Initial Catalog=RiderPlanDB1')).
 rule_i(0,datastore(1,'USER_PASSWORD','')).
 rule_i(0,datastore(1,'USER_ID','')).
 rule_i(0,datastore(1,'TRUSTED_CONNECTION','Yes')).
@@ -197,14 +197,18 @@ rule_i(0,prop('ObjFolder','Default')).
 rule_i(0,prop('ObjDesc','')).
 rule_i(0,prop('ObjName','RolUsuario')).
 rule_i(0,prop('ObjId','0')).
+rule_i(3,prompt([ 7,[ [ 3,11,11 ] ],[ 11 ],[ 11 ] ])).
 rule_i(0,rule([ a(22,[ 'Dlt','Delete','' ]) ],[],[],[])).
 rule_i(0,maingen(16)).
  
 a_i(1,3,t,3,[],[ [ [ [],13,13 ] ],'IRolUsuario',[] ]).
+a_i(2,3,r,7,[],[ [ [ 3,11,11 ] ],'IUsuario',[] ]).
  
 v_i(t,i,1,13).
 v_i(t,o,1,15).
 v_i(t,o,1,11).
+v_i(r,i,2,11).
+v_i(r,o,2,[]).
  
  
  
@@ -215,9 +219,12 @@ attri_i(15,[ 'Rol',int,3,0,'ZZ9',0,'Rol','',0,0 ]).
 attri_i(13,[ 'RolUsuarioID',int,3,0,'ZZ9',0,'Rol Usuario ID','',0,0 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2,0 ]).
  
+table_i(7,[ 'USUARIO',[ 11 ],'Usuario','Usuario' ]).
 table_i(3,[ 'ROLUSUARIO',[ 13,15,11 ],'RolUsuario','RolUsuario' ]).
  
 index_i(3,[ 'IRolUsuario',u,[ 13 ],'IRolUsuario' ]).
+index_i(3,[ 'IRolUsuario1',d,[ 11 ],'IRolUsuario1' ]).
+index_i(7,[ 'IUsuario',u,[ 11 ],'IUsuario' ]).
  
  
  
@@ -382,13 +389,19 @@ att_prop_i(2,11,idDATEFORMAT,idDATEFORMAT_SHORT,d).
 att_prop_i(2,11,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
 att_prop_i(2,11,'FullName','UsuarioID',v).
  
+tbl_prop_i(2,3,'AllDirSuper',[ [ 7,[ 11 ] ] ],v).
+tbl_prop_i(2,7,'DirSubor',[ [ 3,[ 11 ] ] ],v).
+tbl_prop_i(2,3,'DirSuper',[ [ 7,[ 11 ] ] ],v).
  
 tbl_att_prop_i(2,3,13,'AllowNulls',n).
 tbl_att_prop_i(2,3,13,'AUTONUMBER',y).
 tbl_att_prop_i(2,3,15,'AllowNulls',n).
 tbl_att_prop_i(2,3,11,'AllowNulls',n).
+tbl_att_prop_i(2,7,11,'AllowNulls',n).
+tbl_att_prop_i(2,7,11,'AUTONUMBER',y).
  
 i_tbl_best_trn(3,[ 3,1,'RolUsuario','RolUsuario' ]).
+i_tbl_best_trn(7,[ 7,1,'Usuario','Usuario' ]).
  
  
  

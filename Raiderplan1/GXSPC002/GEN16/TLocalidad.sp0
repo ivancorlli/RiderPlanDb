@@ -59,7 +59,7 @@ rule_i(0,datastore(1,'PoolRWEnabled','-1')).
 rule_i(0,datastore(1,'CS_RPCPGML','')).
 rule_i(0,datastore(1,'JDBC_DATASOURCE','')).
 rule_i(0,datastore(1,'USE_JDBC_DATASOURCE','0')).
-rule_i(0,datastore(1,'DS_DBMS_ADDINFO','Server=DESKTOP-CM1DMPN\SQLEXPRESS01;Database=RaiderPlanDB1;User Id=usuario;Password=usuario;')).
+rule_i(0,datastore(1,'DS_DBMS_ADDINFO','Provider=SQLOLEDB;Data Source=ICORLLI\SQLEXPRESS01;Integrated Security=SSPI;Initial Catalog=RiderPlanDB1')).
 rule_i(0,datastore(1,'USER_PASSWORD','')).
 rule_i(0,datastore(1,'USER_ID','')).
 rule_i(0,datastore(1,'TRUSTED_CONNECTION','Yes')).
@@ -484,6 +484,7 @@ att_prop_i(2,4,'FullName','PersonaID',v).
  
 tbl_prop_i(2,1,'AllDirSuper',[ [ 5,[ 20 ] ] ],v).
 tbl_prop_i(2,5,'AllDirSuper',[ [ 6,[ 22 ] ] ],v).
+tbl_prop_i(2,1,'DirSuperNull',[ [ 5,[ 20 ] ] ],v).
 tbl_prop_i(2,6,'DirSubor',[ [ 5,[ 22 ] ] ],v).
 tbl_prop_i(2,5,'DirSubor',[ [ 1,[ 20 ] ] ],v).
 tbl_prop_i(2,1,'DirSuper',[ [ 5,[ 20 ] ] ],v).
@@ -498,7 +499,6 @@ tbl_att_prop_i(2,6,22,'AUTONUMBER',y).
 tbl_att_prop_i(2,6,21,'AllowNulls',n).
 tbl_att_prop_i(2,1,4,'AllowNulls',n).
 tbl_att_prop_i(2,1,4,'AUTONUMBER',y).
-tbl_att_prop_i(2,1,20,'AllowNulls',n).
  
 i_tbl_best_trn(5,[ 5,1,'Localidad','Localidad' ]).
 i_tbl_best_trn(1,[ 1,1,'Persona','Persona' ]).

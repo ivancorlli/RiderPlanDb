@@ -21,6 +21,16 @@ namespace Raiderplan1 {
 
       }
 
+      public static IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )
+      {
+         return daFactory.GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( ) ;
+      }
+
+      public static IUsuarioDataAdapter GetUsuarioDataAdapter( )
+      {
+         return daFactory.GetUsuarioDataAdapter( ) ;
+      }
+
       public static IViajeDataAdapter GetViajeDataAdapter( )
       {
          return daFactory.GetViajeDataAdapter( ) ;
@@ -36,21 +46,6 @@ namespace Raiderplan1 {
          return daFactory.GetTrayectoTipoDetalleDataAdapter( ) ;
       }
 
-      public static IPersonaDataAdapter GetPersonaDataAdapter( )
-      {
-         return daFactory.GetPersonaDataAdapter( ) ;
-      }
-
-      public static IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )
-      {
-         return daFactory.GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( ) ;
-      }
-
-      public static IUsuarioDataAdapter GetUsuarioDataAdapter( )
-      {
-         return daFactory.GetUsuarioDataAdapter( ) ;
-      }
-
       public static IRolUsuarioDataAdapter GetRolUsuarioDataAdapter( )
       {
          return daFactory.GetRolUsuarioDataAdapter( ) ;
@@ -59,6 +54,11 @@ namespace Raiderplan1 {
       public static IProvinciaDataAdapter GetProvinciaDataAdapter( )
       {
          return daFactory.GetProvinciaDataAdapter( ) ;
+      }
+
+      public static IPersonaDataAdapter GetPersonaDataAdapter( )
+      {
+         return daFactory.GetPersonaDataAdapter( ) ;
       }
 
       public static IPaisDataAdapter GetPaisDataAdapter( )

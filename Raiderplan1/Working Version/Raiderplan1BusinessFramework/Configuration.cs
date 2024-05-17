@@ -128,7 +128,7 @@ namespace Raiderplan1 {
             {
                if ( ( m_ConnectionString == null ) || (m_ConnectionString.Length==0) )
                {
-                  m_CurrentConnectionString = "Server=DESKTOP-CM1DMPN\\SQLEXPRESS01;Database=RaiderPlanDB1;User Id=usuario;Password=usuario;" ;
+                  m_CurrentConnectionString = "Server=ICORLLI\\SQLEXPRESS01;Integrated Security=SSPI;Database=RiderPlanDB1" ;
                }
                else
                {

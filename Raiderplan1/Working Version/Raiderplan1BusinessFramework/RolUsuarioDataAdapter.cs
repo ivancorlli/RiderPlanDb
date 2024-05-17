@@ -208,6 +208,97 @@ namespace Raiderplan1 {
 
 
       ///  <summary>
+      ///   (6) Fills the specified dataset filtered by UsuarioIDfield(s).
+      ///  </summary>
+      ///  <param name="dataSet">DataSet</param>
+      ///  <param name="usuarioID">Usuario ID</param>
+      public virtual int FillByUsuarioID( RolUsuarioDataSet dataSet ,
+                                          int usuarioID )
+      {
+         InitializeMembers( ) ;
+         connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
+         RolUsuarioSet = dataSet ;
+         rowRolUsuario = RolUsuarioSet.RolUsuario.NewRolUsuarioRow() ;
+         rowRolUsuario.UsuarioID = usuarioID ;
+         try
+         {
+            LoadByUsuarioID( 0, -1) ;
+            dataSet.AcceptChanges( ) ;
+         }
+         finally
+         {
+            this.Cleanup();
+         }
+         return 0 ;
+      }
+
+
+      ///  <summary>
+      ///   (6) Fills a page of up to maxRows rows into the specified dataset filtered by UsuarioIDfield(s)starting
+      ///    at startRow
+      ///  </summary>
+      ///  <param name="dataSet">DataSet</param>
+      ///  <param name="usuarioID">Usuario ID</param>
+      ///  <param name="startRow">Starting row</param>
+      ///  <param name="maxRows">Max number of rows to load</param>
+      public virtual int FillPageByUsuarioID( RolUsuarioDataSet dataSet ,
+                                              int usuarioID ,
+                                              int startRow ,
+                                              int maxRows )
+      {
+         InitializeMembers( ) ;
+         connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
+         RolUsuarioSet = dataSet ;
+         rowRolUsuario = RolUsuarioSet.RolUsuario.NewRolUsuarioRow() ;
+         rowRolUsuario.UsuarioID = usuarioID ;
+         try
+         {
+            LoadByUsuarioID( startRow, maxRows) ;
+            dataSet.AcceptChanges( ) ;
+         }
+         finally
+         {
+            this.Cleanup();
+         }
+         return 0 ;
+      }
+
+
+      ///  <summary>
+      ///   (9) Gets the record count filtered by UsuarioIDfield(s).
+      ///  </summary>
+      ///  <param name="usuarioID">Usuario ID</param>
+      public virtual int GetRecordCountByUsuarioID( int usuarioID )
+      {
+         int m_Count ;
+         try
+         {
+            InitializeMembers( ) ;
+            m_Count = GetInternalRecordCountByUsuarioID( usuarioID ) ;
+         }
+         finally
+         {
+            this.Cleanup();
+         }
+         return m_Count ;
+      }
+
+      private int GetInternalRecordCountByUsuarioID( int usuarioID )
+      {
+         connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
+         cmRolUsuarioSelect1 = connDefault.GetCommand("SELECT COUNT(*) FROM [RolUsuario] WITH (NOLOCK) WHERE [UsuarioID] = @UsuarioID ", false) ;
+         if ( ( cmRolUsuarioSelect1.IDbCommand.Parameters.Count == 0 ) )
+         {
+            cmRolUsuarioSelect1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
+         }
+         cmRolUsuarioSelect1.SetParameter(0, usuarioID);
+         RolUsuarioSelect1 = cmRolUsuarioSelect1.FetchData() ;
+         recordCount = ( ( RolUsuarioSelect1.IsDBNull(0) )  ? (int)(0) : RolUsuarioSelect1.GetInt32(0) ) ;
+         RolUsuarioSelect1.Close();
+         return recordCount ;
+      }
+
+      ///  <summary>
       ///   (8) Fills the specified dataset with the record matching RolUsuarioID in the the
       ///    fillDataParameters array, if the array is null, it fills the Dataset loading all
       ///    records in the table.
@@ -277,10 +368,10 @@ namespace Raiderplan1 {
       private int GetInternalRecordCount( )
       {
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmRolUsuarioSelect1 = connDefault.GetCommand("SELECT COUNT(*) FROM [RolUsuario] WITH (NOLOCK) ", false) ;
-         RolUsuarioSelect1 = cmRolUsuarioSelect1.FetchData() ;
-         recordCount = ( ( RolUsuarioSelect1.IsDBNull(0) )  ? (int)(0) : RolUsuarioSelect1.GetInt32(0) ) ;
-         RolUsuarioSelect1.Close();
+         cmRolUsuarioSelect2 = connDefault.GetCommand("SELECT COUNT(*) FROM [RolUsuario] WITH (NOLOCK) ", false) ;
+         RolUsuarioSelect2 = cmRolUsuarioSelect2.FetchData() ;
+         recordCount = ( ( RolUsuarioSelect2.IsDBNull(0) )  ? (int)(0) : RolUsuarioSelect2.GetInt32(0) ) ;
+         RolUsuarioSelect2.Close();
          return recordCount ;
       }
 
@@ -394,23 +485,43 @@ namespace Raiderplan1 {
          }
       }
 
+      private void CheckIntegrityErrorsRolusuario( )
+      {
+          IDataReader UsuarioSelect1 ;
+          ReadWriteCommand cmUsuarioSelect1 ;
+         cmUsuarioSelect1 = connDefault.GetCommand("SELECT [UsuarioID] FROM [Usuario] WITH (NOLOCK) WHERE [UsuarioID] = @UsuarioID ", false) ;
+         if ( ( cmUsuarioSelect1.IDbCommand.Parameters.Count == 0 ) )
+         {
+            cmUsuarioSelect1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
+         }
+         cmUsuarioSelect1.SetParameter(0, rowRolUsuario["UsuarioID"]);
+         UsuarioSelect1 = cmUsuarioSelect1.FetchData() ;
+         if ( !cmUsuarioSelect1.HasMoreRows )
+         {
+            UsuarioSelect1.Close();
+            throw new UsuarioForeignKeyNotFoundException( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("inex"), new   object[]  {resourceManagerTables.GetString("Usuario")})) ;
+         }
+         UsuarioSelect1.Close();
+         throw new ForeignKeyNotFoundException( resourceManager.GetString("refinterror")) ;
+      }
+
       private void GetByPrimaryKey( )
       {
-          IDataReader RolUsuarioSelect2 ;
-          ReadWriteCommand cmRolUsuarioSelect2 ;
-         cmRolUsuarioSelect2 = connDefault.GetCommand("SELECT [RolUsuarioID], [Rol], [UsuarioID] FROM [RolUsuario] WITH (NOLOCK) WHERE [RolUsuarioID] = @RolUsuarioID ", false) ;
-         if ( ( cmRolUsuarioSelect2.IDbCommand.Parameters.Count == 0 ) )
+          IDataReader RolUsuarioSelect3 ;
+          ReadWriteCommand cmRolUsuarioSelect3 ;
+         cmRolUsuarioSelect3 = connDefault.GetCommand("SELECT [RolUsuarioID], [Rol], [UsuarioID] FROM [RolUsuario] WITH (NOLOCK) WHERE [RolUsuarioID] = @RolUsuarioID ", false) ;
+         if ( ( cmRolUsuarioSelect3.IDbCommand.Parameters.Count == 0 ) )
          {
-            cmRolUsuarioSelect2.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@RolUsuarioID", System.Data.DbType.Int16));
+            cmRolUsuarioSelect3.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@RolUsuarioID", System.Data.DbType.Int16));
          }
-         cmRolUsuarioSelect2.SetParameter(0, rowRolUsuario["RolUsuarioID"]);
-         RolUsuarioSelect2 = cmRolUsuarioSelect2.FetchData() ;
-         if ( cmRolUsuarioSelect2.HasMoreRows )
+         cmRolUsuarioSelect3.SetParameter(0, rowRolUsuario["RolUsuarioID"]);
+         RolUsuarioSelect3 = cmRolUsuarioSelect3.FetchData() ;
+         if ( cmRolUsuarioSelect3.HasMoreRows )
          {
             RcdFound3 = 1 ;
-            rowRolUsuario["RolUsuarioID"] = dsDefault.Db.GetInt16(RolUsuarioSelect2, 0) ;
-            rowRolUsuario["Rol"] = dsDefault.Db.GetInt16(RolUsuarioSelect2, 1) ;
-            rowRolUsuario["UsuarioID"] = dsDefault.Db.GetInt32(RolUsuarioSelect2, 2) ;
+            rowRolUsuario["RolUsuarioID"] = dsDefault.Db.GetInt16(RolUsuarioSelect3, 0) ;
+            rowRolUsuario["Rol"] = dsDefault.Db.GetInt16(RolUsuarioSelect3, 1) ;
+            rowRolUsuario["UsuarioID"] = dsDefault.Db.GetInt32(RolUsuarioSelect3, 2) ;
             sMode3 = Gx_mode ;
             Gx_mode = Mode.Display ;
             Gx_mode = sMode3 ;
@@ -419,33 +530,33 @@ namespace Raiderplan1 {
          {
             RcdFound3 = 0 ;
          }
-         RolUsuarioSelect2.Close();
+         RolUsuarioSelect3.Close();
       }
 
       private void CheckOptimisticConcurrencyRolusuario( )
       {
-          IDataReader RolUsuarioSelect3 ;
-          ReadWriteCommand cmRolUsuarioSelect3 ;
+          IDataReader RolUsuarioSelect4 ;
+          ReadWriteCommand cmRolUsuarioSelect4 ;
          if ( ( Gx_mode != Mode.Insert ) )
          {
-            cmRolUsuarioSelect3 = connDefault.GetCommand("SELECT [RolUsuarioID], [Rol], [UsuarioID] FROM [RolUsuario] WITH (UPDLOCK) WHERE [RolUsuarioID] = @RolUsuarioID ", false) ;
-            if ( ( cmRolUsuarioSelect3.IDbCommand.Parameters.Count == 0 ) )
+            cmRolUsuarioSelect4 = connDefault.GetCommand("SELECT [RolUsuarioID], [Rol], [UsuarioID] FROM [RolUsuario] WITH (UPDLOCK) WHERE [RolUsuarioID] = @RolUsuarioID ", false) ;
+            if ( ( cmRolUsuarioSelect4.IDbCommand.Parameters.Count == 0 ) )
             {
-               cmRolUsuarioSelect3.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@RolUsuarioID", System.Data.DbType.Int16));
+               cmRolUsuarioSelect4.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@RolUsuarioID", System.Data.DbType.Int16));
             }
-            cmRolUsuarioSelect3.SetParameter(0, rowRolUsuario["RolUsuarioID"]);
-            RolUsuarioSelect3 = cmRolUsuarioSelect3.FetchData() ;
-            if ( cmRolUsuarioSelect3.Locked )
+            cmRolUsuarioSelect4.SetParameter(0, rowRolUsuario["RolUsuarioID"]);
+            RolUsuarioSelect4 = cmRolUsuarioSelect4.FetchData() ;
+            if ( cmRolUsuarioSelect4.Locked )
             {
-               RolUsuarioSelect3.Close();
+               RolUsuarioSelect4.Close();
                throw new RolUsuarioDataLockedException( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("lock"), new   object[]  {resourceManagerTables.GetString("RolUsuario")})) ;
             }
-            if ( !cmRolUsuarioSelect3.HasMoreRows || ( ! m__RolOriginal.Equals(dsDefault.Db.GetInt16(RolUsuarioSelect3, 1)) ) || ( ! m__UsuarioIDOriginal.Equals(dsDefault.Db.GetInt32(RolUsuarioSelect3, 2)) ) )
+            if ( !cmRolUsuarioSelect4.HasMoreRows || ( ! m__RolOriginal.Equals(dsDefault.Db.GetInt16(RolUsuarioSelect4, 1)) ) || ( ! m__UsuarioIDOriginal.Equals(dsDefault.Db.GetInt32(RolUsuarioSelect4, 2)) ) )
             {
-               RolUsuarioSelect3.Close();
+               RolUsuarioSelect4.Close();
                throw new RolUsuarioDataChangedException( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("waschg"), new   object[]  {resourceManagerTables.GetString("RolUsuario")})) ;
             }
-            RolUsuarioSelect3.Close();
+            RolUsuarioSelect4.Close();
          }
       }
 
@@ -462,12 +573,20 @@ namespace Raiderplan1 {
             cmRolUsuarioInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@Rol", System.Data.DbType.Int16));
             cmRolUsuarioInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
          }
+         cmRolUsuarioInsert1.ErrorMask = cmRolUsuarioInsert1.ErrorMask  |  ErrorMask.ForeignKeyError;
          cmRolUsuarioInsert1.ErrorMask = cmRolUsuarioInsert1.ErrorMask  |  ErrorMask.DuplicateKeyError;
          cmRolUsuarioInsert1.SetParameter(0, rowRolUsuario["Rol"]);
          cmRolUsuarioInsert1.SetParameter(1, rowRolUsuario["UsuarioID"]);
          RolUsuarioInsert1 = cmRolUsuarioInsert1.FetchData() ;
-         rowRolUsuario.RolUsuarioID = (short)(RolUsuarioInsert1.GetDecimal(0)) ;
-         RolUsuarioInsert1.Close();
+         if ( ! ( cmRolUsuarioInsert1.ForeignKeyError || cmRolUsuarioInsert1.DupKey ) )
+         {
+            rowRolUsuario.RolUsuarioID = (short)(RolUsuarioInsert1.GetDecimal(0)) ;
+            RolUsuarioInsert1.Close();
+         }
+         if ( cmRolUsuarioInsert1.ForeignKeyError )
+         {
+            CheckIntegrityErrorsRolusuario( ) ;
+         }
          // Start of After( Insert) rules
          // End of After( Insert) rules
          OnRolUsuarioUpdated( new RolUsuarioEventArgs( rowRolUsuario, Mode.Insert)) ;
@@ -488,11 +607,16 @@ namespace Raiderplan1 {
             cmRolUsuarioUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
             cmRolUsuarioUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@RolUsuarioID", System.Data.DbType.Int16));
          }
+         cmRolUsuarioUpdate1.ErrorMask = cmRolUsuarioUpdate1.ErrorMask  |  ErrorMask.ForeignKeyError;
          // Using cursor RolUsuarioUpdate1
          cmRolUsuarioUpdate1.SetParameter(0, rowRolUsuario["Rol"]);
          cmRolUsuarioUpdate1.SetParameter(1, rowRolUsuario["UsuarioID"]);
          cmRolUsuarioUpdate1.SetParameter(2, rowRolUsuario["RolUsuarioID"]);
          cmRolUsuarioUpdate1.ExecuteStmt();
+         if ( cmRolUsuarioUpdate1.ForeignKeyError )
+         {
+            CheckIntegrityErrorsRolusuario( ) ;
+         }
          // Start of After( update) rules
          // End of After( update) rules
          OnRolUsuarioUpdated( new RolUsuarioEventArgs( rowRolUsuario, Mode.Update)) ;
@@ -550,13 +674,45 @@ namespace Raiderplan1 {
          {
             scmdbuf = "SELECT " + m_SelectString3 + " FROM [RolUsuario] TM1 WITH (NOLOCK)" + m_WhereString + " ORDER BY TM1.[RolUsuarioID] " ;
          }
-         cmRolUsuarioSelect4 = connDefault.GetCommand(scmdbuf, false) ;
-         if ( ( cmRolUsuarioSelect4.IDbCommand.Parameters.Count == 0 ) )
+         cmRolUsuarioSelect5 = connDefault.GetCommand(scmdbuf, false) ;
+         if ( ( cmRolUsuarioSelect5.IDbCommand.Parameters.Count == 0 ) )
          {
-            cmRolUsuarioSelect4.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@RolUsuarioID", System.Data.DbType.Int16));
+            cmRolUsuarioSelect5.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@RolUsuarioID", System.Data.DbType.Int16));
          }
-         cmRolUsuarioSelect4.SetParameter(0, rowRolUsuario["RolUsuarioID"]);
-         RolUsuarioSelect4 = cmRolUsuarioSelect4.FetchData() ;
+         cmRolUsuarioSelect5.SetParameter(0, rowRolUsuario["RolUsuarioID"]);
+         RolUsuarioSelect5 = cmRolUsuarioSelect5.FetchData() ;
+         RcdFound3 = 0 ;
+         ScanLoadRolusuario( ) ;
+         LoadDataRolusuario( maxRows) ;
+         // Load Subordinate Levels
+      }
+
+      private void ScanByUsuarioID( int startRow ,
+                                    int maxRows )
+      {
+         m_WhereString = " WHERE TM1.[UsuarioID] = @UsuarioID" ;
+         if ( ( maxRows >= 0 ) )
+         {
+            if ( ( startRow == 0 ) )
+            {
+               scmdbuf = "SELECT TOP " + maxRows.ToString() + "  " + m_SelectString3 + "  FROM [RolUsuario] TM1 WITH (NOLOCK)" + m_WhereString + " ORDER BY TM1.[RolUsuarioID]" ;
+            }
+            else
+            {
+               scmdbuf = " SELECT * FROM ( SELECT  " + m_SelectString3 + ", ROW_NUMBER() OVER  (  ORDER BY TM1.[RolUsuarioID] ) AS DK_PAGENUM   FROM [RolUsuario] TM1 WITH (NOLOCK) " + m_WhereString + " ) AS DK_PAGE WHERE DK_PAGENUM BETWEEN " + (startRow + 1).ToString() + " AND " + (startRow + maxRows).ToString() ;
+            }
+         }
+         else
+         {
+            scmdbuf = "SELECT " + m_SelectString3 + " FROM [RolUsuario] TM1 WITH (NOLOCK)" + m_WhereString + " ORDER BY TM1.[RolUsuarioID] " ;
+         }
+         cmRolUsuarioSelect5 = connDefault.GetCommand(scmdbuf, false) ;
+         if ( ( cmRolUsuarioSelect5.IDbCommand.Parameters.Count == 0 ) )
+         {
+            cmRolUsuarioSelect5.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
+         }
+         cmRolUsuarioSelect5.SetParameter(0, rowRolUsuario["UsuarioID"]);
+         RolUsuarioSelect5 = cmRolUsuarioSelect5.FetchData() ;
          RcdFound3 = 0 ;
          ScanLoadRolusuario( ) ;
          LoadDataRolusuario( maxRows) ;
@@ -582,8 +738,8 @@ namespace Raiderplan1 {
          {
             scmdbuf = "SELECT " + m_SelectString3 + " FROM [RolUsuario] TM1 WITH (NOLOCK)" + m_WhereString + " ORDER BY TM1.[RolUsuarioID] " ;
          }
-         cmRolUsuarioSelect4 = connDefault.GetCommand(scmdbuf, false) ;
-         RolUsuarioSelect4 = cmRolUsuarioSelect4.FetchData() ;
+         cmRolUsuarioSelect5 = connDefault.GetCommand(scmdbuf, false) ;
+         RolUsuarioSelect5 = cmRolUsuarioSelect5.FetchData() ;
          RcdFound3 = 0 ;
          ScanLoadRolusuario( ) ;
          LoadDataRolusuario( maxRows) ;
@@ -592,7 +748,7 @@ namespace Raiderplan1 {
 
       private void ScanNextRolusuario( )
       {
-         cmRolUsuarioSelect4.HasMoreRows = RolUsuarioSelect4.Read() ;
+         cmRolUsuarioSelect5.HasMoreRows = RolUsuarioSelect5.Read() ;
          RcdFound3 = 0 ;
          ScanLoadRolusuario( ) ;
       }
@@ -600,18 +756,18 @@ namespace Raiderplan1 {
       private void ScanLoadRolusuario( )
       {
          Gx_mode = Mode.Display ;
-         if ( cmRolUsuarioSelect4.HasMoreRows )
+         if ( cmRolUsuarioSelect5.HasMoreRows )
          {
             RcdFound3 = 1 ;
-            rowRolUsuario["RolUsuarioID"] = dsDefault.Db.GetInt16(RolUsuarioSelect4, 0) ;
-            rowRolUsuario["Rol"] = dsDefault.Db.GetInt16(RolUsuarioSelect4, 1) ;
-            rowRolUsuario["UsuarioID"] = dsDefault.Db.GetInt32(RolUsuarioSelect4, 2) ;
+            rowRolUsuario["RolUsuarioID"] = dsDefault.Db.GetInt16(RolUsuarioSelect5, 0) ;
+            rowRolUsuario["Rol"] = dsDefault.Db.GetInt16(RolUsuarioSelect5, 1) ;
+            rowRolUsuario["UsuarioID"] = dsDefault.Db.GetInt32(RolUsuarioSelect5, 2) ;
          }
       }
 
       private void ScanEndRolusuario( )
       {
-         RolUsuarioSelect4.Close();
+         RolUsuarioSelect5.Close();
       }
 
       private void AfterConfirmRolusuario( )
@@ -667,6 +823,20 @@ namespace Raiderplan1 {
          bool tmpConstraintState = RolUsuarioSet.EnforceConstraints ;
          RolUsuarioSet.RolUsuario.BeginLoadData( ) ;
          ScanByRolUsuarioID( startRow, maxRows) ;
+         RolUsuarioSet.RolUsuario.EndLoadData( ) ;
+         this.RolUsuarioSet.EnforceConstraints = tmpConstraintState ;
+         if ( ( RolUsuarioSet.RolUsuario.Count > 0 ) )
+         {
+            rowRolUsuario = RolUsuarioSet.RolUsuario[RolUsuarioSet.RolUsuario.Count -1] ;
+         }
+      }
+
+      private void LoadByUsuarioID( int startRow ,
+                                    int maxRows )
+      {
+         bool tmpConstraintState = RolUsuarioSet.EnforceConstraints ;
+         RolUsuarioSet.RolUsuario.BeginLoadData( ) ;
+         ScanByUsuarioID( startRow, maxRows) ;
          RolUsuarioSet.RolUsuario.EndLoadData( ) ;
          this.RolUsuarioSet.EnforceConstraints = tmpConstraintState ;
          if ( ( RolUsuarioSet.RolUsuario.Count > 0 ) )
@@ -785,6 +955,52 @@ namespace Raiderplan1 {
       }
 
       [Serializable()]
+      public class UsuarioForeignKeyNotFoundException : Deklarit.ForeignKeyNotFoundException
+      {
+         public UsuarioForeignKeyNotFoundException( )
+         {
+         }
+
+         public UsuarioForeignKeyNotFoundException( string message ) : base(message)
+         {
+         }
+
+         public UsuarioForeignKeyNotFoundException( string message ,
+                                                    Exception inner ) : base(message, inner)
+         {
+         }
+
+         protected UsuarioForeignKeyNotFoundException( SerializationInfo info ,
+                                                       StreamingContext context ) : base(info, context)
+         {
+         }
+
+      }
+
+      [Serializable()]
+      public class ForeignKeyNotFoundException : Deklarit.ForeignKeyNotFoundException
+      {
+         public ForeignKeyNotFoundException( )
+         {
+         }
+
+         public ForeignKeyNotFoundException( string message ) : base(message)
+         {
+         }
+
+         public ForeignKeyNotFoundException( string message ,
+                                             Exception inner ) : base(message, inner)
+         {
+         }
+
+         protected ForeignKeyNotFoundException( SerializationInfo info ,
+                                                StreamingContext context ) : base(info, context)
+         {
+         }
+
+      }
+
+      [Serializable()]
       public class RolUsuarioDataLockedException : Deklarit.DataLockedException
       {
          public RolUsuarioDataLockedException( )
@@ -867,8 +1083,10 @@ namespace Raiderplan1 {
       private ReadWriteConnection connDefault ;
       private ReadWriteCommand cmRolUsuarioSelect1 ;
       private IDataReader RolUsuarioSelect1 ;
-      private ReadWriteCommand cmRolUsuarioSelect4 ;
-      private IDataReader RolUsuarioSelect4 ;
+      private ReadWriteCommand cmRolUsuarioSelect2 ;
+      private IDataReader RolUsuarioSelect2 ;
+      private ReadWriteCommand cmRolUsuarioSelect5 ;
+      private IDataReader RolUsuarioSelect5 ;
       private System.Data.StatementType Gx_mode ;
       private System.Data.StatementType sMode3 ;
       private object m__RolOriginal ;
@@ -911,9 +1129,9 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmRolUsuarioSelect5 = connDefault.GetCommand("SELECT TM1.[RolUsuarioID], TM1.[Rol], TM1.[UsuarioID] FROM [RolUsuario] TM1 WITH (NOLOCK) ORDER BY TM1.[RolUsuarioID] ", false) ;
-         RolUsuarioSelect5 = cmRolUsuarioSelect5.ExecuteReader(((daCurrentTransaction==null) ? Configuration.ReaderCommandBehavior : CommandBehavior.Default)) ;
-         return RolUsuarioSelect5 ;
+         cmRolUsuarioSelect6 = connDefault.GetCommand("SELECT TM1.[RolUsuarioID], TM1.[Rol], TM1.[UsuarioID] FROM [RolUsuario] TM1 WITH (NOLOCK) ORDER BY TM1.[RolUsuarioID] ", false) ;
+         RolUsuarioSelect6 = cmRolUsuarioSelect6.ExecuteReader(((daCurrentTransaction==null) ? Configuration.ReaderCommandBehavior : CommandBehavior.Default)) ;
+         return RolUsuarioSelect6 ;
       }
 
       public IDataReader OpenByRolUsuarioID( short rolUsuarioID )
@@ -921,14 +1139,45 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmRolUsuarioSelect5 = connDefault.GetCommand("SELECT TM1.[RolUsuarioID], TM1.[Rol], TM1.[UsuarioID] FROM [RolUsuario] TM1 WITH (NOLOCK) WHERE TM1.[RolUsuarioID] = @RolUsuarioID ORDER BY TM1.[RolUsuarioID] ", false) ;
-         if ( ( cmRolUsuarioSelect5.IDbCommand.Parameters.Count == 0 ) )
+         cmRolUsuarioSelect6 = connDefault.GetCommand("SELECT TM1.[RolUsuarioID], TM1.[Rol], TM1.[UsuarioID] FROM [RolUsuario] TM1 WITH (NOLOCK) WHERE TM1.[RolUsuarioID] = @RolUsuarioID ORDER BY TM1.[RolUsuarioID] ", false) ;
+         if ( ( cmRolUsuarioSelect6.IDbCommand.Parameters.Count == 0 ) )
          {
-            cmRolUsuarioSelect5.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@RolUsuarioID", System.Data.DbType.Int16));
+            cmRolUsuarioSelect6.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@RolUsuarioID", System.Data.DbType.Int16));
          }
-         cmRolUsuarioSelect5.SetParameter(0, rolUsuarioID);
-         RolUsuarioSelect5 = cmRolUsuarioSelect5.ExecuteReader(((daCurrentTransaction==null) ? Configuration.ReaderCommandBehavior : CommandBehavior.Default)) ;
-         return RolUsuarioSelect5 ;
+         cmRolUsuarioSelect6.SetParameter(0, rolUsuarioID);
+         RolUsuarioSelect6 = cmRolUsuarioSelect6.ExecuteReader(((daCurrentTransaction==null) ? Configuration.ReaderCommandBehavior : CommandBehavior.Default)) ;
+         return RolUsuarioSelect6 ;
+      }
+
+      public IDataReader OpenByUsuarioID( int usuarioID )
+      {
+         init_reader( ) ;
+         m_Closed = false ;
+         connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
+         cmRolUsuarioSelect6 = connDefault.GetCommand("SELECT TM1.[RolUsuarioID], TM1.[Rol], TM1.[UsuarioID] FROM [RolUsuario] TM1 WITH (NOLOCK) WHERE TM1.[UsuarioID] = @UsuarioID ORDER BY TM1.[RolUsuarioID] ", false) ;
+         if ( ( cmRolUsuarioSelect6.IDbCommand.Parameters.Count == 0 ) )
+         {
+            cmRolUsuarioSelect6.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
+         }
+         cmRolUsuarioSelect6.SetParameter(0, usuarioID);
+         RolUsuarioSelect6 = cmRolUsuarioSelect6.ExecuteReader(((daCurrentTransaction==null) ? Configuration.ReaderCommandBehavior : CommandBehavior.Default)) ;
+         return RolUsuarioSelect6 ;
+      }
+
+      public int DeleteByUsuarioID( int usuarioID )
+      {
+         init_reader( ) ;
+         int intCount = 0 ;
+         connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
+         cmRolUsuarioDelete2 = connDefault.GetCommand("DELETE FROM [RolUsuario]  WHERE [UsuarioID] = @UsuarioID", false) ;
+         if ( ( cmRolUsuarioDelete2.IDbCommand.Parameters.Count == 0 ) )
+         {
+            cmRolUsuarioDelete2.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
+         }
+         // Using cursor RolUsuarioDelete2
+         cmRolUsuarioDelete2.SetParameter(0, usuarioID);
+         intCount = cmRolUsuarioDelete2.ExecuteStmt() ;
+         return intCount ;
       }
 
       public void Dispose( )
@@ -938,10 +1187,10 @@ namespace Raiderplan1 {
             m_Disposed = true ;
             try
             {
-               if ( ! m_Closed && ( RolUsuarioSelect5 != null ) )
+               if ( ! m_Closed && ( RolUsuarioSelect6 != null ) )
                {
                   m_Closed = true ;
-                  RolUsuarioSelect5.Close();
+                  RolUsuarioSelect6.Close();
                }
             }
             finally
@@ -986,8 +1235,9 @@ namespace Raiderplan1 {
       private bool m_Closed ;
       private DataStore dsDefault ;
       private ReadWriteConnection connDefault ;
-      private ReadWriteCommand cmRolUsuarioSelect5 ;
-      private IDataReader RolUsuarioSelect5 ;
+      private ReadWriteCommand cmRolUsuarioSelect6 ;
+      private IDataReader RolUsuarioSelect6 ;
+      private ReadWriteCommand cmRolUsuarioDelete2 ;
    }
 
 }

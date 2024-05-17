@@ -2,34 +2,6 @@
  
  
  
-pgm_prop_i(trn,8,'TVIAJE','URLAccess','No').
-pgm_prop_i(trn,8,'TVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(trn,8,'TVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(trn,8,'TVIAJE',idJNDI_Name,'ejb/aViaje').
-pgm_prop_i(trn,8,'TVIAJE',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(trn,8,'TVIAJE',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(trn,8,'TVIAJE',idDEST_JNDI_Name,'').
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE','URLAccess','No').
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idJNDI_Name,'ejb/aTrayectoTipoDetalle').
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idDEST_JNDI_Name,'').
-pgm_prop_i(trn,9,'TTRAYECTOVIAJE','URLAccess','No').
-pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idJNDI_Name,'ejb/aTrayectoViaje').
-pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idDEST_JNDI_Name,'').
-pgm_prop_i(trn,1,'TPERSONA','URLAccess','No').
-pgm_prop_i(trn,1,'TPERSONA',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(trn,1,'TPERSONA',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(trn,1,'TPERSONA',idJNDI_Name,'ejb/aPersona').
-pgm_prop_i(trn,1,'TPERSONA',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(trn,1,'TPERSONA',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(trn,1,'TPERSONA',idDEST_JNDI_Name,'').
 pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION','SOAP_NAMESPACE','Raiderplan1').
 pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idTRN_Type,idTRN_Type_CONTAINER).
 pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idTRN_Attribute,idTRN_Attribute_REQUIRED).
@@ -44,6 +16,27 @@ pgm_prop_i(trn,7,'TUSUARIO',idJNDI_Name,'ejb/aUsuario').
 pgm_prop_i(trn,7,'TUSUARIO',idDEST_Type,idDEST_Type_QUEUE).
 pgm_prop_i(trn,7,'TUSUARIO',idCON_FACTORY_JNDI_Name,'').
 pgm_prop_i(trn,7,'TUSUARIO',idDEST_JNDI_Name,'').
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE','URLAccess','No').
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idJNDI_Name,'ejb/aTrayectoTipoDetalle').
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idDEST_JNDI_Name,'').
+pgm_prop_i(trn,9,'TTRAYECTOVIAJE','URLAccess','No').
+pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idJNDI_Name,'ejb/aTrayectoViaje').
+pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idDEST_JNDI_Name,'').
+pgm_prop_i(trn,8,'TVIAJE','URLAccess','No').
+pgm_prop_i(trn,8,'TVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(trn,8,'TVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(trn,8,'TVIAJE',idJNDI_Name,'ejb/aViaje').
+pgm_prop_i(trn,8,'TVIAJE',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(trn,8,'TVIAJE',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(trn,8,'TVIAJE',idDEST_JNDI_Name,'').
 pgm_prop_i(trn,6,'TPROVINCIA','URLAccess','No').
 pgm_prop_i(trn,6,'TPROVINCIA',idTRN_Type,idTRN_Type_CONTAINER).
 pgm_prop_i(trn,6,'TPROVINCIA',idTRN_Attribute,idTRN_Attribute_REQUIRED).
@@ -72,6 +65,13 @@ pgm_prop_i(trn,3,'TROLUSUARIO',idJNDI_Name,'ejb/aRolUsuario').
 pgm_prop_i(trn,3,'TROLUSUARIO',idDEST_Type,idDEST_Type_QUEUE).
 pgm_prop_i(trn,3,'TROLUSUARIO',idCON_FACTORY_JNDI_Name,'').
 pgm_prop_i(trn,3,'TROLUSUARIO',idDEST_JNDI_Name,'').
+pgm_prop_i(trn,1,'TPERSONA','URLAccess','No').
+pgm_prop_i(trn,1,'TPERSONA',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(trn,1,'TPERSONA',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(trn,1,'TPERSONA',idJNDI_Name,'ejb/aPersona').
+pgm_prop_i(trn,1,'TPERSONA',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(trn,1,'TPERSONA',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(trn,1,'TPERSONA',idDEST_JNDI_Name,'').
  
  
 model_wrkinfo_i([ 'Working Version','Working Version' ]).
@@ -103,7 +103,7 @@ datastore_i(1,'PoolRWEnabled','-1').
 datastore_i(1,'CS_RPCPGML','').
 datastore_i(1,'JDBC_DATASOURCE','').
 datastore_i(1,'USE_JDBC_DATASOURCE','0').
-datastore_i(1,'DS_DBMS_ADDINFO','Server=DESKTOP-CM1DMPN\SQLEXPRESS01;Database=RaiderPlanDB1;User Id=usuario;Password=usuario;').
+datastore_i(1,'DS_DBMS_ADDINFO','Provider=SQLOLEDB;Data Source=ICORLLI\SQLEXPRESS01;Integrated Security=SSPI;Initial Catalog=RiderPlanDB1').
 datastore_i(1,'USER_PASSWORD','').
 datastore_i(1,'USER_ID','').
 datastore_i(1,'TRUSTED_CONNECTION','Yes').
@@ -134,5 +134,5 @@ datastore_i(1,'NAME','Default').
  
  
  
-ver_stamp(date(2023,6,13),time(23,22,0,8)).
+ver_stamp(date(2024,5,16),time(20,5,40,84)).
  

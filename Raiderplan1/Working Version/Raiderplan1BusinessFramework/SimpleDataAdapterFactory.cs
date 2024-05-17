@@ -12,6 +12,16 @@ namespace Raiderplan1 {
    using Microsoft.Practices.EnterpriseLibrary.PolicyInjection;
    public partial class SimpleDataAdapterFactory : IDataAdapterFactory, IConnectedDataAdapterFactory
    {
+      public virtual IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )
+      {
+         return PolicyInjection.Create<dpUsuarioXEmailXusuarioIDCollectionDataAdapter, IdpUsuarioXEmailXusuarioIDCollectionDataAdapter>( ) ;
+      }
+
+      public virtual IUsuarioDataAdapter GetUsuarioDataAdapter( )
+      {
+         return PolicyInjection.Create<UsuarioDataAdapter, IUsuarioDataAdapter>( ) ;
+      }
+
       public virtual IViajeDataAdapter GetViajeDataAdapter( )
       {
          return PolicyInjection.Create<ViajeDataAdapter, IViajeDataAdapter>( ) ;
@@ -27,21 +37,6 @@ namespace Raiderplan1 {
          return PolicyInjection.Create<TrayectoTipoDetalleDataAdapter, ITrayectoTipoDetalleDataAdapter>( ) ;
       }
 
-      public virtual IPersonaDataAdapter GetPersonaDataAdapter( )
-      {
-         return PolicyInjection.Create<PersonaDataAdapter, IPersonaDataAdapter>( ) ;
-      }
-
-      public virtual IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )
-      {
-         return PolicyInjection.Create<dpUsuarioXEmailXusuarioIDCollectionDataAdapter, IdpUsuarioXEmailXusuarioIDCollectionDataAdapter>( ) ;
-      }
-
-      public virtual IUsuarioDataAdapter GetUsuarioDataAdapter( )
-      {
-         return PolicyInjection.Create<UsuarioDataAdapter, IUsuarioDataAdapter>( ) ;
-      }
-
       public virtual IRolUsuarioDataAdapter GetRolUsuarioDataAdapter( )
       {
          return PolicyInjection.Create<RolUsuarioDataAdapter, IRolUsuarioDataAdapter>( ) ;
@@ -50,6 +45,11 @@ namespace Raiderplan1 {
       public virtual IProvinciaDataAdapter GetProvinciaDataAdapter( )
       {
          return PolicyInjection.Create<ProvinciaDataAdapter, IProvinciaDataAdapter>( ) ;
+      }
+
+      public virtual IPersonaDataAdapter GetPersonaDataAdapter( )
+      {
+         return PolicyInjection.Create<PersonaDataAdapter, IPersonaDataAdapter>( ) ;
       }
 
       public virtual IPaisDataAdapter GetPaisDataAdapter( )

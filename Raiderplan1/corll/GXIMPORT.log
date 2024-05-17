@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<ImportLog>
+   <RowImport>
+      <Name>dpUsuarioXEmailXusuarioIDCollection</Name>
+      <Description>dpUsuarioXEmailXusuarioIDCollection</Description>
+      <Class>2</Class>
+      <Status>2</Status>
+      <Id>1</Id>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+         <Folder>dpUsuario</Folder>
+      </Infos>
+   </RowImport>
+</ImportLog>

@@ -89,6 +89,10 @@
 <AttriName>CodigoValidation</AttriName>
 <Description>Codigo Validation</Description></Attribute>
 <Attribute>
+<AttriId>71</AttriId>
+<AttriName>CodigoRecuperacion</AttriName>
+<Description>Codigo Recuperacion</Description></Attribute>
+<Attribute>
 <AttriId>4</AttriId>
 <AttriName>PersonaID</AttriName>
 <Description>Persona ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -124,6 +128,10 @@
 <AttriName>CodigoValidation</AttriName>
 <Description>Codigo Validation</Description></Attribute>
 <Attribute>
+<AttriId>71</AttriId>
+<AttriName>CodigoRecuperacion</AttriName>
+<Description>Codigo Recuperacion</Description></Attribute>
+<Attribute>
 <AttriId>4</AttriId>
 <AttriName>PersonaID</AttriName>
 <Description>Persona ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -138,6 +146,16 @@
 <AfterUpdateRules></AfterUpdateRules>
 <AfterDeleteRules></AfterDeleteRules>
 <TablesToControlOnDelete>
+<Table>
+<TableId>8</TableId>
+<TableName>VIAJE</TableName>
+<Description>Viaje</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>11</AttriId>
+<AttriName>UsuarioID</AttriName>
+<Description>Usuario ID</Description></Attribute></KeyAttributes></Table>
 <Table>
 <TableId>3</TableId>
 <TableName>ROLUSUARIO</TableName>

@@ -37,7 +37,18 @@
 <AttriId>13</AttriId>
 <AttriName>RolUsuarioID</AttriName>
 <Description>Rol Usuario ID</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></NavigationTree>
+<Tables>
+<Table>
+<TableId>7</TableId>
+<TableName>USUARIO</TableName>
+<Description>Usuario</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>11</AttriId>
+<AttriName>UsuarioID</AttriName>
+<Description>Usuario ID</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></NavigationTree>
 <Formulas>
 <VerticalFormulas></VerticalFormulas>
 <AggSelFormulas></AggSelFormulas></Formulas>
@@ -90,4 +101,5 @@
 <Levels></Levels>
 <AfterTrnRules></AfterTrnRules>
 <AfterLevelRules></AfterLevelRules></Level></Levels>
+<Prompts></Prompts>
 <Suggests></Suggests></ObjectSpec>

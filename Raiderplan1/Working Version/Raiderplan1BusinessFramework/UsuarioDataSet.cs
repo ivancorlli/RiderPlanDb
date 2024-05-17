@@ -249,6 +249,7 @@ namespace Raiderplan1 {
          private DataColumn columnUsuarioFechaAlta ;
          private DataColumn columnPersonaID ;
          private DataColumn columnCodigoValidation ;
+         private DataColumn columnCodigoRecuperacion ;
          public UsuarioDataTable() 
          {
              this.TableName = "Usuario";
@@ -415,6 +416,14 @@ namespace Raiderplan1 {
 
          }
 
+         public DataColumn CodigoRecuperacionColumn
+         {
+            get {
+               return this.columnCodigoRecuperacion ;
+            }
+
+         }
+
          public event UsuarioRowChangeEventHandler UsuarioRowChanged ;
          public event UsuarioRowChangeEventHandler UsuarioRowChanging ;
          public event UsuarioRowChangeEventHandler UsuarioRowDeleted ;
@@ -425,7 +434,8 @@ namespace Raiderplan1 {
                                           String usuarioPasword ,
                                           DateTime usuarioFechaAlta ,
                                           int personaID ,
-                                          String codigoValidation )
+                                          String codigoValidation ,
+                                          String codigoRecuperacion )
          {
             UsuarioRow rowUsuarioRow = ((UsuarioRow)(this.NewRow())) ;
             rowUsuarioRow["UsuarioNombre"] = usuarioNombre ;
@@ -435,6 +445,7 @@ namespace Raiderplan1 {
             rowUsuarioRow["UsuarioFechaAlta"] = usuarioFechaAlta ;
             rowUsuarioRow["PersonaID"] = personaID ;
             rowUsuarioRow["CodigoValidation"] = codigoValidation ;
+            rowUsuarioRow["CodigoRecuperacion"] = codigoRecuperacion ;
             this.Rows.Add( rowUsuarioRow) ;
             return rowUsuarioRow ;
          }
@@ -454,6 +465,7 @@ namespace Raiderplan1 {
             this.columnUsuarioFechaAlta = this.Columns["UsuarioFechaAlta"] ;
             this.columnPersonaID = this.Columns["PersonaID"] ;
             this.columnCodigoValidation = this.Columns["CodigoValidation"] ;
+            this.columnCodigoRecuperacion = this.Columns["CodigoRecuperacion"] ;
          }
 
          public void InitClass( )
@@ -542,7 +554,7 @@ namespace Raiderplan1 {
             this.columnUsuarioEmail.ExtendedProperties.Add( "Deklarit.InternalName", "UsuarioEmail") ;
             this.Columns.Add( this.columnUsuarioEmail) ;
             this.columnUsuarioPasword = new DataColumn( "UsuarioPasword", typeof(String), "", System.Data.MappingType.Element) ;
-            this.columnUsuarioPasword.AllowDBNull = false ;
+            this.columnUsuarioPasword.AllowDBNull = true ;
             this.columnUsuarioPasword.Caption = "Usuario Pasword" ;
             this.columnUsuarioPasword.MaxLength = 70 ;
             this.columnUsuarioPasword.DefaultValue = System.Convert.DBNull ;
@@ -555,7 +567,7 @@ namespace Raiderplan1 {
             this.columnUsuarioPasword.ExtendedProperties.Add( "Description", "Usuario Pasword") ;
             this.columnUsuarioPasword.ExtendedProperties.Add( "Length", "70") ;
             this.columnUsuarioPasword.ExtendedProperties.Add( "Decimals", "0") ;
-            this.columnUsuarioPasword.ExtendedProperties.Add( "AllowDBNulls", "false") ;
+            this.columnUsuarioPasword.ExtendedProperties.Add( "AllowDBNulls", "true") ;
             this.columnUsuarioPasword.ExtendedProperties.Add( "IsInReader", "true") ;
             this.columnUsuarioPasword.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
             this.columnUsuarioPasword.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
@@ -619,6 +631,26 @@ namespace Raiderplan1 {
             this.columnCodigoValidation.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
             this.columnCodigoValidation.ExtendedProperties.Add( "Deklarit.InternalName", "CodigoValidation") ;
             this.Columns.Add( this.columnCodigoValidation) ;
+            this.columnCodigoRecuperacion = new DataColumn( "CodigoRecuperacion", typeof(String), "", System.Data.MappingType.Element) ;
+            this.columnCodigoRecuperacion.AllowDBNull = true ;
+            this.columnCodigoRecuperacion.Caption = "Codigo Recuperacion" ;
+            this.columnCodigoRecuperacion.MaxLength = 4 ;
+            this.columnCodigoRecuperacion.DefaultValue = System.Convert.DBNull ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "DeklaritType", "svchar") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Description", "Codigo Recuperacion") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Length", "4") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "AllowDBNulls", "true") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Deklarit.InternalName", "CodigoRecuperacion") ;
+            this.Columns.Add( this.columnCodigoRecuperacion) ;
             this.PrimaryKey = new  DataColumn[]  {this.columnUsuarioID} ;
             this.ExtendedProperties.Add( "ParentLvl", "") ;
             this.ExtendedProperties.Add( "LevelName", "Usuario") ;
@@ -917,6 +949,38 @@ namespace Raiderplan1 {
          public void SetCodigoValidationNull( )
          {
             this[this.tableUsuario.CodigoValidationColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the Codigo Recuperacion.
+         ///  </summary>
+         public String CodigoRecuperacion
+         {
+            get {
+               try
+               {
+                  return ((String)(this[this.tableUsuario.CodigoRecuperacionColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value CodigoRecuperacion because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tableUsuario.CodigoRecuperacionColumn] = value ;
+            }
+
+         }
+
+         public bool IsCodigoRecuperacionNull( )
+         {
+            return this.IsNull( this.tableUsuario.CodigoRecuperacionColumn) ;
+         }
+
+         public void SetCodigoRecuperacionNull( )
+         {
+            this[this.tableUsuario.CodigoRecuperacionColumn] = System.Convert.DBNull ;
          }
 
       }

@@ -39,6 +39,16 @@ namespace Raiderplan1 {
 
       }
 
+      public IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )
+      {
+         return dataAdapterFactory.GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( ) ;
+      }
+
+      public IUsuarioDataAdapter GetUsuarioDataAdapter( )
+      {
+         return dataAdapterFactory.GetUsuarioDataAdapter( ) ;
+      }
+
       public IViajeDataAdapter GetViajeDataAdapter( )
       {
          return dataAdapterFactory.GetViajeDataAdapter( ) ;
@@ -54,21 +64,6 @@ namespace Raiderplan1 {
          return dataAdapterFactory.GetTrayectoTipoDetalleDataAdapter( ) ;
       }
 
-      public IPersonaDataAdapter GetPersonaDataAdapter( )
-      {
-         return dataAdapterFactory.GetPersonaDataAdapter( ) ;
-      }
-
-      public IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )
-      {
-         return dataAdapterFactory.GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( ) ;
-      }
-
-      public IUsuarioDataAdapter GetUsuarioDataAdapter( )
-      {
-         return dataAdapterFactory.GetUsuarioDataAdapter( ) ;
-      }
-
       public IRolUsuarioDataAdapter GetRolUsuarioDataAdapter( )
       {
          return dataAdapterFactory.GetRolUsuarioDataAdapter( ) ;
@@ -77,6 +72,11 @@ namespace Raiderplan1 {
       public IProvinciaDataAdapter GetProvinciaDataAdapter( )
       {
          return dataAdapterFactory.GetProvinciaDataAdapter( ) ;
+      }
+
+      public IPersonaDataAdapter GetPersonaDataAdapter( )
+      {
+         return dataAdapterFactory.GetPersonaDataAdapter( ) ;
       }
 
       public IPaisDataAdapter GetPaisDataAdapter( )

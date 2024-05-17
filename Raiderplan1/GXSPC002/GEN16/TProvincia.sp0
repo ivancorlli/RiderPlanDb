@@ -57,7 +57,7 @@ rule_i(0,datastore(1,'PoolRWEnabled','-1')).
 rule_i(0,datastore(1,'CS_RPCPGML','')).
 rule_i(0,datastore(1,'JDBC_DATASOURCE','')).
 rule_i(0,datastore(1,'USE_JDBC_DATASOURCE','0')).
-rule_i(0,datastore(1,'DS_DBMS_ADDINFO','Server=DESKTOP-CM1DMPN\SQLEXPRESS01;Database=RaiderPlanDB1;User Id=usuario;Password=usuario;')).
+rule_i(0,datastore(1,'DS_DBMS_ADDINFO','Provider=SQLOLEDB;Data Source=ICORLLI\SQLEXPRESS01;Integrated Security=SSPI;Initial Catalog=RiderPlanDB1')).
 rule_i(0,datastore(1,'USER_PASSWORD','')).
 rule_i(0,datastore(1,'USER_ID','')).
 rule_i(0,datastore(1,'TRUSTED_CONNECTION','Yes')).

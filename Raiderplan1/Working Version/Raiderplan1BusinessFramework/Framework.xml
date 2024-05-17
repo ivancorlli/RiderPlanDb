@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <Objects>
    <Object>
+      <ObjName>dpUsuarioXEmailXusuarioIDCollection</ObjName>
+      <ObjDesc>dpUsuarioXEmailXusuarioIDCollection</ObjDesc>
+      <ObjType>DataProvider</ObjType>
+      <ObjDataSet>dpUsuarioXEmailXusuarioIDCollectionDataSet</ObjDataSet>
+      <ObjDataAdapter>dpUsuarioXEmailXusuarioIDCollectionDataAdapter</ObjDataAdapter>
+      <ObjDataAdapterInterface>IdpUsuarioXEmailXusuarioIDCollectionDataAdapter</ObjDataAdapterInterface>
+      <ObjNameSpace>Raiderplan1</ObjNameSpace>
+   </Object>
+   <Object>
+      <ObjName>Usuario</ObjName>
+      <ObjDesc>Usuario</ObjDesc>
+      <ObjType>BusinessComponent</ObjType>
+      <ObjDataSet>UsuarioDataSet</ObjDataSet>
+      <ObjDataAdapter>UsuarioDataAdapter</ObjDataAdapter>
+      <ObjDataAdapterInterface>IUsuarioDataAdapter</ObjDataAdapterInterface>
+      <ObjNameSpace>Raiderplan1</ObjNameSpace>
+   </Object>
+   <Object>
       <ObjName>Viaje</ObjName>
       <ObjDesc>Viaje</ObjDesc>
       <ObjType>BusinessComponent</ObjType>
@@ -28,33 +46,6 @@
       <ObjNameSpace>Raiderplan1</ObjNameSpace>
    </Object>
    <Object>
-      <ObjName>Persona</ObjName>
-      <ObjDesc>Persona</ObjDesc>
-      <ObjType>BusinessComponent</ObjType>
-      <ObjDataSet>PersonaDataSet</ObjDataSet>
-      <ObjDataAdapter>PersonaDataAdapter</ObjDataAdapter>
-      <ObjDataAdapterInterface>IPersonaDataAdapter</ObjDataAdapterInterface>
-      <ObjNameSpace>Raiderplan1</ObjNameSpace>
-   </Object>
-   <Object>
-      <ObjName>dpUsuarioXEmailXusuarioIDCollection</ObjName>
-      <ObjDesc>dpUsuarioXEmailXusuarioIDCollection</ObjDesc>
-      <ObjType>DataProvider</ObjType>
-      <ObjDataSet>dpUsuarioXEmailXusuarioIDCollectionDataSet</ObjDataSet>
-      <ObjDataAdapter>dpUsuarioXEmailXusuarioIDCollectionDataAdapter</ObjDataAdapter>
-      <ObjDataAdapterInterface>IdpUsuarioXEmailXusuarioIDCollectionDataAdapter</ObjDataAdapterInterface>
-      <ObjNameSpace>Raiderplan1</ObjNameSpace>
-   </Object>
-   <Object>
-      <ObjName>Usuario</ObjName>
-      <ObjDesc>Usuario</ObjDesc>
-      <ObjType>BusinessComponent</ObjType>
-      <ObjDataSet>UsuarioDataSet</ObjDataSet>
-      <ObjDataAdapter>UsuarioDataAdapter</ObjDataAdapter>
-      <ObjDataAdapterInterface>IUsuarioDataAdapter</ObjDataAdapterInterface>
-      <ObjNameSpace>Raiderplan1</ObjNameSpace>
-   </Object>
-   <Object>
       <ObjName>RolUsuario</ObjName>
       <ObjDesc>RolUsuario</ObjDesc>
       <ObjType>BusinessComponent</ObjType>
@@ -70,6 +61,15 @@
       <ObjDataSet>ProvinciaDataSet</ObjDataSet>
       <ObjDataAdapter>ProvinciaDataAdapter</ObjDataAdapter>
       <ObjDataAdapterInterface>IProvinciaDataAdapter</ObjDataAdapterInterface>
+      <ObjNameSpace>Raiderplan1</ObjNameSpace>
+   </Object>
+   <Object>
+      <ObjName>Persona</ObjName>
+      <ObjDesc>Persona</ObjDesc>
+      <ObjType>BusinessComponent</ObjType>
+      <ObjDataSet>PersonaDataSet</ObjDataSet>
+      <ObjDataAdapter>PersonaDataAdapter</ObjDataAdapter>
+      <ObjDataAdapterInterface>IPersonaDataAdapter</ObjDataAdapterInterface>
       <ObjNameSpace>Raiderplan1</ObjNameSpace>
    </Object>
    <Object>

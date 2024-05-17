@@ -11,11 +11,11 @@ lwi_i(7,[ [] ]).
  
  
  
-ta_i(7,[ [ [ 7,11 ],[ 7,7 ],[ 7,10 ],[ 7,8 ],[ 7,9 ],[ 7,24 ],[ 7,28 ],[ 7,4 ] ] ]).
+ta_i(7,[ [ [ 7,11 ],[ 7,7 ],[ 7,10 ],[ 7,8 ],[ 7,9 ],[ 7,24 ],[ 7,28 ],[ 7,71 ],[ 7,4 ] ] ]).
  
-las_i(7,[ [ 11,7,10,8,9,24,4,28 ] ]).
+las_i(7,[ [ 11,7,10,8,9,24,4,28,71 ] ]).
  
-lac_i(7,[ [ 11,7,10,8,9,24,4,28 ] ]).
+lac_i(7,[ [ 11,7,10,8,9,24,4,28,71 ] ]).
  
  
 lits_i('Usuario ID',2,3).
@@ -26,17 +26,19 @@ lits_i('Usuario Pasword',6,3).
 lits_i('Usuario Fecha Alta',7,3).
 lits_i('Persona ID',8,3).
 lits_i('Codigo Validation',9,3).
+lits_i('Codigo Recuperacion',10,3).
  
-cls_i([ 2,3 ],[ 9,91 ]).
+cls_i([ 2,3 ],[ 10,93 ]).
  
-pos_i(11,[ 2,2,22 ]).
-pos_i(7,[ 3,3,22 ]).
-pos_i(10,[ 4,4,22 ]).
-pos_i(8,[ 5,5,22 ]).
-pos_i(9,[ 6,6,22 ]).
-pos_i(24,[ 7,7,22 ]).
-pos_i(4,[ 8,8,22 ]).
-pos_i(28,[ 9,9,22 ]).
+pos_i(11,[ 2,2,24 ]).
+pos_i(7,[ 3,3,24 ]).
+pos_i(10,[ 4,4,24 ]).
+pos_i(8,[ 5,5,24 ]).
+pos_i(9,[ 6,6,24 ]).
+pos_i(24,[ 7,7,24 ]).
+pos_i(4,[ 8,8,24 ]).
+pos_i(28,[ 9,9,24 ]).
+pos_i(71,[ 10,10,24 ]).
  
  
  
@@ -65,7 +67,7 @@ rule_i(0,datastore(1,'PoolRWEnabled','-1')).
 rule_i(0,datastore(1,'CS_RPCPGML','')).
 rule_i(0,datastore(1,'JDBC_DATASOURCE','')).
 rule_i(0,datastore(1,'USE_JDBC_DATASOURCE','0')).
-rule_i(0,datastore(1,'DS_DBMS_ADDINFO','Server=DESKTOP-CM1DMPN\SQLEXPRESS01;Database=RaiderPlanDB1;User Id=usuario;Password=usuario;')).
+rule_i(0,datastore(1,'DS_DBMS_ADDINFO','Provider=SQLOLEDB;Data Source=ICORLLI\SQLEXPRESS01;Integrated Security=SSPI;Initial Catalog=RiderPlanDB1')).
 rule_i(0,datastore(1,'USER_PASSWORD','')).
 rule_i(0,datastore(1,'USER_ID','')).
 rule_i(0,datastore(1,'TRUSTED_CONNECTION','Yes')).
@@ -221,16 +223,20 @@ v_i(t,o,1,8).
 v_i(t,o,1,9).
 v_i(t,o,1,24).
 v_i(t,o,1,28).
+v_i(t,o,1,71).
 v_i(t,o,1,4).
 v_i(r,i,2,4).
 v_i(r,o,2,[]).
  
  
+tbl_to_delete_i(7,[ 8,[ [ 7,11,11 ] ],c,'IViaje1',[ [ 8,11 ] ],[ 42 ] ]).
 tbl_to_delete_i(7,[ 3,[ [ 7,11,11 ] ],c,'IRolUsuario1',[ [ 3,11 ] ],[ 13 ] ]).
  
  
  
+attri_i(42,[ 'ViajeID',int,10,0,'ZZZZZZZZZ9',0,'Viaje ID','',0,0 ]).
 attri_i(13,[ 'RolUsuarioID',int,3,0,'ZZ9',0,'Rol Usuario ID','',0,0 ]).
+attri_i(71,[ 'CodigoRecuperacion',svchar,4,0,'',0,'Codigo Recuperacion','',0,0 ]).
 attri_i(28,[ 'CodigoValidation',svchar,4,0,'',0,'Codigo Validation','',0,0 ]).
 attri_i(4,[ 'PersonaID',int,8,0,'ZZZZZZZ9',0,'Persona ID','',0,0 ]).
 attri_i(24,[ 'UsuarioFechaAlta',date,8,0,'99/99/99',0,'Usuario Fecha Alta','',0,0 ]).
@@ -241,21 +247,24 @@ attri_i(7,[ 'UsuarioNombre',svchar,50,0,'',0,'Usuario Nombre','',0,0 ]).
 attri_i(11,[ 'UsuarioID',int,8,0,'ZZZZZZZ9',0,'Usuario ID','',0,0 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2,0 ]).
  
+table_i(8,[ 'VIAJE',[ 42,11 ],'Viaje','Viaje' ]).
 table_i(3,[ 'ROLUSUARIO',[ 13,11 ],'RolUsuario','RolUsuario' ]).
 table_i(1,[ 'PERSONA',[ 4 ],'Persona','Persona' ]).
-table_i(7,[ 'USUARIO',[ 11,7,10,8,9,24,4,28 ],'Usuario','Usuario' ]).
+table_i(7,[ 'USUARIO',[ 11,7,10,8,9,24,4,28,71 ],'Usuario','Usuario' ]).
  
 index_i(7,[ 'IUsuario',u,[ 11 ],'IUsuario' ]).
 index_i(7,[ 'IUsuario1',d,[ 4 ],'IUsuario1' ]).
 index_i(1,[ 'IPersona',u,[ 4 ],'IPersona' ]).
 index_i(3,[ 'IRolUsuario',u,[ 13 ],'IRolUsuario' ]).
 index_i(3,[ 'IRolUsuario1',d,[ 11 ],'IRolUsuario1' ]).
+index_i(8,[ 'IViaje',u,[ 42 ],'IViaje' ]).
+index_i(8,[ 'IViaje1',d,[ 11 ],'IViaje1' ]).
  
  
  
  
-upd_i(7,7,i,[ [ 7,10,8,9,24,28,4 ],[],'IUsuario',[ [ [],11,11 ] ] ]).
-upd_i(7,7,u,[ [ 7,10,8,9,24,28,4 ],[],'IUsuario',[] ]).
+upd_i(7,7,i,[ [ 7,10,8,9,24,28,71,4 ],[],'IUsuario',[ [ [],11,11 ] ] ]).
+upd_i(7,7,u,[ [ 7,10,8,9,24,28,71,4 ],[],'IUsuario',[] ]).
 upd_i(7,7,d,[ [],[],'IUsuario',[] ]).
  
  
@@ -307,27 +316,29 @@ lit_i(3,1,button('Previous'),[ id(3),title([ 'GX_BtnPrevious' ]),ctlname(btn_Pre
 lit_i(4,1,button('Next'),[ id(4),title([ 'GX_BtnNext' ]),ctlname(btn_Next),rect(60,2,85,25),font('MS Shell Dlg',8,[]) ]).
 lit_i(5,1,button('Last'),[ id(5),title([ 'GX_BtnLast' ]),ctlname(btn_Last),rect(86,2,111,25),font('MS Shell Dlg',8,[]) ]).
 lit_i(6,1,button('Select'),[ id(6),title([ 'GX_BtnSelect' ]),ctlname(btn_Select),rect(115,2,203,25),font('MS Shell Dlg',8,[]) ]).
-lit_i(7,1,button('Enter'),[ id(7),title([ 'GX_BtnEnter' ]),ctlname(btn_Enter),rect(602,48,690,70),font('MS Shell Dlg',8,[]) ]).
-lit_i(8,1,button('Cancel'),[ id(8),title([ 'GX_BtnCancel' ]),ctlname(btn_Cancel),rect(602,76,690,98),font('MS Shell Dlg',8,[]) ]).
-lit_i(9,1,button('Delete'),[ id(9),title([ 'GX_BtnDelete' ]),ctlname(btn_Delete),rect(602,104,690,126),font('MS Shell Dlg',8,[]) ]).
-lit_i(10,1,button('Help'),[ id(10),title([ 'GX_BtnHelp' ]),ctlname(btn_Help),rect(602,142,690,164),font('MS Shell Dlg',8,[]) ]).
-lit_i(11,1,t(11,2),[ font('Courier New',9,[]),rect(154,48,219,68),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(11),ctrltype(edit,11),ispwd(0),e2n(1) ]).
+lit_i(7,1,button('Enter'),[ id(7),title([ 'GX_BtnEnter' ]),ctlname(btn_Enter),rect(616,48,704,70),font('MS Shell Dlg',8,[]) ]).
+lit_i(8,1,button('Cancel'),[ id(8),title([ 'GX_BtnCancel' ]),ctlname(btn_Cancel),rect(616,76,704,98),font('MS Shell Dlg',8,[]) ]).
+lit_i(9,1,button('Delete'),[ id(9),title([ 'GX_BtnDelete' ]),ctlname(btn_Delete),rect(616,104,704,126),font('MS Shell Dlg',8,[]) ]).
+lit_i(10,1,button('Help'),[ id(10),title([ 'GX_BtnHelp' ]),ctlname(btn_Help),rect(616,142,704,164),font('MS Shell Dlg',8,[]) ]).
+lit_i(11,1,t(11,2),[ font('Courier New',9,[]),rect(168,48,233,68),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(11),ctrltype(edit,11),ispwd(0),e2n(1) ]).
 lit_i(12,1,t('Usuario ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,48,81,60),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(13,1,t(7,2),[ font('Courier New',9,[]),rect(154,72,513,92),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(7),ctrltype(edit,13),ispwd(0),e2n(1) ]).
+lit_i(13,1,t(7,2),[ font('Courier New',9,[]),rect(168,72,527,92),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(7),ctrltype(edit,13),ispwd(0),e2n(1) ]).
 lit_i(14,1,t('Usuario Nombre',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,72,111,84),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(15,1,t(10,2),[ font('Courier New',9,[]),rect(154,96,170,116),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(10),ctrltype(edit,15),ispwd(0),e2n(1) ]).
+lit_i(15,1,t(10,2),[ font('Courier New',9,[]),rect(168,96,184,116),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(10),ctrltype(edit,15),ispwd(0),e2n(1) ]).
 lit_i(16,1,t('Usuario Activo',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,96,104,108),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(17,1,t(8,2),[ font('Courier New',9,[]),rect(154,120,583,140),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(8),ctrltype(edit,17),ispwd(0),e2n(1) ]).
+lit_i(17,1,t(8,2),[ font('Courier New',9,[]),rect(168,120,597,140),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(8),ctrltype(edit,17),ispwd(0),e2n(1) ]).
 lit_i(18,1,t('Usuario Email',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,120,98,132),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(19,1,t(9,2),[ font('Courier New',9,[]),rect(154,144,583,164),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(9),ctrltype(edit,19),ispwd(0),e2n(1) ]).
+lit_i(19,1,t(9,2),[ font('Courier New',9,[]),rect(168,144,597,164),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(9),ctrltype(edit,19),ispwd(0),e2n(1) ]).
 lit_i(20,1,t('Usuario Pasword',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,144,116,156),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(21,1,t(24,2),[ font('Courier New',9,[]),rect(154,168,219,188),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(24),ctrltype(edit,21),ispwd(0),e2n(1) ]).
+lit_i(21,1,t(24,2),[ font('Courier New',9,[]),rect(168,168,233,188),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(24),ctrltype(edit,21),ispwd(0),e2n(1) ]).
 lit_i(22,1,t('Usuario Fecha Alta',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,168,129,180),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(23,1,t(4,2),[ font('Courier New',9,[]),rect(154,192,219,212),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(4),ctrltype(edit,23),ispwd(0),e2n(1) ]).
+lit_i(23,1,t(4,2),[ font('Courier New',9,[]),rect(168,192,233,212),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(4),ctrltype(edit,23),ispwd(0),e2n(1) ]).
 lit_i(24,1,t('Persona ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,192,84,204),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(25,1,t(28,2),[ font('Courier New',9,[]),rect(154,216,191,236),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(28),ctrltype(edit,25),ispwd(0),e2n(1) ]).
+lit_i(25,1,t(28,2),[ font('Courier New',9,[]),rect(168,216,205,236),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(28),ctrltype(edit,25),ispwd(0),e2n(1) ]).
 lit_i(26,1,t('Codigo Validation',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,216,120,228),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(1,1,window,[ title([]),rect(0,0,709,253),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
+lit_i(27,1,t(71,2),[ font('Courier New',9,[]),rect(168,240,205,260),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(71),ctrltype(edit,27),ispwd(0),e2n(1) ]).
+lit_i(28,1,t('Codigo Recuperacion',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,240,143,252),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(1,1,window,[ title([]),rect(0,0,723,277),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
  
 grid_i(7,24).
  
@@ -360,6 +371,9 @@ std_color_i(24,fore,8).
 std_color_i(25,back,5).
 std_color_i(25,fore,8).
 std_color_i(26,fore,8).
+std_color_i(27,back,5).
+std_color_i(27,fore,8).
+std_color_i(28,fore,8).
 std_color_i(1,back,15).
 std_color_i(1,fore,6).
  
@@ -560,6 +574,30 @@ att_prop_i(2,28,'DKL_ISPASSWORD','0',v).
 att_prop_i(2,28,idDATEFORMAT,idDATEFORMAT_SHORT,d).
 att_prop_i(2,28,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
 att_prop_i(2,28,'FullName','CodigoValidation',v).
+att_prop_i(2,71,'AUTONUMBER_START','1',v).
+att_prop_i(2,71,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,71,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,71,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,71,'OBJECT_METADATA','',v).
+att_prop_i(2,71,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,71,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,71,'DKL_VERSION','2100',d).
+att_prop_i(2,71,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,71,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,71,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,71,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,71,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,71,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,71,'DKL_ISROWGUID','0',v).
+att_prop_i(2,71,'DKL_INPUT_MASK','',v).
+att_prop_i(2,71,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,71,'DKL_MIME_TYPE','',v).
+att_prop_i(2,71,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,71,'DKL_CASING','0',v).
+att_prop_i(2,71,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,71,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,71,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,71,'FullName','CodigoRecuperacion',v).
 att_prop_i(2,13,'AUTONUMBER','-1',v).
 att_prop_i(2,13,'AUTONUMBER_START','1',v).
 att_prop_i(2,13,'AUTONUMBER_STEP','1',v).
@@ -585,11 +623,38 @@ att_prop_i(2,13,'DKL_ISPASSWORD','0',v).
 att_prop_i(2,13,idDATEFORMAT,idDATEFORMAT_SHORT,d).
 att_prop_i(2,13,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
 att_prop_i(2,13,'FullName','RolUsuarioID',v).
+att_prop_i(2,42,'AUTONUMBER','-1',v).
+att_prop_i(2,42,'AUTONUMBER_START','1',v).
+att_prop_i(2,42,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,42,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,42,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,42,'OBJECT_METADATA','',v).
+att_prop_i(2,42,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,42,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,42,'DKL_VERSION','2100',d).
+att_prop_i(2,42,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,42,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,42,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,42,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,42,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,42,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,42,'DKL_ISROWGUID','0',v).
+att_prop_i(2,42,'DKL_INPUT_MASK','',v).
+att_prop_i(2,42,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,42,'DKL_MIME_TYPE','',v).
+att_prop_i(2,42,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,42,'DKL_CASING','0',v).
+att_prop_i(2,42,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,42,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,42,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,42,'FullName','ViajeID',v).
  
+tbl_prop_i(2,8,'AllDirSuper',[ [ 7,[ 11 ] ] ],v).
 tbl_prop_i(2,3,'AllDirSuper',[ [ 7,[ 11 ] ] ],v).
 tbl_prop_i(2,7,'AllDirSuper',[ [ 1,[ 4 ] ] ],v).
 tbl_prop_i(2,1,'DirSubor',[ [ 7,[ 4 ] ] ],v).
-tbl_prop_i(2,7,'DirSubor',[ [ 3,[ 11 ] ] ],v).
+tbl_prop_i(2,7,'DirSubor',[ [ 3,[ 11 ] ],[ 8,[ 11 ] ] ],v).
+tbl_prop_i(2,8,'DirSuper',[ [ 7,[ 11 ] ] ],v).
 tbl_prop_i(2,3,'DirSuper',[ [ 7,[ 11 ] ] ],v).
 tbl_prop_i(2,7,'DirSuper',[ [ 1,[ 4 ] ] ],v).
  
@@ -598,7 +663,6 @@ tbl_att_prop_i(2,7,11,'AUTONUMBER',y).
 tbl_att_prop_i(2,7,7,'AllowNulls',n).
 tbl_att_prop_i(2,7,10,'AllowNulls',n).
 tbl_att_prop_i(2,7,8,'AllowNulls',n).
-tbl_att_prop_i(2,7,9,'AllowNulls',n).
 tbl_att_prop_i(2,7,24,'AllowNulls',n).
 tbl_att_prop_i(2,7,4,'AllowNulls',n).
 tbl_att_prop_i(2,1,4,'AllowNulls',n).
@@ -606,14 +670,18 @@ tbl_att_prop_i(2,1,4,'AUTONUMBER',y).
 tbl_att_prop_i(2,3,13,'AllowNulls',n).
 tbl_att_prop_i(2,3,13,'AUTONUMBER',y).
 tbl_att_prop_i(2,3,11,'AllowNulls',n).
+tbl_att_prop_i(2,8,42,'AllowNulls',n).
+tbl_att_prop_i(2,8,42,'AUTONUMBER',y).
+tbl_att_prop_i(2,8,11,'AllowNulls',n).
  
 i_tbl_best_trn(7,[ 7,1,'Usuario','Usuario' ]).
 i_tbl_best_trn(3,[ 3,1,'RolUsuario','RolUsuario' ]).
+i_tbl_best_trn(8,[ 8,1,'Viaje','Viaje' ]).
 i_tbl_best_trn(1,[ 1,1,'Persona','Persona' ]).
  
  
  
-trn_level_i(7,[ [ 11,7,10,8,9,24,4,28 ],'Usuario','Usuario','Usuario','',7 ]).
+trn_level_i(7,[ [ 11,7,10,8,9,24,4,28,71 ],'Usuario','Usuario','Usuario','',7 ]).
  
  
  

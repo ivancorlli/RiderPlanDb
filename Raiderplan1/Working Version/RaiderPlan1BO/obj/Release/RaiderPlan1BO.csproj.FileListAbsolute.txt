@@ -21,3 +21,26 @@ C:\Users\Carlos\Documents\Visual Studio 2008\Projects\Raiderplan1\Raiderplan1\Wo
 C:\Users\Carlos\Documents\Visual Studio 2008\Projects\Raiderplan1\Raiderplan1\Working Version\RaiderPlan1BO\obj\Release\ResolveAssemblyReference.cache
 C:\Users\Carlos\Documents\Visual Studio 2008\Projects\Raiderplan1\Raiderplan1\Working Version\RaiderPlan1BO\obj\Release\RaiderPlan1BO.dll
 C:\Users\Carlos\Documents\Visual Studio 2008\Projects\Raiderplan1\Raiderplan1\Working Version\RaiderPlan1BO\obj\Release\RaiderPlan1BO.pdb
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\RaiderPlan1BO.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\RaiderPlan1BO.pdb
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\DeklaritLibrary.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\Raiderplan1BusinessFramework.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\Deklarit.EnterpriseLibrary.Security.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\Microsoft.Practices.ObjectBuilder.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\Microsoft.Practices.EnterpriseLibrary.Security.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\Microsoft.Practices.EnterpriseLibrary.Caching.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\Raiderplan1BusinessFramework.pdb
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\da\DeklaritLibrary.resources.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\de\DeklaritLibrary.resources.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\en\DeklaritLibrary.resources.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\es\DeklaritLibrary.resources.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\hr\DeklaritLibrary.resources.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\it\DeklaritLibrary.resources.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\nl\DeklaritLibrary.resources.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\bin\Release\pt\DeklaritLibrary.resources.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\obj\Release\ResolveAssemblyReference.cache
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\obj\Release\RaiderPlan1BO.dll
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\RaiderPlan1BO\obj\Release\RaiderPlan1BO.pdb

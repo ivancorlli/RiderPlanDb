@@ -441,16 +441,16 @@ namespace Raiderplan1 {
          {
             if ( ( startRow == 0 ) )
             {
-               scmdbuf = "SELECT TOP " + maxRows.ToString() + "  TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioActivo], TM1.[PersonaID], T2.[PersonaApellido], T2.[PersonaNombre], TM1.[CodigoValidation]  FROM ([Usuario] TM1 INNER JOIN [Persona] T2 ON T2.[PersonaID] = TM1.[PersonaID])" + m_WhereString + ((sDynOrderString.Length==0) ? " ORDER BY TM1.[UsuarioID] " : sDynOrderString) ;
+               scmdbuf = "SELECT TOP " + maxRows.ToString() + "  TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioActivo], TM1.[PersonaID], T2.[PersonaApellido], T2.[PersonaNombre], TM1.[CodigoValidation], TM1.[CodigoRecuperacion]  FROM ([Usuario] TM1 INNER JOIN [Persona] T2 ON T2.[PersonaID] = TM1.[PersonaID])" + m_WhereString + ((sDynOrderString.Length==0) ? " ORDER BY TM1.[UsuarioID] " : sDynOrderString) ;
             }
             else
             {
-               scmdbuf = " SELECT * FROM ( SELECT  TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioActivo], TM1.[PersonaID], T2.[PersonaApellido], T2.[PersonaNombre], TM1.[CodigoValidation], ROW_NUMBER() OVER  ( " + ((sDynOrderString.Length==0) ? " ORDER BY TM1.[UsuarioID] " : sDynOrderString) + " ) AS DK_PAGENUM   FROM ([Usuario] TM1 INNER JOIN [Persona] T2 ON T2.[PersonaID] = TM1.[PersonaID]) " + m_WhereString + " ) AS DK_PAGE WHERE DK_PAGENUM BETWEEN " + (startRow + 1).ToString() + " AND " + (startRow + maxRows).ToString() ;
+               scmdbuf = " SELECT * FROM ( SELECT  TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioActivo], TM1.[PersonaID], T2.[PersonaApellido], T2.[PersonaNombre], TM1.[CodigoValidation], TM1.[CodigoRecuperacion], ROW_NUMBER() OVER  ( " + ((sDynOrderString.Length==0) ? " ORDER BY TM1.[UsuarioID] " : sDynOrderString) + " ) AS DK_PAGENUM   FROM ([Usuario] TM1 INNER JOIN [Persona] T2 ON T2.[PersonaID] = TM1.[PersonaID]) " + m_WhereString + " ) AS DK_PAGE WHERE DK_PAGENUM BETWEEN " + (startRow + 1).ToString() + " AND " + (startRow + maxRows).ToString() ;
             }
          }
          else
          {
-            scmdbuf = "SELECT TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioActivo], TM1.[PersonaID], T2.[PersonaApellido], T2.[PersonaNombre], TM1.[CodigoValidation] FROM ([Usuario] TM1 INNER JOIN [Persona] T2 ON T2.[PersonaID] = TM1.[PersonaID])" + m_WhereString + sDynOrderString ;
+            scmdbuf = "SELECT TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioActivo], TM1.[PersonaID], T2.[PersonaApellido], T2.[PersonaNombre], TM1.[CodigoValidation], TM1.[CodigoRecuperacion] FROM ([Usuario] TM1 INNER JOIN [Persona] T2 ON T2.[PersonaID] = TM1.[PersonaID])" + m_WhereString + sDynOrderString ;
          }
          cmUsuarioSelect2 = connDefault.GetCommand(scmdbuf,false);
          cmUsuarioSelect2.ErrorMask = cmUsuarioSelect2.ErrorMask  |  ErrorMask.Lock;
@@ -467,6 +467,7 @@ namespace Raiderplan1 {
             m_PersonaApellido = dsDefault.Db.GetString(UsuarioSelect2, 6, ref m__PersonaApellidoIsNull) ;
             m_PersonaNombre = dsDefault.Db.GetString(UsuarioSelect2, 7, ref m__PersonaNombreIsNull) ;
             m_CodigoValidation = dsDefault.Db.GetString(UsuarioSelect2, 8, ref m__CodigoValidationIsNull) ;
+            m_CodigoRecuperacion = dsDefault.Db.GetString(UsuarioSelect2, 9, ref m__CodigoRecuperacionIsNull) ;
             m_PersonaApellido = dsDefault.Db.GetString(UsuarioSelect2, 6, ref m__PersonaApellidoIsNull) ;
             m_PersonaNombre = dsDefault.Db.GetString(UsuarioSelect2, 7, ref m__PersonaNombreIsNull) ;
             rowUsuario = dpUsuarioXEmailXusuarioIDCollectionSet.Usuario.NewUsuarioRow() ;
@@ -479,6 +480,7 @@ namespace Raiderplan1 {
             rowUsuario["PersonaApellido"] = ( ( m__PersonaApellidoIsNull )  ? System.Convert.DBNull : m_PersonaApellido ) ;
             rowUsuario["PersonaNombre"] = ( ( m__PersonaNombreIsNull )  ? System.Convert.DBNull : m_PersonaNombre ) ;
             rowUsuario["CodigoValidation"] = ( ( m__CodigoValidationIsNull )  ? System.Convert.DBNull : m_CodigoValidation ) ;
+            rowUsuario["CodigoRecuperacion"] = ( ( m__CodigoRecuperacionIsNull )  ? System.Convert.DBNull : m_CodigoRecuperacion ) ;
             AddRowUsuario( ) ;
             loadedRows++ ;
             cmUsuarioSelect2.HasMoreRows = UsuarioSelect2.Read();
@@ -499,8 +501,8 @@ namespace Raiderplan1 {
          rowUsuario.AcceptChanges( ) ;
       }
 
-      public enum Attribute {UsuarioID, UsuarioNombre, UsuarioEmail, UsuarioPasword, UsuarioActivo, PersonaID, PersonaApellido, PersonaNombre, CodigoValidation};
-      private static String[] attributeNames = new String[]  {"TM1.[UsuarioID]", "TM1.[UsuarioNombre]", "TM1.[UsuarioEmail]", "TM1.[UsuarioPasword]", "TM1.[UsuarioActivo]", "TM1.[PersonaID]", "T2.[PersonaApellido]", "T2.[PersonaNombre]", "TM1.[CodigoValidation]"} ;
+      public enum Attribute {UsuarioID, UsuarioNombre, UsuarioEmail, UsuarioPasword, UsuarioActivo, PersonaID, PersonaApellido, PersonaNombre, CodigoValidation, CodigoRecuperacion};
+      private static String[] attributeNames = new String[]  {"TM1.[UsuarioID]", "TM1.[UsuarioNombre]", "TM1.[UsuarioEmail]", "TM1.[UsuarioPasword]", "TM1.[UsuarioActivo]", "TM1.[PersonaID]", "T2.[PersonaApellido]", "T2.[PersonaNombre]", "TM1.[CodigoValidation]", "TM1.[CodigoRecuperacion]"} ;
       private void Init_order_Usuario( )
       {
          this.Order = new ArrayList() ;
@@ -543,6 +545,8 @@ namespace Raiderplan1 {
          m_PersonaNombre = "" ;
          m__CodigoValidationIsNull = false ;
          m_CodigoValidation = "" ;
+         m__CodigoRecuperacionIsNull = false ;
+         m_CodigoRecuperacion = "" ;
          // GeneXus formulas.
          if ( ( this.Transaction == null ) )
          {
@@ -568,6 +572,7 @@ namespace Raiderplan1 {
       private bool m__PersonaApellidoIsNull ;
       private bool m__PersonaNombreIsNull ;
       private bool m__CodigoValidationIsNull ;
+      private bool m__CodigoRecuperacionIsNull ;
       private String AV8Email ;
       private String AV9NombreU ;
       private String m_UsuarioNombre ;
@@ -577,6 +582,7 @@ namespace Raiderplan1 {
       private String m_PersonaApellido ;
       private String m_PersonaNombre ;
       private String m_CodigoValidation ;
+      private String m_CodigoRecuperacion ;
       private DataStore dsDefault ;
       private System.Resources.ResourceManager resourceManager ;
       private System.Resources.ResourceManager resourceManagerTables ;
@@ -629,7 +635,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         scmdbuf = "SELECT TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioActivo], TM1.[PersonaID], T2.[PersonaApellido], T2.[PersonaNombre], TM1.[CodigoValidation] FROM ([Usuario] TM1 INNER JOIN [Persona] T2 ON T2.[PersonaID] = TM1.[PersonaID])" ;
+         scmdbuf = "SELECT TM1.[UsuarioID], TM1.[UsuarioNombre], TM1.[UsuarioEmail], TM1.[UsuarioPasword], TM1.[UsuarioActivo], TM1.[PersonaID], T2.[PersonaApellido], T2.[PersonaNombre], TM1.[CodigoValidation], TM1.[CodigoRecuperacion] FROM ([Usuario] TM1 INNER JOIN [Persona] T2 ON T2.[PersonaID] = TM1.[PersonaID])" ;
          sWhereString = "" ;
          if ( ( String.Compare(email.TrimEnd(' '), "".TrimEnd(' '), false, System.Globalization.CultureInfo.CurrentCulture) == 0 ) )
          {
@@ -760,8 +766,8 @@ namespace Raiderplan1 {
       		}
               return orderString;
       	}
-      public enum Attribute {UsuarioID, UsuarioNombre, UsuarioEmail, UsuarioPasword, UsuarioActivo, PersonaID, PersonaApellido, PersonaNombre, CodigoValidation};
-      private static String[] attributeNames = new String[]  {"TM1.[UsuarioID]", "TM1.[UsuarioNombre]", "TM1.[UsuarioEmail]", "TM1.[UsuarioPasword]", "TM1.[UsuarioActivo]", "TM1.[PersonaID]", "T2.[PersonaApellido]", "T2.[PersonaNombre]", "TM1.[CodigoValidation]"} ;
+      public enum Attribute {UsuarioID, UsuarioNombre, UsuarioEmail, UsuarioPasword, UsuarioActivo, PersonaID, PersonaApellido, PersonaNombre, CodigoValidation, CodigoRecuperacion};
+      private static String[] attributeNames = new String[]  {"TM1.[UsuarioID]", "TM1.[UsuarioNombre]", "TM1.[UsuarioEmail]", "TM1.[UsuarioPasword]", "TM1.[UsuarioActivo]", "TM1.[PersonaID]", "T2.[PersonaApellido]", "T2.[PersonaNombre]", "TM1.[CodigoValidation]", "TM1.[CodigoRecuperacion]"} ;
       private void Init_order_Usuario( )
       {
          this.Order = new ArrayList() ;

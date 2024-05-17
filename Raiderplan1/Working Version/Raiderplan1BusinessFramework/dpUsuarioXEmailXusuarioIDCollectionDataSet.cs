@@ -252,6 +252,7 @@ namespace Raiderplan1 {
          private DataColumn columnPersonaApellido ;
          private DataColumn columnPersonaNombre ;
          private DataColumn columnCodigoValidation ;
+         private DataColumn columnCodigoRecuperacion ;
          public UsuarioDataTable() 
          {
              this.TableName = "Usuario";
@@ -426,6 +427,14 @@ namespace Raiderplan1 {
 
          }
 
+         public DataColumn CodigoRecuperacionColumn
+         {
+            get {
+               return this.columnCodigoRecuperacion ;
+            }
+
+         }
+
          public event UsuarioRowChangeEventHandler UsuarioRowChanged ;
          public event UsuarioRowChangeEventHandler UsuarioRowChanging ;
          public event UsuarioRowChangeEventHandler UsuarioRowDeleted ;
@@ -438,10 +447,11 @@ namespace Raiderplan1 {
                                           int personaID ,
                                           String personaApellido ,
                                           String personaNombre ,
-                                          String codigoValidation )
+                                          String codigoValidation ,
+                                          String codigoRecuperacion )
          {
             UsuarioRow rowUsuarioRow = ((UsuarioRow)(this.NewRow())) ;
-            rowUsuarioRow.ItemArray = new   object[]  {usuarioID, usuarioNombre, usuarioEmail, usuarioPasword, usuarioActivo, personaID, personaApellido, personaNombre, codigoValidation} ;
+            rowUsuarioRow.ItemArray = new   object[]  {usuarioID, usuarioNombre, usuarioEmail, usuarioPasword, usuarioActivo, personaID, personaApellido, personaNombre, codigoValidation, codigoRecuperacion} ;
             this.Rows.Add( rowUsuarioRow) ;
             return rowUsuarioRow ;
          }
@@ -457,6 +467,7 @@ namespace Raiderplan1 {
             this.columnPersonaApellido = this.Columns["PersonaApellido"] ;
             this.columnPersonaNombre = this.Columns["PersonaNombre"] ;
             this.columnCodigoValidation = this.Columns["CodigoValidation"] ;
+            this.columnCodigoRecuperacion = this.Columns["CodigoRecuperacion"] ;
          }
 
          public void InitClass( )
@@ -531,7 +542,7 @@ namespace Raiderplan1 {
             this.columnUsuarioPasword.ExtendedProperties.Add( "Description", "Usuario Pasword") ;
             this.columnUsuarioPasword.ExtendedProperties.Add( "Length", "70") ;
             this.columnUsuarioPasword.ExtendedProperties.Add( "Decimals", "0") ;
-            this.columnUsuarioPasword.ExtendedProperties.Add( "AllowDBNulls", "false") ;
+            this.columnUsuarioPasword.ExtendedProperties.Add( "AllowDBNulls", "true") ;
             this.columnUsuarioPasword.ExtendedProperties.Add( "IsInReader", "true") ;
             this.columnUsuarioPasword.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
             this.columnUsuarioPasword.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
@@ -631,6 +642,25 @@ namespace Raiderplan1 {
             this.columnCodigoValidation.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
             this.columnCodigoValidation.ExtendedProperties.Add( "Deklarit.InternalName", "CodigoValidation") ;
             this.Columns.Add( this.columnCodigoValidation) ;
+            this.columnCodigoRecuperacion = new DataColumn( "CodigoRecuperacion", typeof(String), "", System.Data.MappingType.Element) ;
+            this.columnCodigoRecuperacion.Caption = "Codigo Recuperacion" ;
+            this.columnCodigoRecuperacion.MaxLength = 4 ;
+            this.columnCodigoRecuperacion.DefaultValue = System.Convert.DBNull ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "ReadOnly", "true") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "DeklaritType", "svchar") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Description", "Codigo Recuperacion") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Length", "4") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "AllowDBNulls", "true") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnCodigoRecuperacion.ExtendedProperties.Add( "Deklarit.InternalName", "CodigoRecuperacion") ;
+            this.Columns.Add( this.columnCodigoRecuperacion) ;
             this.ExtendedProperties.Add( "ParentLvl", "") ;
             this.ExtendedProperties.Add( "LevelName", "dpUsuarioXEmailXusuarioIDCollection") ;
             this.ExtendedProperties.Add( "Description", "Usuario") ;
@@ -971,6 +1001,38 @@ namespace Raiderplan1 {
          public void SetCodigoValidationNull( )
          {
             this[this.tableUsuario.CodigoValidationColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the Codigo Recuperacion.
+         ///  </summary>
+         public String CodigoRecuperacion
+         {
+            get {
+               try
+               {
+                  return ((String)(this[this.tableUsuario.CodigoRecuperacionColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value CodigoRecuperacion because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tableUsuario.CodigoRecuperacionColumn] = value ;
+            }
+
+         }
+
+         public bool IsCodigoRecuperacionNull( )
+         {
+            return this.IsNull( this.tableUsuario.CodigoRecuperacionColumn) ;
+         }
+
+         public void SetCodigoRecuperacionNull( )
+         {
+            this[this.tableUsuario.CodigoRecuperacionColumn] = System.Convert.DBNull ;
          }
 
       }

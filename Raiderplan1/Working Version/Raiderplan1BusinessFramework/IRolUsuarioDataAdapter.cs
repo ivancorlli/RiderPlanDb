@@ -16,6 +16,13 @@ namespace Raiderplan1 {
                      int startRow ,
                      int maxRows );
        int Fill( DataSet dataSet );
+       int GetRecordCountByUsuarioID( int usuarioID );
+       int FillPageByUsuarioID( RolUsuarioDataSet dataSet ,
+                                int usuarioID ,
+                                int startRow ,
+                                int maxRows );
+       int FillByUsuarioID( RolUsuarioDataSet dataSet ,
+                            int usuarioID );
        bool FillByRolUsuarioID( RolUsuarioDataSet dataSet ,
                                 short rolUsuarioID );
        int Fill( RolUsuarioDataSet dataSet );

@@ -218,6 +218,27 @@ namespace Raiderplan1
 		}
 
    
+		public System.Int32 GetRecordCountByUsuarioID(System.Int32 usuarioID)
+		{
+			IRolUsuarioDataAdapter dataAdapter = DataAdapterFactoryProxy.Instance.GetRolUsuarioDataAdapter();
+			return dataAdapter.GetRecordCountByUsuarioID(usuarioID);
+		}
+
+   
+		public System.Int32 FillPageByUsuarioID(System.Int32 usuarioID, System.Int32 startRow, System.Int32 maxRows)
+		{
+			IRolUsuarioDataAdapter dataAdapter = DataAdapterFactoryProxy.Instance.GetRolUsuarioDataAdapter();
+			return dataAdapter.FillPageByUsuarioID(m_DataSet, usuarioID, startRow, maxRows);
+		}
+
+   
+		public System.Int32 FillByUsuarioID(System.Int32 usuarioID)
+		{
+			IRolUsuarioDataAdapter dataAdapter = DataAdapterFactoryProxy.Instance.GetRolUsuarioDataAdapter();
+			return dataAdapter.FillByUsuarioID(m_DataSet, usuarioID);
+		}
+
+   
 		public System.Int32 Fill()
 		{
 			IRolUsuarioDataAdapter dataAdapter = DataAdapterFactoryProxy.Instance.GetRolUsuarioDataAdapter();

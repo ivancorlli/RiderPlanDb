@@ -23,6 +23,13 @@
       <xs:appinfo >
          <dkdata:relations>
             <dkdata:manyToOne>
+               <dkdata:relation  name="UsuarioUsuarioID" dkdata:BusinessComponent="Usuario" dkdata:Description="Usuario" dkdata:DataSetName="UsuarioDataSet" dkdata:DataAdapterName="UsuarioDataAdapter" dkdata:DataAdapterInterfaceName="IUsuarioDataAdapter">
+                  <dkdata:foreignKey>
+                     <dkdata:attribute  name="UsuarioID" type="int"/>
+                  </dkdata:foreignKey>
+                  <dkdata:foreignTableAttributes>
+                  </dkdata:foreignTableAttributes>
+               </dkdata:relation>
             </dkdata:manyToOne>
          </dkdata:relations>
          <dkdata:Dependencies>
@@ -30,6 +37,9 @@
          <dkdata:LookupInfo>
          </dkdata:LookupInfo>
          <dkdata:FillMethods  dkdata:Lvl="3">
+            <dkdata:FillMethod  dkdata:FillString="UsuarioID" dkdata:IndexName="IRolUsuario1" dkdata:Unique="false">
+               <dkdata:Attribute  dkdata:AttributeName="UsuarioID"/>
+            </dkdata:FillMethod>
          </dkdata:FillMethods>
       </xs:appinfo>
    </xs:annotation>
