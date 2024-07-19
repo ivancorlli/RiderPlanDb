@@ -12,9 +12,9 @@ namespace Raiderplan1 {
    using Microsoft.Practices.EnterpriseLibrary.PolicyInjection;
    public partial class SimpleDataAdapterFactory : IDataAdapterFactory, IConnectedDataAdapterFactory
    {
-      public virtual IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )
+      public virtual IViajeDataAdapter GetViajeDataAdapter( )
       {
-         return PolicyInjection.Create<dpUsuarioXEmailXusuarioIDCollectionDataAdapter, IdpUsuarioXEmailXusuarioIDCollectionDataAdapter>( ) ;
+         return PolicyInjection.Create<ViajeDataAdapter, IViajeDataAdapter>( ) ;
       }
 
       public virtual IUsuarioDataAdapter GetUsuarioDataAdapter( )
@@ -22,19 +22,9 @@ namespace Raiderplan1 {
          return PolicyInjection.Create<UsuarioDataAdapter, IUsuarioDataAdapter>( ) ;
       }
 
-      public virtual IViajeDataAdapter GetViajeDataAdapter( )
-      {
-         return PolicyInjection.Create<ViajeDataAdapter, IViajeDataAdapter>( ) ;
-      }
-
       public virtual ITrayectoViajeDataAdapter GetTrayectoViajeDataAdapter( )
       {
          return PolicyInjection.Create<TrayectoViajeDataAdapter, ITrayectoViajeDataAdapter>( ) ;
-      }
-
-      public virtual ITrayectoTipoDetalleDataAdapter GetTrayectoTipoDetalleDataAdapter( )
-      {
-         return PolicyInjection.Create<TrayectoTipoDetalleDataAdapter, ITrayectoTipoDetalleDataAdapter>( ) ;
       }
 
       public virtual IRolUsuarioDataAdapter GetRolUsuarioDataAdapter( )
@@ -60,6 +50,11 @@ namespace Raiderplan1 {
       public virtual ILocalidadDataAdapter GetLocalidadDataAdapter( )
       {
          return PolicyInjection.Create<LocalidadDataAdapter, ILocalidadDataAdapter>( ) ;
+      }
+
+      public virtual IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )
+      {
+         return PolicyInjection.Create<dpUsuarioXEmailXusuarioIDCollectionDataAdapter, IdpUsuarioXEmailXusuarioIDCollectionDataAdapter>( ) ;
       }
 
       public IDeklaritTransaction GetDeklaritTransaction( IsolationLevel level )

@@ -18,19 +18,8 @@
                      <xs:element  name="TiempoEstimado" msprop:Caption="Tiempo Estimado en horas" default="0" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="Tiempo Estimado en horas" msprop:Length="4" msprop:Decimals="2" msprop:AllowDBNulls="true" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="TiempoEstimado" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:decimal"/>
                      <xs:element  name="CombustibleConsumido" msprop:Caption="Combustible Consumido en litros" default="0" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="Combustible Consumido en litros" msprop:Length="5" msprop:Decimals="2" msprop:AllowDBNulls="true" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="CombustibleConsumido" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:decimal"/>
                      <xs:element  name="EstadoCarretera" msprop:Caption="Estado Carretera" default="" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="svchar" msprop:Description="Estado Carretera" msprop:Length="100" msprop:Decimals="0" msprop:AllowDBNulls="true" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="EstadoCarretera" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
-                  </xs:sequence>
-               </xs:complexType>
-            </xs:element>
-            <xs:element  name="TrayectoViajeTrayecto" msprop:ParentLvl="TrayectoViaje" msprop:LevelName="Trayecto" msprop:Description="Trayecto" msprop:AllowInsert="true" msprop:AllowUpdate="true" msprop:AllowDelete="true" msprop:Deklarit.EditInDataGrid="True">
-               <xs:complexType >
-                  <xs:sequence >
-                     <xs:element  name="TrayectoViajeID" msprop:Caption="Trayecto Viaje ID" default="0" msprop:IsKey="true" msprop:ReadOnly="true" msprop:DeklaritType="int" msprop:Description="Trayecto Viaje ID" msprop:Length="8" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="TrayectoViajeID" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:int"/>
-                     <xs:element  name="TrayectoDetalleID" msprop:Caption="Trayecto Detalle" default="0" msprop:IsKey="true" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="Trayecto Detalle" msprop:Length="5" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="TrayectoDetalleID" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:int"/>
-                     <xs:element  name="TrayectoTipoDetalleID" msprop:Caption="Trayecto Tipo Detalle ID" default="0" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="Trayecto Tipo Detalle ID" msprop:Length="5" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="TrayectoTipoDetalleID" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:int"/>
-                     <xs:element  name="TDDescripcion" msprop:Caption="TD Descripcion" default="" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="svchar" msprop:Description="TD Descripcion" msprop:Length="200" msprop:Decimals="0" msprop:AllowDBNulls="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="TDDescripcion" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
-                     <xs:element  name="TDLatitud" msprop:Caption="TD Latitud" default="0" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="TD Latitud" msprop:Length="17" msprop:Decimals="15" msprop:AllowDBNulls="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="TDLatitud" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:decimal"/>
-                     <xs:element  name="TDLongitud" msprop:Caption="TD Longitud" default="0" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="TD Longitud" msprop:Length="17" msprop:Decimals="15" msprop:AllowDBNulls="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="TDLongitud" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:decimal"/>
-                     <xs:element  name="TDCosto" msprop:Caption="TD Costo" default="0" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="TD Costo" msprop:Length="8" msprop:Decimals="2" msprop:AllowDBNulls="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="TDCosto" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:decimal"/>
+                     <xs:element  name="Instrucciones" msprop:Caption="Instrucciones" default="" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="vchar" msprop:Description="Instrucciones" msprop:Length="5" msprop:Decimals="0" msprop:AllowDBNulls="true" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="Instrucciones" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                     <xs:element  name="Orden" msprop:Caption="Orden" default="0" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="Orden" msprop:Length="5" msprop:Decimals="0" msprop:AllowDBNulls="true" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="Orden" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:int"/>
                   </xs:sequence>
                </xs:complexType>
             </xs:element>
@@ -40,30 +29,11 @@
          <xs:selector  xpath=".//TrayectoViaje"/>
          <xs:field  xpath="TrayectoViajeID"/>
       </xs:unique>
-      <xs:unique  name="TrayectoViajeTrayectoConstraint1" msdata:ConstraintName="TrayectoViajeTrayectoConstraint1" msdata:PrimaryKey="true">
-         <xs:selector  xpath=".//TrayectoViajeTrayecto"/>
-         <xs:field  xpath="TrayectoViajeID"/>
-         <xs:field  xpath="TrayectoDetalleID"/>
-      </xs:unique>
-      <xs:keyref  name="TrayectoViaje_TrayectoViajeTrayecto" refer="TrayectoViajeConstraint1" msdata:IsNested="true" msprop:rel_Generator_UserRelationName="TrayectoViaje_TrayectoViajeTrayecto" msprop:rel_Generator_RelationVarName="relationTrayectoViaje_TrayectoViajeTrayecto" msprop:rel_Generator_UserChildTable="TrayectoViajeTrayecto" msprop:rel_Generator_UserParentTable="TrayectoViaje" msprop:rel_Generator_ParentPropName="TrayectoViajeRow" msprop:rel_Generator_ChildPropName="GetTrayectoViajeTrayectoRows" msdata:UpdateRule="None" msdata:DeleteRule="None">
-         <xs:selector  xpath=".//TrayectoViajeTrayecto"/>
-         <xs:field  xpath="TrayectoViajeID"/>
-      </xs:keyref>
    </xs:element>
    <xs:annotation >
       <xs:appinfo >
-         <msdata:Relationship  name="TrayectoViaje_TrayectoViajeTrayecto" msdata:parent="TrayectoViaje" msdata:child="TrayectoViajeTrayecto" msdata:parentkey="TrayectoViajeID" msdata:childkey="TrayectoViajeID" msprop:Generator_UserRelationName="TrayectoViaje_TrayectoViajeTrayecto" msprop:Generator_RelationVarName="relationTrayectoViaje_TrayectoViajeTrayecto" msprop:Generator_UserChildTable="TrayectoViajeTrayecto" msprop:Generator_UserParentTable="TrayectoViaje" msprop:Generator_ParentPropName="TrayectoViajeRow" msprop:Generator_ChildPropName="GetTrayectoViajeTrayectoRows"/>
          <dkdata:relations>
-            <dkdata:oneToMany>
-            </dkdata:oneToMany>
             <dkdata:manyToOne>
-               <dkdata:relation  name="TrayectoTipoDetalleTrayectoTipoDetalleID" dkdata:BusinessComponent="TrayectoTipoDetalle" dkdata:Description="TipoDetalle" dkdata:DataSetName="TrayectoTipoDetalleDataSet" dkdata:DataAdapterName="TrayectoTipoDetalleDataAdapter" dkdata:DataAdapterInterfaceName="ITrayectoTipoDetalleDataAdapter">
-                  <dkdata:foreignKey>
-                     <dkdata:attribute  name="TrayectoTipoDetalleID" type="int"/>
-                  </dkdata:foreignKey>
-                  <dkdata:foreignTableAttributes>
-                  </dkdata:foreignTableAttributes>
-               </dkdata:relation>
                <dkdata:relation  name="ViajeViajeID" dkdata:BusinessComponent="Viaje" dkdata:Description="Viaje" dkdata:DataSetName="ViajeDataSet" dkdata:DataAdapterName="ViajeDataAdapter" dkdata:DataAdapterInterfaceName="IViajeDataAdapter">
                   <dkdata:foreignKey>
                      <dkdata:attribute  name="ViajeID" type="long"/>
@@ -77,14 +47,6 @@
          </dkdata:Dependencies>
          <dkdata:LookupInfo>
          </dkdata:LookupInfo>
-         <dkdata:FillMethods  dkdata:Lvl="11">
-            <dkdata:FillMethod  dkdata:FillString="TrayectoTipoDetalleID" dkdata:IndexName="ITrayectoViajeTrayecto2" dkdata:Unique="false">
-               <dkdata:Attribute  dkdata:AttributeName="TrayectoTipoDetalleID"/>
-            </dkdata:FillMethod>
-            <dkdata:FillMethod  dkdata:FillString="TrayectoViajeID">
-               <dkdata:Attribute  dkdata:AttributeName="TrayectoViajeID"/>
-            </dkdata:FillMethod>
-         </dkdata:FillMethods>
          <dkdata:FillMethods  dkdata:Lvl="10">
             <dkdata:FillMethod  dkdata:FillString="ViajeID" dkdata:IndexName="ITrayectoViaje2" dkdata:Unique="false">
                <dkdata:Attribute  dkdata:AttributeName="ViajeID"/>

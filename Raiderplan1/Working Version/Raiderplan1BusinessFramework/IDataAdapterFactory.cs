@@ -8,16 +8,15 @@
 namespace Raiderplan1 {
    public partial interface IDataAdapterFactory
    {
-       IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( );
-       IUsuarioDataAdapter GetUsuarioDataAdapter( );
        IViajeDataAdapter GetViajeDataAdapter( );
+       IUsuarioDataAdapter GetUsuarioDataAdapter( );
        ITrayectoViajeDataAdapter GetTrayectoViajeDataAdapter( );
-       ITrayectoTipoDetalleDataAdapter GetTrayectoTipoDetalleDataAdapter( );
        IRolUsuarioDataAdapter GetRolUsuarioDataAdapter( );
        IProvinciaDataAdapter GetProvinciaDataAdapter( );
        IPersonaDataAdapter GetPersonaDataAdapter( );
        IPaisDataAdapter GetPaisDataAdapter( );
        ILocalidadDataAdapter GetLocalidadDataAdapter( );
+       IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( );
    }
 
 }

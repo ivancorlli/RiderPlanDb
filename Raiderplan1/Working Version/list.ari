@@ -1,25 +1,22 @@
-deklarit_object_i(rpt,1,[$dpUsuarioXEmailXusuarioIDCollection$,$dpUsuarioXEmailXusuarioIDCollection$] , $$).
-deklarit_object_i(trn,7,[$Usuario$,$Usuario$] , $$).
 deklarit_object_i(trn,8,[$Viaje$,$Viaje$] , $$).
+deklarit_object_i(trn,7,[$Usuario$,$Usuario$] , $$).
 deklarit_object_i(trn,9,[$TrayectoViaje$,$TrayectoViaje$] , $$).
-deklarit_object_i(trn,10,[$TipoDetalle$,$TrayectoTipoDetalle$] , $$).
 deklarit_object_i(trn,3,[$RolUsuario$,$RolUsuario$] , $$).
 deklarit_object_i(trn,6,[$Provincia$,$Provincia$] , $$).
 deklarit_object_i(trn,1,[$Persona$,$Persona$] , $$).
 deklarit_object_i(trn,4,[$Pais$,$Pais$] , $$).
 deklarit_object_i(trn,5,[$Localidad$,$Localidad$] , $$).
+deklarit_object_i(rpt,1,[$dpUsuarioXEmailXusuarioIDCollection$,$dpUsuarioXEmailXusuarioIDCollection$] , $$).
 deklarit_object_i(proc,0,[$Load redundancy procedure$,$GXLRED$] , $$).
 deklarit_connstr_i(1,$dsDefault$,$Data Source=ICORLLI\SQLEXPRESS01;Integrated Security=SSPI;Initial Catalog=RiderPlanDB1$).
-deklarit_custom_pty_i($msprop:Deklarit.IsVisibleOnWorkWith$,$$,prop).
-deklarit_custom_pty_i($msprop:Deklarit.IsVisibleOnForm$,$$,prop).
-deklarit_custom_pty_i($msprop:Deklarit.IsDescription$,$$,prop).
-deklarit_custom_pty_i($msprop:Deklarit.LowCardinality$,$$,prop).
 deklarit_custom_pty_i($Deklarit.IsVisibleOnWorkWith$,$$,prop).
 deklarit_custom_pty_i($Deklarit.IsVisibleOnForm$,$$,prop).
 deklarit_custom_pty_i($Deklarit.IsDescription$,$$,prop).
 deklarit_custom_pty_i($Deklarit.LowCardinality$,$$,prop).
-deklarit_custom_pty_i($Deklarit.EditInDataGrid$,$$,prop).
-deklarit_custom_pty_i($msprop:Deklarit.EditInDataGrid$,$$,prop).
+deklarit_custom_pty_i($msprop:Deklarit.IsVisibleOnWorkWith$,$$,prop).
+deklarit_custom_pty_i($msprop:Deklarit.IsVisibleOnForm$,$$,prop).
+deklarit_custom_pty_i($msprop:Deklarit.IsDescription$,$$,prop).
+deklarit_custom_pty_i($msprop:Deklarit.LowCardinality$,$$,prop).
 enum_to_gen_i(2,14,'UsuarioRol').
 enum_to_gen_i(2,5,'Sexo').
 enum_to_gen_value_i(2,5,'0','Masculino','Masculino').

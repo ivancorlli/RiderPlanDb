@@ -24,11 +24,6 @@
    <xs:annotation >
       <xs:appinfo >
          <dkdata:relations>
-            <dkdata:oneToMany>
-               <dkdata:relation  name="Persona" dkdata:Description="Persona" dkdata:DataSetName="PersonaDataSet" dkdata:DataAdapterName="PersonaDataAdapter" dkdata:DataAdapterInterfaceName="IPersonaDataAdapter">
-                  <dkdata:attribute  name="LoacaliadID"/>
-               </dkdata:relation>
-            </dkdata:oneToMany>
             <dkdata:manyToOne>
                <dkdata:relation  name="ProvinciaProvinciaID" dkdata:BusinessComponent="Provincia" dkdata:Description="Provincia" dkdata:DataSetName="ProvinciaDataSet" dkdata:DataAdapterName="ProvinciaDataAdapter" dkdata:DataAdapterInterfaceName="IProvinciaDataAdapter">
                   <dkdata:foreignKey>

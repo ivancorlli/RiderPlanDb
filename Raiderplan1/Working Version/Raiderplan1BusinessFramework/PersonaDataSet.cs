@@ -246,7 +246,8 @@ namespace Raiderplan1 {
          private DataColumn columnPersonaApellido ;
          private DataColumn columnPersonaFechaNacimiento ;
          private DataColumn columnPersonaSexo ;
-         private DataColumn columnLoacaliadID ;
+         private DataColumn columnPLocalidadID ;
+         private DataColumn columnPProvinciaID ;
          private DataColumn columnImagenPerfil ;
          public PersonaDataTable() 
          {
@@ -390,10 +391,18 @@ namespace Raiderplan1 {
 
          }
 
-         public DataColumn LoacaliadIDColumn
+         public DataColumn PLocalidadIDColumn
          {
             get {
-               return this.columnLoacaliadID ;
+               return this.columnPLocalidadID ;
+            }
+
+         }
+
+         public DataColumn PProvinciaIDColumn
+         {
+            get {
+               return this.columnPProvinciaID ;
             }
 
          }
@@ -414,7 +423,8 @@ namespace Raiderplan1 {
                                           String personaApellido ,
                                           DateTime personaFechaNacimiento ,
                                           Sexo personaSexo ,
-                                          int loacaliadID ,
+                                          int pLocalidadID ,
+                                          int pProvinciaID ,
                                           String imagenPerfil )
          {
             PersonaRow rowPersonaRow = ((PersonaRow)(this.NewRow())) ;
@@ -422,7 +432,8 @@ namespace Raiderplan1 {
             rowPersonaRow["PersonaApellido"] = personaApellido ;
             rowPersonaRow["PersonaFechaNacimiento"] = personaFechaNacimiento ;
             rowPersonaRow["PersonaSexo"] = personaSexo ;
-            rowPersonaRow["LoacaliadID"] = loacaliadID ;
+            rowPersonaRow["PLocalidadID"] = pLocalidadID ;
+            rowPersonaRow["PProvinciaID"] = pProvinciaID ;
             rowPersonaRow["ImagenPerfil"] = imagenPerfil ;
             this.Rows.Add( rowPersonaRow) ;
             return rowPersonaRow ;
@@ -440,7 +451,8 @@ namespace Raiderplan1 {
             this.columnPersonaApellido = this.Columns["PersonaApellido"] ;
             this.columnPersonaFechaNacimiento = this.Columns["PersonaFechaNacimiento"] ;
             this.columnPersonaSexo = this.Columns["PersonaSexo"] ;
-            this.columnLoacaliadID = this.Columns["LoacaliadID"] ;
+            this.columnPLocalidadID = this.Columns["PLocalidadID"] ;
+            this.columnPProvinciaID = this.Columns["PProvinciaID"] ;
             this.columnImagenPerfil = this.Columns["ImagenPerfil"] ;
          }
 
@@ -549,29 +561,48 @@ namespace Raiderplan1 {
             this.columnPersonaSexo.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
             this.columnPersonaSexo.ExtendedProperties.Add( "Deklarit.InternalName", "PersonaSexo") ;
             this.Columns.Add( this.columnPersonaSexo) ;
-            this.columnLoacaliadID = new DataColumn( "LoacaliadID", typeof(int), "", System.Data.MappingType.Element) ;
-            this.columnLoacaliadID.AllowDBNull = true ;
-            this.columnLoacaliadID.Caption = "Loacaliad ID" ;
-            this.columnLoacaliadID.DefaultValue = System.Convert.DBNull ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "IsKey", "false") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "ReadOnly", "false") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "DeklaritType", "int") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "Description", "Loacaliad ID") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "Length", "8") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "Decimals", "0") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "AllowDBNulls", "true") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "IsInReader", "true") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
-            this.columnLoacaliadID.ExtendedProperties.Add( "Deklarit.InternalName", "LoacaliadID") ;
-            this.Columns.Add( this.columnLoacaliadID) ;
+            this.columnPLocalidadID = new DataColumn( "PLocalidadID", typeof(int), "", System.Data.MappingType.Element) ;
+            this.columnPLocalidadID.AllowDBNull = true ;
+            this.columnPLocalidadID.Caption = "P Localidad ID" ;
+            this.columnPLocalidadID.DefaultValue = System.Convert.DBNull ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "DeklaritType", "int") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "Description", "P Localidad ID") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "Length", "5") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "AllowDBNulls", "true") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnPLocalidadID.ExtendedProperties.Add( "Deklarit.InternalName", "PLocalidadID") ;
+            this.Columns.Add( this.columnPLocalidadID) ;
+            this.columnPProvinciaID = new DataColumn( "PProvinciaID", typeof(int), "", System.Data.MappingType.Element) ;
+            this.columnPProvinciaID.AllowDBNull = true ;
+            this.columnPProvinciaID.Caption = "P Provincia ID" ;
+            this.columnPProvinciaID.DefaultValue = System.Convert.DBNull ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "DeklaritType", "int") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "Description", "P Provincia ID") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "Length", "5") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "AllowDBNulls", "true") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnPProvinciaID.ExtendedProperties.Add( "Deklarit.InternalName", "PProvinciaID") ;
+            this.Columns.Add( this.columnPProvinciaID) ;
             this.columnImagenPerfil = new DataColumn( "ImagenPerfil", typeof(String), "", System.Data.MappingType.Element) ;
-            this.columnImagenPerfil.AllowDBNull = false ;
+            this.columnImagenPerfil.AllowDBNull = true ;
             this.columnImagenPerfil.Caption = "Imagen Perfil" ;
-            this.columnImagenPerfil.MaxLength = 25 ;
+            this.columnImagenPerfil.MaxLength = 50 ;
             this.columnImagenPerfil.DefaultValue = System.Convert.DBNull ;
             this.columnImagenPerfil.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
             this.columnImagenPerfil.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
@@ -580,9 +611,9 @@ namespace Raiderplan1 {
             this.columnImagenPerfil.ExtendedProperties.Add( "ReadOnly", "false") ;
             this.columnImagenPerfil.ExtendedProperties.Add( "DeklaritType", "svchar") ;
             this.columnImagenPerfil.ExtendedProperties.Add( "Description", "Imagen Perfil") ;
-            this.columnImagenPerfil.ExtendedProperties.Add( "Length", "25") ;
+            this.columnImagenPerfil.ExtendedProperties.Add( "Length", "50") ;
             this.columnImagenPerfil.ExtendedProperties.Add( "Decimals", "0") ;
-            this.columnImagenPerfil.ExtendedProperties.Add( "AllowDBNulls", "false") ;
+            this.columnImagenPerfil.ExtendedProperties.Add( "AllowDBNulls", "true") ;
             this.columnImagenPerfil.ExtendedProperties.Add( "IsInReader", "true") ;
             this.columnImagenPerfil.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
             this.columnImagenPerfil.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
@@ -793,35 +824,67 @@ namespace Raiderplan1 {
          }
 
          ///  <summary>
-         ///   Gets or sets the Loacaliad ID.
+         ///   Gets or sets the P Localidad ID.
          ///  </summary>
-         public int LoacaliadID
+         public int PLocalidadID
          {
             get {
                try
                {
-                  return ((int)(this[this.tablePersona.LoacaliadIDColumn])) ;
+                  return ((int)(this[this.tablePersona.PLocalidadIDColumn])) ;
                }
                catch ( InvalidCastException deklaritException )
                {
-                  throw new StrongTypingException( "Cannot get value LoacaliadID because it is DBNull.", deklaritException) ;
+                  throw new StrongTypingException( "Cannot get value PLocalidadID because it is DBNull.", deklaritException) ;
                }
             }
 
             set {
-               this[this.tablePersona.LoacaliadIDColumn] = value ;
+               this[this.tablePersona.PLocalidadIDColumn] = value ;
             }
 
          }
 
-         public bool IsLoacaliadIDNull( )
+         public bool IsPLocalidadIDNull( )
          {
-            return this.IsNull( this.tablePersona.LoacaliadIDColumn) ;
+            return this.IsNull( this.tablePersona.PLocalidadIDColumn) ;
          }
 
-         public void SetLoacaliadIDNull( )
+         public void SetPLocalidadIDNull( )
          {
-            this[this.tablePersona.LoacaliadIDColumn] = System.Convert.DBNull ;
+            this[this.tablePersona.PLocalidadIDColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the P Provincia ID.
+         ///  </summary>
+         public int PProvinciaID
+         {
+            get {
+               try
+               {
+                  return ((int)(this[this.tablePersona.PProvinciaIDColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value PProvinciaID because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tablePersona.PProvinciaIDColumn] = value ;
+            }
+
+         }
+
+         public bool IsPProvinciaIDNull( )
+         {
+            return this.IsNull( this.tablePersona.PProvinciaIDColumn) ;
+         }
+
+         public void SetPProvinciaIDNull( )
+         {
+            this[this.tablePersona.PProvinciaIDColumn] = System.Convert.DBNull ;
          }
 
          ///  <summary>

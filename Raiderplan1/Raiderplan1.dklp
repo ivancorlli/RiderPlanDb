@@ -1,5 +1,5 @@
  <DeKlaritProject>
-  <Modified>2024-05-16 23:45:56GMT</Modified>
+  <Modified>2024-07-19 23:38:16GMT</Modified>
   <Version>4000</Version>
   <General>
  <ProjectIdGuid>{989A8F7E-C6E0-4602-B021-6A4AF705541A}</ProjectIdGuid>
@@ -41,11 +41,6 @@
   <Folder>Usuario</Folder>
  </Object>
  <Object>
-  <Name>TrayectoTipoDetalle</Name>
-  <Class>0</Class>
-  <Folder>Vaijes</Folder>
- </Object>
- <Object>
   <Name>TrayectoViaje</Name>
   <Class>0</Class>
   <Folder>Vaijes</Folder>
@@ -62,6 +57,11 @@
  </Object>
  <Object>
   <Name>Viajes</Name>
+  <Class>3</Class>
+  <Folder>BusinessComponents</Folder>
+ </Object>
+ <Object>
+  <Name>Viajes2</Name>
   <Class>3</Class>
   <Folder>BusinessComponents</Folder>
  </Object>
@@ -101,6 +101,14 @@
   <Folder>BusinessComponents</Folder>
  </Object>
  <Object>
+  <Name>PersonaProvinciaID</Name>
+  <Class>10</Class>
+ </Object>
+ <Object>
+  <Name>PersonaProvincia</Name>
+  <Class>10</Class>
+ </Object>
+ <Object>
   <Name>Sexo</Name>
   <Class>11</Class>
  </Object>
@@ -138,14 +146,6 @@
  </Object>
  <Object>
   <Name>TrayectoViaje</Name>
-  <Class>7</Class>
- </Object>
- <Object>
-  <Name>TrayectoViajeTrayecto</Name>
-  <Class>7</Class>
- </Object>
- <Object>
-  <Name>TrayectoTipoDetalle</Name>
   <Class>7</Class>
  </Object>
   </Files>
@@ -356,6 +356,51 @@
  <Attribute>
   <Name>CodigoRecuperacion</Name>
  </Attribute>
+ <Attribute>
+  <Name>ViajeImage</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PersonaProvinciaIDPaisNombre</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PersonaProvinciaIDNombre</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PersonaProvinciaIDID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PersonaProvinciaIDPaisID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PersonaProvinciaPaisID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PersonaProvinciaID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PersonaProvinciaNombre</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PersonaProvinciaPaisNombre</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PProvinciaID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ViajeNombre</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ViajeImagen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>PLocalidadID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>Instrucciones</Name>
+ </Attribute>
+ <Attribute>
+  <Name>Orden</Name>
+ </Attribute>
   </Attributes>
   <Globals>
   </Globals>
@@ -367,7 +412,7 @@
   <DBMS>SQLServer</DBMS>
   <LanguageSupport/>
   <DatabaseSchema/>
-  <Addins><![CDATA[&lt;DeklaritAddins&gt; &lt;Addin&gt;  &lt;Name&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Name&gt;  &lt;Path&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Path&gt;  &lt;OutputPath/&gt;  &lt;OutputProjectName&gt;RaiderPlan1BO&lt;/OutputProjectName&gt;  &lt;Language&gt;0&lt;/Language&gt;  &lt;Guid/&gt;  &lt;RunningSet&gt;Raiderplan1,BusinessComponents,Geografia,Localidad,Pais,Provincia,Persona,Persona,Usuario,RolUsuario,Usuario,Vaijes,TrayectoTipoDetalle,TrayectoViaje,Viaje,DataProviders,dpUsuario,dpUsuarioXEmailXusuarioIDCollection&lt;/RunningSet&gt;  &lt;RunningDate&gt;2024-05-16 23:44:36GMT&lt;/RunningDate&gt;  &lt;InBuild&gt;0&lt;/InBuild&gt;  &lt;Hidden&gt;0&lt;/Hidden&gt;  &lt;Data&gt;&lt;![CDATA[]]&gt; &lt;/Data&gt; &lt;/Addin&gt;&lt;/DeklaritAddins&gt;]]> </Addins>
+  <Addins><![CDATA[&lt;DeklaritAddins&gt; &lt;Addin&gt;  &lt;Name&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Name&gt;  &lt;Path&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Path&gt;  &lt;OutputPath/&gt;  &lt;OutputProjectName&gt;RaiderPlan1BO&lt;/OutputProjectName&gt;  &lt;Language&gt;0&lt;/Language&gt;  &lt;Guid/&gt;  &lt;RunningSet&gt;BusinessComponents,Geografia,Localidad,Pais,Provincia,Persona,Persona,Usuario,RolUsuario,Usuario,Vaijes,TrayectoTipoDetalle,TrayectoViaje,Viaje,DataProviders,dpUsuario,dpUsuarioXEmailXusuarioIDCollection&lt;/RunningSet&gt;  &lt;RunningDate&gt;2024-07-19 23:37:49GMT&lt;/RunningDate&gt;  &lt;InBuild&gt;0&lt;/InBuild&gt;  &lt;Hidden&gt;0&lt;/Hidden&gt;  &lt;Data&gt;&lt;![CDATA[]]&gt; &lt;/Data&gt; &lt;/Addin&gt;&lt;/DeklaritAddins&gt;]]> </Addins>
   <SQLVersion>9</SQLVersion>
   <TargetFramework>1</TargetFramework>
   <ProjectName>Raiderplan1BusinessFramework</ProjectName>

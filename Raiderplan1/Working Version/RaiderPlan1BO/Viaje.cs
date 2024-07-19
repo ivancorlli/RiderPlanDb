@@ -138,17 +138,17 @@ namespace Raiderplan1
 		}
 		
 		/// <summary>
-		/// Gets or sets the Vaije Nombre
+		/// Gets or sets the Viaje Nombre
 		/// </summary>        
-		public System.String VaijeNombre
+		public System.String ViajeNombre
 		{
 			get 
 			{
-				return m_DataRow.VaijeNombre;
+				return m_DataRow.ViajeNombre;
 			}
 			set
 			{
-				m_DataRow.VaijeNombre = value;
+				m_DataRow.ViajeNombre = value;
 			}
 		}
 		
@@ -344,6 +344,21 @@ namespace Raiderplan1
 			set
 			{
 				m_DataRow.MotociletaModelo = value;
+			}
+		}
+		
+		/// <summary>
+		/// Gets or sets the Viaje Imagen
+		/// </summary>        
+		public System.String ViajeImagen
+		{
+			get 
+			{
+				return m_DataRow.ViajeImagen;
+			}
+			set
+			{
+				m_DataRow.ViajeImagen = value;
 			}
 		}
 		

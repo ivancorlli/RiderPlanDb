@@ -1,28 +1,21 @@
 spec_i([ trn,9,'TrayectoViaje','TrayectoViaje',[],eng,'4_5_0-002' ]).
  
 struct_i(10,0,[],[]).
-struct_i(11,10,[ 47 ],[]).
  
-level_i(11,[ 11,[ [ 11,many ],[ 12,one ] ],[ 47,61 ],[],[],[],[ 47,61 ],'ITrayectoViajeTrayecto',[ 11,[ [ [],47,47 ] ] ],[] ]).
 level_i(10,[ 10,[ [ 10,many ],[ 8,one ] ],[ 47 ],[],[],[],[ 47 ],'ITrayectoViaje',[ 10,[] ],[] ]).
  
-tw_i(11,[ [ 12,[ [ 11,65,65 ] ] ] ]).
 tw_i(10,[ [ 8,[ [ 10,42,42 ] ] ] ]).
  
-lwi_i(11,[ [] ]).
 lwi_i(10,[ [] ]).
  
  
  
  
-ta_i(11,[ [ [ 11,47 ],[ 11,61 ],[ 11,67 ],[ 11,68 ],[ 11,69 ],[ 11,70 ],[ 11,65 ] ] ]).
-ta_i(10,[ [ [ 10,47 ],[ 10,46 ],[ 10,62 ],[ 10,50 ],[ 10,51 ],[ 10,52 ],[ 10,53 ],[ 10,54 ],[ 10,55 ],[ 10,56 ],[ 10,57 ],[ 10,42 ] ] ]).
+ta_i(10,[ [ [ 10,47 ],[ 10,46 ],[ 10,62 ],[ 10,50 ],[ 10,51 ],[ 10,52 ],[ 10,53 ],[ 10,54 ],[ 10,55 ],[ 10,56 ],[ 10,57 ],[ 10,85 ],[ 10,86 ],[ 10,42 ] ] ]).
  
-las_i(11,[ [ 47,61,65,67,68,69,70 ] ]).
-las_i(10,[ [ 47,42,46,62,50,51,52,53,54,55,56,57 ] ]).
+las_i(10,[ [ 47,42,46,62,50,51,52,53,54,55,56,57,85,86 ] ]).
  
-lac_i(11,[ [ 61,65,67,68,69,70 ] ]).
-lac_i(10,[ [ 47,42,46,62,50,51,52,53,54,55,56,57 ] ]).
+lac_i(10,[ [ 47,42,46,62,50,51,52,53,54,55,56,57,85,86 ] ]).
  
  
 lits_i('Trayecto Viaje ID',2,3).
@@ -37,14 +30,10 @@ lits_i('Trayectokm',12,3).
 lits_i('Tiempo Estimado',13,3).
 lits_i('Combustible Consumido',14,3).
 lits_i('Estado Carretera',15,3).
-lits_i('Trayecto Detalle',16,3).
-lits_i('Trayecto Tipo Detalle ID',16,17).
-lits_i('TD Descripcion',16,38).
-lits_i('TD Latitud',16,239).
-lits_i('TD Longitud',16,258).
-lits_i('TD Costo',16,277).
+lits_i('Instrucciones',16,3).
+lits_i('Orden',17,3).
  
-cls_i([ 2,3 ],[ 23,285 ]).
+cls_i([ 2,3 ],[ 17,177 ]).
  
 pos_i(47,[ 2,2,28 ]).
 pos_i(42,[ 3,3,28 ]).
@@ -58,14 +47,9 @@ pos_i(54,[ 12,12,28 ]).
 pos_i(55,[ 13,13,28 ]).
 pos_i(56,[ 14,14,28 ]).
 pos_i(57,[ 15,15,28 ]).
-pos_i(61,[ 17,23,3 ]).
-pos_i(65,[ 17,23,17 ]).
-pos_i(67,[ 17,23,38 ]).
-pos_i(68,[ 17,23,239 ]).
-pos_i(69,[ 17,23,258 ]).
-pos_i(70,[ 17,23,277 ]).
+pos_i(85,[ 16,16,28 ]).
+pos_i(86,[ 17,17,28 ]).
  
-repeat_i(11,[ 17,23,[],[] ]).
  
  
 rule_i(0,datastore(1,'DS_LAST_CHANGE','')).
@@ -250,15 +234,12 @@ rule_i(0,prop('ObjFolder','Default')).
 rule_i(0,prop('ObjDesc','')).
 rule_i(0,prop('ObjName','TrayectoViaje')).
 rule_i(0,prop('ObjId','0')).
-rule_i(11,prompt([ 12,[ [ 11,65,65 ] ],[ 65 ],[ 65 ] ])).
 rule_i(10,prompt([ 8,[ [ 10,42,42 ] ],[ 42 ],[ 42 ] ])).
 rule_i(0,rule([ a(22,[ 'Dlt','Delete','' ]) ],[],[],[])).
 rule_i(0,maingen(16)).
  
 a_i(1,10,t,10,[],[ [ [ [],47,47 ] ],'ITrayectoViaje',[] ]).
 a_i(2,10,r,8,[],[ [ [ 10,42,42 ] ],'IViaje',[] ]).
-a_i(3,11,t,11,[],[ [ [ [],47,47 ],[ [],61,61 ] ],'ITrayectoViajeTrayecto',[] ]).
-a_i(4,11,r,12,[],[ [ [ 11,65,65 ] ],'ITrayectoTipoDetalle',[] ]).
  
 v_i(t,i,1,47).
 v_i(t,o,1,46).
@@ -271,30 +252,18 @@ v_i(t,o,1,54).
 v_i(t,o,1,55).
 v_i(t,o,1,56).
 v_i(t,o,1,57).
+v_i(t,o,1,85).
+v_i(t,o,1,86).
 v_i(t,o,1,42).
 v_i(r,i,2,42).
 v_i(r,o,2,[]).
-v_i(t,i,3,47).
-v_i(t,i,3,61).
-v_i(t,o,3,67).
-v_i(t,o,3,68).
-v_i(t,o,3,69).
-v_i(t,o,3,70).
-v_i(t,o,3,65).
-v_i(r,i,4,65).
-v_i(r,o,4,[]).
- 
- 
-tbl_to_delete_i(10,[ 11,[ [ 10,47,47 ] ],d,'ITrayectoViajeTrayecto',[ [ 11,47 ],[ 11,61 ] ],[ 47,61 ] ]).
  
  
  
-attri_i(70,[ 'TDCosto',int,9,2,'ZZZZZ9.99',0,'TD Costo','',0,0 ]).
-attri_i(69,[ 'TDLongitud',int,18,15,'Z9.999999999999999',0,'TD Longitud','',0,0 ]).
-attri_i(68,[ 'TDLatitud',int,18,15,'Z9.999999999999999',0,'TD Latitud','',0,0 ]).
-attri_i(67,[ 'TDDescripcion',svchar,200,0,'',0,'TD Descripcion','',0,0 ]).
-attri_i(65,[ 'TrayectoTipoDetalleID',int,5,0,'ZZZZ9',0,'Trayecto Tipo Detalle ID','',0,0 ]).
-attri_i(61,[ 'TrayectoDetalleID',int,5,0,'ZZZZ9',0,'Trayecto Detalle','',0,0 ]).
+ 
+ 
+attri_i(86,[ 'Orden',int,5,0,'ZZZZ9',0,'Orden','',0,0 ]).
+attri_i(85,[ 'Instrucciones',vchar,5,0,'',0,'Instrucciones','',0,0 ]).
 attri_i(57,[ 'EstadoCarretera',svchar,100,0,'',0,'Estado Carretera','',0,0 ]).
 attri_i(56,[ 'CombustibleConsumido',int,6,2,'ZZ9.99',0,'Combustible Consumido','',0,0 ]).
 attri_i(55,[ 'TiempoEstimado',int,5,2,'Z9.99',0,'Tiempo Estimado','',0,0 ]).
@@ -310,31 +279,21 @@ attri_i(47,[ 'TrayectoViajeID',int,8,0,'ZZZZZZZ9',0,'Trayecto Viaje ID','',0,0 ]
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2,0 ]).
  
 table_i(8,[ 'VIAJE',[ 42 ],'Viaje','Viaje' ]).
-table_i(12,[ 'TRAYECTOTIPODETALLE',[ 65 ],'TipoDetalle','TrayectoTipoDetalle' ]).
-table_i(10,[ 'TRAYECTOVIAJE',[ 47,42,46,50,51,52,53,54,55,56,57,62 ],'TrayectoViaje','TrayectoViaje' ]).
-table_i(11,[ 'TRAYECTOVIAJETRAYECTO',[ 47,61,65,67,68,69,70 ],'Trayecto','TrayectoViajeTrayecto' ]).
+table_i(10,[ 'TRAYECTOVIAJE',[ 47,42,46,50,51,52,53,54,55,56,57,62,85,86 ],'TrayectoViaje','TrayectoViaje' ]).
  
 index_i(10,[ 'ITrayectoViaje',u,[ 47 ],'ITrayectoViaje' ]).
 index_i(10,[ 'ITrayectoViaje2',d,[ 42 ],'ITrayectoViaje2' ]).
 index_i(8,[ 'IViaje',u,[ 42 ],'IViaje' ]).
-index_i(11,[ 'ITrayectoViajeTrayecto',u,[ 47,61 ],'ITrayectoViajeTrayecto' ]).
-index_i(11,[ 'ITrayectoViajeTrayecto2',d,[ 65 ],'ITrayectoViajeTrayecto2' ]).
-index_i(12,[ 'ITrayectoTipoDetalle',u,[ 65 ],'ITrayectoTipoDetalle' ]).
  
  
  
  
-upd_i(10,10,i,[ [ 46,62,50,51,52,53,54,55,56,57,42 ],[],'ITrayectoViaje',[ [ [],47,47 ] ] ]).
-upd_i(10,10,u,[ [ 46,62,50,51,52,53,54,55,56,57,42 ],[],'ITrayectoViaje',[] ]).
+upd_i(10,10,i,[ [ 46,62,50,51,52,53,54,55,56,57,85,86,42 ],[],'ITrayectoViaje',[ [ [],47,47 ] ] ]).
+upd_i(10,10,u,[ [ 46,62,50,51,52,53,54,55,56,57,85,86,42 ],[],'ITrayectoViaje',[] ]).
 upd_i(10,10,d,[ [],[],'ITrayectoViaje',[] ]).
-upd_i(11,11,i,[ [ 47,61,67,68,69,70,65 ],[],'ITrayectoViajeTrayecto',[ [ [],47,47 ],[ [],61,61 ] ] ]).
-upd_i(11,11,u,[ [ 67,68,69,70,65 ],[],'ITrayectoViajeTrayecto',[] ]).
-upd_i(11,11,d,[ [],[],'ITrayectoViajeTrayecto',[] ]).
  
  
-start_i(11,0,0,[ [ [ 47,2,47,= ] ],many ]).
  
-end_i(11,0,0,[ [ [ t(47,2),t(=,10),t(47,23) ] ] ]).
  
  
  
@@ -347,7 +306,6 @@ break_i(2,nvg,1,[],[ [],[],[] ]).
 b_group_i(2,1,lit,0,1,0).
  
  
-sf_break_i(35,11).
  
  
  
@@ -375,10 +333,10 @@ lit_i(3,1,button('Previous'),[ id(3),title([ 'GX_BtnPrevious' ]),ctlname(btn_Pre
 lit_i(4,1,button('Next'),[ id(4),title([ 'GX_BtnNext' ]),ctlname(btn_Next),rect(60,2,85,25),font('MS Shell Dlg',8,[]) ]).
 lit_i(5,1,button('Last'),[ id(5),title([ 'GX_BtnLast' ]),ctlname(btn_Last),rect(86,2,111,25),font('MS Shell Dlg',8,[]) ]).
 lit_i(6,1,button('Select'),[ id(6),title([ 'GX_BtnSelect' ]),ctlname(btn_Select),rect(115,2,203,25),font('MS Shell Dlg',8,[]) ]).
-lit_i(7,1,button('Enter'),[ id(7),title([ 'GX_BtnEnter' ]),ctlname(btn_Enter),rect(1116,48,1204,70),font('MS Shell Dlg',8,[]) ]).
-lit_i(8,1,button('Cancel'),[ id(8),title([ 'GX_BtnCancel' ]),ctlname(btn_Cancel),rect(1116,76,1204,98),font('MS Shell Dlg',8,[]) ]).
-lit_i(9,1,button('Delete'),[ id(9),title([ 'GX_BtnDelete' ]),ctlname(btn_Delete),rect(1116,104,1204,126),font('MS Shell Dlg',8,[]) ]).
-lit_i(10,1,button('Help'),[ id(10),title([ 'GX_BtnHelp' ]),ctlname(btn_Help),rect(1116,142,1204,164),font('MS Shell Dlg',8,[]) ]).
+lit_i(7,1,button('Enter'),[ id(7),title([ 'GX_BtnEnter' ]),ctlname(btn_Enter),rect(644,48,732,70),font('MS Shell Dlg',8,[]) ]).
+lit_i(8,1,button('Cancel'),[ id(8),title([ 'GX_BtnCancel' ]),ctlname(btn_Cancel),rect(644,76,732,98),font('MS Shell Dlg',8,[]) ]).
+lit_i(9,1,button('Delete'),[ id(9),title([ 'GX_BtnDelete' ]),ctlname(btn_Delete),rect(644,104,732,126),font('MS Shell Dlg',8,[]) ]).
+lit_i(10,1,button('Help'),[ id(10),title([ 'GX_BtnHelp' ]),ctlname(btn_Help),rect(644,142,732,164),font('MS Shell Dlg',8,[]) ]).
 lit_i(11,1,t(47,2),[ font('Courier New',9,[]),rect(196,48,261,68),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(47),ctrltype(edit,11),ispwd(0),e2n(1) ]).
 lit_i(12,1,t('Trayecto Viaje ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,48,120,60),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
 lit_i(13,1,t(42,2),[ font('Courier New',9,[]),rect(196,72,275,92),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(42),ctrltype(edit,13),ispwd(0),e2n(1) ]).
@@ -403,14 +361,11 @@ lit_i(31,1,t(56,2),[ font('Courier New',9,[]),rect(196,336,247,356),outstyle('3d
 lit_i(32,1,t('Combustible Consumido',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,336,154,348),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
 lit_i(33,1,t(57,2),[ font('Courier New',9,[]),rect(196,360,625,380),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(57),ctrltype(edit,33),ispwd(0),e2n(1) ]).
 lit_i(34,1,t('Estado Carretera',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,360,116,372),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(36,1,s(t(61,2),35),[ width(103),pos(0),title([ 'Trayecto Detalle' ]),ctlname(61),pic([]),titgxcolor([]),gxcolor([]),back(rgb(255,255,255)),fore(rgb(0,0,0)),tback(rgb(240,240,240)),tfore(rgb(0,0,0)),ctrltype(edit,36),e2n(1) ]).
-lit_i(37,1,s(t(65,2),35),[ width(149),pos(1),title([ 'Trayecto Tipo Detalle ID' ]),ctlname(65),pic([]),titgxcolor([]),gxcolor([]),back(rgb(255,255,255)),fore(rgb(0,0,0)),tback(rgb(240,240,240)),tfore(rgb(0,0,0)),ctrltype(edit,37),e2n(1) ]).
-lit_i(38,1,s(t(67,2),35),[ width(427),pos(2),title([ 'TD Descripcion' ]),ctlname(67),pic([]),titgxcolor([]),gxcolor([]),back(rgb(255,255,255)),fore(rgb(0,0,0)),tback(rgb(240,240,240)),tfore(rgb(0,0,0)),ctrltype(edit,38),e2n(1) ]).
-lit_i(39,1,s(t(68,2),35),[ width(133),pos(3),title([ 'TD Latitud' ]),ctlname(68),pic([]),titgxcolor([]),gxcolor([]),back(rgb(255,255,255)),fore(rgb(0,0,0)),tback(rgb(240,240,240)),tfore(rgb(0,0,0)),ctrltype(edit,39),e2n(1) ]).
-lit_i(40,1,s(t(69,2),35),[ width(133),pos(4),title([ 'TD Longitud' ]),ctlname(69),pic([]),titgxcolor([]),gxcolor([]),back(rgb(255,255,255)),fore(rgb(0,0,0)),tback(rgb(240,240,240)),tfore(rgb(0,0,0)),ctrltype(edit,40),e2n(1) ]).
-lit_i(41,1,s(t(70,2),35),[ width(70),pos(5),title([ 'TD Costo' ]),ctlname(70),pic([]),titgxcolor([]),gxcolor([]),back(rgb(255,255,255)),fore(rgb(0,0,0)),tback(rgb(240,240,240)),tfore(rgb(0,0,0)),ctrltype(edit,41),e2n(1) ]).
-lit_i(35,1,s(35),[ th(18),height(18),rect(21,384,1097,576),back(rgb(240,240,240)),fore(gxcolor([]),rgb(0,0,0)),border(1),ctlname(grd_1),font(font('Courier New',9,[])),titlefont(font('MS Sans Serif',8,[ bold ])),el([ t(61,2),t(65,2),t(67,2),t(68,2),t(69,2),t(70,2) ]) ]).
-lit_i(1,1,window,[ title([]),rect(0,0,1223,593),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
+lit_i(35,1,t(85,2),[ font('Courier New',9,[]),rect(196,384,240,404),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(85),ctrltype(edit,35),ispwd(0),e2n(1) ]).
+lit_i(36,1,t('Instrucciones',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,384,97,396),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(37,1,t(86,2),[ font('Courier New',9,[]),rect(196,408,240,428),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(86),ctrltype(edit,37),ispwd(0),e2n(1) ]).
+lit_i(38,1,t('Orden',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,408,55,420),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(1,1,window,[ title([]),rect(0,0,751,445),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
  
 grid_i(7,24).
  
@@ -455,32 +410,12 @@ std_color_i(32,fore,8).
 std_color_i(33,back,5).
 std_color_i(33,fore,8).
 std_color_i(34,fore,8).
-std_color_i(36,back,5).
+std_color_i(35,back,5).
+std_color_i(35,fore,8).
 std_color_i(36,fore,8).
-std_color_i(36,tback,15).
-std_color_i(36,tfore,18).
 std_color_i(37,back,5).
 std_color_i(37,fore,8).
-std_color_i(37,tback,15).
-std_color_i(37,tfore,18).
-std_color_i(38,back,5).
 std_color_i(38,fore,8).
-std_color_i(38,tback,15).
-std_color_i(38,tfore,18).
-std_color_i(39,back,5).
-std_color_i(39,fore,8).
-std_color_i(39,tback,15).
-std_color_i(39,tfore,18).
-std_color_i(40,back,5).
-std_color_i(40,fore,8).
-std_color_i(40,tback,15).
-std_color_i(40,tfore,18).
-std_color_i(41,back,5).
-std_color_i(41,fore,8).
-std_color_i(41,tback,15).
-std_color_i(41,tfore,18).
-std_color_i(35,back,15).
-std_color_i(35,fore,8).
 std_color_i(1,back,15).
 std_color_i(1,fore,6).
  
@@ -784,162 +719,58 @@ att_prop_i(2,57,'DKL_ISPASSWORD','0',v).
 att_prop_i(2,57,idDATEFORMAT,idDATEFORMAT_SHORT,d).
 att_prop_i(2,57,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
 att_prop_i(2,57,'FullName','EstadoCarretera',v).
-att_prop_i(2,61,'AUTONUMBER','0',v).
-att_prop_i(2,61,'AUTONUMBER_START','1',v).
-att_prop_i(2,61,'AUTONUMBER_STEP','1',v).
-att_prop_i(2,61,'AUTONUMBER_FORREPLICATION','-1',v).
-att_prop_i(2,61,'ATT_INITIAL_VALUE','',v).
-att_prop_i(2,61,'OBJECT_METADATA','',v).
-att_prop_i(2,61,'DKL_DEPENDENCIES_PROPS','',d).
-att_prop_i(2,61,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
-att_prop_i(2,61,'DKL_VERSION','2100',d).
-att_prop_i(2,61,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
-att_prop_i(2,61,'AUTOGENERATE_GUID','-1',v).
-att_prop_i(2,61,'DKL_EMPTY_ASNULL','0',v).
-att_prop_i(2,61,'DKL_RIGHT_TRIM','0',v).
-att_prop_i(2,61,'DKL_INTERNATIONAL_SUPPORT','0',v).
-att_prop_i(2,61,'DKL_REGULAR_EXPRESION','',v).
-att_prop_i(2,61,'DKL_ISROWGUID','0',v).
-att_prop_i(2,61,'DKL_INPUT_MASK','',v).
-att_prop_i(2,61,'DKL_ENABLE_ATT_AUTH','0',v).
-att_prop_i(2,61,'DKL_MIME_TYPE','',v).
-att_prop_i(2,61,'DKL_ENCRYPTION','0',v).
-att_prop_i(2,61,'DKL_CASING','0',v).
-att_prop_i(2,61,'DKL_ISPASSWORD','0',v).
-att_prop_i(2,61,idDATEFORMAT,idDATEFORMAT_SHORT,d).
-att_prop_i(2,61,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
-att_prop_i(2,61,'FullName','TrayectoDetalleID',v).
-att_prop_i(2,65,'AUTONUMBER','0',v).
-att_prop_i(2,65,'AUTONUMBER_START','1',v).
-att_prop_i(2,65,'AUTONUMBER_STEP','1',v).
-att_prop_i(2,65,'AUTONUMBER_FORREPLICATION','-1',v).
-att_prop_i(2,65,'ATT_INITIAL_VALUE','',v).
-att_prop_i(2,65,'OBJECT_METADATA','',v).
-att_prop_i(2,65,'DKL_DEPENDENCIES_PROPS','',d).
-att_prop_i(2,65,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
-att_prop_i(2,65,'DKL_VERSION','2100',d).
-att_prop_i(2,65,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
-att_prop_i(2,65,'AUTOGENERATE_GUID','-1',v).
-att_prop_i(2,65,'DKL_EMPTY_ASNULL','0',v).
-att_prop_i(2,65,'DKL_RIGHT_TRIM','0',v).
-att_prop_i(2,65,'DKL_INTERNATIONAL_SUPPORT','0',v).
-att_prop_i(2,65,'DKL_REGULAR_EXPRESION','',v).
-att_prop_i(2,65,'DKL_ISROWGUID','0',v).
-att_prop_i(2,65,'DKL_INPUT_MASK','',v).
-att_prop_i(2,65,'DKL_ENABLE_ATT_AUTH','0',v).
-att_prop_i(2,65,'DKL_MIME_TYPE','',v).
-att_prop_i(2,65,'DKL_ENCRYPTION','0',v).
-att_prop_i(2,65,'DKL_CASING','0',v).
-att_prop_i(2,65,'DKL_ISPASSWORD','0',v).
-att_prop_i(2,65,idDATEFORMAT,idDATEFORMAT_SHORT,d).
-att_prop_i(2,65,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
-att_prop_i(2,65,'FullName','TrayectoTipoDetalleID',v).
-att_prop_i(2,67,'AUTONUMBER_START','1',v).
-att_prop_i(2,67,'AUTONUMBER_STEP','1',v).
-att_prop_i(2,67,'AUTONUMBER_FORREPLICATION','-1',v).
-att_prop_i(2,67,'ATT_INITIAL_VALUE','',v).
-att_prop_i(2,67,'OBJECT_METADATA','',v).
-att_prop_i(2,67,'DKL_DEPENDENCIES_PROPS','',d).
-att_prop_i(2,67,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
-att_prop_i(2,67,'DKL_VERSION','2100',d).
-att_prop_i(2,67,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
-att_prop_i(2,67,'AUTOGENERATE_GUID','-1',v).
-att_prop_i(2,67,'DKL_EMPTY_ASNULL','0',v).
-att_prop_i(2,67,'DKL_RIGHT_TRIM','0',v).
-att_prop_i(2,67,'DKL_INTERNATIONAL_SUPPORT','0',v).
-att_prop_i(2,67,'DKL_REGULAR_EXPRESION','',v).
-att_prop_i(2,67,'DKL_ISROWGUID','0',v).
-att_prop_i(2,67,'DKL_INPUT_MASK','',v).
-att_prop_i(2,67,'DKL_ENABLE_ATT_AUTH','0',v).
-att_prop_i(2,67,'DKL_MIME_TYPE','',v).
-att_prop_i(2,67,'DKL_ENCRYPTION','0',v).
-att_prop_i(2,67,'DKL_CASING','0',v).
-att_prop_i(2,67,'DKL_ISPASSWORD','0',v).
-att_prop_i(2,67,idDATEFORMAT,idDATEFORMAT_SHORT,d).
-att_prop_i(2,67,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
-att_prop_i(2,67,'FullName','TDDescripcion',v).
-att_prop_i(2,68,'AUTONUMBER','0',v).
-att_prop_i(2,68,'AUTONUMBER_START','1',v).
-att_prop_i(2,68,'AUTONUMBER_STEP','1',v).
-att_prop_i(2,68,'AUTONUMBER_FORREPLICATION','-1',v).
-att_prop_i(2,68,'ATT_INITIAL_VALUE','',v).
-att_prop_i(2,68,'OBJECT_METADATA','',v).
-att_prop_i(2,68,'DKL_DEPENDENCIES_PROPS','',d).
-att_prop_i(2,68,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
-att_prop_i(2,68,'DKL_VERSION','2100',d).
-att_prop_i(2,68,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
-att_prop_i(2,68,'AUTOGENERATE_GUID','-1',v).
-att_prop_i(2,68,'DKL_EMPTY_ASNULL','0',v).
-att_prop_i(2,68,'DKL_RIGHT_TRIM','0',v).
-att_prop_i(2,68,'DKL_INTERNATIONAL_SUPPORT','0',v).
-att_prop_i(2,68,'DKL_REGULAR_EXPRESION','',v).
-att_prop_i(2,68,'DKL_ISROWGUID','0',v).
-att_prop_i(2,68,'DKL_INPUT_MASK','',v).
-att_prop_i(2,68,'DKL_ENABLE_ATT_AUTH','0',v).
-att_prop_i(2,68,'DKL_MIME_TYPE','',v).
-att_prop_i(2,68,'DKL_ENCRYPTION','0',v).
-att_prop_i(2,68,'DKL_CASING','0',v).
-att_prop_i(2,68,'DKL_ISPASSWORD','0',v).
-att_prop_i(2,68,idDATEFORMAT,idDATEFORMAT_SHORT,d).
-att_prop_i(2,68,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
-att_prop_i(2,68,'FullName','TDLatitud',v).
-att_prop_i(2,69,'AUTONUMBER','0',v).
-att_prop_i(2,69,'AUTONUMBER_START','1',v).
-att_prop_i(2,69,'AUTONUMBER_STEP','1',v).
-att_prop_i(2,69,'AUTONUMBER_FORREPLICATION','-1',v).
-att_prop_i(2,69,'ATT_INITIAL_VALUE','',v).
-att_prop_i(2,69,'OBJECT_METADATA','',v).
-att_prop_i(2,69,'DKL_DEPENDENCIES_PROPS','',d).
-att_prop_i(2,69,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
-att_prop_i(2,69,'DKL_VERSION','2100',d).
-att_prop_i(2,69,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
-att_prop_i(2,69,'AUTOGENERATE_GUID','-1',v).
-att_prop_i(2,69,'DKL_EMPTY_ASNULL','0',v).
-att_prop_i(2,69,'DKL_RIGHT_TRIM','0',v).
-att_prop_i(2,69,'DKL_INTERNATIONAL_SUPPORT','0',v).
-att_prop_i(2,69,'DKL_REGULAR_EXPRESION','',v).
-att_prop_i(2,69,'DKL_ISROWGUID','0',v).
-att_prop_i(2,69,'DKL_INPUT_MASK','',v).
-att_prop_i(2,69,'DKL_ENABLE_ATT_AUTH','0',v).
-att_prop_i(2,69,'DKL_MIME_TYPE','',v).
-att_prop_i(2,69,'DKL_ENCRYPTION','0',v).
-att_prop_i(2,69,'DKL_CASING','0',v).
-att_prop_i(2,69,'DKL_ISPASSWORD','0',v).
-att_prop_i(2,69,idDATEFORMAT,idDATEFORMAT_SHORT,d).
-att_prop_i(2,69,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
-att_prop_i(2,69,'FullName','TDLongitud',v).
-att_prop_i(2,70,'AUTONUMBER','0',v).
-att_prop_i(2,70,'AUTONUMBER_START','1',v).
-att_prop_i(2,70,'AUTONUMBER_STEP','1',v).
-att_prop_i(2,70,'AUTONUMBER_FORREPLICATION','-1',v).
-att_prop_i(2,70,'ATT_INITIAL_VALUE','',v).
-att_prop_i(2,70,'OBJECT_METADATA','',v).
-att_prop_i(2,70,'DKL_DEPENDENCIES_PROPS','',d).
-att_prop_i(2,70,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
-att_prop_i(2,70,'DKL_VERSION','2100',d).
-att_prop_i(2,70,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
-att_prop_i(2,70,'AUTOGENERATE_GUID','-1',v).
-att_prop_i(2,70,'DKL_EMPTY_ASNULL','0',v).
-att_prop_i(2,70,'DKL_RIGHT_TRIM','0',v).
-att_prop_i(2,70,'DKL_INTERNATIONAL_SUPPORT','0',v).
-att_prop_i(2,70,'DKL_REGULAR_EXPRESION','',v).
-att_prop_i(2,70,'DKL_ISROWGUID','0',v).
-att_prop_i(2,70,'DKL_INPUT_MASK','',v).
-att_prop_i(2,70,'DKL_ENABLE_ATT_AUTH','0',v).
-att_prop_i(2,70,'DKL_MIME_TYPE','',v).
-att_prop_i(2,70,'DKL_ENCRYPTION','0',v).
-att_prop_i(2,70,'DKL_CASING','0',v).
-att_prop_i(2,70,'DKL_ISPASSWORD','0',v).
-att_prop_i(2,70,idDATEFORMAT,idDATEFORMAT_SHORT,d).
-att_prop_i(2,70,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
-att_prop_i(2,70,'FullName','TDCosto',v).
+att_prop_i(2,85,'AUTONUMBER_START','1',v).
+att_prop_i(2,85,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,85,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,85,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,85,'OBJECT_METADATA','',v).
+att_prop_i(2,85,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,85,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,85,'DKL_VERSION','2100',d).
+att_prop_i(2,85,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,85,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,85,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,85,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,85,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,85,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,85,'DKL_ISROWGUID','0',v).
+att_prop_i(2,85,'DKL_INPUT_MASK','',v).
+att_prop_i(2,85,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,85,'DKL_MIME_TYPE','',v).
+att_prop_i(2,85,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,85,'DKL_CASING','0',v).
+att_prop_i(2,85,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,85,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,85,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,85,'FullName','Instrucciones',v).
+att_prop_i(2,86,'AUTONUMBER','0',v).
+att_prop_i(2,86,'AUTONUMBER_START','1',v).
+att_prop_i(2,86,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,86,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,86,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,86,'OBJECT_METADATA','',v).
+att_prop_i(2,86,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,86,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,86,'DKL_VERSION','2100',d).
+att_prop_i(2,86,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,86,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,86,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,86,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,86,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,86,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,86,'DKL_ISROWGUID','0',v).
+att_prop_i(2,86,'DKL_INPUT_MASK','',v).
+att_prop_i(2,86,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,86,'DKL_MIME_TYPE','',v).
+att_prop_i(2,86,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,86,'DKL_CASING','0',v).
+att_prop_i(2,86,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,86,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,86,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,86,'FullName','Orden',v).
  
-tbl_prop_i(2,11,'AllDirSuper',[ [ 12,[ 65 ] ],[ 10,[ 47 ] ] ],v).
 tbl_prop_i(2,10,'AllDirSuper',[ [ 8,[ 42 ] ] ],v).
-tbl_prop_i(2,12,'DirSubor',[ [ 11,[ 65 ] ] ],v).
 tbl_prop_i(2,8,'DirSubor',[ [ 10,[ 42 ] ] ],v).
-tbl_prop_i(2,10,'DirSubor',[ [ 11,[ 47 ] ] ],v).
-tbl_prop_i(2,11,'DirSuper',[ [ 12,[ 65 ] ],[ 10,[ 47 ] ] ],v).
 tbl_prop_i(2,10,'DirSuper',[ [ 8,[ 42 ] ] ],v).
  
 tbl_att_prop_i(2,10,47,'AllowNulls',n).
@@ -948,24 +779,13 @@ tbl_att_prop_i(2,10,42,'AllowNulls',n).
 tbl_att_prop_i(2,10,62,'AllowNulls',n).
 tbl_att_prop_i(2,8,42,'AllowNulls',n).
 tbl_att_prop_i(2,8,42,'AUTONUMBER',y).
-tbl_att_prop_i(2,11,47,'AllowNulls',n).
-tbl_att_prop_i(2,11,61,'AllowNulls',n).
-tbl_att_prop_i(2,11,65,'AllowNulls',n).
-tbl_att_prop_i(2,12,65,'AllowNulls',n).
  
 i_tbl_best_trn(10,[ 9,1,'TrayectoViaje','TrayectoViaje' ]).
-i_tbl_best_trn(11,[ 9,2,'TrayectoViaje','TrayectoViaje' ]).
 i_tbl_best_trn(8,[ 8,1,'Viaje','Viaje' ]).
-i_tbl_best_trn(12,[ 10,1,'TrayectoTipoDetalle','TipoDetalle' ]).
  
  
  
-trn_level_i(10,[ [ 47,42,46,62,50,51,52,53,54,55,56,57 ],'TrayectoViaje','TrayectoViaje','TrayectoViaje','',46 ]).
-trn_level_i(11,[ [ 61,65,67,68,69,70 ],'Trayecto','Trayecto','Level1Item',' <LevelInfo>
-  <BuiltinProperties>
-<Properties><Property><Name>EditInDataGrid</Name><Description>If true a DataGrid component is used in order to edit the level</Description><Value>True</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>  </BuiltinProperties>
- </LevelInfo>
-',46 ]).
+trn_level_i(10,[ [ 47,42,46,62,50,51,52,53,54,55,56,57,85,86 ],'TrayectoViaje','TrayectoViaje','TrayectoViaje','',46 ]).
  
  
  

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <Objects>
    <Object>
-      <ObjName>dpUsuarioXEmailXusuarioIDCollection</ObjName>
-      <ObjDesc>dpUsuarioXEmailXusuarioIDCollection</ObjDesc>
-      <ObjType>DataProvider</ObjType>
-      <ObjDataSet>dpUsuarioXEmailXusuarioIDCollectionDataSet</ObjDataSet>
-      <ObjDataAdapter>dpUsuarioXEmailXusuarioIDCollectionDataAdapter</ObjDataAdapter>
-      <ObjDataAdapterInterface>IdpUsuarioXEmailXusuarioIDCollectionDataAdapter</ObjDataAdapterInterface>
+      <ObjName>Viaje</ObjName>
+      <ObjDesc>Viaje</ObjDesc>
+      <ObjType>BusinessComponent</ObjType>
+      <ObjDataSet>ViajeDataSet</ObjDataSet>
+      <ObjDataAdapter>ViajeDataAdapter</ObjDataAdapter>
+      <ObjDataAdapterInterface>IViajeDataAdapter</ObjDataAdapterInterface>
       <ObjNameSpace>Raiderplan1</ObjNameSpace>
    </Object>
    <Object>
@@ -19,30 +19,12 @@
       <ObjNameSpace>Raiderplan1</ObjNameSpace>
    </Object>
    <Object>
-      <ObjName>Viaje</ObjName>
-      <ObjDesc>Viaje</ObjDesc>
-      <ObjType>BusinessComponent</ObjType>
-      <ObjDataSet>ViajeDataSet</ObjDataSet>
-      <ObjDataAdapter>ViajeDataAdapter</ObjDataAdapter>
-      <ObjDataAdapterInterface>IViajeDataAdapter</ObjDataAdapterInterface>
-      <ObjNameSpace>Raiderplan1</ObjNameSpace>
-   </Object>
-   <Object>
       <ObjName>TrayectoViaje</ObjName>
       <ObjDesc>TrayectoViaje</ObjDesc>
       <ObjType>BusinessComponent</ObjType>
       <ObjDataSet>TrayectoViajeDataSet</ObjDataSet>
       <ObjDataAdapter>TrayectoViajeDataAdapter</ObjDataAdapter>
       <ObjDataAdapterInterface>ITrayectoViajeDataAdapter</ObjDataAdapterInterface>
-      <ObjNameSpace>Raiderplan1</ObjNameSpace>
-   </Object>
-   <Object>
-      <ObjName>TrayectoTipoDetalle</ObjName>
-      <ObjDesc>TipoDetalle</ObjDesc>
-      <ObjType>BusinessComponent</ObjType>
-      <ObjDataSet>TrayectoTipoDetalleDataSet</ObjDataSet>
-      <ObjDataAdapter>TrayectoTipoDetalleDataAdapter</ObjDataAdapter>
-      <ObjDataAdapterInterface>ITrayectoTipoDetalleDataAdapter</ObjDataAdapterInterface>
       <ObjNameSpace>Raiderplan1</ObjNameSpace>
    </Object>
    <Object>
@@ -88,6 +70,15 @@
       <ObjDataSet>LocalidadDataSet</ObjDataSet>
       <ObjDataAdapter>LocalidadDataAdapter</ObjDataAdapter>
       <ObjDataAdapterInterface>ILocalidadDataAdapter</ObjDataAdapterInterface>
+      <ObjNameSpace>Raiderplan1</ObjNameSpace>
+   </Object>
+   <Object>
+      <ObjName>dpUsuarioXEmailXusuarioIDCollection</ObjName>
+      <ObjDesc>dpUsuarioXEmailXusuarioIDCollection</ObjDesc>
+      <ObjType>DataProvider</ObjType>
+      <ObjDataSet>dpUsuarioXEmailXusuarioIDCollectionDataSet</ObjDataSet>
+      <ObjDataAdapter>dpUsuarioXEmailXusuarioIDCollectionDataAdapter</ObjDataAdapter>
+      <ObjDataAdapterInterface>IdpUsuarioXEmailXusuarioIDCollectionDataAdapter</ObjDataAdapterInterface>
       <ObjNameSpace>Raiderplan1</ObjNameSpace>
    </Object>
 </Objects>

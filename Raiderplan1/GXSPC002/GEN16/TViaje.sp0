@@ -11,48 +11,50 @@ lwi_i(8,[ [] ]).
  
  
  
-ta_i(8,[ [ [ 8,42 ],[ 8,48 ],[ 8,30 ],[ 8,31 ],[ 8,32 ],[ 8,33 ],[ 8,34 ],[ 8,35 ],[ 8,36 ],[ 8,37 ],[ 8,38 ],[ 8,39 ],[ 8,41 ],[ 8,44 ],[ 8,45 ],[ 8,11 ] ] ]).
+ta_i(8,[ [ [ 8,42 ],[ 8,82 ],[ 8,30 ],[ 8,31 ],[ 8,32 ],[ 8,33 ],[ 8,34 ],[ 8,35 ],[ 8,36 ],[ 8,37 ],[ 8,38 ],[ 8,39 ],[ 8,41 ],[ 8,44 ],[ 8,45 ],[ 8,83 ],[ 8,11 ] ] ]).
  
-las_i(8,[ [ 42,11,48,30,31,32,33,34,35,36,37,38,39,41,44,45 ] ]).
+las_i(8,[ [ 42,11,82,30,31,32,33,34,35,36,37,38,39,41,44,45,83 ] ]).
  
-lac_i(8,[ [ 42,11,48,30,31,32,33,34,35,36,37,38,39,41,44,45 ] ]).
+lac_i(8,[ [ 42,11,82,30,31,32,33,34,35,36,37,38,39,41,44,45,83 ] ]).
  
  
 lits_i('Viaje ID',2,3).
 lits_i('Usuario ID',3,3).
-lits_i('Vaije Nombre',4,3).
-lits_i('Fecha Salida',7,3).
-lits_i('Fecha Llegada',8,3).
-lits_i('Fecha Salida Efectiva',9,3).
-lits_i('Fecha Llegada Efectiva',10,3).
-lits_i('Lugar Partida',11,3).
-lits_i('Lugarllegada',14,3).
-lits_i('Longitud Partida',17,3).
-lits_i('Latitud Partida',18,3).
-lits_i('Longitud Legada',19,3).
-lits_i('Latitud Llegada',20,3).
-lits_i('km Totales Estimado',21,3).
-lits_i('Motocilceta',22,3).
-lits_i('Motocileta',23,3).
+lits_i('Viaje Nombre',4,3).
+lits_i('Fecha Salida',5,3).
+lits_i('Fecha Llegada',6,3).
+lits_i('Fecha Salida Efectiva',7,3).
+lits_i('Fecha Llegada Efectiva',8,3).
+lits_i('Lugar Partida',9,3).
+lits_i('Lugarllegada',12,3).
+lits_i('Longitud Partida',15,3).
+lits_i('Latitud Partida',16,3).
+lits_i('Longitud Legada',17,3).
+lits_i('Latitud Llegada',18,3).
+lits_i('km Totales Estimado',19,3).
+lits_i('Motocilceta',20,3).
+lits_i('Motocileta',21,3).
+lits_i('Viaje Imagen',22,3).
  
-cls_i([ 2,3 ],[ 23,205 ]).
+cls_i([ 2,3 ],[ 22,175 ]).
  
 pos_i(42,[ 2,2,26 ]).
 pos_i(11,[ 3,3,26 ]).
-pos_i(48,[ 4,4,26 ]).
-pos_i(30,[ 7,7,26 ]).
-pos_i(31,[ 8,8,26 ]).
-pos_i(32,[ 9,9,26 ]).
-pos_i(33,[ 10,10,26 ]).
-pos_i(34,[ 11,11,26 ]).
-pos_i(35,[ 14,14,26 ]).
-pos_i(36,[ 17,17,26 ]).
-pos_i(37,[ 18,18,26 ]).
-pos_i(38,[ 19,19,26 ]).
-pos_i(39,[ 20,20,26 ]).
-pos_i(41,[ 21,21,26 ]).
-pos_i(44,[ 22,22,26 ]).
-pos_i(45,[ 23,23,26 ]).
+pos_i(82,[ 4,4,26 ]).
+pos_i(30,[ 5,5,26 ]).
+pos_i(31,[ 6,6,26 ]).
+pos_i(32,[ 7,7,26 ]).
+pos_i(33,[ 8,8,26 ]).
+pos_i(34,[ 9,9,26 ]).
+pos_i(35,[ 12,12,26 ]).
+pos_i(36,[ 15,15,26 ]).
+pos_i(37,[ 16,16,26 ]).
+pos_i(38,[ 17,17,26 ]).
+pos_i(39,[ 18,18,26 ]).
+pos_i(41,[ 19,19,26 ]).
+pos_i(44,[ 20,20,26 ]).
+pos_i(45,[ 21,21,26 ]).
+pos_i(83,[ 22,22,26 ]).
  
  
  
@@ -241,7 +243,7 @@ a_i(1,8,t,8,[],[ [ [ [],42,42 ] ],'IViaje',[] ]).
 a_i(2,8,r,7,[],[ [ [ 8,11,11 ] ],'IUsuario',[] ]).
  
 v_i(t,i,1,42).
-v_i(t,o,1,48).
+v_i(t,o,1,82).
 v_i(t,o,1,30).
 v_i(t,o,1,31).
 v_i(t,o,1,32).
@@ -255,6 +257,7 @@ v_i(t,o,1,39).
 v_i(t,o,1,41).
 v_i(t,o,1,44).
 v_i(t,o,1,45).
+v_i(t,o,1,83).
 v_i(t,o,1,11).
 v_i(r,i,2,11).
 v_i(r,o,2,[]).
@@ -265,6 +268,7 @@ tbl_to_delete_i(8,[ 10,[ [ 8,42,42 ] ],c,'ITrayectoViaje2',[ [ 10,42 ] ],[ 47 ] 
  
  
 attri_i(47,[ 'TrayectoViajeID',int,8,0,'ZZZZZZZ9',0,'Trayecto Viaje ID','',0,0 ]).
+attri_i(83,[ 'ViajeImagen',svchar,50,0,'',0,'Viaje Imagen','',0,0 ]).
 attri_i(45,[ 'MotociletaModelo',svchar,50,0,'',0,'Motocileta','',0,0 ]).
 attri_i(44,[ 'MotocilcetaMarca',svchar,30,0,'',0,'Motocilceta','',0,0 ]).
 attri_i(41,[ kmTotalesEstimado,int,9,2,'ZZZZZ9.99',0,'km Totales Estimado','',0,0 ]).
@@ -278,14 +282,14 @@ attri_i(33,[ 'FechaLlegadaEfectiva',dtime,8,5,'99/99/99 99:99',0,'Fecha Llegada 
 attri_i(32,[ 'FechaSalidaEfectiva',dtime,8,5,'99/99/99 99:99',0,'Fecha Salida Efectiva','',0,0 ]).
 attri_i(31,[ 'FechaLlegadaProgramada',dtime,8,5,'99/99/99 99:99',0,'Fecha Llegada','',0,0 ]).
 attri_i(30,[ 'FechaSalidaProgramada',dtime,8,5,'99/99/99 99:99',0,'Fecha Salida','',0,0 ]).
-attri_i(48,[ 'VaijeNombre',svchar,180,0,'',0,'Vaije Nombre','',0,0 ]).
+attri_i(82,[ 'ViajeNombre',svchar,25,0,'',0,'Viaje Nombre','',0,0 ]).
 attri_i(11,[ 'UsuarioID',int,8,0,'ZZZZZZZ9',0,'Usuario ID','',0,0 ]).
 attri_i(42,[ 'ViajeID',int,10,0,'ZZZZZZZZZ9',0,'Viaje ID','',0,0 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2,0 ]).
  
 table_i(10,[ 'TRAYECTOVIAJE',[ 47,42 ],'TrayectoViaje','TrayectoViaje' ]).
 table_i(7,[ 'USUARIO',[ 11 ],'Usuario','Usuario' ]).
-table_i(8,[ 'VIAJE',[ 42,30,31,32,33,34,35,36,37,38,39,41,44,45,48,11 ],'Viaje','Viaje' ]).
+table_i(8,[ 'VIAJE',[ 42,30,31,32,33,34,35,36,37,38,39,41,44,45,11,82,83 ],'Viaje','Viaje' ]).
  
 index_i(8,[ 'IViaje',u,[ 42 ],'IViaje' ]).
 index_i(8,[ 'IViaje1',d,[ 11 ],'IViaje1' ]).
@@ -296,8 +300,8 @@ index_i(10,[ 'ITrayectoViaje2',d,[ 42 ],'ITrayectoViaje2' ]).
  
  
  
-upd_i(8,8,i,[ [ 48,30,31,32,33,34,35,36,37,38,39,41,44,45,11 ],[],'IViaje',[ [ [],42,42 ] ] ]).
-upd_i(8,8,u,[ [ 48,30,31,32,33,34,35,36,37,38,39,41,44,45,11 ],[],'IViaje',[] ]).
+upd_i(8,8,i,[ [ 82,30,31,32,33,34,35,36,37,38,39,41,44,45,83,11 ],[],'IViaje',[ [ [],42,42 ] ] ]).
+upd_i(8,8,u,[ [ 82,30,31,32,33,34,35,36,37,38,39,41,44,45,83,11 ],[],'IViaje',[] ]).
 upd_i(8,8,d,[ [],[],'IViaje',[] ]).
  
  
@@ -349,35 +353,37 @@ lit_i(11,1,t(42,2),[ font('Courier New',9,[]),rect(182,48,261,68),outstyle('3d')
 lit_i(12,1,t('Viaje ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,48,66,60),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
 lit_i(13,1,t(11,2),[ font('Courier New',9,[]),rect(182,72,247,92),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(11),ctrltype(edit,13),ispwd(0),e2n(1) ]).
 lit_i(14,1,t('Usuario ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,72,81,84),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(15,1,t(48,2),[ font('Courier New',9,[]),rect(182,96,611,149),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(48),ctrltype(edit,15),ispwd(0),e2n(1) ]).
-lit_i(16,1,t('Vaije Nombre',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,96,96,108),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(17,1,t(30,2),[ font('Courier New',9,[]),rect(182,168,289,188),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(30),ctrltype(edit,17),ispwd(0),e2n(1) ]).
-lit_i(18,1,t('Fecha Salida',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,168,95,180),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(19,1,t(31,2),[ font('Courier New',9,[]),rect(182,192,289,212),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(31),ctrltype(edit,19),ispwd(0),e2n(1) ]).
-lit_i(20,1,t('Fecha Llegada',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,192,105,204),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(21,1,t(32,2),[ font('Courier New',9,[]),rect(182,216,289,236),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(32),ctrltype(edit,21),ispwd(0),e2n(1) ]).
-lit_i(22,1,t('Fecha Salida Efectiva',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,216,146,228),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(23,1,t(33,2),[ font('Courier New',9,[]),rect(182,240,289,260),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(33),ctrltype(edit,23),ispwd(0),e2n(1) ]).
-lit_i(24,1,t('Fecha Llegada Efectiva',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,240,156,252),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(25,1,t(34,2),[ font('Courier New',9,[]),rect(182,264,611,317),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(34),ctrltype(edit,25),ispwd(0),e2n(1) ]).
-lit_i(26,1,t('Lugar Partida',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,264,97,276),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(27,1,t(35,2),[ font('Courier New',9,[]),rect(182,336,611,389),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(35),ctrltype(edit,27),ispwd(0),e2n(1) ]).
-lit_i(28,1,t('Lugarllegada',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,336,94,348),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(29,1,t(36,2),[ font('Courier New',9,[]),rect(182,408,317,428),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(36),ctrltype(edit,29),ispwd(0),e2n(1) ]).
-lit_i(30,1,t('Longitud Partida',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,408,114,420),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(31,1,t(37,2),[ font('Courier New',9,[]),rect(182,432,317,452),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(37),ctrltype(edit,31),ispwd(0),e2n(1) ]).
-lit_i(32,1,t('Latitud Partida',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,432,104,444),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(33,1,t(38,2),[ font('Courier New',9,[]),rect(182,456,317,476),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(38),ctrltype(edit,33),ispwd(0),e2n(1) ]).
-lit_i(34,1,t('Longitud Legada',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,456,116,468),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(35,1,t(39,2),[ font('Courier New',9,[]),rect(182,480,317,500),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(39),ctrltype(edit,35),ispwd(0),e2n(1) ]).
-lit_i(36,1,t('Latitud Llegada',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,480,109,492),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(37,1,t(41,2),[ font('Courier New',9,[]),rect(182,504,254,524),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(41),ctrltype(edit,37),ispwd(0),e2n(1) ]).
-lit_i(38,1,t('km Totales Estimado',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,504,138,516),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(39,1,t(44,2),[ font('Courier New',9,[]),rect(182,528,401,548),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(44),ctrltype(edit,39),ispwd(0),e2n(1) ]).
-lit_i(40,1,t('Motocilceta',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,528,87,540),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(41,1,t(45,2),[ font('Courier New',9,[]),rect(182,552,541,572),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(45),ctrltype(edit,41),ispwd(0),e2n(1) ]).
-lit_i(42,1,t('Motocileta',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,552,80,564),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(1,1,window,[ title([]),rect(0,0,737,589),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
+lit_i(15,1,t(82,2),[ font('Courier New',9,[]),rect(182,96,366,116),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(82),ctrltype(edit,15),ispwd(0),e2n(1) ]).
+lit_i(16,1,t('Viaje Nombre',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,96,96,108),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(17,1,t(30,2),[ font('Courier New',9,[]),rect(182,120,289,140),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(30),ctrltype(edit,17),ispwd(0),e2n(1) ]).
+lit_i(18,1,t('Fecha Salida',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,120,95,132),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(19,1,t(31,2),[ font('Courier New',9,[]),rect(182,144,289,164),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(31),ctrltype(edit,19),ispwd(0),e2n(1) ]).
+lit_i(20,1,t('Fecha Llegada',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,144,105,156),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(21,1,t(32,2),[ font('Courier New',9,[]),rect(182,168,289,188),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(32),ctrltype(edit,21),ispwd(0),e2n(1) ]).
+lit_i(22,1,t('Fecha Salida Efectiva',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,168,146,180),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(23,1,t(33,2),[ font('Courier New',9,[]),rect(182,192,289,212),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(33),ctrltype(edit,23),ispwd(0),e2n(1) ]).
+lit_i(24,1,t('Fecha Llegada Efectiva',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,192,156,204),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(25,1,t(34,2),[ font('Courier New',9,[]),rect(182,216,611,269),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(34),ctrltype(edit,25),ispwd(0),e2n(1) ]).
+lit_i(26,1,t('Lugar Partida',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,216,97,228),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(27,1,t(35,2),[ font('Courier New',9,[]),rect(182,288,611,341),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(35),ctrltype(edit,27),ispwd(0),e2n(1) ]).
+lit_i(28,1,t('Lugarllegada',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,288,94,300),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(29,1,t(36,2),[ font('Courier New',9,[]),rect(182,360,317,380),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(36),ctrltype(edit,29),ispwd(0),e2n(1) ]).
+lit_i(30,1,t('Longitud Partida',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,360,114,372),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(31,1,t(37,2),[ font('Courier New',9,[]),rect(182,384,317,404),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(37),ctrltype(edit,31),ispwd(0),e2n(1) ]).
+lit_i(32,1,t('Latitud Partida',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,384,104,396),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(33,1,t(38,2),[ font('Courier New',9,[]),rect(182,408,317,428),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(38),ctrltype(edit,33),ispwd(0),e2n(1) ]).
+lit_i(34,1,t('Longitud Legada',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,408,116,420),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(35,1,t(39,2),[ font('Courier New',9,[]),rect(182,432,317,452),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(39),ctrltype(edit,35),ispwd(0),e2n(1) ]).
+lit_i(36,1,t('Latitud Llegada',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,432,109,444),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(37,1,t(41,2),[ font('Courier New',9,[]),rect(182,456,254,476),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(41),ctrltype(edit,37),ispwd(0),e2n(1) ]).
+lit_i(38,1,t('km Totales Estimado',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,456,138,468),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(39,1,t(44,2),[ font('Courier New',9,[]),rect(182,480,401,500),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(44),ctrltype(edit,39),ispwd(0),e2n(1) ]).
+lit_i(40,1,t('Motocilceta',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,480,87,492),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(41,1,t(45,2),[ font('Courier New',9,[]),rect(182,504,541,524),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(45),ctrltype(edit,41),ispwd(0),e2n(1) ]).
+lit_i(42,1,t('Motocileta',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,504,80,516),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(43,1,t(83,2),[ font('Courier New',9,[]),rect(182,528,541,548),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(83),ctrltype(edit,43),ispwd(0),e2n(1) ]).
+lit_i(44,1,t('Viaje Imagen',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,528,94,540),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(1,1,window,[ title([]),rect(0,0,737,565),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
  
 grid_i(7,24).
  
@@ -434,6 +440,9 @@ std_color_i(40,fore,8).
 std_color_i(41,back,5).
 std_color_i(41,fore,8).
 std_color_i(42,fore,8).
+std_color_i(43,back,5).
+std_color_i(43,fore,8).
+std_color_i(44,fore,8).
 std_color_i(1,back,15).
 std_color_i(1,fore,6).
  
@@ -490,30 +499,30 @@ att_prop_i(2,11,'DKL_ISPASSWORD','0',v).
 att_prop_i(2,11,idDATEFORMAT,idDATEFORMAT_SHORT,d).
 att_prop_i(2,11,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
 att_prop_i(2,11,'FullName','UsuarioID',v).
-att_prop_i(2,48,'AUTONUMBER_START','1',v).
-att_prop_i(2,48,'AUTONUMBER_STEP','1',v).
-att_prop_i(2,48,'AUTONUMBER_FORREPLICATION','-1',v).
-att_prop_i(2,48,'ATT_INITIAL_VALUE','',v).
-att_prop_i(2,48,'OBJECT_METADATA','',v).
-att_prop_i(2,48,'DKL_DEPENDENCIES_PROPS','',d).
-att_prop_i(2,48,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
-att_prop_i(2,48,'DKL_VERSION','2100',d).
-att_prop_i(2,48,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
-att_prop_i(2,48,'AUTOGENERATE_GUID','-1',v).
-att_prop_i(2,48,'DKL_EMPTY_ASNULL','0',v).
-att_prop_i(2,48,'DKL_RIGHT_TRIM','0',v).
-att_prop_i(2,48,'DKL_INTERNATIONAL_SUPPORT','0',v).
-att_prop_i(2,48,'DKL_REGULAR_EXPRESION','',v).
-att_prop_i(2,48,'DKL_ISROWGUID','0',v).
-att_prop_i(2,48,'DKL_INPUT_MASK','',v).
-att_prop_i(2,48,'DKL_ENABLE_ATT_AUTH','0',v).
-att_prop_i(2,48,'DKL_MIME_TYPE','',v).
-att_prop_i(2,48,'DKL_ENCRYPTION','0',v).
-att_prop_i(2,48,'DKL_CASING','0',v).
-att_prop_i(2,48,'DKL_ISPASSWORD','0',v).
-att_prop_i(2,48,idDATEFORMAT,idDATEFORMAT_SHORT,d).
-att_prop_i(2,48,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
-att_prop_i(2,48,'FullName','VaijeNombre',v).
+att_prop_i(2,82,'AUTONUMBER_START','1',v).
+att_prop_i(2,82,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,82,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,82,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,82,'OBJECT_METADATA','',v).
+att_prop_i(2,82,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,82,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,82,'DKL_VERSION','2100',d).
+att_prop_i(2,82,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,82,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,82,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,82,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,82,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,82,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,82,'DKL_ISROWGUID','0',v).
+att_prop_i(2,82,'DKL_INPUT_MASK','',v).
+att_prop_i(2,82,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,82,'DKL_MIME_TYPE','',v).
+att_prop_i(2,82,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,82,'DKL_CASING','0',v).
+att_prop_i(2,82,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,82,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,82,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,82,'FullName','ViajeNombre',v).
 att_prop_i(2,30,'AUTONUMBER_START','1',v).
 att_prop_i(2,30,'AUTONUMBER_STEP','1',v).
 att_prop_i(2,30,'AUTONUMBER_FORREPLICATION','-1',v).
@@ -831,6 +840,30 @@ att_prop_i(2,45,'DKL_ISPASSWORD','0',v).
 att_prop_i(2,45,idDATEFORMAT,idDATEFORMAT_SHORT,d).
 att_prop_i(2,45,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
 att_prop_i(2,45,'FullName','MotociletaModelo',v).
+att_prop_i(2,83,'AUTONUMBER_START','1',v).
+att_prop_i(2,83,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,83,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,83,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,83,'OBJECT_METADATA','',v).
+att_prop_i(2,83,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,83,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,83,'DKL_VERSION','2100',d).
+att_prop_i(2,83,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,83,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,83,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,83,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,83,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,83,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,83,'DKL_ISROWGUID','0',v).
+att_prop_i(2,83,'DKL_INPUT_MASK','',v).
+att_prop_i(2,83,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,83,'DKL_MIME_TYPE','',v).
+att_prop_i(2,83,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,83,'DKL_CASING','0',v).
+att_prop_i(2,83,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,83,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,83,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,83,'FullName','ViajeImagen',v).
 att_prop_i(2,47,'AUTONUMBER','-1',v).
 att_prop_i(2,47,'AUTONUMBER_START','1',v).
 att_prop_i(2,47,'AUTONUMBER_STEP','1',v).
@@ -866,8 +899,8 @@ tbl_prop_i(2,8,'DirSuper',[ [ 7,[ 11 ] ] ],v).
  
 tbl_att_prop_i(2,8,42,'AllowNulls',n).
 tbl_att_prop_i(2,8,42,'AUTONUMBER',y).
-tbl_att_prop_i(2,8,48,'AllowNulls',n).
 tbl_att_prop_i(2,8,11,'AllowNulls',n).
+tbl_att_prop_i(2,8,82,'AllowNulls',n).
 tbl_att_prop_i(2,7,11,'AllowNulls',n).
 tbl_att_prop_i(2,7,11,'AUTONUMBER',y).
 tbl_att_prop_i(2,10,47,'AllowNulls',n).
@@ -880,7 +913,7 @@ i_tbl_best_trn(7,[ 7,1,'Usuario','Usuario' ]).
  
  
  
-trn_level_i(8,[ [ 42,11,48,30,31,32,33,34,35,36,37,38,39,41,44,45 ],'Viaje','Viaje','Viaje','',48 ]).
+trn_level_i(8,[ [ 42,11,82,30,31,32,33,34,35,36,37,38,39,41,44,45,83 ],'Viaje','Viaje','Viaje','',82 ]).
  
  
  

@@ -4,20 +4,83 @@
     <MinorVersion>8</MinorVersion>
   </KMW>
  <GXObject>
-  <Report>
+  <Transaction>
     <Info>
-      <Name>dpUsuarioXEmailXusuarioIDCollection</Name>
-      <Description>dpUsuarioXEmailXusuarioIDCollection</Description>
-      <Folder>dpUsuario</Folder>
+      <Name>TrayectoViaje</Name>
+      <Description>TrayectoViaje</Description>
+      <Folder>Vaijes</Folder>
     </Info>
-    <LastUpdate>2024-05-16 23:45:09GMT</LastUpdate>
-<Property><Type>string</Type><Name>OUTPUT</Name><Value>FIL</Value><Rule>Output('FIL')</Rule></Property><Rules><![CDATA[
-		parm(in:&Email, in:&NombreUsuario);
-		]]></Rules><Layout><FormInfo><FormId>1</FormId><FormClass>Graphic</FormClass><IsDefault>N</IsDefault><Att_Font></Att_Font><Txt_Font></Txt_Font><TemplateBased>N</TemplateBased></FormInfo><Block><CodeBlock><left>17</left><top>1</top><right>129</right><bottom>1</bottom><Brush>Y</Brush><ColorInfo><Foreground>Lime</Foreground></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>N</FromDefault><ForeColor>-2147483642</ForeColor><BackColor>16777215</BackColor><BorderWidth>0</BorderWidth><Shape>Frame</Shape><OutStyle>Single</OutStyle><Source> for each  where &amp;NombreUsuario=UsuarioNombre WHEN   &amp;Email="" 
-
- where &amp;Email=UsuarioEmail WHEN   &amp;NombreUsuario="" 
-
-</Source></CodeBlock></Block><Block><PrintBlock><left>18</left><top>1</top><right>18</right><bottom>1</bottom><Brush>Y</Brush><CtrlName>dpUsuarioXEmailXusuarioIDCollection</CtrlName><ColorInfo><Foreground>Black</Foreground><Background>White</Background></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><ForeColor>-2147483642</ForeColor><BackColor>16777215</BackColor><Shape>Frame</Shape><OutStyle>Single</OutStyle></PrintBlock><Edit><left>0</left><top>11</top><right>89</right><bottom>11</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>UsuarioID</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>12</top><right>89</right><bottom>12</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>UsuarioNombre</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>13</top><right>89</right><bottom>13</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>UsuarioEmail</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>14</top><right>89</right><bottom>14</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>UsuarioPasword</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>15</top><right>89</right><bottom>15</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>UsuarioActivo</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>16</top><right>89</right><bottom>16</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>PersonaID</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>17</top><right>89</right><bottom>17</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>PersonaApellido</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>18</top><right>89</right><bottom>18</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>PersonaNombre</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>19</top><right>89</right><bottom>19</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>CodigoValidation</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>20</top><right>89</right><bottom>20</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>CodigoRecuperacion</Name><EditInfo></EditInfo><Align>2</Align></Edit></Block><Block><CodeBlock><left>17</left><top></top><right>129</right><bottom></bottom><Brush>Y</Brush><ColorInfo><Foreground>Lime</Foreground></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>N</FromDefault><ForeColor>-2147483642</ForeColor><BackColor>16777215</BackColor><BorderWidth>0</BorderWidth><Shape>Frame</Shape><OutStyle>Single</OutStyle><Source> endfor</Source></CodeBlock></Block></Layout><Variable><Id>-8</Id><Name>Email</Name><Title>Email   </Title><Type>ShortVarChar</Type><Length>60</Length><Decimals>0</Decimals></Variable><Variable><Id>-9</Id><Name>NombreUsuario</Name><Title>Usuario Nombre   </Title><Type>ShortVarChar</Type><Length>50</Length><Decimals>0</Decimals></Variable>    <Documentation>
+    <LastUpdate>2024-07-19 23:26:55GMT</LastUpdate>
+ <Structure>
+  <Source><![CDATA[TrayectoViajeID*
+ViajeID
+TrayectoOrigen
+TrayectoDestino
+TayectoLatitudOrigen
+TrayectoLongitudOrigen
+TrayectoLatidudDestino
+TrayectoLongitudDestino
+Trayectokm
+TiempoEstimado
+CombustibleConsumido
+EstadoCarretera
+Instrucciones
+Orden
+]]> </Source>
+  <AllowNulls>
+    <Name>ViajeID</Name>
+    <Value>No</Value>
+  </AllowNulls>
+  <AllowNulls>
+    <Name>TrayectoOrigen</Name>
+    <Value>Yes</Value>
+  </AllowNulls>
+  <AllowNulls>
+    <Name>TrayectoDestino</Name>
+    <Value>No</Value>
+  </AllowNulls>
+  <AllowNulls>
+    <Name>TayectoLatitudOrigen</Name>
+    <Value>Yes</Value>
+  </AllowNulls>
+  <AllowNulls>
+    <Name>TrayectoLongitudOrigen</Name>
+    <Value>Yes</Value>
+  </AllowNulls>
+  <AllowNulls>
+    <Name>TrayectoLatidudDestino</Name>
+    <Value>Yes</Value>
+  </AllowNulls>
+  <AllowNulls>
+    <Name>TrayectoLongitudDestino</Name>
+    <Value>Yes</Value>
+  </AllowNulls>
+  <AllowNulls>
+    <Name>Trayectokm</Name>
+    <Value>Yes</Value>
+  </AllowNulls>
+  <AllowNulls>
+    <Name>TiempoEstimado</Name>
+    <Value>Yes</Value>
+  </AllowNulls>
+  <AllowNulls>
+    <Name>CombustibleConsumido</Name>
+    <Value>Yes</Value>
+  </AllowNulls>
+  <AllowNulls>
+    <Name>EstadoCarretera</Name>
+    <Value>Yes</Value>
+  </AllowNulls>
+  <AllowNulls>
+    <Name>Instrucciones</Name>
+    <Value>Yes</Value>
+  </AllowNulls>
+  <AllowNulls>
+    <Name>Orden</Name>
+    <Value>Yes</Value>
+  </AllowNulls>
+ </Structure>
+    <Documentation>
       <Source><![CDATA[ ]]> </Source>
     </Documentation>
  <Property>
@@ -33,12 +96,12 @@
  <Property>
   <Type>string</Type>
   <Name>DKL_BUILTIN_PROPERTIES</Name>
-  <Value><![CDATA[<Properties><Property><Name>LowCardinality</Name><Description>Low cardinality expected for this kind of object.</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property></Properties>]]> </Value>
+  <Value><![CDATA[<Properties></Properties>]]> </Value>
  </Property>
  <Property>
   <Type>integer</Type>
   <Name>DEKLARIT_TYPE</Name>
-  <Value>2</Value>
+  <Value>0</Value>
  </Property>
  <Property>
   <Type>integer</Type>
@@ -63,7 +126,7 @@
  <Property>
   <Type>integer</Type>
   <Name>DKL_PERMISSION_BASE_ID</Name>
-  <Value>2007</Value>
+  <Value>2012</Value>
  </Property>
  <Property>
   <Type>integer</Type>
@@ -78,7 +141,7 @@
  <Property>
   <Type>string</Type>
   <Name>DKL_DATASET_TOUSE</Name>
-  <Value><![CDATA[ ]]> </Value>
+  <Value><![CDATA[]]> </Value>
  </Property>
  <Property>
   <Type>string</Type>
@@ -108,7 +171,7 @@
  <Property>
   <Type>objxml</Type>
   <Name>DKL_DEPENDENCIES_PROPS</Name>
-  <Value><![CDATA[<Items xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gx="www.genexus.com" ></Items>]]> </Value>
+  <Value><![CDATA[<Items xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gx="www.genexus.com" ><Item><gx:Object><Name>trayectokm</Name><Class>5</Class></gx:Object><Properties> <Property>  <Type>string</Type>  <Name>Description</Name>  <Value>Trayecto Km</Value> </Property></Properties></Item><Item><gx:Object><Name>combustibleconsumido</Name><Class>5</Class></gx:Object><Properties> <Property>  <Type>string</Type>  <Name>Description</Name>  <Value>Combustible Consumido en litros</Value> </Property></Properties></Item><Item><gx:Object><Name>tiempoestimado</Name><Class>5</Class></gx:Object><Properties> <Property>  <Type>string</Type>  <Name>Description</Name>  <Value>Tiempo Estimado en horas</Value> </Property></Properties></Item></Items>]]> </Value>
  </Property>
  <Property>
   <Type>integer</Type>
@@ -153,8 +216,135 @@
  <Property>
   <Type>string</Type>
   <Name>DKL_STOREDPROCEDURE</Name>
-  <Value><![CDATA[ ]]> </Value>
+  <Value><![CDATA[]]> </Value>
  </Property>
-  </Report>
+  </Transaction>
  </GXObject>
+ <Attributes>
+ <GXAtt>
+  <Attribute>
+    <Name>Orden</Name>
+    <Title>Orden</Title>
+    <Decimals>0</Decimals>
+    <Length>5</Length>
+    <Picture/>
+    <ValRange/>
+  </Attribute>
+  <AttInfo>
+    <Domain/>
+  </AttInfo>
+  <AttDoc>
+ <Property>
+  <Type>integer</Type>
+  <Name>AUTONUMBER</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>AUTONUMBER_START</Name>
+  <Value>1</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>AUTONUMBER_STEP</Name>
+  <Value>1</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>ATT_INITIAL_VALUE</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_CUSTOM_PROPERTIES</Name>
+  <Value><![CDATA[<Properties></Properties>]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_BUILTIN_PROPERTIES</Name>
+  <Value><![CDATA[<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>IDEnumDefinedValues</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>AUTOGENERATE_GUID</Name>
+  <Value>1</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_EMPTY_ASNULL</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_RIGHT_TRIM</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_INTERNATIONAL_SUPPORT</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_REGULAR_EXPRESION</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>ATT_TIMESTAMP</Name>
+  <Value><![CDATA[2024-07-19 23:26:53GMT]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_ISROWGUID</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_INPUT_MASK</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>AUTONUMBER_FORREPLICATION</Name>
+  <Value>1</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>OBJECT_METADATA</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_ENABLE_ATT_AUTH</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_MIME_TYPE</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_ENCRYPTION</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_CASING</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_ISPASSWORD</Name>
+  <Value>0</Value>
+ </Property>
+  </AttDoc>
+ </GXAtt>
+ </Attributes>
  </ExportFile>

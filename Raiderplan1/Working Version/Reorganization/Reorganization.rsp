@@ -9,6 +9,7 @@
 /r:system.data.dll
 /r:system.data.dll
 /r:system.data.dll
+c10.cs
 Reorganization.cs
 gxrgzd.cs
 gxrgzc.cs

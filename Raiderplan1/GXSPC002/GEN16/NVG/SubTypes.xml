@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ObjectSpec>
+<SpecVersion>4_5_0-002</SpecVersion>
+<Object>
+<ObjCls>10</ObjCls>
+<ObjId>0</ObjId>
+<ObjName>SubTypes</ObjName>
+<ObjDesc>Subtype groups analysis report</ObjDesc>
+<ObjPgmName>SubTypes</ObjPgmName>
+<ObjClsName>Subtype group</ObjClsName></Object>
+<Warnings>
+<Warning>
+<MsgCode>spc0079</MsgCode>
+<Token>Attribute(s) </Token>
+<Attribute>
+<AttriId>75</AttriId>
+<AttriName>PersonaProvinciaIDID</AttriName>
+<Description>Provincia ID</Description></Attribute>
+<Token> in subtype group '</Token>
+<SubtypeGroup>
+<SubtypeGroupId>1</SubtypeGroupId>
+<SubtypeGroupName>PersonaProvinciaID</SubtypeGroupName></SubtypeGroup>
+<Token>' is(are) not associated to any table.</Token></Warning>
+<Warning>
+<MsgCode>spc0079</MsgCode>
+<Token>Attribute(s) </Token>
+<Attribute>
+<AttriId>78</AttriId>
+<AttriName>PersonaProvinciaID</AttriName>
+<Description>Provincia ID</Description></Attribute>
+<Token> in subtype group '</Token>
+<SubtypeGroup>
+<SubtypeGroupId>2</SubtypeGroupId>
+<SubtypeGroupName>PersonaProvincia</SubtypeGroupName></SubtypeGroup>
+<Token>' is(are) not associated to any table.</Token></Warning></Warnings>
+<Errors></Errors></ObjectSpec>

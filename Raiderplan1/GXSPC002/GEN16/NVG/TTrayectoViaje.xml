@@ -105,6 +105,14 @@
 <AttriName>EstadoCarretera</AttriName>
 <Description>Estado Carretera</Description></Attribute>
 <Attribute>
+<AttriId>85</AttriId>
+<AttriName>Instrucciones</AttriName>
+<Description>Instrucciones</Description></Attribute>
+<Attribute>
+<AttriId>86</AttriId>
+<AttriName>Orden</AttriName>
+<Description>Orden</Description></Attribute>
+<Attribute>
 <AttriId>42</AttriId>
 <AttriName>ViajeID</AttriName>
 <Description>Viaje ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -156,6 +164,14 @@
 <AttriName>EstadoCarretera</AttriName>
 <Description>Estado Carretera</Description></Attribute>
 <Attribute>
+<AttriId>85</AttriId>
+<AttriName>Instrucciones</AttriName>
+<Description>Instrucciones</Description></Attribute>
+<Attribute>
+<AttriId>86</AttriId>
+<AttriName>Orden</AttriName>
+<Description>Orden</Description></Attribute>
+<Attribute>
 <AttriId>42</AttriId>
 <AttriName>ViajeID</AttriName>
 <Description>Viaje ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -170,126 +186,7 @@
 <AfterUpdateRules></AfterUpdateRules>
 <AfterDeleteRules></AfterDeleteRules>
 <TablesToControlOnDelete></TablesToControlOnDelete>
-<Levels>
-<Level>
-<LevelType>Trn</LevelType>
-<LevelNumber>11</LevelNumber>
-<BaseTable>
-<Table>
-<TableId>11</TableId>
-<TableName>TRAYECTOVIAJETRAYECTO</TableName>
-<Description>Trayecto</Description></Table></BaseTable>
-<NavigationTree>
-<Table>
-<TableId>11</TableId>
-<TableName>TRAYECTOVIAJETRAYECTO</TableName>
-<Description>Trayecto</Description>
-<Updated>Yes</Updated>
-<RecordsToRead>many</RecordsToRead>
-<KeyAttributes>
-<Attribute>
-<AttriId>47</AttriId>
-<AttriName>TrayectoViajeID</AttriName>
-<Description>Trayecto Viaje ID</Description></Attribute>
-<Attribute>
-<AttriId>61</AttriId>
-<AttriName>TrayectoDetalleID</AttriName>
-<Description>Trayecto Detalle</Description></Attribute></KeyAttributes>
-<Tables>
-<Table>
-<TableId>12</TableId>
-<TableName>TRAYECTOTIPODETALLE</TableName>
-<Description>TipoDetalle</Description>
-<RecordsToRead>one</RecordsToRead>
-<KeyAttributes>
-<Attribute>
-<AttriId>65</AttriId>
-<AttriName>TrayectoTipoDetalleID</AttriName>
-<Description>Trayecto Tipo Detalle ID</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></Tables></Table></NavigationTree>
-<Formulas>
-<VerticalFormulas></VerticalFormulas>
-<AggSelFormulas></AggSelFormulas></Formulas>
-<DynamicLoads></DynamicLoads>
-<Rules></Rules>
-<AfterAttributeRules></AfterAttributeRules>
-<AfterConfirmRules></AfterConfirmRules>
-<TablesToUpdate>
-<TableToUpdate>
-<Table>
-<TableId>11</TableId>
-<TableName>TRAYECTOVIAJETRAYECTO</TableName>
-<Description>Trayecto</Description></Table>
-<TableAction>insert</TableAction>
-<AttrisToUpdate>
-<Attribute>
-<AttriId>47</AttriId>
-<AttriName>TrayectoViajeID</AttriName>
-<Description>Trayecto Viaje ID</Description></Attribute>
-<Attribute>
-<AttriId>61</AttriId>
-<AttriName>TrayectoDetalleID</AttriName>
-<Description>Trayecto Detalle</Description></Attribute>
-<Attribute>
-<AttriId>67</AttriId>
-<AttriName>TDDescripcion</AttriName>
-<Description>TD Descripcion</Description></Attribute>
-<Attribute>
-<AttriId>68</AttriId>
-<AttriName>TDLatitud</AttriName>
-<Description>TD Latitud</Description></Attribute>
-<Attribute>
-<AttriId>69</AttriId>
-<AttriName>TDLongitud</AttriName>
-<Description>TD Longitud</Description></Attribute>
-<Attribute>
-<AttriId>70</AttriId>
-<AttriName>TDCosto</AttriName>
-<Description>TD Costo</Description></Attribute>
-<Attribute>
-<AttriId>65</AttriId>
-<AttriName>TrayectoTipoDetalleID</AttriName>
-<Description>Trayecto Tipo Detalle ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
-<TableToUpdate>
-<Table>
-<TableId>11</TableId>
-<TableName>TRAYECTOVIAJETRAYECTO</TableName>
-<Description>Trayecto</Description></Table>
-<TableAction>update</TableAction>
-<AttrisToUpdate>
-<Attribute>
-<AttriId>67</AttriId>
-<AttriName>TDDescripcion</AttriName>
-<Description>TD Descripcion</Description></Attribute>
-<Attribute>
-<AttriId>68</AttriId>
-<AttriName>TDLatitud</AttriName>
-<Description>TD Latitud</Description></Attribute>
-<Attribute>
-<AttriId>69</AttriId>
-<AttriName>TDLongitud</AttriName>
-<Description>TD Longitud</Description></Attribute>
-<Attribute>
-<AttriId>70</AttriId>
-<AttriName>TDCosto</AttriName>
-<Description>TD Costo</Description></Attribute>
-<Attribute>
-<AttriId>65</AttriId>
-<AttriName>TrayectoTipoDetalleID</AttriName>
-<Description>Trayecto Tipo Detalle ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
-<TableToUpdate>
-<Table>
-<TableId>11</TableId>
-<TableName>TRAYECTOVIAJETRAYECTO</TableName>
-<Description>Trayecto</Description></Table>
-<TableAction>delete</TableAction>
-<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
-<AfterInsertRules></AfterInsertRules>
-<AfterUpdateRules></AfterUpdateRules>
-<AfterDeleteRules></AfterDeleteRules>
-<TablesToControlOnDelete></TablesToControlOnDelete>
 <Levels></Levels>
-<AfterLevelRules></AfterLevelRules></Level></Levels>
 <AfterTrnRules></AfterTrnRules>
 <AfterLevelRules></AfterLevelRules></Level></Levels>
 <Prompts></Prompts>

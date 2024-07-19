@@ -2,27 +2,6 @@
  
  
  
-pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION','SOAP_NAMESPACE','Raiderplan1').
-pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idJNDI_Name,'ejb/adpUsuarioXEmailXusuarioIDCollection').
-pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idDEST_JNDI_Name,'').
-pgm_prop_i(trn,7,'TUSUARIO','URLAccess','No').
-pgm_prop_i(trn,7,'TUSUARIO',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(trn,7,'TUSUARIO',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(trn,7,'TUSUARIO',idJNDI_Name,'ejb/aUsuario').
-pgm_prop_i(trn,7,'TUSUARIO',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(trn,7,'TUSUARIO',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(trn,7,'TUSUARIO',idDEST_JNDI_Name,'').
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE','URLAccess','No').
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idJNDI_Name,'ejb/aTrayectoTipoDetalle').
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idDEST_JNDI_Name,'').
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE','URLAccess','No').
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
@@ -37,6 +16,13 @@ pgm_prop_i(trn,8,'TVIAJE',idJNDI_Name,'ejb/aViaje').
 pgm_prop_i(trn,8,'TVIAJE',idDEST_Type,idDEST_Type_QUEUE).
 pgm_prop_i(trn,8,'TVIAJE',idCON_FACTORY_JNDI_Name,'').
 pgm_prop_i(trn,8,'TVIAJE',idDEST_JNDI_Name,'').
+pgm_prop_i(trn,7,'TUSUARIO','URLAccess','No').
+pgm_prop_i(trn,7,'TUSUARIO',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(trn,7,'TUSUARIO',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(trn,7,'TUSUARIO',idJNDI_Name,'ejb/aUsuario').
+pgm_prop_i(trn,7,'TUSUARIO',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(trn,7,'TUSUARIO',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(trn,7,'TUSUARIO',idDEST_JNDI_Name,'').
 pgm_prop_i(trn,6,'TPROVINCIA','URLAccess','No').
 pgm_prop_i(trn,6,'TPROVINCIA',idTRN_Type,idTRN_Type_CONTAINER).
 pgm_prop_i(trn,6,'TPROVINCIA',idTRN_Attribute,idTRN_Attribute_REQUIRED).
@@ -72,6 +58,20 @@ pgm_prop_i(trn,1,'TPERSONA',idJNDI_Name,'ejb/aPersona').
 pgm_prop_i(trn,1,'TPERSONA',idDEST_Type,idDEST_Type_QUEUE).
 pgm_prop_i(trn,1,'TPERSONA',idCON_FACTORY_JNDI_Name,'').
 pgm_prop_i(trn,1,'TPERSONA',idDEST_JNDI_Name,'').
+pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION','SOAP_NAMESPACE','Raiderplan1').
+pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idJNDI_Name,'ejb/adpUsuarioXEmailXusuarioIDCollection').
+pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idDEST_JNDI_Name,'').
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE','URLAccess','No').
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idJNDI_Name,'ejb/aTrayectoTipoDetalle').
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idDEST_JNDI_Name,'').
  
  
 model_wrkinfo_i([ 'Working Version','Working Version' ]).
@@ -129,10 +129,15 @@ datastore_i(1,'DBMS',12).
 datastore_i(1,'NAME','Default').
  
  
+subtype_group_i(1,1,[ 'PersonaProvinciaID',[] ]).
+subtype_group_i(1,2,[ 'PersonaProvincia',[] ]).
+subtype_group_i(2,1,[ 'PersonaProvinciaID',[] ]).
+subtype_group_i(2,2,[ 'PersonaProvincia',[] ]).
+ 
+forced_rebuild_i.
  
  
  
  
- 
-ver_stamp(date(2024,5,16),time(20,5,40,84)).
+ver_stamp(date(2024,7,19),time(20,33,58,39)).
  

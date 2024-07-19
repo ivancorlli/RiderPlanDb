@@ -37,19 +37,7 @@
 <AttriId>4</AttriId>
 <AttriName>PersonaID</AttriName>
 <Description>Persona ID</Description></Attribute></KeyAttributes>
-<Tables>
-<Table>
-<TableId>5</TableId>
-<TableName>LOCALIDAD</TableName>
-<Description>Localidad</Description>
-<RecordsToRead>one</RecordsToRead>
-<KeyAttributes>
-<Attribute>
-<AttriId>20</AttriId>
-<AttriName>LoacaliadID</AttriName>
-<Description>Loacaliad ID</Description></Attribute></KeyAttributes>
-<JoinType>Outer</JoinType>
-<Tables></Tables></Table></Tables></Table></NavigationTree>
+<Tables></Tables></Table></NavigationTree>
 <Formulas>
 <VerticalFormulas></VerticalFormulas>
 <AggSelFormulas></AggSelFormulas></Formulas>
@@ -82,13 +70,17 @@
 <AttriName>PersonaSexo</AttriName>
 <Description>Persona Sexo</Description></Attribute>
 <Attribute>
+<AttriId>84</AttriId>
+<AttriName>PLocalidadID</AttriName>
+<Description>P Localidad ID</Description></Attribute>
+<Attribute>
+<AttriId>81</AttriId>
+<AttriName>PProvinciaID</AttriName>
+<Description>P Provincia ID</Description></Attribute>
+<Attribute>
 <AttriId>29</AttriId>
 <AttriName>ImagenPerfil</AttriName>
-<Description>Imagen Perfil</Description></Attribute>
-<Attribute>
-<AttriId>20</AttriId>
-<AttriName>LoacaliadID</AttriName>
-<Description>Loacaliad ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<Description>Imagen Perfil</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
 <TableId>1</TableId>
@@ -113,13 +105,17 @@
 <AttriName>PersonaSexo</AttriName>
 <Description>Persona Sexo</Description></Attribute>
 <Attribute>
+<AttriId>84</AttriId>
+<AttriName>PLocalidadID</AttriName>
+<Description>P Localidad ID</Description></Attribute>
+<Attribute>
+<AttriId>81</AttriId>
+<AttriName>PProvinciaID</AttriName>
+<Description>P Provincia ID</Description></Attribute>
+<Attribute>
 <AttriId>29</AttriId>
 <AttriName>ImagenPerfil</AttriName>
-<Description>Imagen Perfil</Description></Attribute>
-<Attribute>
-<AttriId>20</AttriId>
-<AttriName>LoacaliadID</AttriName>
-<Description>Loacaliad ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<Description>Imagen Perfil</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
 <TableId>1</TableId>
@@ -144,5 +140,4 @@
 <Levels></Levels>
 <AfterTrnRules></AfterTrnRules>
 <AfterLevelRules></AfterLevelRules></Level></Levels>
-<Prompts></Prompts>
 <Suggests></Suggests></ObjectSpec>

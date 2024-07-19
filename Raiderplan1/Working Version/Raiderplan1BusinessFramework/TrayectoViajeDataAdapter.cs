@@ -21,7 +21,6 @@ namespace Raiderplan1 {
    {
       private TrayectoViajeDataSet TrayectoViajeSet ;
       private IDbTransaction daCurrentTransaction ;
-      private TrayectoViajeDataSet.TrayectoViajeTrayectoRow rowTrayectoViajeTrayecto ;
       private TrayectoViajeDataSet.TrayectoViajeRow rowTrayectoViaje ;
       public TrayectoViajeDataAdapter( )
       {
@@ -454,290 +453,6 @@ namespace Raiderplan1 {
          return 0 ;
       }
 
-      private void LoadRowTrayectoviajetrayecto( )
-      {
-         AddRowTrayectoviajetrayecto( ) ;
-      }
-
-      private void ReadRowTrayectoviajetrayecto( )
-      {
-         Gx_mode = Deklarit.Utils.Mode.FromRowState(rowTrayectoViajeTrayecto.RowState) ;
-         if ( ( rowTrayectoViajeTrayecto.RowState != System.Data.DataRowState.Added ) )
-         {
-            m__TDDescripcionOriginal = rowTrayectoViajeTrayecto["TDDescripcion", System.Data.DataRowVersion.Original] ;
-            m__TDLatitudOriginal = rowTrayectoViajeTrayecto["TDLatitud", System.Data.DataRowVersion.Original] ;
-            m__TDLongitudOriginal = rowTrayectoViajeTrayecto["TDLongitud", System.Data.DataRowVersion.Original] ;
-            m__TDCostoOriginal = rowTrayectoViajeTrayecto["TDCosto", System.Data.DataRowVersion.Original] ;
-            m__TrayectoTipoDetalleIDOriginal = rowTrayectoViajeTrayecto["TrayectoTipoDetalleID", System.Data.DataRowVersion.Original] ;
-         }
-         else
-         {
-            m__TDDescripcionOriginal = rowTrayectoViajeTrayecto["TDDescripcion"] ;
-            m__TDLatitudOriginal = rowTrayectoViajeTrayecto["TDLatitud"] ;
-            m__TDLongitudOriginal = rowTrayectoViajeTrayecto["TDLongitud"] ;
-            m__TDCostoOriginal = rowTrayectoViajeTrayecto["TDCosto"] ;
-            m__TrayectoTipoDetalleIDOriginal = rowTrayectoViajeTrayecto["TrayectoTipoDetalleID"] ;
-         }
-         _Gxremove35 = (bool)((rowTrayectoViajeTrayecto.RowState==System.Data.DataRowState.Deleted)) ;
-         if ( _Gxremove35 )
-         {
-            rowTrayectoViajeTrayecto = ((TrayectoViajeDataSet.TrayectoViajeTrayectoRow)(Deklarit.Utils.DataSetUtil.CloneOriginalDataRow(rowTrayectoViajeTrayecto)));
-         }
-      }
-
-      private void CheckIntegrityErrorsTrayectoviajetrayecto( )
-      {
-          IDataReader TrayectoTipoDetalleSelect1 ;
-          ReadWriteCommand cmTrayectoTipoDetalleSelect1 ;
-         cmTrayectoTipoDetalleSelect1 = connDefault.GetCommand("SELECT [TrayectoTipoDetalleID] FROM [TrayectoTipoDetalle] WITH (NOLOCK) WHERE [TrayectoTipoDetalleID] = @TrayectoTipoDetalleID ", false) ;
-         if ( ( cmTrayectoTipoDetalleSelect1.IDbCommand.Parameters.Count == 0 ) )
-         {
-            cmTrayectoTipoDetalleSelect1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoTipoDetalleID", System.Data.DbType.Int32));
-         }
-         cmTrayectoTipoDetalleSelect1.SetParameter(0, rowTrayectoViajeTrayecto["TrayectoTipoDetalleID"]);
-         TrayectoTipoDetalleSelect1 = cmTrayectoTipoDetalleSelect1.FetchData() ;
-         if ( !cmTrayectoTipoDetalleSelect1.HasMoreRows )
-         {
-            TrayectoTipoDetalleSelect1.Close();
-            throw new TrayectoTipoDetalleForeignKeyNotFoundException( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("inex"), new   object[]  {resourceManagerTables.GetString("TrayectoTipoDetalle")})) ;
-         }
-         TrayectoTipoDetalleSelect1.Close();
-         throw new ForeignKeyNotFoundException( resourceManager.GetString("refinterror")) ;
-      }
-
-      private void CheckOptimisticConcurrencyTrayectoviajetrayecto( )
-      {
-          IDataReader TrayectoViajeTrayectoSelect1 ;
-          ReadWriteCommand cmTrayectoViajeTrayectoSelect1 ;
-         if ( ( Gx_mode != Mode.Insert ) )
-         {
-            cmTrayectoViajeTrayectoSelect1 = connDefault.GetCommand("SELECT [TrayectoViajeID], [TrayectoDetalleID], [TDDescripcion], [TDLatitud], [TDLongitud], [TDCosto], [TrayectoTipoDetalleID] FROM [TrayectoViajeTrayecto] WITH (UPDLOCK) WHERE [TrayectoViajeID] = @TrayectoViajeID AND [TrayectoDetalleID] = @TrayectoDetalleID ", false) ;
-            if ( ( cmTrayectoViajeTrayectoSelect1.IDbCommand.Parameters.Count == 0 ) )
-            {
-               cmTrayectoViajeTrayectoSelect1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoViajeID", System.Data.DbType.Int32));
-               cmTrayectoViajeTrayectoSelect1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoDetalleID", System.Data.DbType.Int32));
-            }
-            cmTrayectoViajeTrayectoSelect1.SetParameter(0, rowTrayectoViajeTrayecto["TrayectoViajeID"]);
-            cmTrayectoViajeTrayectoSelect1.SetParameter(1, rowTrayectoViajeTrayecto["TrayectoDetalleID"]);
-            TrayectoViajeTrayectoSelect1 = cmTrayectoViajeTrayectoSelect1.FetchData() ;
-            if ( cmTrayectoViajeTrayectoSelect1.Locked )
-            {
-               TrayectoViajeTrayectoSelect1.Close();
-               throw new TrayectoViajeTrayectoDataLockedException( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("lock"), new   object[]  {resourceManagerTables.GetString("TrayectoViajeTrayecto")})) ;
-            }
-            if ( !cmTrayectoViajeTrayectoSelect1.HasMoreRows || ( ! StringUtil.ObjectStringEquals(m__TDDescripcionOriginal,dsDefault.Db.GetString(TrayectoViajeTrayectoSelect1, 2)) ) || ( ! m__TDLatitudOriginal.Equals(dsDefault.Db.GetDecimal(TrayectoViajeTrayectoSelect1, 3)) ) || ( ! m__TDLongitudOriginal.Equals(dsDefault.Db.GetDecimal(TrayectoViajeTrayectoSelect1, 4)) ) || ( ! m__TDCostoOriginal.Equals(dsDefault.Db.GetDecimal(TrayectoViajeTrayectoSelect1, 5)) ) || ( ! m__TrayectoTipoDetalleIDOriginal.Equals(dsDefault.Db.GetInt32(TrayectoViajeTrayectoSelect1, 6)) ) )
-            {
-               TrayectoViajeTrayectoSelect1.Close();
-               throw new TrayectoViajeTrayectoDataChangedException( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("waschg"), new   object[]  {resourceManagerTables.GetString("TrayectoViajeTrayecto")})) ;
-            }
-            TrayectoViajeTrayectoSelect1.Close();
-         }
-      }
-
-      private void InsertTrayectoviajetrayecto( )
-      {
-          ReadWriteCommand cmTrayectoViajeTrayectoInsert1 ;
-         CheckOptimisticConcurrencyTrayectoviajetrayecto( ) ;
-         AfterConfirmTrayectoviajetrayecto( ) ;
-         cmTrayectoViajeTrayectoInsert1 = connDefault.GetCommand("INSERT INTO [TrayectoViajeTrayecto] ([TrayectoViajeID], [TrayectoDetalleID], [TDDescripcion], [TDLatitud], [TDLongitud], [TDCosto], [TrayectoTipoDetalleID]) VALUES (@TrayectoViajeID, @TrayectoDetalleID, @TDDescripcion, @TDLatitud, @TDLongitud, @TDCosto, @TrayectoTipoDetalleID)", false) ;
-         if ( ( cmTrayectoViajeTrayectoInsert1.IDbCommand.Parameters.Count == 0 ) )
-         {
-            cmTrayectoViajeTrayectoInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoViajeID", System.Data.DbType.Int32));
-            cmTrayectoViajeTrayectoInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoDetalleID", System.Data.DbType.Int32));
-            cmTrayectoViajeTrayectoInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TDDescripcion", System.Data.DbType.AnsiString,200));
-            cmTrayectoViajeTrayectoInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TDLatitud", System.Data.DbType.Decimal));
-            cmTrayectoViajeTrayectoInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TDLongitud", System.Data.DbType.Decimal));
-            cmTrayectoViajeTrayectoInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TDCosto", System.Data.DbType.Currency));
-            cmTrayectoViajeTrayectoInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoTipoDetalleID", System.Data.DbType.Int32));
-         }
-         cmTrayectoViajeTrayectoInsert1.ErrorMask = cmTrayectoViajeTrayectoInsert1.ErrorMask  |  ErrorMask.ForeignKeyError;
-         cmTrayectoViajeTrayectoInsert1.ErrorMask = cmTrayectoViajeTrayectoInsert1.ErrorMask  |  ErrorMask.DuplicateKeyError;
-         // Using cursor TrayectoViajeTrayectoInsert1
-         cmTrayectoViajeTrayectoInsert1.SetParameter(0, rowTrayectoViajeTrayecto["TrayectoViajeID"]);
-         cmTrayectoViajeTrayectoInsert1.SetParameter(1, rowTrayectoViajeTrayecto["TrayectoDetalleID"]);
-         cmTrayectoViajeTrayectoInsert1.SetParameter(2, rowTrayectoViajeTrayecto["TDDescripcion"]);
-         cmTrayectoViajeTrayectoInsert1.SetParameter(3, rowTrayectoViajeTrayecto["TDLatitud"]);
-         cmTrayectoViajeTrayectoInsert1.SetParameter(4, rowTrayectoViajeTrayecto["TDLongitud"]);
-         cmTrayectoViajeTrayectoInsert1.SetParameter(5, rowTrayectoViajeTrayecto["TDCosto"]);
-         cmTrayectoViajeTrayectoInsert1.SetParameter(6, rowTrayectoViajeTrayecto["TrayectoTipoDetalleID"]);
-         cmTrayectoViajeTrayectoInsert1.ExecuteStmt();
-         if ( cmTrayectoViajeTrayectoInsert1.DupKey )
-         {
-            throw new TrayectoViajeTrayectoDuplicateKeyException( resourceManager.GetString("noupdate")) ;
-         }
-         if ( cmTrayectoViajeTrayectoInsert1.ForeignKeyError )
-         {
-            CheckIntegrityErrorsTrayectoviajetrayecto( ) ;
-         }
-         // Start of After( Insert) rules
-         // End of After( Insert) rules
-         OnTrayectoViajeTrayectoUpdated( new TrayectoViajeTrayectoEventArgs( rowTrayectoViajeTrayecto, Mode.Insert)) ;
-         // Save values for previous() function.
-      }
-
-      private void UpdateTrayectoviajetrayecto( )
-      {
-          ReadWriteCommand cmTrayectoViajeTrayectoUpdate1 ;
-         CheckOptimisticConcurrencyTrayectoviajetrayecto( ) ;
-         AfterConfirmTrayectoviajetrayecto( ) ;
-         cmTrayectoViajeTrayectoUpdate1 = connDefault.GetCommand("UPDATE [TrayectoViajeTrayecto] SET [TDDescripcion]=@TDDescripcion, [TDLatitud]=@TDLatitud, [TDLongitud]=@TDLongitud, [TDCosto]=@TDCosto, [TrayectoTipoDetalleID]=@TrayectoTipoDetalleID  WHERE [TrayectoViajeID] = @TrayectoViajeID AND [TrayectoDetalleID] = @TrayectoDetalleID", false) ;
-         if ( ( cmTrayectoViajeTrayectoUpdate1.IDbCommand.Parameters.Count == 0 ) )
-         {
-            cmTrayectoViajeTrayectoUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TDDescripcion", System.Data.DbType.AnsiString,200));
-            cmTrayectoViajeTrayectoUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TDLatitud", System.Data.DbType.Decimal));
-            cmTrayectoViajeTrayectoUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TDLongitud", System.Data.DbType.Decimal));
-            cmTrayectoViajeTrayectoUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TDCosto", System.Data.DbType.Currency));
-            cmTrayectoViajeTrayectoUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoTipoDetalleID", System.Data.DbType.Int32));
-            cmTrayectoViajeTrayectoUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoViajeID", System.Data.DbType.Int32));
-            cmTrayectoViajeTrayectoUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoDetalleID", System.Data.DbType.Int32));
-         }
-         cmTrayectoViajeTrayectoUpdate1.ErrorMask = cmTrayectoViajeTrayectoUpdate1.ErrorMask  |  ErrorMask.ForeignKeyError;
-         // Using cursor TrayectoViajeTrayectoUpdate1
-         cmTrayectoViajeTrayectoUpdate1.SetParameter(0, rowTrayectoViajeTrayecto["TDDescripcion"]);
-         cmTrayectoViajeTrayectoUpdate1.SetParameter(1, rowTrayectoViajeTrayecto["TDLatitud"]);
-         cmTrayectoViajeTrayectoUpdate1.SetParameter(2, rowTrayectoViajeTrayecto["TDLongitud"]);
-         cmTrayectoViajeTrayectoUpdate1.SetParameter(3, rowTrayectoViajeTrayecto["TDCosto"]);
-         cmTrayectoViajeTrayectoUpdate1.SetParameter(4, rowTrayectoViajeTrayecto["TrayectoTipoDetalleID"]);
-         cmTrayectoViajeTrayectoUpdate1.SetParameter(5, rowTrayectoViajeTrayecto["TrayectoViajeID"]);
-         cmTrayectoViajeTrayectoUpdate1.SetParameter(6, rowTrayectoViajeTrayecto["TrayectoDetalleID"]);
-         cmTrayectoViajeTrayectoUpdate1.ExecuteStmt();
-         if ( cmTrayectoViajeTrayectoUpdate1.ForeignKeyError )
-         {
-            CheckIntegrityErrorsTrayectoviajetrayecto( ) ;
-         }
-         // Start of After( update) rules
-         // End of After( update) rules
-         OnTrayectoViajeTrayectoUpdated( new TrayectoViajeTrayectoEventArgs( rowTrayectoViajeTrayecto, Mode.Update)) ;
-      }
-
-      private void DeleteTrayectoviajetrayecto( )
-      {
-          ReadWriteCommand cmTrayectoViajeTrayectoDelete1 ;
-         Gx_mode = Mode.Delete ;
-         CheckOptimisticConcurrencyTrayectoviajetrayecto( ) ;
-         // No cascading delete specified.
-         AfterConfirmTrayectoviajetrayecto( ) ;
-         cmTrayectoViajeTrayectoDelete1 = connDefault.GetCommand("DELETE FROM [TrayectoViajeTrayecto]  WHERE [TrayectoViajeID] = @TrayectoViajeID AND [TrayectoDetalleID] = @TrayectoDetalleID", false) ;
-         if ( ( cmTrayectoViajeTrayectoDelete1.IDbCommand.Parameters.Count == 0 ) )
-         {
-            cmTrayectoViajeTrayectoDelete1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoViajeID", System.Data.DbType.Int32));
-            cmTrayectoViajeTrayectoDelete1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoDetalleID", System.Data.DbType.Int32));
-         }
-         cmTrayectoViajeTrayectoDelete1.ErrorMask = cmTrayectoViajeTrayectoDelete1.ErrorMask  |  ErrorMask.ForeignKeyError;
-         // Using cursor TrayectoViajeTrayectoDelete1
-         cmTrayectoViajeTrayectoDelete1.SetParameter(0, rowTrayectoViajeTrayecto["TrayectoViajeID"]);
-         cmTrayectoViajeTrayectoDelete1.SetParameter(1, rowTrayectoViajeTrayecto["TrayectoDetalleID"]);
-         cmTrayectoViajeTrayectoDelete1.ExecuteStmt();
-         // Start of After( delete) rules
-         // End of After( delete) rules
-         OnTrayectoViajeTrayectoUpdated( new TrayectoViajeTrayectoEventArgs( rowTrayectoViajeTrayecto, Mode.Delete)) ;
-         rowTrayectoViajeTrayecto.Delete( ) ;
-         sMode11 = Gx_mode ;
-         Gx_mode = Mode.Delete ;
-         Gx_mode = sMode11 ;
-      }
-
-      private void ScanStartTrayectoviajetrayecto( )
-      {
-         cmTrayectoViajeTrayectoSelect2 = connDefault.GetCommand("SELECT [TrayectoViajeID], [TrayectoDetalleID], [TDDescripcion], [TDLatitud], [TDLongitud], [TDCosto], [TrayectoTipoDetalleID] FROM [TrayectoViajeTrayecto] WITH (NOLOCK) WHERE [TrayectoViajeID] = @TrayectoViajeID ORDER BY [TrayectoViajeID], [TrayectoDetalleID] ", false) ;
-         if ( ( cmTrayectoViajeTrayectoSelect2.IDbCommand.Parameters.Count == 0 ) )
-         {
-            cmTrayectoViajeTrayectoSelect2.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoViajeID", System.Data.DbType.Int32));
-         }
-         cmTrayectoViajeTrayectoSelect2.SetParameter(0, rowTrayectoViajeTrayecto["TrayectoViajeID"]);
-         TrayectoViajeTrayectoSelect2 = cmTrayectoViajeTrayectoSelect2.FetchData() ;
-         RcdFound11 = 0 ;
-         ScanLoadTrayectoviajetrayecto( ) ;
-         // Load Subordinate Levels
-      }
-
-      private void SubLvlScanStartTrayectoviajetrayecto( string sCondition ,
-                                                         int startRow ,
-                                                         int maxRows )
-      {
-         m_WhereStringSub = "" ;
-         if ( ( maxRows >= 0 ) )
-         {
-            if ( ( startRow == 0 ) )
-            {
-               m_WhereString = sCondition ;
-               m_SubSelTopString11 = "(SELECT TOP " + maxRows.ToString() + " TM1.[TrayectoViajeID]  FROM [TrayectoViaje]  TM1 " + m_WhereString + " ORDER BY TM1.[TrayectoViajeID] )" ;
-               scmdbuf = "SELECT T1.[TrayectoViajeID], T1.[TrayectoDetalleID], T1.[TDDescripcion], T1.[TDLatitud], T1.[TDLongitud], T1.[TDCosto], T1.[TrayectoTipoDetalleID] FROM ([TrayectoViajeTrayecto] T1 WITH (NOLOCK) INNER JOIN  " + m_SubSelTopString11 + "  TMX ON TMX.[TrayectoViajeID] = T1.[TrayectoViajeID]) ORDER BY T1.[TrayectoViajeID], T1.[TrayectoDetalleID]" ;
-            }
-            else
-            {
-               m_WhereString = sCondition ;
-               m_SubSelTopString11 = "( SELECT * FROM ( SELECT TM1.[TrayectoViajeID], ROW_NUMBER() OVER  (  ORDER BY TM1.[TrayectoViajeID]  ) AS DK_PAGENUM   FROM [TrayectoViaje]  TM1  " + m_WhereString + " ) AS DK_PAGE WHERE DK_PAGENUM BETWEEN " + (startRow + 1).ToString() + " AND " + (startRow + maxRows).ToString() + ")" ;
-               scmdbuf = "SELECT T1.[TrayectoViajeID], T1.[TrayectoDetalleID], T1.[TDDescripcion], T1.[TDLatitud], T1.[TDLongitud], T1.[TDCosto], T1.[TrayectoTipoDetalleID] FROM ([TrayectoViajeTrayecto] T1 WITH (NOLOCK) INNER JOIN  " + m_SubSelTopString11 + "  TMX ON TMX.[TrayectoViajeID] = T1.[TrayectoViajeID]) ORDER BY T1.[TrayectoViajeID], T1.[TrayectoDetalleID]" ;
-            }
-         }
-         else
-         {
-            m_WhereString = sCondition ;
-            m_SubSelTopString11 = "[TrayectoViaje]" ;
-            scmdbuf = "SELECT T1.[TrayectoViajeID], T1.[TrayectoDetalleID], T1.[TDDescripcion], T1.[TDLatitud], T1.[TDLongitud], T1.[TDCosto], T1.[TrayectoTipoDetalleID] FROM ([TrayectoViajeTrayecto] T1 WITH (NOLOCK) INNER JOIN  " + m_SubSelTopString11 + "  TM1 WITH (NOLOCK) ON TM1.[TrayectoViajeID] = T1.[TrayectoViajeID])" + m_WhereString + " ORDER BY T1.[TrayectoViajeID], T1.[TrayectoDetalleID] " ;
-         }
-         cmTrayectoViajeTrayectoSelect2 = connDefault.GetCommand(scmdbuf, false) ;
-      }
-
-      private void SubLvlFetchTrayectoviajetrayecto( )
-      {
-         CreateNewRowTrayectoviajetrayecto( ) ;
-         TrayectoViajeTrayectoSelect2 = cmTrayectoViajeTrayectoSelect2.FetchData() ;
-         RcdFound11 = 0 ;
-         ScanLoadTrayectoviajetrayecto( ) ;
-      }
-
-      private void ScanNextTrayectoviajetrayecto( )
-      {
-         cmTrayectoViajeTrayectoSelect2.HasMoreRows = TrayectoViajeTrayectoSelect2.Read() ;
-         RcdFound11 = 0 ;
-         ScanLoadTrayectoviajetrayecto( ) ;
-      }
-
-      private void SkipNextTrayectoviajetrayecto( )
-      {
-         cmTrayectoViajeTrayectoSelect2.HasMoreRows = TrayectoViajeTrayectoSelect2.Read() ;
-         RcdFound11 = 0 ;
-         if ( cmTrayectoViajeTrayectoSelect2.HasMoreRows )
-         {
-            RcdFound11 = 1 ;
-         }
-      }
-
-      private void ScanLoadTrayectoviajetrayecto( )
-      {
-         Gx_mode = Mode.Display ;
-         if ( cmTrayectoViajeTrayectoSelect2.HasMoreRows )
-         {
-            RcdFound11 = 1 ;
-            rowTrayectoViajeTrayecto["TrayectoViajeID"] = dsDefault.Db.GetInt32(TrayectoViajeTrayectoSelect2, 0) ;
-            rowTrayectoViajeTrayecto["TrayectoDetalleID"] = dsDefault.Db.GetInt32(TrayectoViajeTrayectoSelect2, 1) ;
-            rowTrayectoViajeTrayecto["TDDescripcion"] = dsDefault.Db.GetString(TrayectoViajeTrayectoSelect2, 2) ;
-            rowTrayectoViajeTrayecto["TDLatitud"] = dsDefault.Db.GetDecimal(TrayectoViajeTrayectoSelect2, 3) ;
-            rowTrayectoViajeTrayecto["TDLongitud"] = dsDefault.Db.GetDecimal(TrayectoViajeTrayectoSelect2, 4) ;
-            rowTrayectoViajeTrayecto["TDCosto"] = dsDefault.Db.GetDecimal(TrayectoViajeTrayectoSelect2, 5) ;
-            rowTrayectoViajeTrayecto["TrayectoTipoDetalleID"] = dsDefault.Db.GetInt32(TrayectoViajeTrayectoSelect2, 6) ;
-         }
-      }
-
-      private void ScanEndTrayectoviajetrayecto( )
-      {
-         TrayectoViajeTrayectoSelect2.Close();
-      }
-
-      private void AfterConfirmTrayectoviajetrayecto( )
-      {
-         // After Confirm Rules
-         OnTrayectoViajeTrayectoUpdating( new TrayectoViajeTrayectoEventArgs( rowTrayectoViajeTrayecto, Gx_mode)) ;
-      }
-
-      private void AddRowTrayectoviajetrayecto( )
-      {
-         TrayectoViajeSet.TrayectoViajeTrayecto.AddTrayectoViajeTrayectoRow( rowTrayectoViajeTrayecto) ;
-      }
-
-
       private void LoadRowTrayectoviaje( )
       {
          AddRowTrayectoviaje( ) ;
@@ -758,6 +473,8 @@ namespace Raiderplan1 {
             m__TiempoEstimadoOriginal = rowTrayectoViaje["TiempoEstimado", System.Data.DataRowVersion.Original] ;
             m__CombustibleConsumidoOriginal = rowTrayectoViaje["CombustibleConsumido", System.Data.DataRowVersion.Original] ;
             m__EstadoCarreteraOriginal = rowTrayectoViaje["EstadoCarretera", System.Data.DataRowVersion.Original] ;
+            m__InstruccionesOriginal = rowTrayectoViaje["Instrucciones", System.Data.DataRowVersion.Original] ;
+            m__OrdenOriginal = rowTrayectoViaje["Orden", System.Data.DataRowVersion.Original] ;
             m__ViajeIDOriginal = rowTrayectoViaje["ViajeID", System.Data.DataRowVersion.Original] ;
          }
          else
@@ -772,6 +489,8 @@ namespace Raiderplan1 {
             m__TiempoEstimadoOriginal = rowTrayectoViaje["TiempoEstimado"] ;
             m__CombustibleConsumidoOriginal = rowTrayectoViaje["CombustibleConsumido"] ;
             m__EstadoCarreteraOriginal = rowTrayectoViaje["EstadoCarretera"] ;
+            m__InstruccionesOriginal = rowTrayectoViaje["Instrucciones"] ;
+            m__OrdenOriginal = rowTrayectoViaje["Orden"] ;
             m__ViajeIDOriginal = rowTrayectoViaje["ViajeID"] ;
          }
          _Gxremove = (bool)((rowTrayectoViaje.RowState==System.Data.DataRowState.Deleted)) ;
@@ -805,7 +524,7 @@ namespace Raiderplan1 {
       {
           IDataReader TrayectoViajeSelect3 ;
           ReadWriteCommand cmTrayectoViajeSelect3 ;
-         cmTrayectoViajeSelect3 = connDefault.GetCommand("SELECT [TrayectoViajeID], [TrayectoOrigen], [TrayectoDestino], [TayectoLatitudOrigen], [TrayectoLongitudOrigen], [TrayectoLatidudDestino], [TrayectoLongitudDestino], [Trayectokm], [TiempoEstimado], [CombustibleConsumido], [EstadoCarretera], [ViajeID] FROM [TrayectoViaje] WITH (NOLOCK) WHERE [TrayectoViajeID] = @TrayectoViajeID ", false) ;
+         cmTrayectoViajeSelect3 = connDefault.GetCommand("SELECT [TrayectoViajeID], [TrayectoOrigen], [TrayectoDestino], [TayectoLatitudOrigen], [TrayectoLongitudOrigen], [TrayectoLatidudDestino], [TrayectoLongitudDestino], [Trayectokm], [TiempoEstimado], [CombustibleConsumido], [EstadoCarretera], [Instrucciones], [Orden], [ViajeID] FROM [TrayectoViaje] WITH (NOLOCK) WHERE [TrayectoViajeID] = @TrayectoViajeID ", false) ;
          if ( ( cmTrayectoViajeSelect3.IDbCommand.Parameters.Count == 0 ) )
          {
             cmTrayectoViajeSelect3.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoViajeID", System.Data.DbType.Int32));
@@ -826,7 +545,9 @@ namespace Raiderplan1 {
             rowTrayectoViaje["TiempoEstimado"] = dsDefault.Db.GetDecimal(TrayectoViajeSelect3, 8) ;
             rowTrayectoViaje["CombustibleConsumido"] = dsDefault.Db.GetDecimal(TrayectoViajeSelect3, 9) ;
             rowTrayectoViaje["EstadoCarretera"] = dsDefault.Db.GetString(TrayectoViajeSelect3, 10) ;
-            rowTrayectoViaje["ViajeID"] = dsDefault.Db.GetInt64(TrayectoViajeSelect3, 11) ;
+            rowTrayectoViaje["Instrucciones"] = dsDefault.Db.GetString(TrayectoViajeSelect3, 11) ;
+            rowTrayectoViaje["Orden"] = dsDefault.Db.GetInt32(TrayectoViajeSelect3, 12) ;
+            rowTrayectoViaje["ViajeID"] = dsDefault.Db.GetInt64(TrayectoViajeSelect3, 13) ;
             sMode10 = Gx_mode ;
             Gx_mode = Mode.Display ;
             Gx_mode = sMode10 ;
@@ -844,7 +565,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmTrayectoViajeSelect4 ;
          if ( ( Gx_mode != Mode.Insert ) )
          {
-            cmTrayectoViajeSelect4 = connDefault.GetCommand("SELECT [TrayectoViajeID], [TrayectoOrigen], [TrayectoDestino], [TayectoLatitudOrigen], [TrayectoLongitudOrigen], [TrayectoLatidudDestino], [TrayectoLongitudDestino], [Trayectokm], [TiempoEstimado], [CombustibleConsumido], [EstadoCarretera], [ViajeID] FROM [TrayectoViaje] WITH (UPDLOCK) WHERE [TrayectoViajeID] = @TrayectoViajeID ", false) ;
+            cmTrayectoViajeSelect4 = connDefault.GetCommand("SELECT [TrayectoViajeID], [TrayectoOrigen], [TrayectoDestino], [TayectoLatitudOrigen], [TrayectoLongitudOrigen], [TrayectoLatidudDestino], [TrayectoLongitudDestino], [Trayectokm], [TiempoEstimado], [CombustibleConsumido], [EstadoCarretera], [Instrucciones], [Orden], [ViajeID] FROM [TrayectoViaje] WITH (UPDLOCK) WHERE [TrayectoViajeID] = @TrayectoViajeID ", false) ;
             if ( ( cmTrayectoViajeSelect4.IDbCommand.Parameters.Count == 0 ) )
             {
                cmTrayectoViajeSelect4.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoViajeID", System.Data.DbType.Int32));
@@ -865,7 +586,7 @@ namespace Raiderplan1 {
             {
                _Condition = true ;
             }
-            if ( _Condition || ( ! m__ViajeIDOriginal.Equals(dsDefault.Db.GetInt64(TrayectoViajeSelect4, 11)) ) )
+            if ( _Condition || ( ! StringUtil.ObjectStringEquals(m__InstruccionesOriginal,dsDefault.Db.GetString(TrayectoViajeSelect4, 11)) ) || ( ! m__OrdenOriginal.Equals(dsDefault.Db.GetInt32(TrayectoViajeSelect4, 12)) ) || ( ! m__ViajeIDOriginal.Equals(dsDefault.Db.GetInt64(TrayectoViajeSelect4, 13)) ) )
             {
                TrayectoViajeSelect4.Close();
                throw new TrayectoViajeDataChangedException( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("waschg"), new   object[]  {resourceManagerTables.GetString("TrayectoViaje")})) ;
@@ -880,7 +601,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmTrayectoViajeInsert1 ;
          CheckOptimisticConcurrencyTrayectoviaje( ) ;
          AfterConfirmTrayectoviaje( ) ;
-         cmTrayectoViajeInsert1 = connDefault.GetCommand("INSERT INTO [TrayectoViaje] ([TrayectoOrigen], [TrayectoDestino], [TayectoLatitudOrigen], [TrayectoLongitudOrigen], [TrayectoLatidudDestino], [TrayectoLongitudDestino], [Trayectokm], [TiempoEstimado], [CombustibleConsumido], [EstadoCarretera], [ViajeID]) VALUES (@TrayectoOrigen, @TrayectoDestino, @TayectoLatitudOrigen, @TrayectoLongitudOrigen, @TrayectoLatidudDestino, @TrayectoLongitudDestino, @Trayectokm, @TiempoEstimado, @CombustibleConsumido, @EstadoCarretera, @ViajeID); SELECT SCOPE_IDENTITY()", false) ;
+         cmTrayectoViajeInsert1 = connDefault.GetCommand("INSERT INTO [TrayectoViaje] ([TrayectoOrigen], [TrayectoDestino], [TayectoLatitudOrigen], [TrayectoLongitudOrigen], [TrayectoLatidudDestino], [TrayectoLongitudDestino], [Trayectokm], [TiempoEstimado], [CombustibleConsumido], [EstadoCarretera], [Instrucciones], [Orden], [ViajeID]) VALUES (@TrayectoOrigen, @TrayectoDestino, @TayectoLatitudOrigen, @TrayectoLongitudOrigen, @TrayectoLatidudDestino, @TrayectoLongitudDestino, @Trayectokm, @TiempoEstimado, @CombustibleConsumido, @EstadoCarretera, @Instrucciones, @Orden, @ViajeID); SELECT SCOPE_IDENTITY()", false) ;
          if ( ( cmTrayectoViajeInsert1.IDbCommand.Parameters.Count == 0 ) )
          {
             cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoOrigen", System.Data.DbType.AnsiString,150));
@@ -893,6 +614,8 @@ namespace Raiderplan1 {
             cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TiempoEstimado", System.Data.DbType.Currency));
             cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@CombustibleConsumido", System.Data.DbType.Currency));
             cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@EstadoCarretera", System.Data.DbType.AnsiString,100));
+            cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@Instrucciones", System.Data.DbType.AnsiString));
+            cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@Orden", System.Data.DbType.Int32));
             cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
          }
          cmTrayectoViajeInsert1.ErrorMask = cmTrayectoViajeInsert1.ErrorMask  |  ErrorMask.ForeignKeyError;
@@ -907,7 +630,9 @@ namespace Raiderplan1 {
          cmTrayectoViajeInsert1.SetParameter(7, rowTrayectoViaje["TiempoEstimado"]);
          cmTrayectoViajeInsert1.SetParameter(8, rowTrayectoViaje["CombustibleConsumido"]);
          cmTrayectoViajeInsert1.SetParameter(9, rowTrayectoViaje["EstadoCarretera"]);
-         cmTrayectoViajeInsert1.SetParameter(10, rowTrayectoViaje["ViajeID"]);
+         cmTrayectoViajeInsert1.SetParameter(10, rowTrayectoViaje["Instrucciones"]);
+         cmTrayectoViajeInsert1.SetParameter(11, rowTrayectoViaje["Orden"]);
+         cmTrayectoViajeInsert1.SetParameter(12, rowTrayectoViaje["ViajeID"]);
          TrayectoViajeInsert1 = cmTrayectoViajeInsert1.FetchData() ;
          if ( ! ( cmTrayectoViajeInsert1.ForeignKeyError || cmTrayectoViajeInsert1.DupKey ) )
          {
@@ -921,7 +646,6 @@ namespace Raiderplan1 {
          // Start of After( Insert) rules
          // End of After( Insert) rules
          OnTrayectoViajeUpdated( new TrayectoViajeEventArgs( rowTrayectoViaje, Mode.Insert)) ;
-         ProcessLevelTrayectoviaje( ) ;
          // Save values for previous() function.
          EndLevelTrayectoviaje( ) ;
       }
@@ -931,7 +655,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmTrayectoViajeUpdate1 ;
          CheckOptimisticConcurrencyTrayectoviaje( ) ;
          AfterConfirmTrayectoviaje( ) ;
-         cmTrayectoViajeUpdate1 = connDefault.GetCommand("UPDATE [TrayectoViaje] SET [TrayectoOrigen]=@TrayectoOrigen, [TrayectoDestino]=@TrayectoDestino, [TayectoLatitudOrigen]=@TayectoLatitudOrigen, [TrayectoLongitudOrigen]=@TrayectoLongitudOrigen, [TrayectoLatidudDestino]=@TrayectoLatidudDestino, [TrayectoLongitudDestino]=@TrayectoLongitudDestino, [Trayectokm]=@Trayectokm, [TiempoEstimado]=@TiempoEstimado, [CombustibleConsumido]=@CombustibleConsumido, [EstadoCarretera]=@EstadoCarretera, [ViajeID]=@ViajeID  WHERE [TrayectoViajeID] = @TrayectoViajeID", false) ;
+         cmTrayectoViajeUpdate1 = connDefault.GetCommand("UPDATE [TrayectoViaje] SET [TrayectoOrigen]=@TrayectoOrigen, [TrayectoDestino]=@TrayectoDestino, [TayectoLatitudOrigen]=@TayectoLatitudOrigen, [TrayectoLongitudOrigen]=@TrayectoLongitudOrigen, [TrayectoLatidudDestino]=@TrayectoLatidudDestino, [TrayectoLongitudDestino]=@TrayectoLongitudDestino, [Trayectokm]=@Trayectokm, [TiempoEstimado]=@TiempoEstimado, [CombustibleConsumido]=@CombustibleConsumido, [EstadoCarretera]=@EstadoCarretera, [Instrucciones]=@Instrucciones, [Orden]=@Orden, [ViajeID]=@ViajeID  WHERE [TrayectoViajeID] = @TrayectoViajeID", false) ;
          if ( ( cmTrayectoViajeUpdate1.IDbCommand.Parameters.Count == 0 ) )
          {
             cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoOrigen", System.Data.DbType.AnsiString,150));
@@ -944,6 +668,8 @@ namespace Raiderplan1 {
             cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TiempoEstimado", System.Data.DbType.Currency));
             cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@CombustibleConsumido", System.Data.DbType.Currency));
             cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@EstadoCarretera", System.Data.DbType.AnsiString,100));
+            cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@Instrucciones", System.Data.DbType.AnsiString));
+            cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@Orden", System.Data.DbType.Int32));
             cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
             cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoViajeID", System.Data.DbType.Int32));
          }
@@ -959,8 +685,10 @@ namespace Raiderplan1 {
          cmTrayectoViajeUpdate1.SetParameter(7, rowTrayectoViaje["TiempoEstimado"]);
          cmTrayectoViajeUpdate1.SetParameter(8, rowTrayectoViaje["CombustibleConsumido"]);
          cmTrayectoViajeUpdate1.SetParameter(9, rowTrayectoViaje["EstadoCarretera"]);
-         cmTrayectoViajeUpdate1.SetParameter(10, rowTrayectoViaje["ViajeID"]);
-         cmTrayectoViajeUpdate1.SetParameter(11, rowTrayectoViaje["TrayectoViajeID"]);
+         cmTrayectoViajeUpdate1.SetParameter(10, rowTrayectoViaje["Instrucciones"]);
+         cmTrayectoViajeUpdate1.SetParameter(11, rowTrayectoViaje["Orden"]);
+         cmTrayectoViajeUpdate1.SetParameter(12, rowTrayectoViaje["ViajeID"]);
+         cmTrayectoViajeUpdate1.SetParameter(13, rowTrayectoViaje["TrayectoViajeID"]);
          cmTrayectoViajeUpdate1.ExecuteStmt();
          if ( cmTrayectoViajeUpdate1.ForeignKeyError )
          {
@@ -969,7 +697,6 @@ namespace Raiderplan1 {
          // Start of After( update) rules
          // End of After( update) rules
          OnTrayectoViajeUpdated( new TrayectoViajeEventArgs( rowTrayectoViaje, Mode.Update)) ;
-         ProcessLevelTrayectoviaje( ) ;
          EndLevelTrayectoviaje( ) ;
       }
 
@@ -978,7 +705,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmTrayectoViajeDelete1 ;
          Gx_mode = Mode.Delete ;
          CheckOptimisticConcurrencyTrayectoviaje( ) ;
-         ProcessNestedLevelTrayectoviajetrayecto( ) ;
+         // No cascading delete specified.
          AfterConfirmTrayectoviaje( ) ;
          cmTrayectoViajeDelete1 = connDefault.GetCommand("DELETE FROM [TrayectoViaje]  WHERE [TrayectoViajeID] = @TrayectoViajeID", false) ;
          if ( ( cmTrayectoViajeDelete1.IDbCommand.Parameters.Count == 0 ) )
@@ -997,61 +724,6 @@ namespace Raiderplan1 {
          Gx_mode = Mode.Delete ;
          EndLevelTrayectoviaje( ) ;
          Gx_mode = sMode10 ;
-      }
-
-      private void ProcessNestedLevelTrayectoviajetrayecto( )
-      {
-         foreach( DataRow row in TrayectoViajeSet.TrayectoViajeTrayecto )
-         {
-            rowTrayectoViajeTrayecto = ((TrayectoViajeDataSet.TrayectoViajeTrayectoRow)(row)) ;
-            if ( Deklarit.Data.Helpers.IsRowChanged(rowTrayectoViajeTrayecto) )
-            {
-               bool isChild ;
-               if ( ( rowTrayectoViajeTrayecto.RowState != System.Data.DataRowState.Deleted ) )
-               {
-                  isChild = ( ( rowTrayectoViajeTrayecto.TrayectoViajeID == rowTrayectoViaje.TrayectoViajeID ) )  ;
-               }
-               else
-               {
-                  isChild = ( ( rowTrayectoViajeTrayecto["TrayectoViajeID", System.Data.DataRowVersion.Original].Equals(rowTrayectoViaje.TrayectoViajeID) ) )  ;
-               }
-               if ( isChild )
-               {
-                  ReadRowTrayectoviajetrayecto( ) ;
-                  if ( ( rowTrayectoViajeTrayecto.RowState == System.Data.DataRowState.Added ) )
-                  {
-                     Gx_mode = Mode.Insert ;
-                     InsertTrayectoviajetrayecto( ) ;
-                  }
-                  else
-                  {
-                     if ( _Gxremove35 )
-                     {
-                        Gx_mode = Mode.Delete ;
-                        DeleteTrayectoviajetrayecto( ) ;
-                     }
-                     else
-                     {
-                        Gx_mode = Mode.Update ;
-                        UpdateTrayectoviajetrayecto( ) ;
-                     }
-                  }
-               }
-            }
-         }
-
-         // Start of After( level) rules
-         // End of After( level) rules
-      }
-
-      private void ProcessLevelTrayectoviaje( )
-      {
-         // Save parent mode.
-         sMode10 = Gx_mode ;
-         ProcessNestedLevelTrayectoviajetrayecto( ) ;
-         // Restore parent mode.
-         Gx_mode = sMode10 ;
-         // ' Update level parameters
       }
 
       private void EndLevelTrayectoviaje( )
@@ -1090,22 +762,6 @@ namespace Raiderplan1 {
          ScanLoadTrayectoviaje( ) ;
          LoadDataTrayectoviaje( maxRows) ;
          // Load Subordinate Levels
-         if ( ( RcdFound10 > 0 ) )
-         {
-            SubLvlScanStartTrayectoviajetrayecto( m_WhereString, startRow, maxRows) ;
-            SetParametersTrayectoViajeIDTrayectoviaje( cmTrayectoViajeTrayectoSelect2) ;
-            SubLvlFetchTrayectoviajetrayecto( ) ;
-            SubLoadDataTrayectoviajetrayecto( ) ;
-         }
-      }
-
-      private void SetParametersTrayectoViajeIDTrayectoviaje( ReadWriteCommand m_Command )
-      {
-         if ( ( m_Command.IDbCommand.Parameters.Count == 0 ) )
-         {
-            m_Command.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoViajeID", System.Data.DbType.Int32));
-         }
-         m_Command.SetParameter(0, rowTrayectoViaje["TrayectoViajeID"]);
       }
 
       private void ScanByViajeID( int startRow ,
@@ -1138,22 +794,6 @@ namespace Raiderplan1 {
          ScanLoadTrayectoviaje( ) ;
          LoadDataTrayectoviaje( maxRows) ;
          // Load Subordinate Levels
-         if ( ( RcdFound10 > 0 ) )
-         {
-            SubLvlScanStartTrayectoviajetrayecto( m_WhereString, startRow, maxRows) ;
-            SetParametersViajeIDTrayectoviaje( cmTrayectoViajeTrayectoSelect2) ;
-            SubLvlFetchTrayectoviajetrayecto( ) ;
-            SubLoadDataTrayectoviajetrayecto( ) ;
-         }
-      }
-
-      private void SetParametersViajeIDTrayectoviaje( ReadWriteCommand m_Command )
-      {
-         if ( ( m_Command.IDbCommand.Parameters.Count == 0 ) )
-         {
-            m_Command.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
-         }
-         m_Command.SetParameter(0, rowTrayectoViaje["ViajeID"]);
       }
 
       private void ScanStartTrayectoviaje( int startRow ,
@@ -1181,17 +821,6 @@ namespace Raiderplan1 {
          ScanLoadTrayectoviaje( ) ;
          LoadDataTrayectoviaje( maxRows) ;
          // Load Subordinate Levels
-         if ( ( RcdFound10 > 0 ) )
-         {
-            SubLvlScanStartTrayectoviajetrayecto( m_WhereString, startRow, maxRows) ;
-            SetParametersTrayectoviajeTrayectoviaje( cmTrayectoViajeTrayectoSelect2) ;
-            SubLvlFetchTrayectoviajetrayecto( ) ;
-            SubLoadDataTrayectoviajetrayecto( ) ;
-         }
-      }
-
-      private void SetParametersTrayectoviajeTrayectoviaje( ReadWriteCommand m_Command )
-      {
       }
 
       private void ScanNextTrayectoviaje( )
@@ -1218,7 +847,9 @@ namespace Raiderplan1 {
             rowTrayectoViaje["TiempoEstimado"] = dsDefault.Db.GetDecimal(TrayectoViajeSelect5, 8) ;
             rowTrayectoViaje["CombustibleConsumido"] = dsDefault.Db.GetDecimal(TrayectoViajeSelect5, 9) ;
             rowTrayectoViaje["EstadoCarretera"] = dsDefault.Db.GetString(TrayectoViajeSelect5, 10) ;
-            rowTrayectoViaje["ViajeID"] = dsDefault.Db.GetInt64(TrayectoViajeSelect5, 11) ;
+            rowTrayectoViaje["Instrucciones"] = dsDefault.Db.GetString(TrayectoViajeSelect5, 11) ;
+            rowTrayectoViaje["Orden"] = dsDefault.Db.GetInt32(TrayectoViajeSelect5, 12) ;
+            rowTrayectoViaje["ViajeID"] = dsDefault.Db.GetInt64(TrayectoViajeSelect5, 13) ;
          }
       }
 
@@ -1243,10 +874,8 @@ namespace Raiderplan1 {
       {
          CreateNewRowTrayectoviaje( ) ;
          bool tmpConstraintState = TrayectoViajeSet.EnforceConstraints ;
-         TrayectoViajeSet.TrayectoViajeTrayecto.BeginLoadData( ) ;
          TrayectoViajeSet.TrayectoViaje.BeginLoadData( ) ;
          ScanStartTrayectoviaje( startRow, maxRows) ;
-         TrayectoViajeSet.TrayectoViajeTrayecto.EndLoadData( ) ;
          TrayectoViajeSet.TrayectoViaje.EndLoadData( ) ;
          this.TrayectoViajeSet.EnforceConstraints = tmpConstraintState ;
       }
@@ -1280,10 +909,8 @@ namespace Raiderplan1 {
                                           int maxRows )
       {
          bool tmpConstraintState = TrayectoViajeSet.EnforceConstraints ;
-         TrayectoViajeSet.TrayectoViajeTrayecto.BeginLoadData( ) ;
          TrayectoViajeSet.TrayectoViaje.BeginLoadData( ) ;
          ScanByTrayectoViajeID( startRow, maxRows) ;
-         TrayectoViajeSet.TrayectoViajeTrayecto.EndLoadData( ) ;
          TrayectoViajeSet.TrayectoViaje.EndLoadData( ) ;
          this.TrayectoViajeSet.EnforceConstraints = tmpConstraintState ;
          if ( ( TrayectoViajeSet.TrayectoViaje.Count > 0 ) )
@@ -1296,10 +923,8 @@ namespace Raiderplan1 {
                                   int maxRows )
       {
          bool tmpConstraintState = TrayectoViajeSet.EnforceConstraints ;
-         TrayectoViajeSet.TrayectoViajeTrayecto.BeginLoadData( ) ;
          TrayectoViajeSet.TrayectoViaje.BeginLoadData( ) ;
          ScanByViajeID( startRow, maxRows) ;
-         TrayectoViajeSet.TrayectoViajeTrayecto.EndLoadData( ) ;
          TrayectoViajeSet.TrayectoViaje.EndLoadData( ) ;
          this.TrayectoViajeSet.EnforceConstraints = tmpConstraintState ;
          if ( ( TrayectoViajeSet.TrayectoViaje.Count > 0 ) )
@@ -1308,99 +933,12 @@ namespace Raiderplan1 {
          }
       }
 
-      private void CreateNewRowTrayectoviajetrayecto( )
-      {
-         rowTrayectoViajeTrayecto = TrayectoViajeSet.TrayectoViajeTrayecto.NewTrayectoViajeTrayectoRow() ;
-      }
-
-      private void LoadChildTrayectoviajetrayecto( )
-      {
-         CreateNewRowTrayectoviajetrayecto( ) ;
-         ScanStartTrayectoviajetrayecto( ) ;
-      }
-
-      private void LoadDataTrayectoviajetrayecto( )
-      {
-         while ( ( RcdFound11 != 0 ) )
-         {
-            LoadRowTrayectoviajetrayecto( ) ;
-            CreateNewRowTrayectoviajetrayecto( ) ;
-            ScanNextTrayectoviajetrayecto( ) ;
-         }
-         ScanEndTrayectoviajetrayecto( ) ;
-      }
-
-      private void SubLoadDataTrayectoviajetrayecto( )
-      {
-         while ( ( RcdFound11 != 0 ) )
-         {
-            LoadRowTrayectoviajetrayecto( ) ;
-            CreateNewRowTrayectoviajetrayecto( ) ;
-            ScanNextTrayectoviajetrayecto( ) ;
-         }
-         ScanEndTrayectoviajetrayecto( ) ;
-      }
-
       private void AddRowTrayectoviaje( )
       {
          TrayectoViajeSet.TrayectoViaje.AddTrayectoViajeRow( rowTrayectoViaje) ;
       }
 
-      private readonly string m_SelectString10 = "TM1.[TrayectoViajeID], TM1.[TrayectoOrigen], TM1.[TrayectoDestino], TM1.[TayectoLatitudOrigen], TM1.[TrayectoLongitudOrigen], TM1.[TrayectoLatidudDestino], TM1.[TrayectoLongitudDestino], TM1.[Trayectokm], TM1.[TiempoEstimado], TM1.[CombustibleConsumido], TM1.[EstadoCarretera], TM1.[ViajeID]" ;
-
-
-      public delegate  void TrayectoViajeTrayectoUpdateEventHandler( object sender ,
-                                                                     TrayectoViajeTrayectoEventArgs e );
-      public event TrayectoViajeTrayectoUpdateEventHandler TrayectoViajeTrayectoUpdated ;
-      private void OnTrayectoViajeTrayectoUpdated( TrayectoViajeTrayectoEventArgs e )
-      {
-         if ( ( this.TrayectoViajeTrayectoUpdated != null ) )
-         {
-            this.TrayectoViajeTrayectoUpdated( this, e) ;
-         }
-      }
-
-      public event TrayectoViajeTrayectoUpdateEventHandler TrayectoViajeTrayectoUpdating ;
-      private void OnTrayectoViajeTrayectoUpdating( TrayectoViajeTrayectoEventArgs e )
-      {
-         if ( ( this.TrayectoViajeTrayectoUpdating != null ) )
-         {
-            this.TrayectoViajeTrayectoUpdating( this, e) ;
-         }
-      }
-
-      public class TrayectoViajeTrayectoEventArgs : EventArgs
-      {
-         private System.Data.StatementType m_statementType ;
-         private TrayectoViajeDataSet.TrayectoViajeTrayectoRow m_dataRow ;
-         public TrayectoViajeTrayectoEventArgs( TrayectoViajeDataSet.TrayectoViajeTrayectoRow row ,
-                                                StatementType statementType )
-         {
-            m_dataRow = row ;
-            m_statementType = statementType ;
-         }
-
-         public System.Data.StatementType StatementType
-         {
-            get {
-               return m_statementType ;
-            }
-
-         }
-
-         public TrayectoViajeDataSet.TrayectoViajeTrayectoRow Row
-         {
-            get {
-               return m_dataRow ;
-            }
-
-            set {
-               m_dataRow = value ;
-            }
-
-         }
-
-      }
+      private readonly string m_SelectString10 = "TM1.[TrayectoViajeID], TM1.[TrayectoOrigen], TM1.[TrayectoDestino], TM1.[TayectoLatitudOrigen], TM1.[TrayectoLongitudOrigen], TM1.[TrayectoLatidudDestino], TM1.[TrayectoLongitudDestino], TM1.[Trayectokm], TM1.[TiempoEstimado], TM1.[CombustibleConsumido], TM1.[EstadoCarretera], TM1.[Instrucciones], TM1.[Orden], TM1.[ViajeID]" ;
 
 
       public delegate  void TrayectoViajeUpdateEventHandler( object sender ,
@@ -1482,23 +1020,23 @@ namespace Raiderplan1 {
       }
 
       [Serializable()]
-      public class TrayectoTipoDetalleForeignKeyNotFoundException : Deklarit.ForeignKeyNotFoundException
+      public class ViajeForeignKeyNotFoundException : Deklarit.ForeignKeyNotFoundException
       {
-         public TrayectoTipoDetalleForeignKeyNotFoundException( )
+         public ViajeForeignKeyNotFoundException( )
          {
          }
 
-         public TrayectoTipoDetalleForeignKeyNotFoundException( string message ) : base(message)
+         public ViajeForeignKeyNotFoundException( string message ) : base(message)
          {
          }
 
-         public TrayectoTipoDetalleForeignKeyNotFoundException( string message ,
-                                                                Exception inner ) : base(message, inner)
+         public ViajeForeignKeyNotFoundException( string message ,
+                                                  Exception inner ) : base(message, inner)
          {
          }
 
-         protected TrayectoTipoDetalleForeignKeyNotFoundException( SerializationInfo info ,
-                                                                   StreamingContext context ) : base(info, context)
+         protected ViajeForeignKeyNotFoundException( SerializationInfo info ,
+                                                     StreamingContext context ) : base(info, context)
          {
          }
 
@@ -1522,98 +1060,6 @@ namespace Raiderplan1 {
 
          protected ForeignKeyNotFoundException( SerializationInfo info ,
                                                 StreamingContext context ) : base(info, context)
-         {
-         }
-
-      }
-
-      [Serializable()]
-      public class TrayectoViajeTrayectoDataLockedException : Deklarit.DataLockedException
-      {
-         public TrayectoViajeTrayectoDataLockedException( )
-         {
-         }
-
-         public TrayectoViajeTrayectoDataLockedException( string message ) : base(message)
-         {
-         }
-
-         public TrayectoViajeTrayectoDataLockedException( string message ,
-                                                          Exception inner ) : base(message, inner)
-         {
-         }
-
-         protected TrayectoViajeTrayectoDataLockedException( SerializationInfo info ,
-                                                             StreamingContext context ) : base(info, context)
-         {
-         }
-
-      }
-
-      [Serializable()]
-      public class TrayectoViajeTrayectoDataChangedException : Deklarit.DataChangedException
-      {
-         public TrayectoViajeTrayectoDataChangedException( )
-         {
-         }
-
-         public TrayectoViajeTrayectoDataChangedException( string message ) : base(message)
-         {
-         }
-
-         public TrayectoViajeTrayectoDataChangedException( string message ,
-                                                           Exception inner ) : base(message, inner)
-         {
-         }
-
-         protected TrayectoViajeTrayectoDataChangedException( SerializationInfo info ,
-                                                              StreamingContext context ) : base(info, context)
-         {
-         }
-
-      }
-
-      [Serializable()]
-      public class TrayectoViajeTrayectoDuplicateKeyException : Deklarit.DuplicateKeyException
-      {
-         public TrayectoViajeTrayectoDuplicateKeyException( )
-         {
-         }
-
-         public TrayectoViajeTrayectoDuplicateKeyException( string message ) : base(message)
-         {
-         }
-
-         public TrayectoViajeTrayectoDuplicateKeyException( string message ,
-                                                            Exception inner ) : base(message, inner)
-         {
-         }
-
-         protected TrayectoViajeTrayectoDuplicateKeyException( SerializationInfo info ,
-                                                               StreamingContext context ) : base(info, context)
-         {
-         }
-
-      }
-
-      [Serializable()]
-      public class ViajeForeignKeyNotFoundException : Deklarit.ForeignKeyNotFoundException
-      {
-         public ViajeForeignKeyNotFoundException( )
-         {
-         }
-
-         public ViajeForeignKeyNotFoundException( string message ) : base(message)
-         {
-         }
-
-         public ViajeForeignKeyNotFoundException( string message ,
-                                                  Exception inner ) : base(message, inner)
-         {
-         }
-
-         protected ViajeForeignKeyNotFoundException( SerializationInfo info ,
-                                                     StreamingContext context ) : base(info, context)
          {
          }
 
@@ -1680,15 +1126,6 @@ namespace Raiderplan1 {
          scmdbuf = "" ;
          recordCount = 0 ;
          _Gxremove = false ;
-         m__TDDescripcionOriginal = new object();
-         m__TDLatitudOriginal = new object();
-         m__TDLongitudOriginal = new object();
-         m__TDCostoOriginal = new object();
-         m__TrayectoTipoDetalleIDOriginal = new object();
-         _Gxremove35 = false ;
-         RcdFound11 = 0 ;
-         m_SubSelTopString11 = "" ;
-         m_WhereStringSub = "" ;
          m__TrayectoOrigenOriginal = new object();
          m__TrayectoDestinoOriginal = new object();
          m__TayectoLatitudOrigenOriginal = new object();
@@ -1699,6 +1136,8 @@ namespace Raiderplan1 {
          m__TiempoEstimadoOriginal = new object();
          m__CombustibleConsumidoOriginal = new object();
          m__EstadoCarreteraOriginal = new object();
+         m__InstruccionesOriginal = new object();
+         m__OrdenOriginal = new object();
          m__ViajeIDOriginal = new object();
          _Condition = false ;
          IsModified = 0 ;
@@ -1710,15 +1149,11 @@ namespace Raiderplan1 {
       }
 
       private short RcdFound10 ;
-      private short RcdFound11 ;
       private short IsModified ;
       private int recordCount ;
       private String scmdbuf ;
-      private String m_SubSelTopString11 ;
-      private String m_WhereStringSub ;
       private String m_WhereString ;
       private bool _Gxremove ;
-      private bool _Gxremove35 ;
       private bool _Condition ;
       private DataStore dsDefault ;
       private System.Resources.ResourceManager resourceManager ;
@@ -1728,18 +1163,10 @@ namespace Raiderplan1 {
       private IDataReader TrayectoViajeSelect1 ;
       private ReadWriteCommand cmTrayectoViajeSelect2 ;
       private IDataReader TrayectoViajeSelect2 ;
-      private ReadWriteCommand cmTrayectoViajeTrayectoSelect2 ;
-      private IDataReader TrayectoViajeTrayectoSelect2 ;
       private ReadWriteCommand cmTrayectoViajeSelect5 ;
       private IDataReader TrayectoViajeSelect5 ;
       private System.Data.StatementType Gx_mode ;
-      private System.Data.StatementType sMode11 ;
       private System.Data.StatementType sMode10 ;
-      private object m__TDDescripcionOriginal ;
-      private object m__TDLatitudOriginal ;
-      private object m__TDLongitudOriginal ;
-      private object m__TDCostoOriginal ;
-      private object m__TrayectoTipoDetalleIDOriginal ;
       private object m__TrayectoOrigenOriginal ;
       private object m__TrayectoDestinoOriginal ;
       private object m__TayectoLatitudOrigenOriginal ;
@@ -1750,8 +1177,9 @@ namespace Raiderplan1 {
       private object m__TiempoEstimadoOriginal ;
       private object m__CombustibleConsumidoOriginal ;
       private object m__EstadoCarreteraOriginal ;
+      private object m__InstruccionesOriginal ;
+      private object m__OrdenOriginal ;
       private object m__ViajeIDOriginal ;
-      private ReadWriteCommand m_Command ;
    }
 
    public class TrayectoViajeDataReader : System.IDisposable
@@ -1790,7 +1218,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmTrayectoViajeSelect6 = connDefault.GetCommand("SELECT TM1.[TrayectoViajeID], TM1.[TrayectoOrigen], TM1.[TrayectoDestino], TM1.[TayectoLatitudOrigen], TM1.[TrayectoLongitudOrigen], TM1.[TrayectoLatidudDestino], TM1.[TrayectoLongitudDestino], TM1.[Trayectokm], TM1.[TiempoEstimado], TM1.[CombustibleConsumido], TM1.[EstadoCarretera], TM1.[ViajeID] FROM [TrayectoViaje] TM1 WITH (NOLOCK) ORDER BY TM1.[TrayectoViajeID] ", false) ;
+         cmTrayectoViajeSelect6 = connDefault.GetCommand("SELECT TM1.[TrayectoViajeID], TM1.[TrayectoOrigen], TM1.[TrayectoDestino], TM1.[TayectoLatitudOrigen], TM1.[TrayectoLongitudOrigen], TM1.[TrayectoLatidudDestino], TM1.[TrayectoLongitudDestino], TM1.[Trayectokm], TM1.[TiempoEstimado], TM1.[CombustibleConsumido], TM1.[EstadoCarretera], TM1.[Instrucciones], TM1.[Orden], TM1.[ViajeID] FROM [TrayectoViaje] TM1 WITH (NOLOCK) ORDER BY TM1.[TrayectoViajeID] ", false) ;
          TrayectoViajeSelect6 = cmTrayectoViajeSelect6.ExecuteReader(((daCurrentTransaction==null) ? Configuration.ReaderCommandBehavior : CommandBehavior.Default)) ;
          return TrayectoViajeSelect6 ;
       }
@@ -1800,7 +1228,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmTrayectoViajeSelect6 = connDefault.GetCommand("SELECT TM1.[TrayectoViajeID], TM1.[TrayectoOrigen], TM1.[TrayectoDestino], TM1.[TayectoLatitudOrigen], TM1.[TrayectoLongitudOrigen], TM1.[TrayectoLatidudDestino], TM1.[TrayectoLongitudDestino], TM1.[Trayectokm], TM1.[TiempoEstimado], TM1.[CombustibleConsumido], TM1.[EstadoCarretera], TM1.[ViajeID] FROM [TrayectoViaje] TM1 WITH (NOLOCK) WHERE TM1.[TrayectoViajeID] = @TrayectoViajeID ORDER BY TM1.[TrayectoViajeID] ", false) ;
+         cmTrayectoViajeSelect6 = connDefault.GetCommand("SELECT TM1.[TrayectoViajeID], TM1.[TrayectoOrigen], TM1.[TrayectoDestino], TM1.[TayectoLatitudOrigen], TM1.[TrayectoLongitudOrigen], TM1.[TrayectoLatidudDestino], TM1.[TrayectoLongitudDestino], TM1.[Trayectokm], TM1.[TiempoEstimado], TM1.[CombustibleConsumido], TM1.[EstadoCarretera], TM1.[Instrucciones], TM1.[Orden], TM1.[ViajeID] FROM [TrayectoViaje] TM1 WITH (NOLOCK) WHERE TM1.[TrayectoViajeID] = @TrayectoViajeID ORDER BY TM1.[TrayectoViajeID] ", false) ;
          if ( ( cmTrayectoViajeSelect6.IDbCommand.Parameters.Count == 0 ) )
          {
             cmTrayectoViajeSelect6.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoViajeID", System.Data.DbType.Int32));
@@ -1815,7 +1243,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmTrayectoViajeSelect6 = connDefault.GetCommand("SELECT TM1.[TrayectoViajeID], TM1.[TrayectoOrigen], TM1.[TrayectoDestino], TM1.[TayectoLatitudOrigen], TM1.[TrayectoLongitudOrigen], TM1.[TrayectoLatidudDestino], TM1.[TrayectoLongitudDestino], TM1.[Trayectokm], TM1.[TiempoEstimado], TM1.[CombustibleConsumido], TM1.[EstadoCarretera], TM1.[ViajeID] FROM [TrayectoViaje] TM1 WITH (NOLOCK) WHERE TM1.[ViajeID] = @ViajeID ORDER BY TM1.[TrayectoViajeID] ", false) ;
+         cmTrayectoViajeSelect6 = connDefault.GetCommand("SELECT TM1.[TrayectoViajeID], TM1.[TrayectoOrigen], TM1.[TrayectoDestino], TM1.[TayectoLatitudOrigen], TM1.[TrayectoLongitudOrigen], TM1.[TrayectoLatidudDestino], TM1.[TrayectoLongitudDestino], TM1.[Trayectokm], TM1.[TiempoEstimado], TM1.[CombustibleConsumido], TM1.[EstadoCarretera], TM1.[Instrucciones], TM1.[Orden], TM1.[ViajeID] FROM [TrayectoViaje] TM1 WITH (NOLOCK) WHERE TM1.[ViajeID] = @ViajeID ORDER BY TM1.[TrayectoViajeID] ", false) ;
          if ( ( cmTrayectoViajeSelect6.IDbCommand.Parameters.Count == 0 ) )
          {
             cmTrayectoViajeSelect6.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));

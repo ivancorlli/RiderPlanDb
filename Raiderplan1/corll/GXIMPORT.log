@@ -1,17 +1,186 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <ImportLog>
    <RowImport>
-      <Name>dpUsuarioXEmailXusuarioIDCollection</Name>
-      <Description>dpUsuarioXEmailXusuarioIDCollection</Description>
-      <Class>2</Class>
+      <Name>TrayectoViaje</Name>
+      <Description>TrayectoViaje</Description>
+      <Class>0</Class>
       <Status>2</Status>
-      <Id>1</Id>
+      <Id>9</Id>
       <Errors>
       </Errors>
       <Warnings>
       </Warnings>
       <Infos>
-         <Folder>dpUsuario</Folder>
+         <Folder>Vaijes</Folder>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>Orden</Name>
+      <Description>Orden</Description>
+      <Status>1</Status>
+      <Id>86</Id>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>TrayectoViajeID</Name>
+      <Description>Trayecto Viaje ID</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ViajeID</Name>
+      <Description>Viaje ID</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>TrayectoOrigen</Name>
+      <Description>Trayecto Origen</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>TrayectoDestino</Name>
+      <Description>Trayecto Destino</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>TayectoLatitudOrigen</Name>
+      <Description>Tayecto Latitud Origen</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>TrayectoLongitudOrigen</Name>
+      <Description>Trayecto Longitud Origen</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>TrayectoLatidudDestino</Name>
+      <Description>Trayecto Latidud Destino</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>TrayectoLongitudDestino</Name>
+      <Description>Trayecto Longitud Destino</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>Trayectokm</Name>
+      <Description>Trayectokm</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>TiempoEstimado</Name>
+      <Description>Tiempo Estimado</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>CombustibleConsumido</Name>
+      <Description>Combustible Consumido</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>EstadoCarretera</Name>
+      <Description>Estado Carretera</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>Instrucciones</Name>
+      <Description>Instrucciones</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
       </Infos>
    </RowImport>
 </ImportLog>

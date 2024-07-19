@@ -183,17 +183,32 @@ namespace Raiderplan1
 		}
 		
 		/// <summary>
-		/// Gets or sets the Loacaliad ID
+		/// Gets or sets the P Localidad ID
 		/// </summary>        
-		public System.Int32 LoacaliadID
+		public System.Int32 PLocalidadID
 		{
 			get 
 			{
-				return m_DataRow.LoacaliadID;
+				return m_DataRow.PLocalidadID;
 			}
 			set
 			{
-				m_DataRow.LoacaliadID = value;
+				m_DataRow.PLocalidadID = value;
+			}
+		}
+		
+		/// <summary>
+		/// Gets or sets the P Provincia ID
+		/// </summary>        
+		public System.Int32 PProvinciaID
+		{
+			get 
+			{
+				return m_DataRow.PProvinciaID;
+			}
+			set
+			{
+				m_DataRow.PProvinciaID = value;
 			}
 		}
 		
@@ -275,27 +290,6 @@ namespace Raiderplan1
 		{
 			IPersonaDataAdapter dataAdapter = DataAdapterFactoryProxy.Instance.GetPersonaDataAdapter();
 			return dataAdapter.FillPage(m_DataSet, startRow, maxRows);
-		}
-
-   
-		public System.Int32 GetRecordCountByLoacaliadID(System.Int32 loacaliadID)
-		{
-			IPersonaDataAdapter dataAdapter = DataAdapterFactoryProxy.Instance.GetPersonaDataAdapter();
-			return dataAdapter.GetRecordCountByLoacaliadID(loacaliadID);
-		}
-
-   
-		public System.Int32 FillPageByLoacaliadID(System.Int32 loacaliadID, System.Int32 startRow, System.Int32 maxRows)
-		{
-			IPersonaDataAdapter dataAdapter = DataAdapterFactoryProxy.Instance.GetPersonaDataAdapter();
-			return dataAdapter.FillPageByLoacaliadID(m_DataSet, loacaliadID, startRow, maxRows);
-		}
-
-   
-		public System.Int32 FillByLoacaliadID(System.Int32 loacaliadID)
-		{
-			IPersonaDataAdapter dataAdapter = DataAdapterFactoryProxy.Instance.GetPersonaDataAdapter();
-			return dataAdapter.FillByLoacaliadID(m_DataSet, loacaliadID);
 		}
 
    

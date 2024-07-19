@@ -21,9 +21,9 @@ namespace Raiderplan1 {
 
       }
 
-      public static IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )
+      public static IViajeDataAdapter GetViajeDataAdapter( )
       {
-         return daFactory.GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( ) ;
+         return daFactory.GetViajeDataAdapter( ) ;
       }
 
       public static IUsuarioDataAdapter GetUsuarioDataAdapter( )
@@ -31,19 +31,9 @@ namespace Raiderplan1 {
          return daFactory.GetUsuarioDataAdapter( ) ;
       }
 
-      public static IViajeDataAdapter GetViajeDataAdapter( )
-      {
-         return daFactory.GetViajeDataAdapter( ) ;
-      }
-
       public static ITrayectoViajeDataAdapter GetTrayectoViajeDataAdapter( )
       {
          return daFactory.GetTrayectoViajeDataAdapter( ) ;
-      }
-
-      public static ITrayectoTipoDetalleDataAdapter GetTrayectoTipoDetalleDataAdapter( )
-      {
-         return daFactory.GetTrayectoTipoDetalleDataAdapter( ) ;
       }
 
       public static IRolUsuarioDataAdapter GetRolUsuarioDataAdapter( )
@@ -69,6 +59,11 @@ namespace Raiderplan1 {
       public static ILocalidadDataAdapter GetLocalidadDataAdapter( )
       {
          return daFactory.GetLocalidadDataAdapter( ) ;
+      }
+
+      public static IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )
+      {
+         return daFactory.GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( ) ;
       }
 
    }

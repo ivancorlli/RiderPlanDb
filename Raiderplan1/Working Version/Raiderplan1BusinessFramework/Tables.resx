@@ -83,10 +83,4 @@
    <data name="TrayectoViaje" xml:space="preserve"> 
     <value>TrayectoViaje</value> 
    </data>
-   <data name="TrayectoViajeTrayecto" xml:space="preserve"> 
-    <value>Trayecto</value> 
-   </data>
-   <data name="TrayectoTipoDetalle" xml:space="preserve"> 
-    <value>TipoDetalle</value> 
-   </data>
 </root>

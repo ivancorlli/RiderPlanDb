@@ -2,20 +2,20 @@ spec_i([ trn,1,'Persona','Persona',[],eng,'4_5_0-002' ]).
  
 struct_i(1,0,[],[]).
  
-level_i(1,[ 1,[ [ 1,many ],[ 5,one ] ],[ 4 ],[],[],[],[ 4 ],'IPersona',[ 1,[] ],[] ]).
+level_i(1,[ 1,[ [ 1,many ] ],[ 4 ],[],[],[],[ 4 ],'IPersona',[ 1,[] ],[] ]).
  
-tw_i(1,[ [ 5,[ [ 1,20,20 ] ] ] ]).
+tw_i(1,[]).
  
 lwi_i(1,[ [] ]).
  
  
  
  
-ta_i(1,[ [ [ 1,4 ],[ 1,1 ],[ 1,2 ],[ 1,3 ],[ 1,6 ],[ 1,29 ],[ 1,20 ] ] ]).
+ta_i(1,[ [ [ 1,4 ],[ 1,1 ],[ 1,2 ],[ 1,3 ],[ 1,6 ],[ 1,84 ],[ 1,81 ],[ 1,29 ] ] ]).
  
-las_i(1,[ [ 4,1,2,3,6,20,29 ] ]).
+las_i(1,[ [ 4,1,2,3,6,84,81,29 ] ]).
  
-lac_i(1,[ [ 4,1,2,3,6,20,29 ] ]).
+lac_i(1,[ [ 4,1,2,3,6,84,81,29 ] ]).
  
  
 lits_i('Persona ID',2,3).
@@ -23,18 +23,20 @@ lits_i('Persona Nombre',3,3).
 lits_i('Persona Apellido',5,3).
 lits_i('Perosna',7,3).
 lits_i('Persona Sexo',8,3).
-lits_i('Loacaliad ID',9,3).
-lits_i('Imagen Perfil',10,3).
+lits_i('P Localidad ID',9,3).
+lits_i('P Provincia ID',10,3).
+lits_i('Imagen Perfil',11,3).
  
-cls_i([ 2,3 ],[ 10,139 ]).
+cls_i([ 2,3 ],[ 11,139 ]).
  
 pos_i(4,[ 2,2,20 ]).
 pos_i(1,[ 3,3,20 ]).
 pos_i(2,[ 5,5,20 ]).
 pos_i(3,[ 7,7,20 ]).
 pos_i(6,[ 8,8,20 ]).
-pos_i(20,[ 9,9,20 ]).
-pos_i(29,[ 10,10,20 ]).
+pos_i(84,[ 9,9,20 ]).
+pos_i(81,[ 10,10,20 ]).
+pos_i(29,[ 11,11,20 ]).
  
  
  
@@ -160,7 +162,7 @@ rule_i(0,prop('DKL_CACHE_PRIORITY','2')).
 rule_i(0,prop('DKL_CACHE_FREQUENCY','1')).
 rule_i(0,prop('DKL_PERMISSION_BASE_ID','2001')).
 rule_i(0,prop('DKL_VERSION','4000')).
-rule_i(0,prop('DKL_BUILTIN_PROPERTIES','<Properties></Properties>')).
+rule_i(0,prop('DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>LowCardinality</Name><Description>Low cardinality expected for this kind of object.</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property></Properties>')).
 rule_i(0,prop('DKL_ROLES','<Roles></Roles>')).
 rule_i(0,prop('DKL_CUSTOM_PROPERTIES','<Properties></Properties>')).
 rule_i(0,prop('USER_METADATA','')).
@@ -210,23 +212,19 @@ rule_i(0,prop('ObjFolder','Default')).
 rule_i(0,prop('ObjDesc','')).
 rule_i(0,prop('ObjName','Persona')).
 rule_i(0,prop('ObjId','0')).
-rule_i(1,prompt([ 5,[ [ 1,20,20 ] ],[ 20 ],[ 20 ] ])).
 rule_i(0,rule([ a(22,[ 'Dlt','Delete','' ]) ],[],[],[])).
 rule_i(0,maingen(16)).
-rule_i(1,rule([ a(18,[ [ 20 ] ]) ],[],[ insert,update,delete ],[ 20 ])).
  
 a_i(1,1,t,1,[],[ [ [ [],4,4 ] ],'IPersona',[] ]).
-a_i(2,1,r,5,[],[ [ [ 1,20,20 ] ],'ILocalidad',[] ]).
  
 v_i(t,i,1,4).
 v_i(t,o,1,1).
 v_i(t,o,1,2).
 v_i(t,o,1,3).
 v_i(t,o,1,6).
+v_i(t,o,1,84).
+v_i(t,o,1,81).
 v_i(t,o,1,29).
-v_i(t,o,1,20).
-v_i(r,i,2,20).
-v_i(r,o,2,[]).
  
  
 tbl_to_delete_i(1,[ 7,[ [ 1,4,4 ] ],c,'IUsuario1',[ [ 7,4 ] ],[ 11 ] ]).
@@ -234,8 +232,9 @@ tbl_to_delete_i(1,[ 7,[ [ 1,4,4 ] ],c,'IUsuario1',[ [ 7,4 ] ],[ 11 ] ]).
  
  
 attri_i(11,[ 'UsuarioID',int,8,0,'ZZZZZZZ9',0,'Usuario ID','',0,0 ]).
-attri_i(29,[ 'ImagenPerfil',svchar,25,0,'',0,'Imagen Perfil','',0,0 ]).
-attri_i(20,[ 'LoacaliadID',int,8,0,'ZZZZZZZ9',0,'Loacaliad ID','',0,0 ]).
+attri_i(29,[ 'ImagenPerfil',svchar,50,0,'',0,'Imagen Perfil','',0,0 ]).
+attri_i(81,[ 'PProvinciaID',int,5,0,'ZZZZ9',0,'P Provincia ID','',0,0 ]).
+attri_i(84,[ 'PLocalidadID',int,5,0,'ZZZZ9',0,'P Localidad ID','',0,0 ]).
 attri_i(6,[ 'PersonaSexo',int,3,0,'ZZ9',0,'Persona Sexo','',0,0 ]).
 attri_i(3,[ 'PersonaFechaNacimiento',date,8,0,'99/99/99',0,'Perosna','',0,0 ]).
 attri_i(2,[ 'PersonaApellido',svchar,120,0,'',0,'Persona Apellido','',0,0 ]).
@@ -244,20 +243,17 @@ attri_i(4,[ 'PersonaID',int,8,0,'ZZZZZZZ9',0,'Persona ID','',0,0 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2,0 ]).
  
 table_i(7,[ 'USUARIO',[ 11,4 ],'Usuario','Usuario' ]).
-table_i(5,[ 'LOCALIDAD',[ 20 ],'Localidad','Localidad' ]).
-table_i(1,[ 'PERSONA',[ 4,1,2,3,6,20,29 ],'Persona','Persona' ]).
+table_i(1,[ 'PERSONA',[ 4,1,2,3,6,29,81,84 ],'Persona','Persona' ]).
  
 index_i(1,[ 'IPersona',u,[ 4 ],'IPersona' ]).
-index_i(1,[ 'IPersona1',d,[ 20 ],'IPersona1' ]).
-index_i(5,[ 'ILocalidad',u,[ 20 ],'ILocalidad' ]).
 index_i(7,[ 'IUsuario',u,[ 11 ],'IUsuario' ]).
 index_i(7,[ 'IUsuario1',d,[ 4 ],'IUsuario1' ]).
  
  
  
  
-upd_i(1,1,i,[ [ 1,2,3,6,29,20 ],[],'IPersona',[ [ [],4,4 ] ] ]).
-upd_i(1,1,u,[ [ 1,2,3,6,29,20 ],[],'IPersona',[] ]).
+upd_i(1,1,i,[ [ 1,2,3,6,84,81,29 ],[],'IPersona',[ [ [],4,4 ] ] ]).
+upd_i(1,1,u,[ [ 1,2,3,6,84,81,29 ],[],'IPersona',[] ]).
 upd_i(1,1,d,[ [],[],'IPersona',[] ]).
  
  
@@ -319,11 +315,13 @@ lit_i(17,1,t(3,2),[ font('Courier New',9,[]),rect(140,168,205,188),outstyle('3d'
 lit_i(18,1,t('Perosna',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,168,67,180),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
 lit_i(19,1,t(6,2),[ font('Courier New',9,[]),rect(140,192,170,212),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(6),ctrltype(edit,19),ispwd(0),e2n(1) ]).
 lit_i(20,1,t('Persona Sexo',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,192,99,204),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(21,1,t(20,2),[ font('Courier New',9,[]),rect(140,216,205,236),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(20),ctrltype(edit,21),ispwd(0),e2n(1) ]).
-lit_i(22,1,t('Loacaliad ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,216,93,228),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(23,1,t(29,2),[ font('Courier New',9,[]),rect(140,240,324,260),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(29),ctrltype(edit,23),ispwd(0),e2n(1) ]).
-lit_i(24,1,t('Imagen Perfil',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,240,95,252),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(1,1,window,[ title([]),rect(0,0,695,277),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
+lit_i(21,1,t(84,2),[ font('Courier New',9,[]),rect(140,216,184,236),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(84),ctrltype(edit,21),ispwd(0),e2n(1) ]).
+lit_i(22,1,t('P Localidad ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,216,105,228),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(23,1,t(81,2),[ font('Courier New',9,[]),rect(140,240,184,260),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(81),ctrltype(edit,23),ispwd(0),e2n(1) ]).
+lit_i(24,1,t('P Provincia ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,240,103,252),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(25,1,t(29,2),[ font('Courier New',9,[]),rect(140,264,499,284),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(29),ctrltype(edit,25),ispwd(0),e2n(1) ]).
+lit_i(26,1,t('Imagen Perfil',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,264,95,276),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(1,1,window,[ title([]),rect(0,0,695,301),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
  
 grid_i(7,24).
  
@@ -353,6 +351,9 @@ std_color_i(22,fore,8).
 std_color_i(23,back,5).
 std_color_i(23,fore,8).
 std_color_i(24,fore,8).
+std_color_i(25,back,5).
+std_color_i(25,fore,8).
+std_color_i(26,fore,8).
 std_color_i(1,back,15).
 std_color_i(1,fore,6).
  
@@ -482,31 +483,56 @@ att_prop_i(2,6,idDATEFORMAT,idDATEFORMAT_SHORT,d).
 att_prop_i(2,6,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
 att_prop_i(2,6,'FullName','PersonaSexo',v).
 att_prop_i(2,6,'Domain','Sexo',v).
-att_prop_i(2,20,'AUTONUMBER','-1',v).
-att_prop_i(2,20,'AUTONUMBER_START','1',v).
-att_prop_i(2,20,'AUTONUMBER_STEP','1',v).
-att_prop_i(2,20,'AUTONUMBER_FORREPLICATION','-1',v).
-att_prop_i(2,20,'ATT_INITIAL_VALUE','',v).
-att_prop_i(2,20,'OBJECT_METADATA','',v).
-att_prop_i(2,20,'DKL_DEPENDENCIES_PROPS','',d).
-att_prop_i(2,20,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
-att_prop_i(2,20,'DKL_VERSION','2100',d).
-att_prop_i(2,20,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
-att_prop_i(2,20,'AUTOGENERATE_GUID','-1',v).
-att_prop_i(2,20,'DKL_EMPTY_ASNULL','0',v).
-att_prop_i(2,20,'DKL_RIGHT_TRIM','0',v).
-att_prop_i(2,20,'DKL_INTERNATIONAL_SUPPORT','0',v).
-att_prop_i(2,20,'DKL_REGULAR_EXPRESION','',v).
-att_prop_i(2,20,'DKL_ISROWGUID','0',v).
-att_prop_i(2,20,'DKL_INPUT_MASK','',v).
-att_prop_i(2,20,'DKL_ENABLE_ATT_AUTH','0',v).
-att_prop_i(2,20,'DKL_MIME_TYPE','',v).
-att_prop_i(2,20,'DKL_ENCRYPTION','0',v).
-att_prop_i(2,20,'DKL_CASING','0',v).
-att_prop_i(2,20,'DKL_ISPASSWORD','0',v).
-att_prop_i(2,20,idDATEFORMAT,idDATEFORMAT_SHORT,d).
-att_prop_i(2,20,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
-att_prop_i(2,20,'FullName','LoacaliadID',v).
+att_prop_i(2,84,'AUTONUMBER','0',v).
+att_prop_i(2,84,'AUTONUMBER_START','1',v).
+att_prop_i(2,84,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,84,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,84,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,84,'OBJECT_METADATA','',v).
+att_prop_i(2,84,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,84,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,84,'DKL_VERSION','2100',d).
+att_prop_i(2,84,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,84,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,84,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,84,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,84,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,84,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,84,'DKL_ISROWGUID','0',v).
+att_prop_i(2,84,'DKL_INPUT_MASK','',v).
+att_prop_i(2,84,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,84,'DKL_MIME_TYPE','',v).
+att_prop_i(2,84,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,84,'DKL_CASING','0',v).
+att_prop_i(2,84,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,84,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,84,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,84,'FullName','PLocalidadID',v).
+att_prop_i(2,81,'AUTONUMBER','0',v).
+att_prop_i(2,81,'AUTONUMBER_START','1',v).
+att_prop_i(2,81,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,81,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,81,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,81,'OBJECT_METADATA','',v).
+att_prop_i(2,81,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,81,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,81,'DKL_VERSION','2100',d).
+att_prop_i(2,81,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,81,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,81,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,81,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,81,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,81,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,81,'DKL_ISROWGUID','0',v).
+att_prop_i(2,81,'DKL_INPUT_MASK','',v).
+att_prop_i(2,81,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,81,'DKL_MIME_TYPE','',v).
+att_prop_i(2,81,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,81,'DKL_CASING','0',v).
+att_prop_i(2,81,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,81,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,81,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,81,'FullName','PProvinciaID',v).
 att_prop_i(2,29,'AUTONUMBER_START','1',v).
 att_prop_i(2,29,'AUTONUMBER_STEP','1',v).
 att_prop_i(2,29,'AUTONUMBER_FORREPLICATION','-1',v).
@@ -558,12 +584,8 @@ att_prop_i(2,11,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
 att_prop_i(2,11,'FullName','UsuarioID',v).
  
 tbl_prop_i(2,7,'AllDirSuper',[ [ 1,[ 4 ] ] ],v).
-tbl_prop_i(2,1,'AllDirSuper',[ [ 5,[ 20 ] ] ],v).
-tbl_prop_i(2,1,'DirSuperNull',[ [ 5,[ 20 ] ] ],v).
-tbl_prop_i(2,5,'DirSubor',[ [ 1,[ 20 ] ] ],v).
 tbl_prop_i(2,1,'DirSubor',[ [ 7,[ 4 ] ] ],v).
 tbl_prop_i(2,7,'DirSuper',[ [ 1,[ 4 ] ] ],v).
-tbl_prop_i(2,1,'DirSuper',[ [ 5,[ 20 ] ] ],v).
  
 tbl_att_prop_i(2,1,4,'AllowNulls',n).
 tbl_att_prop_i(2,1,4,'AUTONUMBER',y).
@@ -571,20 +593,16 @@ tbl_att_prop_i(2,1,1,'AllowNulls',n).
 tbl_att_prop_i(2,1,2,'AllowNulls',n).
 tbl_att_prop_i(2,1,3,'AllowNulls',n).
 tbl_att_prop_i(2,1,6,'AllowNulls',n).
-tbl_att_prop_i(2,1,29,'AllowNulls',n).
-tbl_att_prop_i(2,5,20,'AllowNulls',n).
-tbl_att_prop_i(2,5,20,'AUTONUMBER',y).
 tbl_att_prop_i(2,7,11,'AllowNulls',n).
 tbl_att_prop_i(2,7,11,'AUTONUMBER',y).
 tbl_att_prop_i(2,7,4,'AllowNulls',n).
  
 i_tbl_best_trn(1,[ 1,1,'Persona','Persona' ]).
 i_tbl_best_trn(7,[ 7,1,'Usuario','Usuario' ]).
-i_tbl_best_trn(5,[ 5,1,'Localidad','Localidad' ]).
  
  
  
-trn_level_i(1,[ [ 4,1,2,3,6,20,29 ],'Persona','Persona','Persona','',1 ]).
+trn_level_i(1,[ [ 4,1,2,3,6,84,81,29 ],'Persona','Persona','Persona','',1 ]).
  
  
  

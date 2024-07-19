@@ -128,7 +128,7 @@ namespace Raiderplan1 {
             {
                if ( ( m_ConnectionString == null ) || (m_ConnectionString.Length==0) )
                {
-                  m_CurrentConnectionString = "Server=ICORLLI\\SQLEXPRESS01;Integrated Security=SSPI;Database=RiderPlanDB1" ;
+                  m_CurrentConnectionString = "Data Source=ICORLLI\\SQLEXPRESS01;Integrated Security=SSPI;Initial Catalog=RiderPlanDB1" ;
                }
                else
                {

@@ -80,7 +80,6 @@
     <Compile Include="IPersonaDataAdapter.cs" />
     <Compile Include="IProvinciaDataAdapter.cs" />
     <Compile Include="IRolUsuarioDataAdapter.cs" />
-    <Compile Include="ITrayectoTipoDetalleDataAdapter.cs" />
     <Compile Include="ITrayectoViajeDataAdapter.cs" />
     <Compile Include="IUsuarioDataAdapter.cs" />
     <Compile Include="IViajeDataAdapter.cs" />
@@ -117,11 +116,6 @@
     <Compile Include="SexoEnumeration.cs" />
     <Compile Include="EnterpriseLibrary.cs" />
     <Compile Include="BusinessFrameworkContext.cs" />
-    <Compile Include="TrayectoTipoDetalleDataAdapter.cs" />
-    <Compile Include="TrayectoTipoDetalleDataSet.cs">
-      <DependentUpon>TrayectoTipoDetalleDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="TrayectoViajeDataAdapter.cs" />
     <Compile Include="TrayectoViajeDataSet.cs">
       <DependentUpon>TrayectoViajeDataSet.xsd</DependentUpon>
@@ -175,17 +169,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TrayectoTipoDetalleDataSet.xsd">
+    <EmbeddedResource Include="ViajeDataSet.xsd">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="TrayectoViajeDataSet.xsd">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ViajeDataSet.xsd">
+      <LastGenOutput>TrayectoViajeDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

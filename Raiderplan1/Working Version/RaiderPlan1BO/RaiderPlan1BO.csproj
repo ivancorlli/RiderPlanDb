@@ -58,7 +58,6 @@
     <Compile Include="DataAdapterFactoryProxy.cs" />
     <Compile Include="Provincia.cs" />
     <Compile Include="RolUsuario.cs" />
-    <Compile Include="TrayectoTipoDetalle.cs" />
     <Compile Include="TrayectoViaje.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Viaje.cs" />

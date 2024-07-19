@@ -645,10 +645,6 @@ namespace Raiderplan1 {
          // Using cursor LocalidadDelete1
          cmLocalidadDelete1.SetParameter(0, rowLocalidad["LoacaliadID"]);
          cmLocalidadDelete1.ExecuteStmt();
-         if ( cmLocalidadDelete1.ForeignKeyError )
-         {
-            CheckDeleteErrorsLocalidad( ) ;
-         }
          // Start of After( delete) rules
          // End of After( delete) rules
          OnLocalidadUpdated( new LocalidadEventArgs( rowLocalidad, Mode.Delete)) ;
@@ -676,25 +672,6 @@ namespace Raiderplan1 {
             rowLocalidad["ProvinciaNombre"] = dsDefault.Db.GetString(ProvinciaSelect3, 0) ;
          }
          ProvinciaSelect3.Close();
-      }
-
-      private void CheckDeleteErrorsLocalidad( )
-      {
-          IDataReader PersonaSelect1 ;
-          ReadWriteCommand cmPersonaSelect1 ;
-         cmPersonaSelect1 = connDefault.GetCommand("SELECT TOP 1 [PersonaID] FROM [Persona] WITH (NOLOCK) WHERE [LoacaliadID] = @LoacaliadID ", false) ;
-         if ( ( cmPersonaSelect1.IDbCommand.Parameters.Count == 0 ) )
-         {
-            cmPersonaSelect1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@LoacaliadID", System.Data.DbType.Int32));
-         }
-         cmPersonaSelect1.SetParameter(0, rowLocalidad["LoacaliadID"]);
-         PersonaSelect1 = cmPersonaSelect1.FetchData() ;
-         if ( cmPersonaSelect1.HasMoreRows )
-         {
-            PersonaSelect1.Close();
-            throw new PersonaInvalidDeleteException( string.Format(resourceManager.GetString("del"), new   object[]  {"Persona"})) ;
-         }
-         PersonaSelect1.Close();
       }
 
       private void EndLevelLocalidad( )
@@ -1045,29 +1022,6 @@ namespace Raiderplan1 {
          }
 
          protected LocalidadDataChangedException( SerializationInfo info ,
-                                                  StreamingContext context ) : base(info, context)
-         {
-         }
-
-      }
-
-      [Serializable()]
-      public class PersonaInvalidDeleteException : Deklarit.InvalidDeleteException
-      {
-         public PersonaInvalidDeleteException( )
-         {
-         }
-
-         public PersonaInvalidDeleteException( string message ) : base(message)
-         {
-         }
-
-         public PersonaInvalidDeleteException( string message ,
-                                               Exception inner ) : base(message, inner)
-         {
-         }
-
-         protected PersonaInvalidDeleteException( SerializationInfo info ,
                                                   StreamingContext context ) : base(info, context)
          {
          }

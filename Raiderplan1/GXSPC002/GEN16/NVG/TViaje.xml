@@ -65,9 +65,9 @@
 <TableAction>insert</TableAction>
 <AttrisToUpdate>
 <Attribute>
-<AttriId>48</AttriId>
-<AttriName>VaijeNombre</AttriName>
-<Description>Vaije Nombre</Description></Attribute>
+<AttriId>82</AttriId>
+<AttriName>ViajeNombre</AttriName>
+<Description>Viaje Nombre</Description></Attribute>
 <Attribute>
 <AttriId>30</AttriId>
 <AttriName>FechaSalidaProgramada</AttriName>
@@ -120,6 +120,10 @@
 <AttriId>45</AttriId>
 <AttriName>MotociletaModelo</AttriName>
 <Description>Motocileta</Description></Attribute>
+<Attribute>
+<AttriId>83</AttriId>
+<AttriName>ViajeImagen</AttriName>
+<Description>Viaje Imagen</Description></Attribute>
 <Attribute>
 <AttriId>11</AttriId>
 <AttriName>UsuarioID</AttriName>
@@ -132,9 +136,9 @@
 <TableAction>update</TableAction>
 <AttrisToUpdate>
 <Attribute>
-<AttriId>48</AttriId>
-<AttriName>VaijeNombre</AttriName>
-<Description>Vaije Nombre</Description></Attribute>
+<AttriId>82</AttriId>
+<AttriName>ViajeNombre</AttriName>
+<Description>Viaje Nombre</Description></Attribute>
 <Attribute>
 <AttriId>30</AttriId>
 <AttriName>FechaSalidaProgramada</AttriName>
@@ -187,6 +191,10 @@
 <AttriId>45</AttriId>
 <AttriName>MotociletaModelo</AttriName>
 <Description>Motocileta</Description></Attribute>
+<Attribute>
+<AttriId>83</AttriId>
+<AttriName>ViajeImagen</AttriName>
+<Description>Viaje Imagen</Description></Attribute>
 <Attribute>
 <AttriId>11</AttriId>
 <AttriName>UsuarioID</AttriName>

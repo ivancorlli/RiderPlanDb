@@ -52,12 +52,12 @@ namespace Raiderplan1.Reorg {
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
          RGZ.ExecuteStmt() ;
-         cmC82 = connDefault.GetCommand("SELECT [VaijeNombre], [MotociletaModelo], [MotocilcetaMarca], [kmTotalesEstimado], [LatitudLlegada], [LongitudLegada], [LatitudPartida], [LongitudPartida], [Lugarllegada], [LugarPartida], [FechaLlegadaEfectiva], [FechaSalidaEfectiva], [FechaLlegadaProgramada], [FechaSalidaProgramada], [ViajeID] FROM [Viaje] ",false);
+         cmC82 = connDefault.GetCommand("SELECT [UsuarioID], [MotociletaModelo], [MotocilcetaMarca], [kmTotalesEstimado], [LatitudLlegada], [LongitudLegada], [LatitudPartida], [LongitudPartida], [Lugarllegada], [LugarPartida], [FechaLlegadaEfectiva], [FechaSalidaEfectiva], [FechaLlegadaProgramada], [FechaSalidaProgramada], [ViajeID] FROM [Viaje] ",false);
          cmC82.ErrorMask = cmC82.ErrorMask  |  ErrorMask.Lock;
          C82 = cmC82.FetchData();
          while ( cmC82.HasMoreRows )
          {
-            m_VaijeNombre = dsDefault.Db.GetString(C82, 0, ref m__VaijeNombreIsNull) ;
+            m_UsuarioID = dsDefault.Db.GetInt32(C82, 0, ref m__UsuarioIDIsNull) ;
             m_MotociletaModelo = dsDefault.Db.GetString(C82, 1, ref m__MotociletaModeloIsNull) ;
             m_MotocilcetaMarca = dsDefault.Db.GetString(C82, 2, ref m__MotocilcetaMarcaIsNull) ;
             m_kmTotalesEstimado = dsDefault.Db.GetDecimal(C82, 3, ref m__kmTotalesEstimadoIsNull) ;
@@ -207,9 +207,11 @@ namespace Raiderplan1.Reorg {
                AV15Motoci = m_MotociletaModelo ;
                nV15Motoci = false ;
             }
-            AV16VaijeN = m_VaijeNombre ;
-            AV17Usuari = 0 ;
-            cmC83 = connDefault.GetCommand("INSERT INTO [GXA0008] ([ViajeID], [FechaSalidaProgramada], [FechaLlegadaProgramada], [FechaSalidaEfectiva], [FechaLlegadaEfectiva], [LugarPartida], [Lugarllegada], [LongitudPartida], [LatitudPartida], [LongitudLegada], [LatitudLlegada], [kmTotalesEstimado], [MotocilcetaMarca], [MotociletaModelo], [VaijeNombre], [UsuarioID]) VALUES (@ViajeID, @FechaSalidaProgramada, @FechaLlegadaProgramada, @FechaSalidaEfectiva, @FechaLlegadaEfectiva, @LugarPartida, @Lugarllegada, @LongitudPartida, @LatitudPartida, @LongitudLegada, @LatitudLlegada, @kmTotalesEstimado, @MotocilcetaMarca, @MotociletaModelo, @VaijeNombre, @UsuarioID)",false);
+            AV16Usuari = m_UsuarioID ;
+            AV17ViajeN = " " ;
+            AV18ViajeI = "" ;
+            nV18ViajeI = true ;
+            cmC83 = connDefault.GetCommand("INSERT INTO [GXA0008] ([ViajeID], [FechaSalidaProgramada], [FechaLlegadaProgramada], [FechaSalidaEfectiva], [FechaLlegadaEfectiva], [LugarPartida], [Lugarllegada], [LongitudPartida], [LatitudPartida], [LongitudLegada], [LatitudLlegada], [kmTotalesEstimado], [MotocilcetaMarca], [MotociletaModelo], [UsuarioID], [ViajeNombre], [ViajeImagen]) VALUES (@ViajeID, @FechaSalidaProgramada, @FechaLlegadaProgramada, @FechaSalidaEfectiva, @FechaLlegadaEfectiva, @LugarPartida, @Lugarllegada, @LongitudPartida, @LatitudPartida, @LongitudLegada, @LatitudLlegada, @kmTotalesEstimado, @MotocilcetaMarca, @MotociletaModelo, @UsuarioID, @ViajeNombre, @ViajeImagen)",false);
             if ( ( cmC83.IDbCommand.Parameters.Count == 0 ) )
             {
                cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
@@ -226,8 +228,9 @@ namespace Raiderplan1.Reorg {
                cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@kmTotalesEstimado", System.Data.DbType.Currency));
                cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@MotocilcetaMarca", System.Data.DbType.AnsiString,30));
                cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@MotociletaModelo", System.Data.DbType.AnsiString,50));
-               cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@VaijeNombre", System.Data.DbType.AnsiString,180));
                cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
+               cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeNombre", System.Data.DbType.AnsiString,25));
+               cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeImagen", System.Data.DbType.AnsiString,50));
             }
             cmC83.ErrorMask = cmC83.ErrorMask  |  ErrorMask.DuplicateKeyError;
             // Using cursor C83
@@ -245,8 +248,9 @@ namespace Raiderplan1.Reorg {
             cmC83.SetParameter(11, AV13kmTota, nV13kmTota);
             cmC83.SetParameter(12, AV14Motoci, nV14Motoci);
             cmC83.SetParameter(13, AV15Motoci, nV15Motoci);
-            cmC83.SetParameter(14, AV16VaijeN);
-            cmC83.SetParameter(15, AV17Usuari);
+            cmC83.SetParameter(14, AV16Usuari);
+            cmC83.SetParameter(15, AV17ViajeN);
+            cmC83.SetParameter(16, AV18ViajeI, nV18ViajeI);
             cmC83.ExecuteStmt();
             if ( cmC83.DupKey )
             {
@@ -281,8 +285,8 @@ namespace Raiderplan1.Reorg {
          resourceManagerTables = new System.Resources.ResourceManager( "Deklarit.Tables", System.Reflection.Assembly.GetExecutingAssembly()) ;
          cmdBuffer = "" ;
          scmdbuf = "" ;
-         m__VaijeNombreIsNull = false ;
-         m_VaijeNombre = "" ;
+         m__UsuarioIDIsNull = false ;
+         m_UsuarioID = 0 ;
          m__MotociletaModeloIsNull = false ;
          m_MotociletaModelo = "" ;
          m__MotocilcetaMarcaIsNull = false ;
@@ -339,8 +343,10 @@ namespace Raiderplan1.Reorg {
          nV14Motoci = false ;
          AV15Motoci = "" ;
          nV15Motoci = false ;
-         AV16VaijeN = "" ;
-         AV17Usuari = 0 ;
+         AV16Usuari = 0 ;
+         AV17ViajeN = "" ;
+         AV18ViajeI = "" ;
+         nV18ViajeI = false ;
          Gx_err = 0 ;
          Gx_emsg = "" ;
          // GeneXus formulas.
@@ -348,8 +354,9 @@ namespace Raiderplan1.Reorg {
       }
 
       private short Gx_err ;
+      private int m_UsuarioID ;
       private int GIGXA0008 ;
-      private int AV17Usuari ;
+      private int AV16Usuari ;
       private long m_ViajeID ;
       private long AV2ViajeID ;
       private decimal m_kmTotalesEstimado ;
@@ -373,7 +380,7 @@ namespace Raiderplan1.Reorg {
       private DateTime AV4FechaLl ;
       private DateTime AV5FechaSa ;
       private DateTime AV6FechaLl ;
-      private bool m__VaijeNombreIsNull ;
+      private bool m__UsuarioIDIsNull ;
       private bool m__MotociletaModeloIsNull ;
       private bool m__MotocilcetaMarcaIsNull ;
       private bool m__kmTotalesEstimadoIsNull ;
@@ -401,7 +408,7 @@ namespace Raiderplan1.Reorg {
       private bool nV13kmTota ;
       private bool nV14Motoci ;
       private bool nV15Motoci ;
-      private String m_VaijeNombre ;
+      private bool nV18ViajeI ;
       private String m_MotociletaModelo ;
       private String m_MotocilcetaMarca ;
       private String m_Lugarllegada ;
@@ -410,7 +417,8 @@ namespace Raiderplan1.Reorg {
       private String AV8Lugarll ;
       private String AV14Motoci ;
       private String AV15Motoci ;
-      private String AV16VaijeN ;
+      private String AV17ViajeN ;
+      private String AV18ViajeI ;
       private DataStore dsDefault ;
       private System.Resources.ResourceManager resourceManager ;
       private System.Resources.ResourceManager resourceManagerTables ;

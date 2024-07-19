@@ -18,16 +18,6 @@ namespace Raiderplan1 {
    [Serializable()]
    public partial class TrayectoViajeDataSet : System.Data.DataSet
    {
-      private TrayectoViajeTrayectoDataTable tableTrayectoViajeTrayecto ;
-      [System.ComponentModel.DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Content)]
-      public TrayectoViajeTrayectoDataTable TrayectoViajeTrayecto
-      {
-         get {
-            return this.tableTrayectoViajeTrayecto ;
-         }
-
-      }
-
       private TrayectoViajeDataTable tableTrayectoViaje ;
       [System.ComponentModel.DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Content)]
       public TrayectoViajeDataTable TrayectoViaje
@@ -103,9 +93,6 @@ namespace Raiderplan1 {
       	    return false;
       }
       
-      private bool ShouldSerializeTrayectoViajeTrayecto() { 
-		return false; 
-	  }
       private bool ShouldSerializeTrayectoViaje() { 
 		return false; 
 	  }
@@ -117,10 +104,6 @@ namespace Raiderplan1 {
       		this.Reset();
       		DataSet ds = new DataSet();
               ds.ReadXml(reader);
-              if ((ds.Tables["TrayectoViajeTrayecto"] != null))  
-        { 
-			base.Tables.Add(new TrayectoViajeTrayectoDataTable(ds.Tables["TrayectoViajeTrayecto"])); 
-        }		
               if ((ds.Tables["TrayectoViaje"] != null))  
         { 
 			base.Tables.Add(new TrayectoViajeDataTable(ds.Tables["TrayectoViaje"])); 
@@ -156,12 +139,6 @@ namespace Raiderplan1 {
       }
       
       internal void InitVars(bool initTable) {
-          this.tableTrayectoViajeTrayecto = ((TrayectoViajeTrayectoDataTable)(base.Tables["TrayectoViajeTrayecto"]));		
-		  if ((initTable == true)) { 
-			if ((this.tableTrayectoViajeTrayecto != null)) { 
-				this.tableTrayectoViajeTrayecto.InitVars(); 
-			} 
-	  	  }  
           this.tableTrayectoViaje = ((TrayectoViajeDataTable)(base.Tables["TrayectoViaje"]));		
 		  if ((initTable == true)) { 
 			if ((this.tableTrayectoViaje != null)) { 
@@ -205,10 +182,6 @@ namespace Raiderplan1 {
       	{
       		System.Data.DataSet ds = new System.Data.DataSet();
               ds.ReadXmlSchema(new System.Xml.XmlTextReader(new System.IO.StringReader(strSchema)));
-              if ((ds.Tables["TrayectoViajeTrayecto"] != null))  
-        { 
-			base.Tables.Add(new TrayectoViajeTrayectoDataTable(ds.Tables["TrayectoViajeTrayecto"])); 
-        }        
               if ((ds.Tables["TrayectoViaje"] != null))  
         { 
 			base.Tables.Add(new TrayectoViajeDataTable(ds.Tables["TrayectoViaje"])); 
@@ -259,405 +232,8 @@ namespace Raiderplan1 {
       {
          this.DataSetName = "TrayectoViajeDataSet" ;
          this.Namespace = "http://www.tempuri.org/TrayectoViaje" ;
-         this.tableTrayectoViajeTrayecto = new TrayectoViajeTrayectoDataTable() ;
-         this.Tables.Add( this.tableTrayectoViajeTrayecto) ;
          this.tableTrayectoViaje = new TrayectoViajeDataTable() ;
          this.Tables.Add( this.tableTrayectoViaje) ;
-         this.Relations.Add( "TrayectoViaje_TrayectoViajeTrayecto", new  System.Data.DataColumn[]  {this.Tables["TrayectoViaje"].Columns["TrayectoViajeID"]}, new  System.Data.DataColumn[]  {this.Tables["TrayectoViajeTrayecto"].Columns["TrayectoViajeID"]}) ;
-         this.Relations["TrayectoViaje_TrayectoViajeTrayecto"].Nested = true ;
-      }
-
-      public delegate  void TrayectoViajeTrayectoRowChangeEventHandler( object sender ,
-                                                                        TrayectoViajeTrayectoRowChangeEvent e );
-      [Serializable()]
-      public partial class TrayectoViajeTrayectoDataTable : DataTable, System.Collections.IEnumerable
-      {
-         private DataColumn columnTrayectoViajeID ;
-         private DataColumn columnTrayectoDetalleID ;
-         private DataColumn columnTrayectoTipoDetalleID ;
-         private DataColumn columnTDDescripcion ;
-         private DataColumn columnTDLatitud ;
-         private DataColumn columnTDLongitud ;
-         private DataColumn columnTDCosto ;
-         public TrayectoViajeTrayectoDataTable() 
-         {
-             this.TableName = "TrayectoViajeTrayecto";
-             this.BeginInit();
-             this.InitClass();
-             this.EndInit();
-         }
-         
-         internal TrayectoViajeTrayectoDataTable(System.Data.DataTable table) {
-             this.TableName = table.TableName;
-             if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                 this.CaseSensitive = table.CaseSensitive;
-             }
-             if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                 this.Locale = table.Locale;
-             }
-             if ((table.Namespace != table.DataSet.Namespace)) {
-                 this.Namespace = table.Namespace;
-             }
-             this.Prefix = table.Prefix;
-             this.MinimumCapacity = table.MinimumCapacity;
-         }
-         
-         [System.ComponentModel.Browsable(false)]
-         public int Count {
-             get {
-                 return this.Rows.Count;
-             }
-         }
-         
-         public TrayectoViajeTrayectoRow this[int index] {
-             get {
-                 return ((TrayectoViajeTrayectoRow)(this.Rows[index]));
-             }
-         }
-         
-         public virtual System.Collections.IEnumerator GetEnumerator() {
-             return this.Rows.GetEnumerator();
-         }
-         
-         public override System.Data.DataTable Clone() {
-             TrayectoViajeTrayectoDataTable cln = ((TrayectoViajeTrayectoDataTable)(base.Clone()));
-             cln.InitVars();
-             return cln;
-         }
-         
-         protected override System.Data.DataTable CreateInstance() {
-             return new TrayectoViajeTrayectoDataTable();
-         }
-         
-         public void AddTrayectoViajeTrayectoRow(TrayectoViajeTrayectoRow row) {
-             this.Rows.Add(row);
-         }
-         
-         public TrayectoViajeTrayectoRow NewTrayectoViajeTrayectoRow() {
-             return ((TrayectoViajeTrayectoRow)(this.NewRow()));
-         }
-         
-         protected override System.Data.DataRow NewRowFromBuilder(System.Data.DataRowBuilder builder) {
-             return new TrayectoViajeTrayectoRow(builder);
-         }
-         
-         protected override System.Type GetRowType() {
-             return typeof(TrayectoViajeTrayectoRow);
-         }
-         
-         public void RemoveTrayectoViajeTrayectoRow(TrayectoViajeTrayectoRow row) {
-             this.Rows.Remove(row);
-         }
-         
-         public static System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(System.Xml.Schema.XmlSchemaSet xs) {
-             System.Xml.Schema.XmlSchemaComplexType type = new System.Xml.Schema.XmlSchemaComplexType();
-             System.Xml.Schema.XmlSchemaSequence sequence = new System.Xml.Schema.XmlSchemaSequence();
-             TrayectoViajeDataSet ds = new TrayectoViajeDataSet();
-             xs.Add(ds.GetSchemaSerializable());
-             System.Xml.Schema.XmlSchemaAny any1 = new System.Xml.Schema.XmlSchemaAny();
-             any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-             any1.MinOccurs = new decimal(0);
-             any1.MaxOccurs = decimal.MaxValue;
-             any1.ProcessContents = System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-             sequence.Items.Add(any1);
-             System.Xml.Schema.XmlSchemaAny any2 = new System.Xml.Schema.XmlSchemaAny();
-             any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-             any2.MinOccurs = new decimal(1);
-             any2.ProcessContents = System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-             sequence.Items.Add(any2);
-             System.Xml.Schema.XmlSchemaAttribute attribute1 = new System.Xml.Schema.XmlSchemaAttribute();
-             attribute1.Name = "namespace";
-             attribute1.FixedValue = ds.Namespace;
-             type.Attributes.Add(attribute1);
-             System.Xml.Schema.XmlSchemaAttribute attribute2 = new System.Xml.Schema.XmlSchemaAttribute();
-             attribute2.Name = "tableTypeName";
-             attribute2.FixedValue = "TrayectoViajeTrayectoDataTable";
-             type.Attributes.Add(attribute2);
-             type.Particle = sequence;
-             return type;
-         }
-         protected TrayectoViajeTrayectoDataTable(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context) : 
-                 base(info, context) 
-         {
-             this.InitVars();
-         }
-         public DataColumn TrayectoViajeIDColumn
-         {
-            get {
-               return this.columnTrayectoViajeID ;
-            }
-
-         }
-
-         public DataColumn TrayectoDetalleIDColumn
-         {
-            get {
-               return this.columnTrayectoDetalleID ;
-            }
-
-         }
-
-         public DataColumn TrayectoTipoDetalleIDColumn
-         {
-            get {
-               return this.columnTrayectoTipoDetalleID ;
-            }
-
-         }
-
-         public DataColumn TDDescripcionColumn
-         {
-            get {
-               return this.columnTDDescripcion ;
-            }
-
-         }
-
-         public DataColumn TDLatitudColumn
-         {
-            get {
-               return this.columnTDLatitud ;
-            }
-
-         }
-
-         public DataColumn TDLongitudColumn
-         {
-            get {
-               return this.columnTDLongitud ;
-            }
-
-         }
-
-         public DataColumn TDCostoColumn
-         {
-            get {
-               return this.columnTDCosto ;
-            }
-
-         }
-
-         public event TrayectoViajeTrayectoRowChangeEventHandler TrayectoViajeTrayectoRowChanged ;
-         public event TrayectoViajeTrayectoRowChangeEventHandler TrayectoViajeTrayectoRowChanging ;
-         public event TrayectoViajeTrayectoRowChangeEventHandler TrayectoViajeTrayectoRowDeleted ;
-         public event TrayectoViajeTrayectoRowChangeEventHandler TrayectoViajeTrayectoRowDeleting ;
-         public TrayectoViajeTrayectoRow AddTrayectoViajeTrayectoRow( int trayectoViajeID ,
-                                                                      int trayectoDetalleID ,
-                                                                      int trayectoTipoDetalleID ,
-                                                                      String tDDescripcion ,
-                                                                      decimal tDLatitud ,
-                                                                      decimal tDLongitud ,
-                                                                      decimal tDCosto )
-         {
-            TrayectoViajeTrayectoRow rowTrayectoViajeTrayectoRow = ((TrayectoViajeTrayectoRow)(this.NewRow())) ;
-            rowTrayectoViajeTrayectoRow["TrayectoViajeID"] = trayectoViajeID ;
-            rowTrayectoViajeTrayectoRow["TrayectoDetalleID"] = trayectoDetalleID ;
-            rowTrayectoViajeTrayectoRow["TrayectoTipoDetalleID"] = trayectoTipoDetalleID ;
-            rowTrayectoViajeTrayectoRow["TDDescripcion"] = tDDescripcion ;
-            rowTrayectoViajeTrayectoRow["TDLatitud"] = tDLatitud ;
-            rowTrayectoViajeTrayectoRow["TDLongitud"] = tDLongitud ;
-            rowTrayectoViajeTrayectoRow["TDCosto"] = tDCosto ;
-            this.Rows.Add( rowTrayectoViajeTrayectoRow) ;
-            return rowTrayectoViajeTrayectoRow ;
-         }
-
-         public TrayectoViajeTrayectoRow FindByTrayectoViajeIDTrayectoDetalleID( int trayectoViajeID ,
-                                                                                 int trayectoDetalleID )
-         {
-            return ((TrayectoViajeTrayectoRow)(this.Rows.Find(new  object[] {trayectoViajeID, trayectoDetalleID}))) ;
-         }
-
-         internal void InitVars( )
-         {
-            this.columnTrayectoViajeID = this.Columns["TrayectoViajeID"] ;
-            this.columnTrayectoDetalleID = this.Columns["TrayectoDetalleID"] ;
-            this.columnTrayectoTipoDetalleID = this.Columns["TrayectoTipoDetalleID"] ;
-            this.columnTDDescripcion = this.Columns["TDDescripcion"] ;
-            this.columnTDLatitud = this.Columns["TDLatitud"] ;
-            this.columnTDLongitud = this.Columns["TDLongitud"] ;
-            this.columnTDCosto = this.Columns["TDCosto"] ;
-         }
-
-         public void InitClass( )
-         {
-            this.columnTrayectoViajeID = new DataColumn( "TrayectoViajeID", typeof(int), "", System.Data.MappingType.Element) ;
-            this.columnTrayectoViajeID.AllowDBNull = false ;
-            this.columnTrayectoViajeID.Caption = "Trayecto Viaje ID" ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "IsKey", "true") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "ReadOnly", "true") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "DeklaritType", "int") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "Description", "Trayecto Viaje ID") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "Length", "8") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "Decimals", "0") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "AllowDBNulls", "false") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "IsInReader", "true") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
-            this.columnTrayectoViajeID.ExtendedProperties.Add( "Deklarit.InternalName", "TrayectoViajeID") ;
-            this.Columns.Add( this.columnTrayectoViajeID) ;
-            this.columnTrayectoDetalleID = new DataColumn( "TrayectoDetalleID", typeof(int), "", System.Data.MappingType.Element) ;
-            this.columnTrayectoDetalleID.AllowDBNull = false ;
-            this.columnTrayectoDetalleID.Caption = "Trayecto Detalle" ;
-            this.columnTrayectoDetalleID.DefaultValue = System.Convert.DBNull ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "IsKey", "true") ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "ReadOnly", "false") ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "DeklaritType", "int") ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "Description", "Trayecto Detalle") ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "Length", "5") ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "Decimals", "0") ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "AllowDBNulls", "false") ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
-            this.columnTrayectoDetalleID.ExtendedProperties.Add( "Deklarit.InternalName", "TrayectoDetalleID") ;
-            this.Columns.Add( this.columnTrayectoDetalleID) ;
-            this.columnTrayectoTipoDetalleID = new DataColumn( "TrayectoTipoDetalleID", typeof(int), "", System.Data.MappingType.Element) ;
-            this.columnTrayectoTipoDetalleID.AllowDBNull = false ;
-            this.columnTrayectoTipoDetalleID.Caption = "Trayecto Tipo Detalle ID" ;
-            this.columnTrayectoTipoDetalleID.DefaultValue = System.Convert.DBNull ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "IsKey", "false") ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "ReadOnly", "false") ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "DeklaritType", "int") ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "Description", "Trayecto Tipo Detalle ID") ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "Length", "5") ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "Decimals", "0") ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "AllowDBNulls", "false") ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
-            this.columnTrayectoTipoDetalleID.ExtendedProperties.Add( "Deklarit.InternalName", "TrayectoTipoDetalleID") ;
-            this.Columns.Add( this.columnTrayectoTipoDetalleID) ;
-            this.columnTDDescripcion = new DataColumn( "TDDescripcion", typeof(String), "", System.Data.MappingType.Element) ;
-            this.columnTDDescripcion.AllowDBNull = true ;
-            this.columnTDDescripcion.Caption = "TD Descripcion" ;
-            this.columnTDDescripcion.MaxLength = 200 ;
-            this.columnTDDescripcion.DefaultValue = System.Convert.DBNull ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "IsKey", "false") ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "ReadOnly", "false") ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "DeklaritType", "svchar") ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "Description", "TD Descripcion") ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "Length", "200") ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "Decimals", "0") ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "AllowDBNulls", "true") ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
-            this.columnTDDescripcion.ExtendedProperties.Add( "Deklarit.InternalName", "TDDescripcion") ;
-            this.Columns.Add( this.columnTDDescripcion) ;
-            this.columnTDLatitud = new DataColumn( "TDLatitud", typeof(decimal), "", System.Data.MappingType.Element) ;
-            this.columnTDLatitud.AllowDBNull = true ;
-            this.columnTDLatitud.Caption = "TD Latitud" ;
-            this.columnTDLatitud.DefaultValue = System.Convert.DBNull ;
-            this.columnTDLatitud.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
-            this.columnTDLatitud.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
-            this.columnTDLatitud.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
-            this.columnTDLatitud.ExtendedProperties.Add( "IsKey", "false") ;
-            this.columnTDLatitud.ExtendedProperties.Add( "ReadOnly", "false") ;
-            this.columnTDLatitud.ExtendedProperties.Add( "DeklaritType", "int") ;
-            this.columnTDLatitud.ExtendedProperties.Add( "Description", "TD Latitud") ;
-            this.columnTDLatitud.ExtendedProperties.Add( "Length", "17") ;
-            this.columnTDLatitud.ExtendedProperties.Add( "Decimals", "15") ;
-            this.columnTDLatitud.ExtendedProperties.Add( "AllowDBNulls", "true") ;
-            this.columnTDLatitud.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
-            this.columnTDLatitud.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
-            this.columnTDLatitud.ExtendedProperties.Add( "Deklarit.InternalName", "TDLatitud") ;
-            this.Columns.Add( this.columnTDLatitud) ;
-            this.columnTDLongitud = new DataColumn( "TDLongitud", typeof(decimal), "", System.Data.MappingType.Element) ;
-            this.columnTDLongitud.AllowDBNull = true ;
-            this.columnTDLongitud.Caption = "TD Longitud" ;
-            this.columnTDLongitud.DefaultValue = System.Convert.DBNull ;
-            this.columnTDLongitud.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
-            this.columnTDLongitud.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
-            this.columnTDLongitud.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
-            this.columnTDLongitud.ExtendedProperties.Add( "IsKey", "false") ;
-            this.columnTDLongitud.ExtendedProperties.Add( "ReadOnly", "false") ;
-            this.columnTDLongitud.ExtendedProperties.Add( "DeklaritType", "int") ;
-            this.columnTDLongitud.ExtendedProperties.Add( "Description", "TD Longitud") ;
-            this.columnTDLongitud.ExtendedProperties.Add( "Length", "17") ;
-            this.columnTDLongitud.ExtendedProperties.Add( "Decimals", "15") ;
-            this.columnTDLongitud.ExtendedProperties.Add( "AllowDBNulls", "true") ;
-            this.columnTDLongitud.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
-            this.columnTDLongitud.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
-            this.columnTDLongitud.ExtendedProperties.Add( "Deklarit.InternalName", "TDLongitud") ;
-            this.Columns.Add( this.columnTDLongitud) ;
-            this.columnTDCosto = new DataColumn( "TDCosto", typeof(decimal), "", System.Data.MappingType.Element) ;
-            this.columnTDCosto.AllowDBNull = true ;
-            this.columnTDCosto.Caption = "TD Costo" ;
-            this.columnTDCosto.DefaultValue = System.Convert.DBNull ;
-            this.columnTDCosto.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
-            this.columnTDCosto.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
-            this.columnTDCosto.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
-            this.columnTDCosto.ExtendedProperties.Add( "IsKey", "false") ;
-            this.columnTDCosto.ExtendedProperties.Add( "ReadOnly", "false") ;
-            this.columnTDCosto.ExtendedProperties.Add( "DeklaritType", "int") ;
-            this.columnTDCosto.ExtendedProperties.Add( "Description", "TD Costo") ;
-            this.columnTDCosto.ExtendedProperties.Add( "Length", "8") ;
-            this.columnTDCosto.ExtendedProperties.Add( "Decimals", "2") ;
-            this.columnTDCosto.ExtendedProperties.Add( "AllowDBNulls", "true") ;
-            this.columnTDCosto.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
-            this.columnTDCosto.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
-            this.columnTDCosto.ExtendedProperties.Add( "Deklarit.InternalName", "TDCosto") ;
-            this.Columns.Add( this.columnTDCosto) ;
-            this.PrimaryKey = new  DataColumn[]  {this.columnTrayectoViajeID, this.columnTrayectoDetalleID} ;
-            this.ExtendedProperties.Add( "ParentLvl", "TrayectoViaje") ;
-            this.ExtendedProperties.Add( "LevelName", "Trayecto") ;
-            this.ExtendedProperties.Add( "Description", "Trayecto") ;
-            this.ExtendedProperties.Add( "msprop:AllowInsert", "true") ;
-            this.ExtendedProperties.Add( "msprop:AllowUpdate", "true") ;
-            this.ExtendedProperties.Add( "msprop:AllowDelete", "true") ;
-            this.ExtendedProperties.Add( "Deklarit.EditInDataGrid", "True") ;
-         }
-
-         protected override void OnRowChanged( DataRowChangeEventArgs e )
-         {
-            base.OnRowChanged( e) ;
-            if ( ( this.TrayectoViajeTrayectoRowChanged != null ) )
-            {
-               this.TrayectoViajeTrayectoRowChanged( this, new TrayectoViajeTrayectoRowChangeEvent( ((TrayectoViajeTrayectoRow)(e.Row)), e.Action)) ;
-            }
-         }
-
-         protected override void OnRowChanging( DataRowChangeEventArgs e )
-         {
-            base.OnRowChanging( e) ;
-            if ( ( this.TrayectoViajeTrayectoRowChanging != null ) )
-            {
-               this.TrayectoViajeTrayectoRowChanging( this, new TrayectoViajeTrayectoRowChangeEvent( ((TrayectoViajeTrayectoRow)(e.Row)), e.Action)) ;
-            }
-         }
-
-         protected override void OnRowDeleted( DataRowChangeEventArgs e )
-         {
-            base.OnRowDeleted( e) ;
-            DataRow pRow = e.Row.GetParentRow( "TrayectoViaje_TrayectoViajeTrayecto", System.Data.DataRowVersion.Original) ;
-            if ( ( pRow != null ) && ( pRow.RowState == System.Data.DataRowState.Unchanged ) )
-            {
-               pRow[0] = pRow[0] ;
-            }
-            if ( ( this.TrayectoViajeTrayectoRowDeleted != null ) )
-            {
-               this.TrayectoViajeTrayectoRowDeleted( this, new TrayectoViajeTrayectoRowChangeEvent( ((TrayectoViajeTrayectoRow)(e.Row)), e.Action)) ;
-            }
-         }
-
-         protected override void OnRowDeleting( DataRowChangeEventArgs e )
-         {
-            base.OnRowDeleting( e) ;
-            if ( ( this.TrayectoViajeTrayectoRowDeleting != null ) )
-            {
-               this.TrayectoViajeTrayectoRowDeleting( this, new TrayectoViajeTrayectoRowChangeEvent( ((TrayectoViajeTrayectoRow)(e.Row)), e.Action)) ;
-            }
-         }
-
       }
 
       public delegate  void TrayectoViajeRowChangeEventHandler( object sender ,
@@ -677,6 +253,8 @@ namespace Raiderplan1 {
          private DataColumn columnTiempoEstimado ;
          private DataColumn columnCombustibleConsumido ;
          private DataColumn columnEstadoCarretera ;
+         private DataColumn columnInstrucciones ;
+         private DataColumn columnOrden ;
          public TrayectoViajeDataTable() 
          {
              this.TableName = "TrayectoViaje";
@@ -875,6 +453,22 @@ namespace Raiderplan1 {
 
          }
 
+         public DataColumn InstruccionesColumn
+         {
+            get {
+               return this.columnInstrucciones ;
+            }
+
+         }
+
+         public DataColumn OrdenColumn
+         {
+            get {
+               return this.columnOrden ;
+            }
+
+         }
+
          public event TrayectoViajeRowChangeEventHandler TrayectoViajeRowChanged ;
          public event TrayectoViajeRowChangeEventHandler TrayectoViajeRowChanging ;
          public event TrayectoViajeRowChangeEventHandler TrayectoViajeRowDeleted ;
@@ -889,7 +483,9 @@ namespace Raiderplan1 {
                                                       decimal trayectokm ,
                                                       decimal tiempoEstimado ,
                                                       decimal combustibleConsumido ,
-                                                      String estadoCarretera )
+                                                      String estadoCarretera ,
+                                                      String instrucciones ,
+                                                      int orden )
          {
             TrayectoViajeRow rowTrayectoViajeRow = ((TrayectoViajeRow)(this.NewRow())) ;
             rowTrayectoViajeRow["ViajeID"] = viajeID ;
@@ -903,6 +499,8 @@ namespace Raiderplan1 {
             rowTrayectoViajeRow["TiempoEstimado"] = tiempoEstimado ;
             rowTrayectoViajeRow["CombustibleConsumido"] = combustibleConsumido ;
             rowTrayectoViajeRow["EstadoCarretera"] = estadoCarretera ;
+            rowTrayectoViajeRow["Instrucciones"] = instrucciones ;
+            rowTrayectoViajeRow["Orden"] = orden ;
             this.Rows.Add( rowTrayectoViajeRow) ;
             return rowTrayectoViajeRow ;
          }
@@ -926,6 +524,8 @@ namespace Raiderplan1 {
             this.columnTiempoEstimado = this.Columns["TiempoEstimado"] ;
             this.columnCombustibleConsumido = this.Columns["CombustibleConsumido"] ;
             this.columnEstadoCarretera = this.Columns["EstadoCarretera"] ;
+            this.columnInstrucciones = this.Columns["Instrucciones"] ;
+            this.columnOrden = this.Columns["Orden"] ;
          }
 
          public void InitClass( )
@@ -1165,6 +765,44 @@ namespace Raiderplan1 {
             this.columnEstadoCarretera.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
             this.columnEstadoCarretera.ExtendedProperties.Add( "Deklarit.InternalName", "EstadoCarretera") ;
             this.Columns.Add( this.columnEstadoCarretera) ;
+            this.columnInstrucciones = new DataColumn( "Instrucciones", typeof(String), "", System.Data.MappingType.Element) ;
+            this.columnInstrucciones.AllowDBNull = true ;
+            this.columnInstrucciones.Caption = "Instrucciones" ;
+            this.columnInstrucciones.DefaultValue = System.Convert.DBNull ;
+            this.columnInstrucciones.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "DeklaritType", "vchar") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "Description", "Instrucciones") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "Length", "5") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "AllowDBNulls", "true") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnInstrucciones.ExtendedProperties.Add( "Deklarit.InternalName", "Instrucciones") ;
+            this.Columns.Add( this.columnInstrucciones) ;
+            this.columnOrden = new DataColumn( "Orden", typeof(int), "", System.Data.MappingType.Element) ;
+            this.columnOrden.AllowDBNull = true ;
+            this.columnOrden.Caption = "Orden" ;
+            this.columnOrden.DefaultValue = System.Convert.DBNull ;
+            this.columnOrden.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnOrden.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnOrden.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnOrden.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnOrden.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnOrden.ExtendedProperties.Add( "DeklaritType", "int") ;
+            this.columnOrden.ExtendedProperties.Add( "Description", "Orden") ;
+            this.columnOrden.ExtendedProperties.Add( "Length", "5") ;
+            this.columnOrden.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnOrden.ExtendedProperties.Add( "AllowDBNulls", "true") ;
+            this.columnOrden.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnOrden.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnOrden.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnOrden.ExtendedProperties.Add( "Deklarit.InternalName", "Orden") ;
+            this.Columns.Add( this.columnOrden) ;
             this.PrimaryKey = new  DataColumn[]  {this.columnTrayectoViajeID} ;
             this.ExtendedProperties.Add( "ParentLvl", "") ;
             this.ExtendedProperties.Add( "LevelName", "TrayectoViaje") ;
@@ -1213,261 +851,12 @@ namespace Raiderplan1 {
 
       }
 
-      public class TrayectoViajeTrayectoRow : DataRow
-      {
-         private TrayectoViajeTrayectoDataTable tableTrayectoViajeTrayecto ;
-         internal TrayectoViajeTrayectoRow( DataRowBuilder rb ) : base(rb)
-         {
-            this.tableTrayectoViajeTrayecto = ((TrayectoViajeTrayectoDataTable)(this.Table)) ;
-         }
-
-         public TrayectoViajeRow GetTrayectoViajeRow( )
-         {
-            return ((TrayectoViajeRow)(this.GetParentRow( "TrayectoViaje_TrayectoViajeTrayecto"))) ;
-         }
-
-         ///  <summary>
-         ///   Gets or sets the Trayecto Viaje ID.
-         ///  </summary>
-         public int TrayectoViajeID
-         {
-            get {
-               return ((int)(this[this.tableTrayectoViajeTrayecto.TrayectoViajeIDColumn])) ;
-            }
-
-            set {
-               this[this.tableTrayectoViajeTrayecto.TrayectoViajeIDColumn] = value ;
-            }
-
-         }
-
-         public bool IsTrayectoViajeIDNull( )
-         {
-            return this.IsNull( this.tableTrayectoViajeTrayecto.TrayectoViajeIDColumn) ;
-         }
-
-         ///  <summary>
-         ///   Gets or sets the Trayecto Detalle.
-         ///  </summary>
-         public int TrayectoDetalleID
-         {
-            get {
-               return ((int)(this[this.tableTrayectoViajeTrayecto.TrayectoDetalleIDColumn])) ;
-            }
-
-            set {
-               this[this.tableTrayectoViajeTrayecto.TrayectoDetalleIDColumn] = value ;
-            }
-
-         }
-
-         public bool IsTrayectoDetalleIDNull( )
-         {
-            return this.IsNull( this.tableTrayectoViajeTrayecto.TrayectoDetalleIDColumn) ;
-         }
-
-         ///  <summary>
-         ///   Gets or sets the Trayecto Tipo Detalle ID.
-         ///  </summary>
-         public int TrayectoTipoDetalleID
-         {
-            get {
-               try
-               {
-                  return ((int)(this[this.tableTrayectoViajeTrayecto.TrayectoTipoDetalleIDColumn])) ;
-               }
-               catch ( InvalidCastException deklaritException )
-               {
-                  throw new StrongTypingException( "Cannot get value TrayectoTipoDetalleID because it is DBNull.", deklaritException) ;
-               }
-            }
-
-            set {
-               this[this.tableTrayectoViajeTrayecto.TrayectoTipoDetalleIDColumn] = value ;
-            }
-
-         }
-
-         public bool IsTrayectoTipoDetalleIDNull( )
-         {
-            return this.IsNull( this.tableTrayectoViajeTrayecto.TrayectoTipoDetalleIDColumn) ;
-         }
-
-         public void SetTrayectoTipoDetalleIDNull( )
-         {
-            this[this.tableTrayectoViajeTrayecto.TrayectoTipoDetalleIDColumn] = System.Convert.DBNull ;
-         }
-
-         ///  <summary>
-         ///   Gets or sets the TD Descripcion.
-         ///  </summary>
-         public String TDDescripcion
-         {
-            get {
-               try
-               {
-                  return ((String)(this[this.tableTrayectoViajeTrayecto.TDDescripcionColumn])) ;
-               }
-               catch ( InvalidCastException deklaritException )
-               {
-                  throw new StrongTypingException( "Cannot get value TDDescripcion because it is DBNull.", deklaritException) ;
-               }
-            }
-
-            set {
-               this[this.tableTrayectoViajeTrayecto.TDDescripcionColumn] = value ;
-            }
-
-         }
-
-         public bool IsTDDescripcionNull( )
-         {
-            return this.IsNull( this.tableTrayectoViajeTrayecto.TDDescripcionColumn) ;
-         }
-
-         public void SetTDDescripcionNull( )
-         {
-            this[this.tableTrayectoViajeTrayecto.TDDescripcionColumn] = System.Convert.DBNull ;
-         }
-
-         ///  <summary>
-         ///   Gets or sets the TD Latitud.
-         ///  </summary>
-         public decimal TDLatitud
-         {
-            get {
-               try
-               {
-                  return ((decimal)(this[this.tableTrayectoViajeTrayecto.TDLatitudColumn])) ;
-               }
-               catch ( InvalidCastException deklaritException )
-               {
-                  throw new StrongTypingException( "Cannot get value TDLatitud because it is DBNull.", deklaritException) ;
-               }
-            }
-
-            set {
-               this[this.tableTrayectoViajeTrayecto.TDLatitudColumn] = value ;
-            }
-
-         }
-
-         public bool IsTDLatitudNull( )
-         {
-            return this.IsNull( this.tableTrayectoViajeTrayecto.TDLatitudColumn) ;
-         }
-
-         public void SetTDLatitudNull( )
-         {
-            this[this.tableTrayectoViajeTrayecto.TDLatitudColumn] = System.Convert.DBNull ;
-         }
-
-         ///  <summary>
-         ///   Gets or sets the TD Longitud.
-         ///  </summary>
-         public decimal TDLongitud
-         {
-            get {
-               try
-               {
-                  return ((decimal)(this[this.tableTrayectoViajeTrayecto.TDLongitudColumn])) ;
-               }
-               catch ( InvalidCastException deklaritException )
-               {
-                  throw new StrongTypingException( "Cannot get value TDLongitud because it is DBNull.", deklaritException) ;
-               }
-            }
-
-            set {
-               this[this.tableTrayectoViajeTrayecto.TDLongitudColumn] = value ;
-            }
-
-         }
-
-         public bool IsTDLongitudNull( )
-         {
-            return this.IsNull( this.tableTrayectoViajeTrayecto.TDLongitudColumn) ;
-         }
-
-         public void SetTDLongitudNull( )
-         {
-            this[this.tableTrayectoViajeTrayecto.TDLongitudColumn] = System.Convert.DBNull ;
-         }
-
-         ///  <summary>
-         ///   Gets or sets the TD Costo.
-         ///  </summary>
-         public decimal TDCosto
-         {
-            get {
-               try
-               {
-                  return ((decimal)(this[this.tableTrayectoViajeTrayecto.TDCostoColumn])) ;
-               }
-               catch ( InvalidCastException deklaritException )
-               {
-                  throw new StrongTypingException( "Cannot get value TDCosto because it is DBNull.", deklaritException) ;
-               }
-            }
-
-            set {
-               this[this.tableTrayectoViajeTrayecto.TDCostoColumn] = value ;
-            }
-
-         }
-
-         public bool IsTDCostoNull( )
-         {
-            return this.IsNull( this.tableTrayectoViajeTrayecto.TDCostoColumn) ;
-         }
-
-         public void SetTDCostoNull( )
-         {
-            this[this.tableTrayectoViajeTrayecto.TDCostoColumn] = System.Convert.DBNull ;
-         }
-
-      }
-
-      public class TrayectoViajeTrayectoRowChangeEvent : EventArgs
-      {
-         private TrayectoViajeTrayectoRow eventRow ;
-         private System.Data.DataRowAction eventAction ;
-         public TrayectoViajeTrayectoRowChangeEvent( TrayectoViajeTrayectoRow row ,
-                                                     DataRowAction action )
-         {
-            this.eventRow = row ;
-            this.eventAction = action ;
-         }
-
-         public TrayectoViajeTrayectoRow Row
-         {
-            get {
-               return this.eventRow ;
-            }
-
-         }
-
-         public DataRowAction Action
-         {
-            get {
-               return this.eventAction ;
-            }
-
-         }
-
-      }
-
       public class TrayectoViajeRow : DataRow
       {
          private TrayectoViajeDataTable tableTrayectoViaje ;
          internal TrayectoViajeRow( DataRowBuilder rb ) : base(rb)
          {
             this.tableTrayectoViaje = ((TrayectoViajeDataTable)(this.Table)) ;
-         }
-
-         public TrayectoViajeTrayectoRow[] GetTrayectoViajeTrayectoRows( )
-         {
-            return ((TrayectoViajeTrayectoRow[])(this.GetChildRows( "TrayectoViaje_TrayectoViajeTrayecto"))) ;
          }
 
          ///  <summary>
@@ -1840,6 +1229,70 @@ namespace Raiderplan1 {
          public void SetEstadoCarreteraNull( )
          {
             this[this.tableTrayectoViaje.EstadoCarreteraColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the Instrucciones.
+         ///  </summary>
+         public String Instrucciones
+         {
+            get {
+               try
+               {
+                  return ((String)(this[this.tableTrayectoViaje.InstruccionesColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value Instrucciones because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tableTrayectoViaje.InstruccionesColumn] = value ;
+            }
+
+         }
+
+         public bool IsInstruccionesNull( )
+         {
+            return this.IsNull( this.tableTrayectoViaje.InstruccionesColumn) ;
+         }
+
+         public void SetInstruccionesNull( )
+         {
+            this[this.tableTrayectoViaje.InstruccionesColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the Orden.
+         ///  </summary>
+         public int Orden
+         {
+            get {
+               try
+               {
+                  return ((int)(this[this.tableTrayectoViaje.OrdenColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value Orden because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tableTrayectoViaje.OrdenColumn] = value ;
+            }
+
+         }
+
+         public bool IsOrdenNull( )
+         {
+            return this.IsNull( this.tableTrayectoViaje.OrdenColumn) ;
+         }
+
+         public void SetOrdenNull( )
+         {
+            this[this.tableTrayectoViaje.OrdenColumn] = System.Convert.DBNull ;
          }
 
       }

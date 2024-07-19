@@ -16,13 +16,6 @@ namespace Raiderplan1 {
                      int startRow ,
                      int maxRows );
        int Fill( DataSet dataSet );
-       int GetRecordCountByLoacaliadID( int loacaliadID );
-       int FillPageByLoacaliadID( PersonaDataSet dataSet ,
-                                  int loacaliadID ,
-                                  int startRow ,
-                                  int maxRows );
-       int FillByLoacaliadID( PersonaDataSet dataSet ,
-                              int loacaliadID );
        bool FillByPersonaID( PersonaDataSet dataSet ,
                              int personaID );
        int Fill( PersonaDataSet dataSet );
