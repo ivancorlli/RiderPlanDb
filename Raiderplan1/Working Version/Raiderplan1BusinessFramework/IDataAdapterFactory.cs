@@ -16,6 +16,10 @@ namespace Raiderplan1 {
        IPersonaDataAdapter GetPersonaDataAdapter( );
        IPaisDataAdapter GetPaisDataAdapter( );
        ILocalidadDataAdapter GetLocalidadDataAdapter( );
+       IViajesRealizadosDataAdapter GetViajesRealizadosDataAdapter( );
+       IViajesEnProgresoDataAdapter GetViajesEnProgresoDataAdapter( );
+       IViajesEnPlanificacionDataAdapter GetViajesEnPlanificacionDataAdapter( );
+       IViajesEliminadosDataAdapter GetViajesEliminadosDataAdapter( );
        IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( );
    }
 

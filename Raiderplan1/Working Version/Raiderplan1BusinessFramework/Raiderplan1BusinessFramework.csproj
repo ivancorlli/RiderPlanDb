@@ -83,6 +83,10 @@
     <Compile Include="ITrayectoViajeDataAdapter.cs" />
     <Compile Include="IUsuarioDataAdapter.cs" />
     <Compile Include="IViajeDataAdapter.cs" />
+    <Compile Include="IViajesEliminadosDataAdapter.cs" />
+    <Compile Include="IViajesEnPlanificacionDataAdapter.cs" />
+    <Compile Include="IViajesEnProgresoDataAdapter.cs" />
+    <Compile Include="IViajesRealizadosDataAdapter.cs" />
     <Compile Include="LocalidadDataAdapter.cs" />
     <Compile Include="LocalidadDataSet.cs">
       <DependentUpon>LocalidadDataSet.xsd</DependentUpon>
@@ -132,6 +136,26 @@
       <DependentUpon>ViajeDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ViajesEliminadosDataAdapter.cs" />
+    <Compile Include="ViajesEliminadosDataSet.cs">
+      <DependentUpon>ViajesEliminadosDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViajesEnPlanificacionDataAdapter.cs" />
+    <Compile Include="ViajesEnPlanificacionDataSet.cs">
+      <DependentUpon>ViajesEnPlanificacionDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViajesEnProgresoDataAdapter.cs" />
+    <Compile Include="ViajesEnProgresoDataSet.cs">
+      <DependentUpon>ViajesEnProgresoDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViajesRealizadosDataAdapter.cs" />
+    <Compile Include="ViajesRealizadosDataSet.cs">
+      <DependentUpon>ViajesRealizadosDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="LocalidadDataSet.xsd">
@@ -176,6 +200,30 @@
   <ItemGroup>
     <EmbeddedResource Include="TrayectoViajeDataSet.xsd">
       <LastGenOutput>TrayectoViajeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ViajesEliminadosDataSet.xsd">
+      <LastGenOutput>ViajesEliminadosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ViajesEnPlanificacionDataSet.xsd">
+      <LastGenOutput>ViajesEnPlanificacionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ViajesEnProgresoDataSet.xsd">
+      <LastGenOutput>ViajesEnProgresoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ViajesRealizadosDataSet.xsd">
+      <LastGenOutput>ViajesRealizadosDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

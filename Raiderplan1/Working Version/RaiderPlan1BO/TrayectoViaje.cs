@@ -317,6 +317,21 @@ namespace Raiderplan1
 			}
 		}
 		
+		/// <summary>
+		/// Gets or sets the S/N
+		/// </summary>        
+		public System.String EsOrigen
+		{
+			get 
+			{
+				return m_DataRow.EsOrigen;
+			}
+			set
+			{
+				m_DataRow.EsOrigen = value;
+			}
+		}
+		
 
 
 

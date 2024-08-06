@@ -52,6 +52,26 @@ namespace Raiderplan1 {
          return PolicyInjection.Create<LocalidadDataAdapter, ILocalidadDataAdapter>( ) ;
       }
 
+      public virtual IViajesRealizadosDataAdapter GetViajesRealizadosDataAdapter( )
+      {
+         return PolicyInjection.Create<ViajesRealizadosDataAdapter, IViajesRealizadosDataAdapter>( ) ;
+      }
+
+      public virtual IViajesEnProgresoDataAdapter GetViajesEnProgresoDataAdapter( )
+      {
+         return PolicyInjection.Create<ViajesEnProgresoDataAdapter, IViajesEnProgresoDataAdapter>( ) ;
+      }
+
+      public virtual IViajesEnPlanificacionDataAdapter GetViajesEnPlanificacionDataAdapter( )
+      {
+         return PolicyInjection.Create<ViajesEnPlanificacionDataAdapter, IViajesEnPlanificacionDataAdapter>( ) ;
+      }
+
+      public virtual IViajesEliminadosDataAdapter GetViajesEliminadosDataAdapter( )
+      {
+         return PolicyInjection.Create<ViajesEliminadosDataAdapter, IViajesEliminadosDataAdapter>( ) ;
+      }
+
       public virtual IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )
       {
          return PolicyInjection.Create<dpUsuarioXEmailXusuarioIDCollectionDataAdapter, IdpUsuarioXEmailXusuarioIDCollectionDataAdapter>( ) ;

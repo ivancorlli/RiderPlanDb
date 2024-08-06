@@ -125,6 +125,10 @@
 <AttriName>ViajeImagen</AttriName>
 <Description>Viaje Imagen</Description></Attribute>
 <Attribute>
+<AttriId>87</AttriId>
+<AttriName>ViajeEstado</AttriName>
+<Description>A = Activo (Planificacion); Z =Eliminado; P =Progreso; R = Realizado</Description></Attribute>
+<Attribute>
 <AttriId>11</AttriId>
 <AttriName>UsuarioID</AttriName>
 <Description>Usuario ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -195,6 +199,10 @@
 <AttriId>83</AttriId>
 <AttriName>ViajeImagen</AttriName>
 <Description>Viaje Imagen</Description></Attribute>
+<Attribute>
+<AttriId>87</AttriId>
+<AttriName>ViajeEstado</AttriName>
+<Description>A = Activo (Planificacion); Z =Eliminado; P =Progreso; R = Realizado</Description></Attribute>
 <Attribute>
 <AttriId>11</AttriId>
 <AttriName>UsuarioID</AttriName>

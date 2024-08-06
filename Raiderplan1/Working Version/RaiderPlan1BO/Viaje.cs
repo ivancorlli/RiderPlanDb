@@ -362,6 +362,21 @@ namespace Raiderplan1
 			}
 		}
 		
+		/// <summary>
+		/// Gets or sets the A = Activo (planificacion); Z =Inactivo (papelera); P = Progreso (iniciado); R = Realizado
+		/// </summary>        
+		public System.String ViajeEstado
+		{
+			get 
+			{
+				return m_DataRow.ViajeEstado;
+			}
+			set
+			{
+				m_DataRow.ViajeEstado = value;
+			}
+		}
+		
 
 
 

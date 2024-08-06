@@ -73,6 +73,42 @@
       <ObjNameSpace>Raiderplan1</ObjNameSpace>
    </Object>
    <Object>
+      <ObjName>ViajesRealizados</ObjName>
+      <ObjDesc>ViajesRealizados</ObjDesc>
+      <ObjType>DataProvider</ObjType>
+      <ObjDataSet>ViajesRealizadosDataSet</ObjDataSet>
+      <ObjDataAdapter>ViajesRealizadosDataAdapter</ObjDataAdapter>
+      <ObjDataAdapterInterface>IViajesRealizadosDataAdapter</ObjDataAdapterInterface>
+      <ObjNameSpace>Raiderplan1</ObjNameSpace>
+   </Object>
+   <Object>
+      <ObjName>ViajesEnProgreso</ObjName>
+      <ObjDesc>ViajesEnProgreso</ObjDesc>
+      <ObjType>DataProvider</ObjType>
+      <ObjDataSet>ViajesEnProgresoDataSet</ObjDataSet>
+      <ObjDataAdapter>ViajesEnProgresoDataAdapter</ObjDataAdapter>
+      <ObjDataAdapterInterface>IViajesEnProgresoDataAdapter</ObjDataAdapterInterface>
+      <ObjNameSpace>Raiderplan1</ObjNameSpace>
+   </Object>
+   <Object>
+      <ObjName>ViajesEnPlanificacion</ObjName>
+      <ObjDesc>ViajesEnPlanificacion</ObjDesc>
+      <ObjType>DataProvider</ObjType>
+      <ObjDataSet>ViajesEnPlanificacionDataSet</ObjDataSet>
+      <ObjDataAdapter>ViajesEnPlanificacionDataAdapter</ObjDataAdapter>
+      <ObjDataAdapterInterface>IViajesEnPlanificacionDataAdapter</ObjDataAdapterInterface>
+      <ObjNameSpace>Raiderplan1</ObjNameSpace>
+   </Object>
+   <Object>
+      <ObjName>ViajesEliminados</ObjName>
+      <ObjDesc>ViajesEliminados</ObjDesc>
+      <ObjType>DataProvider</ObjType>
+      <ObjDataSet>ViajesEliminadosDataSet</ObjDataSet>
+      <ObjDataAdapter>ViajesEliminadosDataAdapter</ObjDataAdapter>
+      <ObjDataAdapterInterface>IViajesEliminadosDataAdapter</ObjDataAdapterInterface>
+      <ObjNameSpace>Raiderplan1</ObjNameSpace>
+   </Object>
+   <Object>
       <ObjName>dpUsuarioXEmailXusuarioIDCollection</ObjName>
       <ObjDesc>dpUsuarioXEmailXusuarioIDCollection</ObjDesc>
       <ObjType>DataProvider</ObjType>

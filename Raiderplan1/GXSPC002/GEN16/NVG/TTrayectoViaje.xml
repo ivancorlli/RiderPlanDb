@@ -113,6 +113,10 @@
 <AttriName>Orden</AttriName>
 <Description>Orden</Description></Attribute>
 <Attribute>
+<AttriId>89</AttriId>
+<AttriName>EsOrigen</AttriName>
+<Description>Es Origen</Description></Attribute>
+<Attribute>
 <AttriId>42</AttriId>
 <AttriName>ViajeID</AttriName>
 <Description>Viaje ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -171,6 +175,10 @@
 <AttriId>86</AttriId>
 <AttriName>Orden</AttriName>
 <Description>Orden</Description></Attribute>
+<Attribute>
+<AttriId>89</AttriId>
+<AttriName>EsOrigen</AttriName>
+<Description>Es Origen</Description></Attribute>
 <Attribute>
 <AttriId>42</AttriId>
 <AttriName>ViajeID</AttriName>

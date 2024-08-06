@@ -61,6 +61,26 @@ namespace Raiderplan1 {
          return daFactory.GetLocalidadDataAdapter( ) ;
       }
 
+      public static IViajesRealizadosDataAdapter GetViajesRealizadosDataAdapter( )
+      {
+         return daFactory.GetViajesRealizadosDataAdapter( ) ;
+      }
+
+      public static IViajesEnProgresoDataAdapter GetViajesEnProgresoDataAdapter( )
+      {
+         return daFactory.GetViajesEnProgresoDataAdapter( ) ;
+      }
+
+      public static IViajesEnPlanificacionDataAdapter GetViajesEnPlanificacionDataAdapter( )
+      {
+         return daFactory.GetViajesEnPlanificacionDataAdapter( ) ;
+      }
+
+      public static IViajesEliminadosDataAdapter GetViajesEliminadosDataAdapter( )
+      {
+         return daFactory.GetViajesEliminadosDataAdapter( ) ;
+      }
+
       public static IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )
       {
          return daFactory.GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( ) ;

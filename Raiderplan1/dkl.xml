@@ -4,84 +4,21 @@
     <MinorVersion>8</MinorVersion>
   </KMW>
  <GXObject>
-  <Transaction>
+  <Report>
     <Info>
-      <Name>TrayectoViaje</Name>
-      <Description>TrayectoViaje</Description>
-      <Folder>Vaijes</Folder>
+      <Name>ViajesRealizados</Name>
+      <Description>ViajesRealizados</Description>
+      <Folder>dpViaje</Folder>
     </Info>
-    <LastUpdate>2024-07-19 23:26:55GMT</LastUpdate>
- <Structure>
-  <Source><![CDATA[TrayectoViajeID*
-ViajeID
-TrayectoOrigen
-TrayectoDestino
-TayectoLatitudOrigen
-TrayectoLongitudOrigen
-TrayectoLatidudDestino
-TrayectoLongitudDestino
-Trayectokm
-TiempoEstimado
-CombustibleConsumido
-EstadoCarretera
-Instrucciones
-Orden
-]]> </Source>
-  <AllowNulls>
-    <Name>ViajeID</Name>
-    <Value>No</Value>
-  </AllowNulls>
-  <AllowNulls>
-    <Name>TrayectoOrigen</Name>
-    <Value>Yes</Value>
-  </AllowNulls>
-  <AllowNulls>
-    <Name>TrayectoDestino</Name>
-    <Value>No</Value>
-  </AllowNulls>
-  <AllowNulls>
-    <Name>TayectoLatitudOrigen</Name>
-    <Value>Yes</Value>
-  </AllowNulls>
-  <AllowNulls>
-    <Name>TrayectoLongitudOrigen</Name>
-    <Value>Yes</Value>
-  </AllowNulls>
-  <AllowNulls>
-    <Name>TrayectoLatidudDestino</Name>
-    <Value>Yes</Value>
-  </AllowNulls>
-  <AllowNulls>
-    <Name>TrayectoLongitudDestino</Name>
-    <Value>Yes</Value>
-  </AllowNulls>
-  <AllowNulls>
-    <Name>Trayectokm</Name>
-    <Value>Yes</Value>
-  </AllowNulls>
-  <AllowNulls>
-    <Name>TiempoEstimado</Name>
-    <Value>Yes</Value>
-  </AllowNulls>
-  <AllowNulls>
-    <Name>CombustibleConsumido</Name>
-    <Value>Yes</Value>
-  </AllowNulls>
-  <AllowNulls>
-    <Name>EstadoCarretera</Name>
-    <Value>Yes</Value>
-  </AllowNulls>
-  <AllowNulls>
-    <Name>Instrucciones</Name>
-    <Value>Yes</Value>
-  </AllowNulls>
-  <AllowNulls>
-    <Name>Orden</Name>
-    <Value>Yes</Value>
-  </AllowNulls>
- </Structure>
-    <Documentation>
-      <Source><![CDATA[ ]]> </Source>
+    <LastUpdate>2024-08-06 15:26:42GMT</LastUpdate>
+<Property><Type>string</Type><Name>OUTPUT</Name><Value>FIL</Value><Rule>Output('FIL')</Rule></Property><Rules><![CDATA[
+		parm(in:&UsuarioID);
+		]]></Rules><Layout><FormInfo><FormId>1</FormId><FormClass>Graphic</FormClass><IsDefault>N</IsDefault><Att_Font></Att_Font><Txt_Font></Txt_Font><TemplateBased>N</TemplateBased></FormInfo><Block><CodeBlock><left>17</left><top>1</top><right>129</right><bottom>1</bottom><Brush>Y</Brush><ColorInfo><Foreground>Lime</Foreground></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>N</FromDefault><ForeColor>-2147483642</ForeColor><BackColor>16777215</BackColor><BorderWidth>0</BorderWidth><Shape>Frame</Shape><OutStyle>Single</OutStyle><Source> for each  where ViajeEstado="R" 
+
+ where &amp;UsuarioID=UsuarioID 
+
+</Source></CodeBlock></Block><Block><PrintBlock><left>18</left><top>1</top><right>18</right><bottom>1</bottom><Brush>Y</Brush><CtrlName>ViajesRealizados</CtrlName><ColorInfo><Foreground>Black</Foreground><Background>White</Background></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><ForeColor>-2147483642</ForeColor><BackColor>16777215</BackColor><Shape>Frame</Shape><OutStyle>Single</OutStyle></PrintBlock><Edit><left>0</left><top>11</top><right>89</right><bottom>11</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>ViajeID</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>12</top><right>89</right><bottom>12</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>UsuarioID</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>13</top><right>89</right><bottom>13</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>ViajeNombre</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>14</top><right>89</right><bottom>14</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>FechaSalidaProgramada</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>15</top><right>89</right><bottom>15</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>FechaLlegadaProgramada</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>16</top><right>89</right><bottom>16</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>FechaSalidaEfectiva</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>17</top><right>89</right><bottom>17</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>FechaLlegadaEfectiva</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>18</top><right>89</right><bottom>18</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>LugarPartida</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>19</top><right>89</right><bottom>19</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>Lugarllegada</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>20</top><right>89</right><bottom>20</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>LongitudPartida</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>21</top><right>89</right><bottom>21</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>LatitudPartida</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>22</top><right>89</right><bottom>22</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>LongitudLegada</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>23</top><right>89</right><bottom>23</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>LatitudLlegada</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>24</top><right>89</right><bottom>24</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>kmTotalesEstimado</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>25</top><right>89</right><bottom>25</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>MotocilcetaMarca</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>26</top><right>89</right><bottom>26</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>MotociletaModelo</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>27</top><right>89</right><bottom>27</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>ViajeImagen</Name><EditInfo></EditInfo><Align>2</Align></Edit><Edit><left>0</left><top>28</top><right>89</right><bottom>28</bottom><ColorInfo></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>Y</FromDefault><BackColor>16777215</BackColor><OutStyle>None</OutStyle><Font><Name>Courier New</Name><Size>9</Size></Font><Id></Id><Name>ViajeEstado</Name><EditInfo></EditInfo><Align>2</Align></Edit></Block><Block><CodeBlock><left>17</left><top></top><right>129</right><bottom></bottom><Brush>Y</Brush><ColorInfo><Foreground>Lime</Foreground></ColorInfo><WebProperties></WebProperties><FromStyle>N</FromStyle><FromDefault>N</FromDefault><ForeColor>-2147483642</ForeColor><BackColor>16777215</BackColor><BorderWidth>0</BorderWidth><Shape>Frame</Shape><OutStyle>Single</OutStyle><Source> endfor</Source></CodeBlock></Block></Layout><Variable><Id>-8</Id><Name>UsuarioID</Name><Title>Usuario ID </Title><Type>Numeric</Type><BasedOn>UsuarioID</BasedOn></Variable>    <Documentation>
+      <Source><![CDATA[]]> </Source>
     </Documentation>
  <Property>
   <Type>string</Type>
@@ -101,7 +38,7 @@ Orden
  <Property>
   <Type>integer</Type>
   <Name>DEKLARIT_TYPE</Name>
-  <Value>0</Value>
+  <Value>2</Value>
  </Property>
  <Property>
   <Type>integer</Type>
@@ -126,7 +63,7 @@ Orden
  <Property>
   <Type>integer</Type>
   <Name>DKL_PERMISSION_BASE_ID</Name>
-  <Value>2012</Value>
+  <Value>2018</Value>
  </Property>
  <Property>
   <Type>integer</Type>
@@ -156,7 +93,7 @@ Orden
  <Property>
   <Type>objxml</Type>
   <Name>OBJECT_METADATA</Name>
-  <Value><![CDATA[ ]]> </Value>
+  <Value><![CDATA[]]> </Value>
  </Property>
  <Property>
   <Type>integer</Type>
@@ -171,7 +108,7 @@ Orden
  <Property>
   <Type>objxml</Type>
   <Name>DKL_DEPENDENCIES_PROPS</Name>
-  <Value><![CDATA[<Items xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gx="www.genexus.com" ><Item><gx:Object><Name>trayectokm</Name><Class>5</Class></gx:Object><Properties> <Property>  <Type>string</Type>  <Name>Description</Name>  <Value>Trayecto Km</Value> </Property></Properties></Item><Item><gx:Object><Name>combustibleconsumido</Name><Class>5</Class></gx:Object><Properties> <Property>  <Type>string</Type>  <Name>Description</Name>  <Value>Combustible Consumido en litros</Value> </Property></Properties></Item><Item><gx:Object><Name>tiempoestimado</Name><Class>5</Class></gx:Object><Properties> <Property>  <Type>string</Type>  <Name>Description</Name>  <Value>Tiempo Estimado en horas</Value> </Property></Properties></Item></Items>]]> </Value>
+  <Value><![CDATA[<Items xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gx="www.genexus.com" ></Items>]]> </Value>
  </Property>
  <Property>
   <Type>integer</Type>
@@ -191,22 +128,22 @@ Orden
  <Property>
   <Type>objxml</Type>
   <Name>DKL_LAYOUT</Name>
-  <Value><![CDATA[ ]]> </Value>
+  <Value><![CDATA[]]> </Value>
  </Property>
  <Property>
   <Type>string</Type>
   <Name>DKL_IMAGE</Name>
-  <Value><![CDATA[ ]]> </Value>
+  <Value><![CDATA[]]> </Value>
  </Property>
  <Property>
   <Type>string</Type>
   <Name>DKL_SMALL_IMAGE</Name>
-  <Value><![CDATA[ ]]> </Value>
+  <Value><![CDATA[]]> </Value>
  </Property>
  <Property>
   <Type>string</Type>
   <Name>DKL_BIG_IMAGE</Name>
-  <Value><![CDATA[ ]]> </Value>
+  <Value><![CDATA[]]> </Value>
  </Property>
  <Property>
   <Type>string</Type>
@@ -218,133 +155,6 @@ Orden
   <Name>DKL_STOREDPROCEDURE</Name>
   <Value><![CDATA[]]> </Value>
  </Property>
-  </Transaction>
+  </Report>
  </GXObject>
- <Attributes>
- <GXAtt>
-  <Attribute>
-    <Name>Orden</Name>
-    <Title>Orden</Title>
-    <Decimals>0</Decimals>
-    <Length>5</Length>
-    <Picture/>
-    <ValRange/>
-  </Attribute>
-  <AttInfo>
-    <Domain/>
-  </AttInfo>
-  <AttDoc>
- <Property>
-  <Type>integer</Type>
-  <Name>AUTONUMBER</Name>
-  <Value>0</Value>
- </Property>
- <Property>
-  <Type>integer</Type>
-  <Name>AUTONUMBER_START</Name>
-  <Value>1</Value>
- </Property>
- <Property>
-  <Type>integer</Type>
-  <Name>AUTONUMBER_STEP</Name>
-  <Value>1</Value>
- </Property>
- <Property>
-  <Type>string</Type>
-  <Name>ATT_INITIAL_VALUE</Name>
-  <Value><![CDATA[]]> </Value>
- </Property>
- <Property>
-  <Type>string</Type>
-  <Name>DKL_CUSTOM_PROPERTIES</Name>
-  <Value><![CDATA[<Properties></Properties>]]> </Value>
- </Property>
- <Property>
-  <Type>string</Type>
-  <Name>DKL_BUILTIN_PROPERTIES</Name>
-  <Value><![CDATA[<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>]]> </Value>
- </Property>
- <Property>
-  <Type>string</Type>
-  <Name>IDEnumDefinedValues</Name>
-  <Value><![CDATA[]]> </Value>
- </Property>
- <Property>
-  <Type>integer</Type>
-  <Name>AUTOGENERATE_GUID</Name>
-  <Value>1</Value>
- </Property>
- <Property>
-  <Type>integer</Type>
-  <Name>DKL_EMPTY_ASNULL</Name>
-  <Value>0</Value>
- </Property>
- <Property>
-  <Type>integer</Type>
-  <Name>DKL_RIGHT_TRIM</Name>
-  <Value>0</Value>
- </Property>
- <Property>
-  <Type>integer</Type>
-  <Name>DKL_INTERNATIONAL_SUPPORT</Name>
-  <Value>0</Value>
- </Property>
- <Property>
-  <Type>string</Type>
-  <Name>DKL_REGULAR_EXPRESION</Name>
-  <Value><![CDATA[]]> </Value>
- </Property>
- <Property>
-  <Type>string</Type>
-  <Name>ATT_TIMESTAMP</Name>
-  <Value><![CDATA[2024-07-19 23:26:53GMT]]> </Value>
- </Property>
- <Property>
-  <Type>integer</Type>
-  <Name>DKL_ISROWGUID</Name>
-  <Value>0</Value>
- </Property>
- <Property>
-  <Type>string</Type>
-  <Name>DKL_INPUT_MASK</Name>
-  <Value><![CDATA[]]> </Value>
- </Property>
- <Property>
-  <Type>integer</Type>
-  <Name>AUTONUMBER_FORREPLICATION</Name>
-  <Value>1</Value>
- </Property>
- <Property>
-  <Type>string</Type>
-  <Name>OBJECT_METADATA</Name>
-  <Value><![CDATA[]]> </Value>
- </Property>
- <Property>
-  <Type>integer</Type>
-  <Name>DKL_ENABLE_ATT_AUTH</Name>
-  <Value>0</Value>
- </Property>
- <Property>
-  <Type>string</Type>
-  <Name>DKL_MIME_TYPE</Name>
-  <Value><![CDATA[]]> </Value>
- </Property>
- <Property>
-  <Type>integer</Type>
-  <Name>DKL_ENCRYPTION</Name>
-  <Value>0</Value>
- </Property>
- <Property>
-  <Type>integer</Type>
-  <Name>DKL_CASING</Name>
-  <Value>0</Value>
- </Property>
- <Property>
-  <Type>integer</Type>
-  <Name>DKL_ISPASSWORD</Name>
-  <Value>0</Value>
- </Property>
-  </AttDoc>
- </GXAtt>
- </Attributes>
  </ExportFile>

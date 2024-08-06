@@ -258,6 +258,7 @@ namespace Raiderplan1 {
          private DataColumn columnMotocilcetaMarca ;
          private DataColumn columnMotociletaModelo ;
          private DataColumn columnViajeImagen ;
+         private DataColumn columnViajeEstado ;
          public ViajeDataTable() 
          {
              this.TableName = "Viaje";
@@ -496,6 +497,14 @@ namespace Raiderplan1 {
 
          }
 
+         public DataColumn ViajeEstadoColumn
+         {
+            get {
+               return this.columnViajeEstado ;
+            }
+
+         }
+
          public event ViajeRowChangeEventHandler ViajeRowChanged ;
          public event ViajeRowChangeEventHandler ViajeRowChanging ;
          public event ViajeRowChangeEventHandler ViajeRowDeleted ;
@@ -515,7 +524,8 @@ namespace Raiderplan1 {
                                       decimal kmTotalesEstimado ,
                                       String motocilcetaMarca ,
                                       String motociletaModelo ,
-                                      String viajeImagen )
+                                      String viajeImagen ,
+                                      String viajeEstado )
          {
             ViajeRow rowViajeRow = ((ViajeRow)(this.NewRow())) ;
             rowViajeRow["UsuarioID"] = usuarioID ;
@@ -534,6 +544,7 @@ namespace Raiderplan1 {
             rowViajeRow["MotocilcetaMarca"] = motocilcetaMarca ;
             rowViajeRow["MotociletaModelo"] = motociletaModelo ;
             rowViajeRow["ViajeImagen"] = viajeImagen ;
+            rowViajeRow["ViajeEstado"] = viajeEstado ;
             this.Rows.Add( rowViajeRow) ;
             return rowViajeRow ;
          }
@@ -562,6 +573,7 @@ namespace Raiderplan1 {
             this.columnMotocilcetaMarca = this.Columns["MotocilcetaMarca"] ;
             this.columnMotociletaModelo = this.Columns["MotociletaModelo"] ;
             this.columnViajeImagen = this.Columns["ViajeImagen"] ;
+            this.columnViajeEstado = this.Columns["ViajeEstado"] ;
          }
 
          public void InitClass( )
@@ -899,6 +911,26 @@ namespace Raiderplan1 {
             this.columnViajeImagen.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
             this.columnViajeImagen.ExtendedProperties.Add( "Deklarit.InternalName", "ViajeImagen") ;
             this.Columns.Add( this.columnViajeImagen) ;
+            this.columnViajeEstado = new DataColumn( "ViajeEstado", typeof(String), "", System.Data.MappingType.Element) ;
+            this.columnViajeEstado.AllowDBNull = false ;
+            this.columnViajeEstado.Caption = "A = Activo (Planificacion); Z =Eliminado; P =Progreso; R = Realizado" ;
+            this.columnViajeEstado.MaxLength = 1 ;
+            this.columnViajeEstado.DefaultValue = System.Convert.DBNull ;
+            this.columnViajeEstado.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "DeklaritType", "svchar") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "Description", "A = Activo (planificacion); Z =Inactivo (papelera); P = Progreso (iniciado); R = Realizado") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "Length", "1") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "AllowDBNulls", "false") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnViajeEstado.ExtendedProperties.Add( "Deklarit.InternalName", "ViajeEstado") ;
+            this.Columns.Add( this.columnViajeEstado) ;
             this.PrimaryKey = new  DataColumn[]  {this.columnViajeID} ;
             this.ExtendedProperties.Add( "ParentLvl", "") ;
             this.ExtendedProperties.Add( "LevelName", "Viaje") ;
@@ -1485,6 +1517,39 @@ namespace Raiderplan1 {
          public void SetViajeImagenNull( )
          {
             this[this.tableViaje.ViajeImagenColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the A = Activo (planificacion); Z =Inactivo (papelera); P = Progreso
+         ///    (iniciado); R = Realizado.
+         ///  </summary>
+         public String ViajeEstado
+         {
+            get {
+               try
+               {
+                  return ((String)(this[this.tableViaje.ViajeEstadoColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value ViajeEstado because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tableViaje.ViajeEstadoColumn] = value ;
+            }
+
+         }
+
+         public bool IsViajeEstadoNull( )
+         {
+            return this.IsNull( this.tableViaje.ViajeEstadoColumn) ;
+         }
+
+         public void SetViajeEstadoNull( )
+         {
+            this[this.tableViaje.ViajeEstadoColumn] = System.Convert.DBNull ;
          }
 
       }

@@ -60,6 +60,13 @@ namespace Raiderplan1.Reorg {
          RGZ.IDbCommand.CommandTimeout = 0;
          RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
          RGZ.ExecuteStmt() ;
+         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("rgzd1c"), new   object[]  {"Viaje"}) );
+         cmdBuffer=" ALTER TABLE [Viaje] DROP CONSTRAINT IViaje1 "
+         ;
+         RGZ = connDefault.GetCommand(cmdBuffer,false);
+         RGZ.IDbCommand.CommandTimeout = 0;
+         RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
+         RGZ.ExecuteStmt() ;
          // Create new and temporary tables.
          AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("rgzctnt"), new   object[]  {"3"}) );
          AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("filecrea"), new   object[]  {"GXA0010", ""}) );
@@ -94,7 +101,44 @@ namespace Raiderplan1.Reorg {
             // END Drop table in SQLServer with FKs
             //
          //
-         cmdBuffer=" CREATE TABLE [GXA0010] ([TrayectoViajeID] int NOT null  IDENTITY(1,1), [ViajeID] bigint NOT null , [TrayectoOrigen] varchar(150) null , [TayectoLatitudOrigen] decimal( 17, 15) null , [TrayectoLongitudOrigen] decimal( 17, 15) null , [TrayectoLatidudDestino] decimal( 17, 15) null , [TrayectoLongitudDestino] decimal( 17, 15) null , [Trayectokm] smallmoney null , [TiempoEstimado] smallmoney null , [CombustibleConsumido] smallmoney null , [EstadoCarretera] varchar(100) null , [TrayectoDestino] varchar(50) NOT null , [Instrucciones] varchar(MAX) null , [Orden] int null )  "
+         cmdBuffer=" CREATE TABLE [GXA0010] ([TrayectoViajeID] int NOT null  IDENTITY(1,1), [ViajeID] bigint NOT null , [TrayectoOrigen] varchar(150) null , [TayectoLatitudOrigen] decimal( 17, 15) null , [TrayectoLongitudOrigen] decimal( 17, 15) null , [TrayectoLatidudDestino] decimal( 17, 15) null , [TrayectoLongitudDestino] decimal( 17, 15) null , [Trayectokm] smallmoney null , [TiempoEstimado] smallmoney null , [CombustibleConsumido] smallmoney null , [EstadoCarretera] varchar(100) null , [TrayectoDestino] varchar(50) NOT null , [Instrucciones] varchar(MAX) null , [Orden] int null , [EsOrigen] varchar(1) NOT null )  "
+         ;
+         RGZ = connDefault.GetCommand(cmdBuffer,false);
+         RGZ.IDbCommand.CommandTimeout = 0;
+         RGZ.ExecuteStmt() ;
+         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("filecrea"), new   object[]  {"GXA0008", ""}) );
+         //
+            //
+            // Drop table in SQLServer with FKs
+            //
+         //
+         cmsysreferencesSelect2 = connDefault.GetCommand("SELECT OBJECT_NAME(constid), OBJECT_NAME(fkeyid), [rkeyid] FROM [sysreferences] WHERE [rkeyid] = OBJECT_ID('[GXA0008]') ",true);
+         cmsysreferencesSelect2.ErrorMask = cmsysreferencesSelect2.ErrorMask  |  ErrorMask.Lock;
+         sysreferencesSelect2 = cmsysreferencesSelect2.FetchData();
+         while ( cmsysreferencesSelect2.HasMoreRows )
+         {
+            constid = dsDefault.Db.GetString(sysreferencesSelect2, 0, ref nconstid) ;
+            fkeyid = dsDefault.Db.GetString(sysreferencesSelect2, 1, ref nfkeyid) ;
+            rkeyid = dsDefault.Db.GetInt32(sysreferencesSelect2, 2, ref nrkeyid) ;
+            cmdBuffer = "ALTER TABLE " + "[" + fkeyid + "] DROP CONSTRAINT " + constid ;
+            RGZ = connDefault.GetCommand(cmdBuffer,false);
+            RGZ.IDbCommand.CommandTimeout = 0;
+            RGZ.ExecuteStmt() ;
+            cmsysreferencesSelect2.HasMoreRows = sysreferencesSelect2.Read();
+         }
+         sysreferencesSelect2.Close();
+         cmdBuffer=" DROP TABLE [GXA0008] "
+         ;
+         RGZ = connDefault.GetCommand(cmdBuffer,false);
+         RGZ.IDbCommand.CommandTimeout = 0;
+         RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
+         RGZ.ExecuteStmt() ;
+         //
+            //
+            // END Drop table in SQLServer with FKs
+            //
+         //
+         cmdBuffer=" CREATE TABLE [GXA0008] ([ViajeID] bigint NOT null  IDENTITY(1,1), [FechaSalidaProgramada] datetime null , [FechaLlegadaProgramada] datetime null , [FechaSalidaEfectiva] datetime null , [FechaLlegadaEfectiva] datetime null , [LugarPartida] varchar(150) null , [Lugarllegada] varchar(150) null , [LongitudPartida] decimal( 17, 15) null , [LatitudPartida] decimal( 17, 15) null , [LongitudLegada] decimal( 17, 15) null , [LatitudLlegada] decimal( 17, 15) null , [kmTotalesEstimado] money null , [MotocilcetaMarca] varchar(30) null , [MotociletaModelo] varchar(50) null , [UsuarioID] int NOT null , [ViajeNombre] varchar(25) NOT null , [ViajeImagen] varchar(50) null , [ViajeEstado] varchar(1) NOT null )  "
          ;
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
@@ -138,6 +182,8 @@ namespace Raiderplan1.Reorg {
       protected ReadWriteCommand RGZ ;
       protected ReadWriteCommand cmsysreferencesSelect1 ;
       protected IDataReader sysreferencesSelect1 ;
+      protected ReadWriteCommand cmsysreferencesSelect2 ;
+      protected IDataReader sysreferencesSelect2 ;
    }
 
 }

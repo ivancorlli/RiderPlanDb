@@ -255,6 +255,7 @@ namespace Raiderplan1 {
          private DataColumn columnEstadoCarretera ;
          private DataColumn columnInstrucciones ;
          private DataColumn columnOrden ;
+         private DataColumn columnEsOrigen ;
          public TrayectoViajeDataTable() 
          {
              this.TableName = "TrayectoViaje";
@@ -469,6 +470,14 @@ namespace Raiderplan1 {
 
          }
 
+         public DataColumn EsOrigenColumn
+         {
+            get {
+               return this.columnEsOrigen ;
+            }
+
+         }
+
          public event TrayectoViajeRowChangeEventHandler TrayectoViajeRowChanged ;
          public event TrayectoViajeRowChangeEventHandler TrayectoViajeRowChanging ;
          public event TrayectoViajeRowChangeEventHandler TrayectoViajeRowDeleted ;
@@ -485,7 +494,8 @@ namespace Raiderplan1 {
                                                       decimal combustibleConsumido ,
                                                       String estadoCarretera ,
                                                       String instrucciones ,
-                                                      int orden )
+                                                      int orden ,
+                                                      String esOrigen )
          {
             TrayectoViajeRow rowTrayectoViajeRow = ((TrayectoViajeRow)(this.NewRow())) ;
             rowTrayectoViajeRow["ViajeID"] = viajeID ;
@@ -501,6 +511,7 @@ namespace Raiderplan1 {
             rowTrayectoViajeRow["EstadoCarretera"] = estadoCarretera ;
             rowTrayectoViajeRow["Instrucciones"] = instrucciones ;
             rowTrayectoViajeRow["Orden"] = orden ;
+            rowTrayectoViajeRow["EsOrigen"] = esOrigen ;
             this.Rows.Add( rowTrayectoViajeRow) ;
             return rowTrayectoViajeRow ;
          }
@@ -526,6 +537,7 @@ namespace Raiderplan1 {
             this.columnEstadoCarretera = this.Columns["EstadoCarretera"] ;
             this.columnInstrucciones = this.Columns["Instrucciones"] ;
             this.columnOrden = this.Columns["Orden"] ;
+            this.columnEsOrigen = this.Columns["EsOrigen"] ;
          }
 
          public void InitClass( )
@@ -803,6 +815,26 @@ namespace Raiderplan1 {
             this.columnOrden.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
             this.columnOrden.ExtendedProperties.Add( "Deklarit.InternalName", "Orden") ;
             this.Columns.Add( this.columnOrden) ;
+            this.columnEsOrigen = new DataColumn( "EsOrigen", typeof(String), "", System.Data.MappingType.Element) ;
+            this.columnEsOrigen.AllowDBNull = false ;
+            this.columnEsOrigen.Caption = "Es Origen" ;
+            this.columnEsOrigen.MaxLength = 1 ;
+            this.columnEsOrigen.DefaultValue = System.Convert.DBNull ;
+            this.columnEsOrigen.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "DeklaritType", "svchar") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "Description", "S/N") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "Length", "1") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "AllowDBNulls", "false") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnEsOrigen.ExtendedProperties.Add( "Deklarit.InternalName", "EsOrigen") ;
+            this.Columns.Add( this.columnEsOrigen) ;
             this.PrimaryKey = new  DataColumn[]  {this.columnTrayectoViajeID} ;
             this.ExtendedProperties.Add( "ParentLvl", "") ;
             this.ExtendedProperties.Add( "LevelName", "TrayectoViaje") ;
@@ -1293,6 +1325,38 @@ namespace Raiderplan1 {
          public void SetOrdenNull( )
          {
             this[this.tableTrayectoViaje.OrdenColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the S/N.
+         ///  </summary>
+         public String EsOrigen
+         {
+            get {
+               try
+               {
+                  return ((String)(this[this.tableTrayectoViaje.EsOrigenColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value EsOrigen because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tableTrayectoViaje.EsOrigenColumn] = value ;
+            }
+
+         }
+
+         public bool IsEsOrigenNull( )
+         {
+            return this.IsNull( this.tableTrayectoViaje.EsOrigenColumn) ;
+         }
+
+         public void SetEsOrigenNull( )
+         {
+            this[this.tableTrayectoViaje.EsOrigenColumn] = System.Convert.DBNull ;
          }
 
       }

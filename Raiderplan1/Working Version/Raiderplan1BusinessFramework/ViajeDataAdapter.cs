@@ -484,6 +484,7 @@ namespace Raiderplan1 {
             m__MotocilcetaMarcaOriginal = rowViaje["MotocilcetaMarca", System.Data.DataRowVersion.Original] ;
             m__MotociletaModeloOriginal = rowViaje["MotociletaModelo", System.Data.DataRowVersion.Original] ;
             m__ViajeImagenOriginal = rowViaje["ViajeImagen", System.Data.DataRowVersion.Original] ;
+            m__ViajeEstadoOriginal = rowViaje["ViajeEstado", System.Data.DataRowVersion.Original] ;
             m__UsuarioIDOriginal = rowViaje["UsuarioID", System.Data.DataRowVersion.Original] ;
          }
          else
@@ -503,6 +504,7 @@ namespace Raiderplan1 {
             m__MotocilcetaMarcaOriginal = rowViaje["MotocilcetaMarca"] ;
             m__MotociletaModeloOriginal = rowViaje["MotociletaModelo"] ;
             m__ViajeImagenOriginal = rowViaje["ViajeImagen"] ;
+            m__ViajeEstadoOriginal = rowViaje["ViajeEstado"] ;
             m__UsuarioIDOriginal = rowViaje["UsuarioID"] ;
          }
          _Gxremove = (bool)((rowViaje.RowState==System.Data.DataRowState.Deleted)) ;
@@ -536,7 +538,7 @@ namespace Raiderplan1 {
       {
           IDataReader ViajeSelect3 ;
           ReadWriteCommand cmViajeSelect3 ;
-         cmViajeSelect3 = connDefault.GetCommand("SELECT [ViajeID], [ViajeNombre], [FechaSalidaProgramada], [FechaLlegadaProgramada], [FechaSalidaEfectiva], [FechaLlegadaEfectiva], [LugarPartida], [Lugarllegada], [LongitudPartida], [LatitudPartida], [LongitudLegada], [LatitudLlegada], [kmTotalesEstimado], [MotocilcetaMarca], [MotociletaModelo], [ViajeImagen], [UsuarioID] FROM [Viaje] WITH (NOLOCK) WHERE [ViajeID] = @ViajeID ", false) ;
+         cmViajeSelect3 = connDefault.GetCommand("SELECT [ViajeID], [ViajeNombre], [FechaSalidaProgramada], [FechaLlegadaProgramada], [FechaSalidaEfectiva], [FechaLlegadaEfectiva], [LugarPartida], [Lugarllegada], [LongitudPartida], [LatitudPartida], [LongitudLegada], [LatitudLlegada], [kmTotalesEstimado], [MotocilcetaMarca], [MotociletaModelo], [ViajeImagen], [ViajeEstado], [UsuarioID] FROM [Viaje] WITH (NOLOCK) WHERE [ViajeID] = @ViajeID ", false) ;
          if ( ( cmViajeSelect3.IDbCommand.Parameters.Count == 0 ) )
          {
             cmViajeSelect3.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
@@ -562,7 +564,8 @@ namespace Raiderplan1 {
             rowViaje["MotocilcetaMarca"] = dsDefault.Db.GetString(ViajeSelect3, 13) ;
             rowViaje["MotociletaModelo"] = dsDefault.Db.GetString(ViajeSelect3, 14) ;
             rowViaje["ViajeImagen"] = dsDefault.Db.GetString(ViajeSelect3, 15) ;
-            rowViaje["UsuarioID"] = dsDefault.Db.GetInt32(ViajeSelect3, 16) ;
+            rowViaje["ViajeEstado"] = dsDefault.Db.GetString(ViajeSelect3, 16) ;
+            rowViaje["UsuarioID"] = dsDefault.Db.GetInt32(ViajeSelect3, 17) ;
             sMode8 = Gx_mode ;
             Gx_mode = Mode.Display ;
             Gx_mode = sMode8 ;
@@ -580,7 +583,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmViajeSelect4 ;
          if ( ( Gx_mode != Mode.Insert ) )
          {
-            cmViajeSelect4 = connDefault.GetCommand("SELECT [ViajeID], [ViajeNombre], [FechaSalidaProgramada], [FechaLlegadaProgramada], [FechaSalidaEfectiva], [FechaLlegadaEfectiva], [LugarPartida], [Lugarllegada], [LongitudPartida], [LatitudPartida], [LongitudLegada], [LatitudLlegada], [kmTotalesEstimado], [MotocilcetaMarca], [MotociletaModelo], [ViajeImagen], [UsuarioID] FROM [Viaje] WITH (UPDLOCK) WHERE [ViajeID] = @ViajeID ", false) ;
+            cmViajeSelect4 = connDefault.GetCommand("SELECT [ViajeID], [ViajeNombre], [FechaSalidaProgramada], [FechaLlegadaProgramada], [FechaSalidaEfectiva], [FechaLlegadaEfectiva], [LugarPartida], [Lugarllegada], [LongitudPartida], [LatitudPartida], [LongitudLegada], [LatitudLlegada], [kmTotalesEstimado], [MotocilcetaMarca], [MotociletaModelo], [ViajeImagen], [ViajeEstado], [UsuarioID] FROM [Viaje] WITH (UPDLOCK) WHERE [ViajeID] = @ViajeID ", false) ;
             if ( ( cmViajeSelect4.IDbCommand.Parameters.Count == 0 ) )
             {
                cmViajeSelect4.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
@@ -605,7 +608,7 @@ namespace Raiderplan1 {
             {
                _Condition = true ;
             }
-            if ( _Condition || ( ! m__UsuarioIDOriginal.Equals(dsDefault.Db.GetInt32(ViajeSelect4, 16)) ) )
+            if ( _Condition || ( ! StringUtil.ObjectStringEquals(m__ViajeEstadoOriginal,dsDefault.Db.GetString(ViajeSelect4, 16)) ) || ( ! m__UsuarioIDOriginal.Equals(dsDefault.Db.GetInt32(ViajeSelect4, 17)) ) )
             {
                ViajeSelect4.Close();
                throw new ViajeDataChangedException( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("waschg"), new   object[]  {resourceManagerTables.GetString("Viaje")})) ;
@@ -620,7 +623,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmViajeInsert1 ;
          CheckOptimisticConcurrencyViaje( ) ;
          AfterConfirmViaje( ) ;
-         cmViajeInsert1 = connDefault.GetCommand("INSERT INTO [Viaje] ([ViajeNombre], [FechaSalidaProgramada], [FechaLlegadaProgramada], [FechaSalidaEfectiva], [FechaLlegadaEfectiva], [LugarPartida], [Lugarllegada], [LongitudPartida], [LatitudPartida], [LongitudLegada], [LatitudLlegada], [kmTotalesEstimado], [MotocilcetaMarca], [MotociletaModelo], [ViajeImagen], [UsuarioID]) VALUES (@ViajeNombre, @FechaSalidaProgramada, @FechaLlegadaProgramada, @FechaSalidaEfectiva, @FechaLlegadaEfectiva, @LugarPartida, @Lugarllegada, @LongitudPartida, @LatitudPartida, @LongitudLegada, @LatitudLlegada, @kmTotalesEstimado, @MotocilcetaMarca, @MotociletaModelo, @ViajeImagen, @UsuarioID); SELECT SCOPE_IDENTITY()", false) ;
+         cmViajeInsert1 = connDefault.GetCommand("INSERT INTO [Viaje] ([ViajeNombre], [FechaSalidaProgramada], [FechaLlegadaProgramada], [FechaSalidaEfectiva], [FechaLlegadaEfectiva], [LugarPartida], [Lugarllegada], [LongitudPartida], [LatitudPartida], [LongitudLegada], [LatitudLlegada], [kmTotalesEstimado], [MotocilcetaMarca], [MotociletaModelo], [ViajeImagen], [ViajeEstado], [UsuarioID]) VALUES (@ViajeNombre, @FechaSalidaProgramada, @FechaLlegadaProgramada, @FechaSalidaEfectiva, @FechaLlegadaEfectiva, @LugarPartida, @Lugarllegada, @LongitudPartida, @LatitudPartida, @LongitudLegada, @LatitudLlegada, @kmTotalesEstimado, @MotocilcetaMarca, @MotociletaModelo, @ViajeImagen, @ViajeEstado, @UsuarioID); SELECT SCOPE_IDENTITY()", false) ;
          if ( ( cmViajeInsert1.IDbCommand.Parameters.Count == 0 ) )
          {
             cmViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeNombre", System.Data.DbType.AnsiString,25));
@@ -638,6 +641,7 @@ namespace Raiderplan1 {
             cmViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@MotocilcetaMarca", System.Data.DbType.AnsiString,30));
             cmViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@MotociletaModelo", System.Data.DbType.AnsiString,50));
             cmViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeImagen", System.Data.DbType.AnsiString,50));
+            cmViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeEstado", System.Data.DbType.AnsiString,1));
             cmViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
          }
          cmViajeInsert1.ErrorMask = cmViajeInsert1.ErrorMask  |  ErrorMask.ForeignKeyError;
@@ -657,7 +661,8 @@ namespace Raiderplan1 {
          cmViajeInsert1.SetParameter(12, rowViaje["MotocilcetaMarca"]);
          cmViajeInsert1.SetParameter(13, rowViaje["MotociletaModelo"]);
          cmViajeInsert1.SetParameter(14, rowViaje["ViajeImagen"]);
-         cmViajeInsert1.SetParameter(15, rowViaje["UsuarioID"]);
+         cmViajeInsert1.SetParameter(15, rowViaje["ViajeEstado"]);
+         cmViajeInsert1.SetParameter(16, rowViaje["UsuarioID"]);
          ViajeInsert1 = cmViajeInsert1.FetchData() ;
          if ( ! ( cmViajeInsert1.ForeignKeyError || cmViajeInsert1.DupKey ) )
          {
@@ -680,7 +685,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmViajeUpdate1 ;
          CheckOptimisticConcurrencyViaje( ) ;
          AfterConfirmViaje( ) ;
-         cmViajeUpdate1 = connDefault.GetCommand("UPDATE [Viaje] SET [ViajeNombre]=@ViajeNombre, [FechaSalidaProgramada]=@FechaSalidaProgramada, [FechaLlegadaProgramada]=@FechaLlegadaProgramada, [FechaSalidaEfectiva]=@FechaSalidaEfectiva, [FechaLlegadaEfectiva]=@FechaLlegadaEfectiva, [LugarPartida]=@LugarPartida, [Lugarllegada]=@Lugarllegada, [LongitudPartida]=@LongitudPartida, [LatitudPartida]=@LatitudPartida, [LongitudLegada]=@LongitudLegada, [LatitudLlegada]=@LatitudLlegada, [kmTotalesEstimado]=@kmTotalesEstimado, [MotocilcetaMarca]=@MotocilcetaMarca, [MotociletaModelo]=@MotociletaModelo, [ViajeImagen]=@ViajeImagen, [UsuarioID]=@UsuarioID  WHERE [ViajeID] = @ViajeID", false) ;
+         cmViajeUpdate1 = connDefault.GetCommand("UPDATE [Viaje] SET [ViajeNombre]=@ViajeNombre, [FechaSalidaProgramada]=@FechaSalidaProgramada, [FechaLlegadaProgramada]=@FechaLlegadaProgramada, [FechaSalidaEfectiva]=@FechaSalidaEfectiva, [FechaLlegadaEfectiva]=@FechaLlegadaEfectiva, [LugarPartida]=@LugarPartida, [Lugarllegada]=@Lugarllegada, [LongitudPartida]=@LongitudPartida, [LatitudPartida]=@LatitudPartida, [LongitudLegada]=@LongitudLegada, [LatitudLlegada]=@LatitudLlegada, [kmTotalesEstimado]=@kmTotalesEstimado, [MotocilcetaMarca]=@MotocilcetaMarca, [MotociletaModelo]=@MotociletaModelo, [ViajeImagen]=@ViajeImagen, [ViajeEstado]=@ViajeEstado, [UsuarioID]=@UsuarioID  WHERE [ViajeID] = @ViajeID", false) ;
          if ( ( cmViajeUpdate1.IDbCommand.Parameters.Count == 0 ) )
          {
             cmViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeNombre", System.Data.DbType.AnsiString,25));
@@ -698,6 +703,7 @@ namespace Raiderplan1 {
             cmViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@MotocilcetaMarca", System.Data.DbType.AnsiString,30));
             cmViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@MotociletaModelo", System.Data.DbType.AnsiString,50));
             cmViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeImagen", System.Data.DbType.AnsiString,50));
+            cmViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeEstado", System.Data.DbType.AnsiString,1));
             cmViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
             cmViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
          }
@@ -718,8 +724,9 @@ namespace Raiderplan1 {
          cmViajeUpdate1.SetParameter(12, rowViaje["MotocilcetaMarca"]);
          cmViajeUpdate1.SetParameter(13, rowViaje["MotociletaModelo"]);
          cmViajeUpdate1.SetParameter(14, rowViaje["ViajeImagen"]);
-         cmViajeUpdate1.SetParameter(15, rowViaje["UsuarioID"]);
-         cmViajeUpdate1.SetParameter(16, rowViaje["ViajeID"]);
+         cmViajeUpdate1.SetParameter(15, rowViaje["ViajeEstado"]);
+         cmViajeUpdate1.SetParameter(16, rowViaje["UsuarioID"]);
+         cmViajeUpdate1.SetParameter(17, rowViaje["ViajeID"]);
          cmViajeUpdate1.ExecuteStmt();
          if ( cmViajeUpdate1.ForeignKeyError )
          {
@@ -906,7 +913,8 @@ namespace Raiderplan1 {
             rowViaje["MotocilcetaMarca"] = dsDefault.Db.GetString(ViajeSelect5, 13) ;
             rowViaje["MotociletaModelo"] = dsDefault.Db.GetString(ViajeSelect5, 14) ;
             rowViaje["ViajeImagen"] = dsDefault.Db.GetString(ViajeSelect5, 15) ;
-            rowViaje["UsuarioID"] = dsDefault.Db.GetInt32(ViajeSelect5, 16) ;
+            rowViaje["ViajeEstado"] = dsDefault.Db.GetString(ViajeSelect5, 16) ;
+            rowViaje["UsuarioID"] = dsDefault.Db.GetInt32(ViajeSelect5, 17) ;
          }
       }
 
@@ -995,7 +1003,7 @@ namespace Raiderplan1 {
          ViajeSet.Viaje.AddViajeRow( rowViaje) ;
       }
 
-      private readonly string m_SelectString8 = "TM1.[ViajeID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[UsuarioID]" ;
+      private readonly string m_SelectString8 = "TM1.[ViajeID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado], TM1.[UsuarioID]" ;
 
 
       public delegate  void ViajeUpdateEventHandler( object sender ,
@@ -1221,6 +1229,7 @@ namespace Raiderplan1 {
          m__MotocilcetaMarcaOriginal = new object();
          m__MotociletaModeloOriginal = new object();
          m__ViajeImagenOriginal = new object();
+         m__ViajeEstadoOriginal = new object();
          m__UsuarioIDOriginal = new object();
          _Condition = false ;
          IsModified = 0 ;
@@ -1265,6 +1274,7 @@ namespace Raiderplan1 {
       private object m__MotocilcetaMarcaOriginal ;
       private object m__MotociletaModeloOriginal ;
       private object m__ViajeImagenOriginal ;
+      private object m__ViajeEstadoOriginal ;
       private object m__UsuarioIDOriginal ;
    }
 
@@ -1304,7 +1314,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmViajeSelect6 = connDefault.GetCommand("SELECT TM1.[ViajeID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[UsuarioID] FROM [Viaje] TM1 WITH (NOLOCK) ORDER BY TM1.[ViajeID] ", false) ;
+         cmViajeSelect6 = connDefault.GetCommand("SELECT TM1.[ViajeID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado], TM1.[UsuarioID] FROM [Viaje] TM1 WITH (NOLOCK) ORDER BY TM1.[ViajeID] ", false) ;
          ViajeSelect6 = cmViajeSelect6.ExecuteReader(((daCurrentTransaction==null) ? Configuration.ReaderCommandBehavior : CommandBehavior.Default)) ;
          return ViajeSelect6 ;
       }
@@ -1314,7 +1324,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmViajeSelect6 = connDefault.GetCommand("SELECT TM1.[ViajeID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[UsuarioID] FROM [Viaje] TM1 WITH (NOLOCK) WHERE TM1.[ViajeID] = @ViajeID ORDER BY TM1.[ViajeID] ", false) ;
+         cmViajeSelect6 = connDefault.GetCommand("SELECT TM1.[ViajeID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado], TM1.[UsuarioID] FROM [Viaje] TM1 WITH (NOLOCK) WHERE TM1.[ViajeID] = @ViajeID ORDER BY TM1.[ViajeID] ", false) ;
          if ( ( cmViajeSelect6.IDbCommand.Parameters.Count == 0 ) )
          {
             cmViajeSelect6.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
@@ -1329,7 +1339,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmViajeSelect6 = connDefault.GetCommand("SELECT TM1.[ViajeID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[UsuarioID] FROM [Viaje] TM1 WITH (NOLOCK) WHERE TM1.[UsuarioID] = @UsuarioID ORDER BY TM1.[ViajeID] ", false) ;
+         cmViajeSelect6 = connDefault.GetCommand("SELECT TM1.[ViajeID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado], TM1.[UsuarioID] FROM [Viaje] TM1 WITH (NOLOCK) WHERE TM1.[UsuarioID] = @UsuarioID ORDER BY TM1.[ViajeID] ", false) ;
          if ( ( cmViajeSelect6.IDbCommand.Parameters.Count == 0 ) )
          {
             cmViajeSelect6.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@UsuarioID", System.Data.DbType.Int32));
