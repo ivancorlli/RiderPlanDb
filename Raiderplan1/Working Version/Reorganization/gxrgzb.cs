@@ -48,33 +48,31 @@ namespace Raiderplan1.Reorg {
             // Execute reorganization programs (none if creating the database).
          //
          AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("rgzrrpgm"), new   object[]  {"4"}) );
-         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("runpgm"), new   object[]  {"C10"}) );
-         new c10(ref dsDefault).execute( ) ;
-         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("runpgm"), new   object[]  {"C8"}) );
-         new c8(ref dsDefault).execute( ) ;
+         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("runpgm"), new   object[]  {"C13"}) );
+         new c13(ref dsDefault).execute( ) ;
          // Creating final tables.
-         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("filecrea"), new   object[]  {"TrayectoViaje", ""}) );
+         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("filecrea"), new   object[]  {"ComentarioViaje", ""}) );
          //
             //
             // Drop table in SQLServer with FKs
             //
          //
-         cmsysreferencesSelect3 = connDefault.GetCommand("SELECT OBJECT_NAME(constid), OBJECT_NAME(fkeyid), [rkeyid] FROM [sysreferences] WHERE [rkeyid] = OBJECT_ID('[TrayectoViaje]') ",true);
-         cmsysreferencesSelect3.ErrorMask = cmsysreferencesSelect3.ErrorMask  |  ErrorMask.Lock;
-         sysreferencesSelect3 = cmsysreferencesSelect3.FetchData();
-         while ( cmsysreferencesSelect3.HasMoreRows )
+         cmsysreferencesSelect2 = connDefault.GetCommand("SELECT OBJECT_NAME(constid), OBJECT_NAME(fkeyid), [rkeyid] FROM [sysreferences] WHERE [rkeyid] = OBJECT_ID('[ComentarioViaje]') ",true);
+         cmsysreferencesSelect2.ErrorMask = cmsysreferencesSelect2.ErrorMask  |  ErrorMask.Lock;
+         sysreferencesSelect2 = cmsysreferencesSelect2.FetchData();
+         while ( cmsysreferencesSelect2.HasMoreRows )
          {
-            constid = dsDefault.Db.GetString(sysreferencesSelect3, 0, ref nconstid) ;
-            fkeyid = dsDefault.Db.GetString(sysreferencesSelect3, 1, ref nfkeyid) ;
-            rkeyid = dsDefault.Db.GetInt32(sysreferencesSelect3, 2, ref nrkeyid) ;
+            constid = dsDefault.Db.GetString(sysreferencesSelect2, 0, ref nconstid) ;
+            fkeyid = dsDefault.Db.GetString(sysreferencesSelect2, 1, ref nfkeyid) ;
+            rkeyid = dsDefault.Db.GetInt32(sysreferencesSelect2, 2, ref nrkeyid) ;
             cmdBuffer = "ALTER TABLE " + "[" + fkeyid + "] DROP CONSTRAINT " + constid ;
             RGZ = connDefault.GetCommand(cmdBuffer,false);
             RGZ.IDbCommand.CommandTimeout = 0;
             RGZ.ExecuteStmt() ;
-            cmsysreferencesSelect3.HasMoreRows = sysreferencesSelect3.Read();
+            cmsysreferencesSelect2.HasMoreRows = sysreferencesSelect2.Read();
          }
-         sysreferencesSelect3.Close();
-         cmdBuffer=" DROP TABLE [TrayectoViaje] "
+         sysreferencesSelect2.Close();
+         cmdBuffer=" DROP TABLE [ComentarioViaje] "
          ;
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
@@ -85,44 +83,7 @@ namespace Raiderplan1.Reorg {
             // END Drop table in SQLServer with FKs
             //
          //
-         cmdBuffer=" CREATE TABLE [TrayectoViaje] ([TrayectoViajeID] int NOT null  IDENTITY(1,1), [ViajeID] bigint NOT null , [TrayectoOrigen] varchar(150) null , [TayectoLatitudOrigen] decimal( 17, 15) null , [TrayectoLongitudOrigen] decimal( 17, 15) null , [TrayectoLatidudDestino] decimal( 17, 15) null , [TrayectoLongitudDestino] decimal( 17, 15) null , [Trayectokm] smallmoney null , [TiempoEstimado] smallmoney null , [CombustibleConsumido] smallmoney null , [EstadoCarretera] varchar(100) null , [TrayectoDestino] varchar(50) NOT null , [Instrucciones] varchar(MAX) null , [Orden] int null , [EsOrigen] varchar(1) NOT null , PRIMARY KEY([TrayectoViajeID]))  "
-         ;
-         RGZ = connDefault.GetCommand(cmdBuffer,false);
-         RGZ.IDbCommand.CommandTimeout = 0;
-         RGZ.ExecuteStmt() ;
-         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("filecrea"), new   object[]  {"Viaje", ""}) );
-         //
-            //
-            // Drop table in SQLServer with FKs
-            //
-         //
-         cmsysreferencesSelect4 = connDefault.GetCommand("SELECT OBJECT_NAME(constid), OBJECT_NAME(fkeyid), [rkeyid] FROM [sysreferences] WHERE [rkeyid] = OBJECT_ID('[Viaje]') ",true);
-         cmsysreferencesSelect4.ErrorMask = cmsysreferencesSelect4.ErrorMask  |  ErrorMask.Lock;
-         sysreferencesSelect4 = cmsysreferencesSelect4.FetchData();
-         while ( cmsysreferencesSelect4.HasMoreRows )
-         {
-            constid = dsDefault.Db.GetString(sysreferencesSelect4, 0, ref nconstid) ;
-            fkeyid = dsDefault.Db.GetString(sysreferencesSelect4, 1, ref nfkeyid) ;
-            rkeyid = dsDefault.Db.GetInt32(sysreferencesSelect4, 2, ref nrkeyid) ;
-            cmdBuffer = "ALTER TABLE " + "[" + fkeyid + "] DROP CONSTRAINT " + constid ;
-            RGZ = connDefault.GetCommand(cmdBuffer,false);
-            RGZ.IDbCommand.CommandTimeout = 0;
-            RGZ.ExecuteStmt() ;
-            cmsysreferencesSelect4.HasMoreRows = sysreferencesSelect4.Read();
-         }
-         sysreferencesSelect4.Close();
-         cmdBuffer=" DROP TABLE [Viaje] "
-         ;
-         RGZ = connDefault.GetCommand(cmdBuffer,false);
-         RGZ.IDbCommand.CommandTimeout = 0;
-         RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
-         RGZ.ExecuteStmt() ;
-         //
-            //
-            // END Drop table in SQLServer with FKs
-            //
-         //
-         cmdBuffer=" CREATE TABLE [Viaje] ([ViajeID] bigint NOT null  IDENTITY(1,1), [FechaSalidaProgramada] datetime null , [FechaLlegadaProgramada] datetime null , [FechaSalidaEfectiva] datetime null , [FechaLlegadaEfectiva] datetime null , [LugarPartida] varchar(150) null , [Lugarllegada] varchar(150) null , [LongitudPartida] decimal( 17, 15) null , [LatitudPartida] decimal( 17, 15) null , [LongitudLegada] decimal( 17, 15) null , [LatitudLlegada] decimal( 17, 15) null , [kmTotalesEstimado] money null , [MotocilcetaMarca] varchar(30) null , [MotociletaModelo] varchar(50) null , [UsuarioID] int NOT null , [ViajeNombre] varchar(25) NOT null , [ViajeImagen] varchar(50) null , [ViajeEstado] varchar(1) NOT null , PRIMARY KEY([ViajeID]))  "
+         cmdBuffer=" CREATE TABLE [ComentarioViaje] ([ComentarioViajeID] int NOT null  IDENTITY(1,1), [ComentarioLatitud] decimal( 17, 5) NOT null , [ComentarioLongitud] decimal( 17, 5) NOT null , [ComentarioTexto] varchar(250) NOT null , [ComentarioImagen] varchar(250) null , [CVTrayectoID] int null , [ViajeID] bigint NOT null , PRIMARY KEY([ComentarioViajeID]))  "
          ;
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
@@ -163,11 +124,9 @@ namespace Raiderplan1.Reorg {
       protected System.Resources.ResourceManager resourceManager ;
       protected System.Resources.ResourceManager resourceManagerTables ;
       protected ReadWriteConnection connDefault ;
-      protected ReadWriteCommand cmsysreferencesSelect3 ;
-      protected IDataReader sysreferencesSelect3 ;
+      protected ReadWriteCommand cmsysreferencesSelect2 ;
+      protected IDataReader sysreferencesSelect2 ;
       protected ReadWriteCommand RGZ ;
-      protected ReadWriteCommand cmsysreferencesSelect4 ;
-      protected IDataReader sysreferencesSelect4 ;
    }
 
 }

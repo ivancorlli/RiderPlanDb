@@ -51,6 +51,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="ComentarioViaje.cs" />
     <Compile Include="dpUsuarioXEmailXusuarioIDCollection.cs" />
     <Compile Include="Localidad.cs" />
     <Compile Include="Pais.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="DataAdapterFactoryProxy.cs" />
     <Compile Include="Provincia.cs" />
     <Compile Include="RolUsuario.cs" />
+    <Compile Include="TrayectoComentario.cs" />
     <Compile Include="TrayectoViaje.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Viaje.cs" />

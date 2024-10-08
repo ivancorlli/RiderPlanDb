@@ -48,28 +48,28 @@ namespace Raiderplan1.Reorg {
             // Rename auxiliary tables to the appropriate name.
          //
          AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("rgzrnmtbl"), new   object[]  {"6"}) );
-         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("fileren"), new   object[]  {"GXA0010", "TrayectoViaje"}) );
+         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("fileren"), new   object[]  {"GXA0013", "ComentarioViaje"}) );
          //
             //
             // Drop table in SQLServer with FKs
             //
          //
-         cmsysreferencesSelect5 = connDefault.GetCommand("SELECT OBJECT_NAME(constid), OBJECT_NAME(fkeyid), [rkeyid] FROM [sysreferences] WHERE [rkeyid] = OBJECT_ID('[TrayectoViaje]') ",true);
-         cmsysreferencesSelect5.ErrorMask = cmsysreferencesSelect5.ErrorMask  |  ErrorMask.Lock;
-         sysreferencesSelect5 = cmsysreferencesSelect5.FetchData();
-         while ( cmsysreferencesSelect5.HasMoreRows )
+         cmsysreferencesSelect3 = connDefault.GetCommand("SELECT OBJECT_NAME(constid), OBJECT_NAME(fkeyid), [rkeyid] FROM [sysreferences] WHERE [rkeyid] = OBJECT_ID('[ComentarioViaje]') ",true);
+         cmsysreferencesSelect3.ErrorMask = cmsysreferencesSelect3.ErrorMask  |  ErrorMask.Lock;
+         sysreferencesSelect3 = cmsysreferencesSelect3.FetchData();
+         while ( cmsysreferencesSelect3.HasMoreRows )
          {
-            constid = dsDefault.Db.GetString(sysreferencesSelect5, 0, ref nconstid) ;
-            fkeyid = dsDefault.Db.GetString(sysreferencesSelect5, 1, ref nfkeyid) ;
-            rkeyid = dsDefault.Db.GetInt32(sysreferencesSelect5, 2, ref nrkeyid) ;
+            constid = dsDefault.Db.GetString(sysreferencesSelect3, 0, ref nconstid) ;
+            fkeyid = dsDefault.Db.GetString(sysreferencesSelect3, 1, ref nfkeyid) ;
+            rkeyid = dsDefault.Db.GetInt32(sysreferencesSelect3, 2, ref nrkeyid) ;
             cmdBuffer = "ALTER TABLE " + "[" + fkeyid + "] DROP CONSTRAINT " + constid ;
             RGZ = connDefault.GetCommand(cmdBuffer,false);
             RGZ.IDbCommand.CommandTimeout = 0;
             RGZ.ExecuteStmt() ;
-            cmsysreferencesSelect5.HasMoreRows = sysreferencesSelect5.Read();
+            cmsysreferencesSelect3.HasMoreRows = sysreferencesSelect3.Read();
          }
-         sysreferencesSelect5.Close();
-         cmdBuffer=" DROP TABLE [TrayectoViaje] "
+         sysreferencesSelect3.Close();
+         cmdBuffer=" DROP TABLE [ComentarioViaje] "
          ;
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
@@ -82,108 +82,39 @@ namespace Raiderplan1.Reorg {
          //
          RGZ = connDefault.GetNewCommand("sp_rename", false);
          RGZ.IDbCommand.CommandType = CommandType.StoredProcedure;
-         RGZ.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@objname", "[GXA0010]"));
-         RGZ.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@newname", "TrayectoViaje"));
+         RGZ.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@objname", "[GXA0013]"));
+         RGZ.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@newname", "ComentarioViaje"));
          RGZ.ExecuteStmt();
          RGZ.IDbCommand.CommandType = CommandType.Text;
-         cmdBuffer=" ALTER TABLE [TrayectoViaje] ADD PRIMARY KEY([TrayectoViajeID]) "
-         ;
-         RGZ = connDefault.GetCommand(cmdBuffer,false);
-         RGZ.IDbCommand.CommandTimeout = 0;
-         RGZ.ExecuteStmt() ;
-         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("fileren"), new   object[]  {"GXA0008", "Viaje"}) );
-         //
-            //
-            // Drop table in SQLServer with FKs
-            //
-         //
-         cmsysreferencesSelect6 = connDefault.GetCommand("SELECT OBJECT_NAME(constid), OBJECT_NAME(fkeyid), [rkeyid] FROM [sysreferences] WHERE [rkeyid] = OBJECT_ID('[Viaje]') ",true);
-         cmsysreferencesSelect6.ErrorMask = cmsysreferencesSelect6.ErrorMask  |  ErrorMask.Lock;
-         sysreferencesSelect6 = cmsysreferencesSelect6.FetchData();
-         while ( cmsysreferencesSelect6.HasMoreRows )
-         {
-            constid = dsDefault.Db.GetString(sysreferencesSelect6, 0, ref nconstid) ;
-            fkeyid = dsDefault.Db.GetString(sysreferencesSelect6, 1, ref nfkeyid) ;
-            rkeyid = dsDefault.Db.GetInt32(sysreferencesSelect6, 2, ref nrkeyid) ;
-            cmdBuffer = "ALTER TABLE " + "[" + fkeyid + "] DROP CONSTRAINT " + constid ;
-            RGZ = connDefault.GetCommand(cmdBuffer,false);
-            RGZ.IDbCommand.CommandTimeout = 0;
-            RGZ.ExecuteStmt() ;
-            cmsysreferencesSelect6.HasMoreRows = sysreferencesSelect6.Read();
-         }
-         sysreferencesSelect6.Close();
-         cmdBuffer=" DROP TABLE [Viaje] "
-         ;
-         RGZ = connDefault.GetCommand(cmdBuffer,false);
-         RGZ.IDbCommand.CommandTimeout = 0;
-         RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
-         RGZ.ExecuteStmt() ;
-         //
-            //
-            // END Drop table in SQLServer with FKs
-            //
-         //
-         RGZ = connDefault.GetNewCommand("sp_rename", false);
-         RGZ.IDbCommand.CommandType = CommandType.StoredProcedure;
-         RGZ.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@objname", "[GXA0008]"));
-         RGZ.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@newname", "Viaje"));
-         RGZ.ExecuteStmt();
-         RGZ.IDbCommand.CommandType = CommandType.Text;
-         cmdBuffer=" ALTER TABLE [Viaje] ADD PRIMARY KEY([ViajeID]) "
+         cmdBuffer=" ALTER TABLE [ComentarioViaje] ADD PRIMARY KEY([ComentarioViajeID]) "
          ;
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
          RGZ.ExecuteStmt() ;
          // Adding attributes to tables' structure.
          AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("rgzbldidx"), new   object[]  {"7"}) );
-         // Indices for table TrayectoViaje
-         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("creaindx"), new   object[]  {"ITrayectoViaje"}) );
-         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("creaindx"), new   object[]  {"ITrayectoViaje2"}) );
-         cmdBuffer=" DROP INDEX [TrayectoViaje].[ITrayectoViaje2] "
+         // Indices for table ComentarioViaje
+         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("creaindx"), new   object[]  {"IComentarioViaje"}) );
+         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("creaindx"), new   object[]  {"IComentarioViaje1"}) );
+         cmdBuffer=" DROP INDEX [ComentarioViaje].[IComentarioViaje1] "
          ;
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
          RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
          RGZ.ExecuteStmt() ;
-         cmdBuffer=" CREATE NONCLUSTERED INDEX [ITrayectoViaje2] ON [TrayectoViaje] ([ViajeID] ) "
+         cmdBuffer=" CREATE NONCLUSTERED INDEX [IComentarioViaje1] ON [ComentarioViaje] ([ViajeID] ) "
          ;
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
          RGZ.ExecuteStmt() ;
-         // Referential constraints on table TrayectoViaje
-         cmdBuffer=" ALTER TABLE [TrayectoViaje] DROP CONSTRAINT ITrayectoViaje2 "
-         ;
-         RGZ = connDefault.GetCommand(cmdBuffer,false);
-         RGZ.IDbCommand.CommandTimeout = 0;
-         RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
-         RGZ.ExecuteStmt() ;
-         cmdBuffer=" ALTER TABLE [TrayectoViaje] ADD CONSTRAINT ITrayectoViaje2 FOREIGN KEY ([ViajeID]) REFERENCES [Viaje] ([ViajeID]) "
-         ;
-         RGZ = connDefault.GetCommand(cmdBuffer,false);
-         RGZ.IDbCommand.CommandTimeout = 0;
-         RGZ.ExecuteStmt() ;
-         // Indices for table Viaje
-         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("creaindx"), new   object[]  {"IViaje"}) );
-         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("creaindx"), new   object[]  {"IViaje1"}) );
-         cmdBuffer=" DROP INDEX [Viaje].[IViaje1] "
+         // Referential constraints on table ComentarioViaje
+         cmdBuffer=" ALTER TABLE [ComentarioViaje] DROP CONSTRAINT IComentarioViaje1 "
          ;
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
          RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
          RGZ.ExecuteStmt() ;
-         cmdBuffer=" CREATE NONCLUSTERED INDEX [IViaje1] ON [Viaje] ([UsuarioID] ) "
-         ;
-         RGZ = connDefault.GetCommand(cmdBuffer,false);
-         RGZ.IDbCommand.CommandTimeout = 0;
-         RGZ.ExecuteStmt() ;
-         // Referential constraints on table Viaje
-         cmdBuffer=" ALTER TABLE [Viaje] DROP CONSTRAINT IViaje1 "
-         ;
-         RGZ = connDefault.GetCommand(cmdBuffer,false);
-         RGZ.IDbCommand.CommandTimeout = 0;
-         RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
-         RGZ.ExecuteStmt() ;
-         cmdBuffer=" ALTER TABLE [Viaje] ADD CONSTRAINT IViaje1 FOREIGN KEY ([UsuarioID]) REFERENCES [Usuario] ([UsuarioID]) "
+         cmdBuffer=" ALTER TABLE [ComentarioViaje] ADD CONSTRAINT IComentarioViaje1 FOREIGN KEY ([ViajeID]) REFERENCES [Viaje] ([ViajeID]) "
          ;
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
@@ -226,11 +157,9 @@ namespace Raiderplan1.Reorg {
       protected System.Resources.ResourceManager resourceManager ;
       protected System.Resources.ResourceManager resourceManagerTables ;
       protected ReadWriteConnection connDefault ;
-      protected ReadWriteCommand cmsysreferencesSelect5 ;
-      protected IDataReader sysreferencesSelect5 ;
+      protected ReadWriteCommand cmsysreferencesSelect3 ;
+      protected IDataReader sysreferencesSelect3 ;
       protected ReadWriteCommand RGZ ;
-      protected ReadWriteCommand cmsysreferencesSelect6 ;
-      protected IDataReader sysreferencesSelect6 ;
    }
 
 }

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ObjectSpec>
+<SpecVersion>4_5_0-002</SpecVersion>
+<Object>
+<ObjCls>2</ObjCls>
+<ObjId>6</ObjId>
+<ObjName>ViajesComentarios</ObjName>
+<ObjDesc>ViajesComentarios</ObjDesc>
+<ObjPgmName>RViajesComentarios</ObjPgmName>
+<ObjClsName>Report</ObjClsName></Object>
+<Result>specfailed</Result>
+<Warnings></Warnings>
+<Errors>
+<Error>
+<MsgCode>spc0027</MsgCode>
+<Token>No relationship found among attributes</Token>
+<Token> at level ViajesComentarios</Token>
+<Token>. Attributes: </Token>
+<Attribute>
+<AttriId>94</AttriId>
+<AttriName>ComentarioViajeID</AttriName>
+<Description>Comentario Viaje ID</Description></Attribute>
+<Token>, </Token>
+<Attribute>
+<AttriId>90</AttriId>
+<AttriName>ComentarioLatitud</AttriName>
+<Description>Comentario Latitud</Description></Attribute>
+<Token>, </Token>
+<Attribute>
+<AttriId>91</AttriId>
+<AttriName>ComentarioLongitud</AttriName>
+<Description>Comentario Longitud</Description></Attribute>
+<Token>, </Token>
+<Attribute>
+<AttriId>92</AttriId>
+<AttriName>ComentarioTexto</AttriName>
+<Description>Comentario Texto</Description></Attribute>
+<Token>, </Token>
+<Attribute>
+<AttriId>93</AttriId>
+<AttriName>ComentarioImagen</AttriName>
+<Description>Comentario Imagen</Description></Attribute>
+<Token>, </Token>
+<Attribute>
+<AttriId>47</AttriId>
+<AttriName>TrayectoViajeID</AttriName>
+<Description>Trayecto Viaje ID</Description></Attribute>
+<Token> are incompatible with: </Token>
+<Attribute>
+<AttriId>42</AttriId>
+<AttriName>ViajeID</AttriName>
+<Description>Viaje ID</Description></Attribute>
+<Token>.</Token></Error></Errors>
+<OutputDevices>
+<Device>File</Device></OutputDevices>
+<Generator>
+<GenId>16</GenId>
+<GenName>Deklarit</GenName></Generator>
+<FormClass>Graphic</FormClass>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>ViajeID</VarId>
+<VarName>@ViajeID</VarName></Variable></Parameter></Parameters>
+<Levels></Levels></ObjectSpec>

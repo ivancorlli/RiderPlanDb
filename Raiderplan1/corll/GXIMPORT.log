@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <ImportLog>
    <RowImport>
-      <Name>ViajesRealizados</Name>
-      <Description>ViajesRealizados</Description>
+      <Name>TrayectoComentario</Name>
+      <Description>TrayectoComentario</Description>
       <Class>2</Class>
       <Status>2</Status>
-      <Id>4</Id>
+      <Id>8</Id>
       <Errors>
       </Errors>
       <Warnings>

@@ -69,17 +69,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="ComentarioViajeDataAdapter.cs" />
+    <Compile Include="ComentarioViajeDataSet.cs">
+      <DependentUpon>ComentarioViajeDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="dpUsuarioXEmailXusuarioIDCollectionDataAdapter.cs" />
     <Compile Include="dpUsuarioXEmailXusuarioIDCollectionDataSet.cs">
       <DependentUpon>dpUsuarioXEmailXusuarioIDCollectionDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="IComentarioViajeDataAdapter.cs" />
     <Compile Include="IdpUsuarioXEmailXusuarioIDCollectionDataAdapter.cs" />
     <Compile Include="ILocalidadDataAdapter.cs" />
     <Compile Include="IPaisDataAdapter.cs" />
     <Compile Include="IPersonaDataAdapter.cs" />
     <Compile Include="IProvinciaDataAdapter.cs" />
     <Compile Include="IRolUsuarioDataAdapter.cs" />
+    <Compile Include="ITrayectoComentarioDataAdapter.cs" />
     <Compile Include="ITrayectoViajeDataAdapter.cs" />
     <Compile Include="IUsuarioDataAdapter.cs" />
     <Compile Include="IViajeDataAdapter.cs" />
@@ -120,6 +127,11 @@
     <Compile Include="SexoEnumeration.cs" />
     <Compile Include="EnterpriseLibrary.cs" />
     <Compile Include="BusinessFrameworkContext.cs" />
+    <Compile Include="TrayectoComentarioDataAdapter.cs" />
+    <Compile Include="TrayectoComentarioDataSet.cs">
+      <DependentUpon>TrayectoComentarioDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TrayectoViajeDataAdapter.cs" />
     <Compile Include="TrayectoViajeDataSet.cs">
       <DependentUpon>TrayectoViajeDataSet.xsd</DependentUpon>
@@ -224,6 +236,17 @@
   <ItemGroup>
     <EmbeddedResource Include="ViajesRealizadosDataSet.xsd">
       <LastGenOutput>ViajesRealizadosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ComentarioViajeDataSet.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TrayectoComentarioDataSet.xsd">
+      <LastGenOutput>TrayectoComentarioDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

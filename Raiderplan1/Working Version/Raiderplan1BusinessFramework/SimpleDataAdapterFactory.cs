@@ -12,6 +12,16 @@ namespace Raiderplan1 {
    using Microsoft.Practices.EnterpriseLibrary.PolicyInjection;
    public partial class SimpleDataAdapterFactory : IDataAdapterFactory, IConnectedDataAdapterFactory
    {
+      public virtual ITrayectoComentarioDataAdapter GetTrayectoComentarioDataAdapter( )
+      {
+         return PolicyInjection.Create<TrayectoComentarioDataAdapter, ITrayectoComentarioDataAdapter>( ) ;
+      }
+
+      public virtual IComentarioViajeDataAdapter GetComentarioViajeDataAdapter( )
+      {
+         return PolicyInjection.Create<ComentarioViajeDataAdapter, IComentarioViajeDataAdapter>( ) ;
+      }
+
       public virtual IViajeDataAdapter GetViajeDataAdapter( )
       {
          return PolicyInjection.Create<ViajeDataAdapter, IViajeDataAdapter>( ) ;

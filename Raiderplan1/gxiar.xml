@@ -3,12 +3,19 @@
     <Id>2</Id>
     <Class>500</Class>
     <Name>Database Information</Name>
-    <Status>2</Status>
+    <Status>3</Status>
     <Path>C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\gxiar.xml</Path>
   </Object>
  <ImpactInfo>
   <ConnectionString>Provider=SQLOLEDB;Data Source=ICORLLI\SQLEXPRESS01;Integrated Security=SSPI;Initial Catalog=RiderPlanDB1</ConnectionString>
   <DBMS>12</DBMS>
-  <Status>2</Status>
+  <Status>3</Status>
  </ImpactInfo>
+  <Object>
+    <Id>0</Id>
+    <Class>7</Class>
+    <Name>ComentarioViaje</Name>
+    <Status>7</Status>
+    <Path>corll/MDL002/GEN16/C13.xml</Path>
+  </Object>
  </Objects>

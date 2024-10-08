@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<xs:schema  id="ComentarioViajeDataSet" targetNamespace="http://www.tempuri.org/ComentarioViaje" xmlns:mstns="http://www.tempuri.org/ComentarioViaje" xmlns="http://www.tempuri.org/ComentarioViaje" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:dkdata="http://www.deklarit.com/XMLSchema">
+   <xs:element  name="ComentarioViajeDataSet" msdata:IsDataSet="true" msprop:DataAdapterName="ComentarioViajeDataAdapter" msprop:BigImage=" " msprop:SmallImage=" " msprop:Image=" " msprop:Deklarit.PermissionBaseId="2020" msprop:DataSetName="ComentarioViajeDataSet" msprop:DataAdapterInterfaceName="IComentarioViajeDataAdapter" msprop:ObjectName="ComentarioViaje" msprop:ObjectDescription="ComentarioViaje" msprop:ObjectType="BusinessComponent" msprop:ObjectPath="\BusinessComponents\Vaijes" msprop:NameSpace="Raiderplan1" msprop:DataChangeFrequency="PrettyOften" msprop:CachePriority="Medium" msprop:Deklarit.AddNewOptionToLowCardinality="True" msprop:Deklarit.HiddenInRelations="" msprop:Deklarit.DataProviderForForeignKeys="" msprop:Deklarit.DescriptionAttribute="" msprop:Deklarit.MenuPath="" msprop:Deklarit.ShowInMenu="True" msprop:Deklarit.DataProviderForWW="" msprop:Deklarit.LowCardinality="False">
+      <xs:complexType>
+         <xs:choice  maxOccurs="unbounded">
+            <xs:element  name="ComentarioViaje" msprop:ParentLvl="" msprop:LevelName="ComentarioViaje" msprop:Description="ComentarioViaje" msprop:AllowInsert="true" msprop:AllowUpdate="true" msprop:AllowDelete="true" msprop:Deklarit.EditInDataGrid="True">
+               <xs:complexType >
+                  <xs:sequence >
+                     <xs:element  name="ComentarioViajeID" msprop:Caption="Comentario Viaje ID" default="0" msprop:AutoNumber="true" msprop:IsKey="true" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="Comentario Viaje ID" msprop:Length="8" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="ComentarioViajeID" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:int"/>
+                     <xs:element  name="ComentarioLatitud" msprop:Caption="Comentario Latitud" default="0" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="Comentario Latitud" msprop:Length="17" msprop:Decimals="5" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="ComentarioLatitud" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:decimal"/>
+                     <xs:element  name="ComentarioLongitud" msprop:Caption="Comentario Longitud" default="0" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="Comentario Longitud" msprop:Length="17" msprop:Decimals="5" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="ComentarioLongitud" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:decimal"/>
+                     <xs:element  name="ComentarioTexto" msprop:Caption="Comentario Texto" default="" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="svchar" msprop:Description="Comentario Texto" msprop:Length="250" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="ComentarioTexto" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                     <xs:element  name="ComentarioImagen" msprop:Caption="Comentario Imagen" default="" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="svchar" msprop:Description="Comentario Imagen" msprop:Length="250" msprop:Decimals="0" msprop:AllowDBNulls="true" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="ComentarioImagen" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:string"/>
+                     <xs:element  name="CVTrayectoID" msprop:Caption="Trayecto Viaje ID" default="0" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="Trayecto Viaje ID" msprop:Length="5" msprop:Decimals="0" msprop:AllowDBNulls="true" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="CVTrayectoID" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:int"/>
+                     <xs:element  name="ViajeID" msprop:Caption="Viaje ID" default="0" msprop:IsKey="false" msprop:ReadOnly="false" msprop:DeklaritType="int" msprop:Description="Viaje ID" msprop:Length="10" msprop:Decimals="0" msprop:AllowDBNulls="false" msprop:IsInReader="true" msprop:Deklarit.Casing="default" msprop:Deklarit.IsPassword="false" msprop:Deklarit.InternalName="ViajeID" msprop:Deklarit.IsDescription="false" msprop:Deklarit.IsVisibleOnForm="true" msprop:Deklarit.IsVisibleOnWorkWith="true" msprop:Deklarit.AutoFilterWhenForeignKey="False" type="xs:long"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:choice>
+      </xs:complexType>
+      <xs:unique  name="ComentarioViajeConstraint1" msdata:ConstraintName="ComentarioViajeConstraint1" msdata:PrimaryKey="true">
+         <xs:selector  xpath=".//ComentarioViaje"/>
+         <xs:field  xpath="ComentarioViajeID"/>
+      </xs:unique>
+   </xs:element>
+   <xs:annotation >
+      <xs:appinfo >
+         <dkdata:relations>
+            <dkdata:manyToOne>
+               <dkdata:relation  name="ViajeViajeID" dkdata:BusinessComponent="Viaje" dkdata:Description="Viaje" dkdata:DataSetName="ViajeDataSet" dkdata:DataAdapterName="ViajeDataAdapter" dkdata:DataAdapterInterfaceName="IViajeDataAdapter">
+                  <dkdata:foreignKey>
+                     <dkdata:attribute  name="ViajeID" type="long"/>
+                  </dkdata:foreignKey>
+                  <dkdata:foreignTableAttributes>
+                  </dkdata:foreignTableAttributes>
+               </dkdata:relation>
+            </dkdata:manyToOne>
+         </dkdata:relations>
+         <dkdata:Dependencies>
+         </dkdata:Dependencies>
+         <dkdata:LookupInfo>
+         </dkdata:LookupInfo>
+         <dkdata:FillMethods  dkdata:Lvl="13">
+            <dkdata:FillMethod  dkdata:FillString="ViajeID" dkdata:IndexName="IComentarioViaje1" dkdata:Unique="false">
+               <dkdata:Attribute  dkdata:AttributeName="ViajeID"/>
+            </dkdata:FillMethod>
+         </dkdata:FillMethods>
+      </xs:appinfo>
+   </xs:annotation>
+</xs:schema>

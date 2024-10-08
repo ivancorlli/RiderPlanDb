@@ -53,21 +53,21 @@ namespace Raiderplan1.Reorg {
          // Warning: Status message commands are not valid in C# Objects. Ignored.
          // Warning: Status message commands are not valid in C# Objects. Ignored.
          AV5GXLvl3 = 0 ;
-         cmLTCtls2 = connDefault.GetCommand("SELECT TOP 1 [ViajeID] FROM [Viaje] ",false);
+         cmLTCtls2 = connDefault.GetCommand("SELECT TOP 1 [ComentarioViajeID] FROM [ComentarioViaje] ",false);
          cmLTCtls2.ErrorMask = cmLTCtls2.ErrorMask  |  ErrorMask.Lock;
          LTCtls2 = cmLTCtls2.FetchData();
          while ( cmLTCtls2.HasMoreRows )
          {
-            m_ViajeID = dsDefault.Db.GetInt64(LTCtls2, 0, ref m__ViajeIDIsNull) ;
+            m_ComentarioViajeID = dsDefault.Db.GetInt32(LTCtls2, 0, ref m__ComentarioViajeIDIsNull) ;
             AV5GXLvl3 = 1 ;
             // Warning: Status message commands are not valid in C# Objects. Ignored.
             AV6GXLvl6 = 0 ;
-            cmLTCtls3 = connDefault.GetCommand("SELECT TOP 1 [UsuarioID] FROM [Usuario] WHERE [UsuarioID] = 0 ",false);
+            cmLTCtls3 = connDefault.GetCommand("SELECT TOP 1 [ViajeID] FROM [Viaje] WHERE [ViajeID] = 0 ",false);
             cmLTCtls3.ErrorMask = cmLTCtls3.ErrorMask  |  ErrorMask.Lock;
             LTCtls3 = cmLTCtls3.FetchData();
             while ( cmLTCtls3.HasMoreRows )
             {
-               m_UsuarioID = dsDefault.Db.GetInt32(LTCtls3, 0, ref m__UsuarioIDIsNull) ;
+               m_ViajeID = dsDefault.Db.GetInt64(LTCtls3, 0, ref m__ViajeIDIsNull) ;
                AV6GXLvl6 = 1 ;
                // Warning: Status message commands are not valid in C# Objects. Ignored.
                // Exit For each command. Update data (if necessary), close cursors & exit.
@@ -107,11 +107,11 @@ namespace Raiderplan1.Reorg {
          resourceManagerTables = new System.Resources.ResourceManager( "Deklarit.Tables", System.Reflection.Assembly.GetExecutingAssembly()) ;
          AV5GXLvl3 = 0 ;
          scmdbuf = "" ;
+         m__ComentarioViajeIDIsNull = false ;
+         m_ComentarioViajeID = 0 ;
+         AV6GXLvl6 = 0 ;
          m__ViajeIDIsNull = false ;
          m_ViajeID = 0 ;
-         AV6GXLvl6 = 0 ;
-         m__UsuarioIDIsNull = false ;
-         m_UsuarioID = 0 ;
          // GeneXus formulas.
          Gx_err = 0 ;
       }
@@ -120,11 +120,11 @@ namespace Raiderplan1.Reorg {
       private short AV5GXLvl3 ;
       private short AV6GXLvl6 ;
       private short Gx_err ;
-      private int m_UsuarioID ;
+      private int m_ComentarioViajeID ;
       private long m_ViajeID ;
       private String scmdbuf ;
+      private bool m__ComentarioViajeIDIsNull ;
       private bool m__ViajeIDIsNull ;
-      private bool m__UsuarioIDIsNull ;
       private DataStore dsDefault ;
       private System.Resources.ResourceManager resourceManager ;
       private System.Resources.ResourceManager resourceManagerTables ;

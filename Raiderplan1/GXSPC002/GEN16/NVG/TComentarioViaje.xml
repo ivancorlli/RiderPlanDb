@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ObjectSpec>
+<SpecVersion>4_5_0-002</SpecVersion>
+<Object>
+<ObjCls>0</ObjCls>
+<ObjId>11</ObjId>
+<ObjName>ComentarioViaje</ObjName>
+<ObjDesc>ComentarioViaje</ObjDesc>
+<ObjPgmName>TComentarioViaje</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>16</GenId>
+<GenName>Deklarit</GenName></Generator>
+<FormClass>Graphic</FormClass>
+<Parameters></Parameters>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>13</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>13</TableId>
+<TableName>COMENTARIOVIAJE</TableName>
+<Description>ComentarioViaje</Description></Table></BaseTable>
+<NavigationTree>
+<Table>
+<TableId>13</TableId>
+<TableName>COMENTARIOVIAJE</TableName>
+<Description>ComentarioViaje</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>94</AttriId>
+<AttriName>ComentarioViajeID</AttriName>
+<Description>Comentario Viaje ID</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>8</TableId>
+<TableName>VIAJE</TableName>
+<Description>Viaje</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>42</AttriId>
+<AttriName>ViajeID</AttriName>
+<Description>Viaje ID</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>13</TableId>
+<TableName>COMENTARIOVIAJE</TableName>
+<Description>ComentarioViaje</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>90</AttriId>
+<AttriName>ComentarioLatitud</AttriName>
+<Description>Comentario Latitud</Description></Attribute>
+<Attribute>
+<AttriId>91</AttriId>
+<AttriName>ComentarioLongitud</AttriName>
+<Description>Comentario Longitud</Description></Attribute>
+<Attribute>
+<AttriId>92</AttriId>
+<AttriName>ComentarioTexto</AttriName>
+<Description>Comentario Texto</Description></Attribute>
+<Attribute>
+<AttriId>93</AttriId>
+<AttriName>ComentarioImagen</AttriName>
+<Description>Comentario Imagen</Description></Attribute>
+<Attribute>
+<AttriId>184</AttriId>
+<AttriName>CVTrayectoID</AttriName>
+<Description>CV Trayecto ID</Description></Attribute>
+<Attribute>
+<AttriId>42</AttriId>
+<AttriName>ViajeID</AttriName>
+<Description>Viaje ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>13</TableId>
+<TableName>COMENTARIOVIAJE</TableName>
+<Description>ComentarioViaje</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>90</AttriId>
+<AttriName>ComentarioLatitud</AttriName>
+<Description>Comentario Latitud</Description></Attribute>
+<Attribute>
+<AttriId>91</AttriId>
+<AttriName>ComentarioLongitud</AttriName>
+<Description>Comentario Longitud</Description></Attribute>
+<Attribute>
+<AttriId>92</AttriId>
+<AttriName>ComentarioTexto</AttriName>
+<Description>Comentario Texto</Description></Attribute>
+<Attribute>
+<AttriId>93</AttriId>
+<AttriName>ComentarioImagen</AttriName>
+<Description>Comentario Imagen</Description></Attribute>
+<Attribute>
+<AttriId>184</AttriId>
+<AttriName>CVTrayectoID</AttriName>
+<Description>CV Trayecto ID</Description></Attribute>
+<Attribute>
+<AttriId>42</AttriId>
+<AttriName>ViajeID</AttriName>
+<Description>Viaje ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>13</TableId>
+<TableName>COMENTARIOVIAJE</TableName>
+<Description>ComentarioViaje</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AfterInsertRules></AfterInsertRules>
+<AfterUpdateRules></AfterUpdateRules>
+<AfterDeleteRules></AfterDeleteRules>
+<TablesToControlOnDelete></TablesToControlOnDelete>
+<Levels></Levels>
+<AfterTrnRules></AfterTrnRules>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
+<Prompts></Prompts>
+<Suggests></Suggests></ObjectSpec>

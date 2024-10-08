@@ -83,4 +83,7 @@
    <data name="TrayectoViaje" xml:space="preserve"> 
     <value>TrayectoViaje</value> 
    </data>
+   <data name="ComentarioViaje" xml:space="preserve"> 
+    <value>ComentarioViaje</value> 
+   </data>
 </root>

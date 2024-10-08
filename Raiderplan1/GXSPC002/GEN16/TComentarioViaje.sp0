@@ -1,0 +1,554 @@
+spec_i([ trn,11,'ComentarioViaje','ComentarioViaje',[],eng,'4_5_0-002' ]).
+ 
+struct_i(13,0,[],[]).
+ 
+level_i(13,[ 13,[ [ 13,many ],[ 8,one ] ],[ 94 ],[],[],[],[ 94 ],'IComentarioViaje',[ 13,[] ],[] ]).
+ 
+tw_i(13,[ [ 8,[ [ 13,42,42 ] ] ] ]).
+ 
+lwi_i(13,[ [] ]).
+ 
+ 
+ 
+ 
+ta_i(13,[ [ [ 13,94 ],[ 13,90 ],[ 13,91 ],[ 13,92 ],[ 13,93 ],[ 13,184 ],[ 13,42 ] ] ]).
+ 
+las_i(13,[ [ 94,90,91,92,93,184,42 ] ]).
+ 
+lac_i(13,[ [ 94,90,91,92,93,184,42 ] ]).
+ 
+ 
+lits_i('Comentario Viaje ID',2,3).
+lits_i('Comentario Latitud',3,3).
+lits_i('Comentario Longitud',4,3).
+lits_i('Comentario Texto',5,3).
+lits_i('Comentario Imagen',9,3).
+lits_i('CV Trayecto ID',13,3).
+lits_i('Viaje ID',14,3).
+ 
+cls_i([ 2,3 ],[ 14,272 ]).
+ 
+pos_i(94,[ 2,2,23 ]).
+pos_i(90,[ 3,3,23 ]).
+pos_i(91,[ 4,4,23 ]).
+pos_i(92,[ 5,5,23 ]).
+pos_i(93,[ 9,9,23 ]).
+pos_i(184,[ 13,13,23 ]).
+pos_i(42,[ 14,14,23 ]).
+ 
+ 
+ 
+rule_i(0,datastore(1,'DS_LAST_CHANGE','')).
+rule_i(0,datastore(1,'LOCK_RETRY','10')).
+rule_i(0,datastore(1,'WAIT_RECORD','0')).
+rule_i(0,datastore(1,'SQLSERVER_VERSION','9')).
+rule_i(0,datastore(1,'DB_NLS_SUPPORT','No')).
+rule_i(0,datastore(1,'COMMENT_ON','No')).
+rule_i(0,datastore(1,'DFT_TMP_TBLSPACE','')).
+rule_i(0,datastore(1,'DFT_IDX_TBLSPACE','')).
+rule_i(0,datastore(1,'DFT_TBL_TBLSPACE','')).
+rule_i(0,datastore(1,'DCL_REF_INT_DB','Yes')).
+rule_i(0,datastore(1,'PRIMARY_KEY_TYPE','PK')).
+rule_i(0,datastore(1,'CS_SCHEMA','')).
+rule_i(0,datastore(1,'CC_USER_PASS','')).
+rule_i(0,datastore(1,'CC_USER_ID','')).
+rule_i(0,datastore(1,'CC_SERVER','')).
+rule_i(0,datastore(1,'CC_DBNAME','')).
+rule_i(0,datastore(1,'RecycleRWMin','30')).
+rule_i(0,datastore(1,'RecycleRW','-1')).
+rule_i(0,datastore(1,'POOL_STARTUP','No')).
+rule_i(0,datastore(1,'POOLSIZE_RW','10')).
+rule_i(0,datastore(1,'UnlimitedRWPool','-1')).
+rule_i(0,datastore(1,'PoolRWEnabled','-1')).
+rule_i(0,datastore(1,'CS_RPCPGML','')).
+rule_i(0,datastore(1,'JDBC_DATASOURCE','')).
+rule_i(0,datastore(1,'USE_JDBC_DATASOURCE','0')).
+rule_i(0,datastore(1,'DS_DBMS_ADDINFO','Provider=SQLOLEDB;Data Source=ICORLLI\SQLEXPRESS01;Integrated Security=SSPI;Initial Catalog=RiderPlanDB1')).
+rule_i(0,datastore(1,'USER_PASSWORD','')).
+rule_i(0,datastore(1,'USER_ID','')).
+rule_i(0,datastore(1,'TRUSTED_CONNECTION','Yes')).
+rule_i(0,datastore(1,'CS_CNTDLG','2')).
+rule_i(0,datastore(1,'CS_CONNECT','First')).
+rule_i(0,datastore(1,'DBMS_PORT','1433')).
+rule_i(0,datastore(1,'CS_SERVER','')).
+rule_i(0,datastore(1,'CS_DBNAME','')).
+rule_i(0,datastore(1,'CS_FLEDSNAME','')).
+rule_i(0,datastore(1,'CS_DRVNAME','sql server')).
+rule_i(0,datastore(1,'CS_DSNAME','')).
+rule_i(0,datastore(1,'CS_USETOCONNECT','Driver')).
+rule_i(0,datastore(1,'DB_URL','')).
+rule_i(0,datastore(1,'JDBC_CUSTOM_URL','0')).
+rule_i(0,datastore(1,'JDBC_CUSTOM_DRIVER','')).
+rule_i(0,datastore(1,'JDBC_DRIVER','com.inet.tds.TdsDriver')).
+rule_i(0,datastore(1,'CONNECT_METHOD','OPSYS')).
+rule_i(0,datastore(1,'ACCESS_TECHNO','ODBC')).
+rule_i(0,datastore(1,'MAIN_DS','-1')).
+rule_i(0,datastore(1,'REORG_GEN','8')).
+rule_i(0,datastore(1,'HelpKeyword','23')).
+rule_i(0,datastore(1,'DBMS',12)).
+rule_i(0,datastore(1,'NAME','Default')).
+rule_i(0,prop('NULLS_BEHAVIOR','CURRENT')).
+rule_i(0,prop('FIELD_TO_FIELD','UMPV')).
+rule_i(0,prop('MTIER_OPT','Yes')).
+rule_i(0,prop('CS_ORA_FORUPD','UMPV')).
+rule_i(0,prop('Hint_firstrows','UMPV')).
+rule_i(0,prop('NULLVALUE_AS_NULL','UMPV')).
+rule_i(0,prop('INITIALIZE_NEW','UMPV')).
+rule_i(0,prop('AUTOENTER','UMPV')).
+rule_i(0,prop('BEEPONMSG','UMPV')).
+rule_i(0,prop('BEEPONERROR','UMPV')).
+rule_i(0,prop('TRNCMT','YES')).
+rule_i(0,prop('EnhancedFindNavigation','UMPV')).
+rule_i(0,prop('SPC_WARNINGS_DISABLED',spc0096)).
+rule_i(0,prop('STD_FUNC_OBJECT','UMPV')).
+rule_i(0,prop('WBCHAR','')).
+rule_i(0,prop('WBATTR',none)).
+rule_i(0,prop('WBCOLOR',none)).
+rule_i(0,prop('WNDPOP','NO')).
+rule_i(0,prop('OKBUT','YES')).
+rule_i(0,prop('AUTOCENTER','UMPV')).
+rule_i(0,prop('DLT_BUTTON','gxconfirm_dlt.gif')).
+rule_i(0,prop('CNF_BUTTON','gxconfirm_cnf.gif')).
+rule_i(0,prop('UPD_BUTTON','gxconfirm_upd.gif')).
+rule_i(0,prop('ADD_BUTTON','gxconfirm_add.gif')).
+rule_i(0,prop('AUTOSCROLL_FORM','UMPV')).
+rule_i(0,prop('SHOW_FRM','UMPV')).
+rule_i(0,prop('MODAL','PARM')).
+rule_i(0,prop('CTRBOX','YES')).
+rule_i(0,prop('ICON','')).
+rule_i(0,prop('S_TASK','YES')).
+rule_i(0,prop('MINBUT','YES')).
+rule_i(0,prop('MAXBUT','YES')).
+rule_i(0,prop('BORSTY','2')).
+rule_i(0,prop('MENUBAR','Default')).
+rule_i(0,prop('KEY_MOREKEYS','UMPV')).
+rule_i(0,prop('KEY_ENTER','UMPV')).
+rule_i(0,prop('KEY_LAST','UMPV')).
+rule_i(0,prop('KEY_FIRST','UMPV')).
+rule_i(0,prop('KEY_SELECT','UMPV')).
+rule_i(0,prop('KEY_DISPLAY','UMPV')).
+rule_i(0,prop('KEY_DELETE','UMPV')).
+rule_i(0,prop('KEY_CANCEL','UMPV')).
+rule_i(0,prop('KEY_UPDATE','UMPV')).
+rule_i(0,prop('KEY_MENU','UMPV')).
+rule_i(0,prop('KEY_RETRIEVE','UMPV')).
+rule_i(0,prop('KEY_NEXT','UMPV')).
+rule_i(0,prop('KEY_PREVIOUS','UMPV')).
+rule_i(0,prop('KEY_INSERT','UMPV')).
+rule_i(0,prop('KEY_REFRESH','UMPV')).
+rule_i(0,prop('KEY_PROMPT','UMPV')).
+rule_i(0,prop('KEY_EXIT','UMPV')).
+rule_i(0,prop('KEY_CHECK','UMPV')).
+rule_i(0,prop('KEY_HELP','UMPV')).
+rule_i(0,prop('ASSIGNED_FNC_KEYS','UMPV')).
+rule_i(0,prop('FIRST_WD_DATEPICKER','UMPV')).
+rule_i(0,prop('WNUM_DATEPICKER','UMPV')).
+rule_i(0,prop(idUSE_WEB_DATEPICKER,'UMPV')).
+rule_i(0,prop('CONFIRM','UMPV')).
+rule_i(0,prop('TRNCFM','UMPV')).
+rule_i(0,prop('CFMTRN','No')).
+rule_i(0,prop('TRNEND','Yes')).
+rule_i(0,prop('DKL_ACTIONS',' ')).
+rule_i(0,prop('DKL_BIG_IMAGE',' ')).
+rule_i(0,prop('DKL_SMALL_IMAGE',' ')).
+rule_i(0,prop('DKL_IMAGE',' ')).
+rule_i(0,prop('DKL_READ_UNCOMMITED_BC','UMPV')).
+rule_i(0,prop('DKL_REF_BY_CANDIDATE','0')).
+rule_i(0,prop('DKL_COMMAND_TIMEOUT','30')).
+rule_i(0,prop('DKL_OPTIMISTIC_LOCKTYPE','1')).
+rule_i(0,prop('DKL_CACHE_PRIORITY','2')).
+rule_i(0,prop('DKL_CACHE_FREQUENCY','1')).
+rule_i(0,prop('DKL_PERMISSION_BASE_ID','2020')).
+rule_i(0,prop('DKL_VERSION','4000')).
+rule_i(0,prop('DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>LowCardinality</Name><Description>Low cardinality expected for this kind of object.</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property></Properties>')).
+rule_i(0,prop('DKL_ROLES','<Roles></Roles>')).
+rule_i(0,prop('DKL_CUSTOM_PROPERTIES','<Properties></Properties>')).
+rule_i(0,prop('USER_METADATA','')).
+rule_i(0,prop('WORKFLOW_METADATA','')).
+rule_i(0,prop('DEKLARIT_TYPE','0')).
+rule_i(0,prop('DKL_LAYOUT','')).
+rule_i(0,prop('DKL_DEPENDENCIES_PROPS','<Items xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gx="www.genexus.com"><Item><gx:Object><Class>5</Class><Id>184</Id></gx:Object><Properties>
+			<Property>
+				<Type>string</Type>
+				<Name>Description</Name>
+				<Value>Trayecto Viaje ID</Value>
+			</Property></Properties></Item></Items>')).
+rule_i(0,prop('OBJECT_METADATA',' ')).
+rule_i(0,prop('DEKLARIT_METADATA','')).
+rule_i(0,prop('HelpKeyword','1')).
+rule_i(0,prop('ObjPurpose','')).
+rule_i(0,prop('ObjBuyer','')).
+rule_i(0,prop('ObjCopyright','')).
+rule_i(0,prop('ObjIsPrivate','0')).
+rule_i(0,prop('ObjAlreadyPrivate','0')).
+rule_i(0,prop('DwhTrnType','NA')).
+rule_i(0,prop('IsDwhTrn','0')).
+rule_i(0,prop(idDEST_JNDI_Name,'')).
+rule_i(0,prop(idCON_FACTORY_JNDI_Name,'')).
+rule_i(0,prop(idDEST_Type,idDEST_Type_QUEUE)).
+rule_i(0,prop(idJNDI_Name,'ejb/aComentarioViaje')).
+rule_i(0,prop(idTRN_Attribute,idTRN_Attribute_REQUIRED)).
+rule_i(0,prop(idTRN_Type,idTRN_Type_CONTAINER)).
+rule_i(0,prop('AppGenerator','Default')).
+rule_i(0,prop('AppLocation','')).
+rule_i(0,prop('AppIcon','')).
+rule_i(0,prop('AppTitle','')).
+rule_i(0,prop('IsMain','0')).
+rule_i(0,prop('ExternalNamespace','Raiderplan1')).
+rule_i(0,prop('ExternalName','ComentarioViaje')).
+rule_i(0,prop(idISBCEJB,'0')).
+rule_i(0,prop(idISBCWEBSERVICE,'0')).
+rule_i(0,prop('CALL_PROTOCOL','INTERNAL')).
+rule_i(0,prop('USE_ENCRYPTION','UMPV')).
+rule_i(0,prop('MasterPage','Default')).
+rule_i(0,prop('URLAccess','No')).
+rule_i(0,prop('WEB_COMP','No')).
+rule_i(0,prop('Theme','*None')).
+rule_i(0,prop('ObjStyle','Default')).
+rule_i(0,prop('ObjIsStyle','0')).
+rule_i(0,prop('ObjFolder','Default')).
+rule_i(0,prop('ObjDesc','')).
+rule_i(0,prop('ObjName','ComentarioViaje')).
+rule_i(0,prop('ObjId','0')).
+rule_i(13,prompt([ 8,[ [ 13,42,42 ] ],[ 42 ],[ 42 ] ])).
+rule_i(0,rule([ a(22,[ 'Dlt','Delete','' ]) ],[],[],[])).
+rule_i(0,maingen(16)).
+ 
+a_i(1,13,t,13,[],[ [ [ [],94,94 ] ],'IComentarioViaje',[] ]).
+a_i(2,13,r,8,[],[ [ [ 13,42,42 ] ],'IViaje',[] ]).
+ 
+v_i(t,i,1,94).
+v_i(t,o,1,90).
+v_i(t,o,1,91).
+v_i(t,o,1,92).
+v_i(t,o,1,93).
+v_i(t,o,1,184).
+v_i(t,o,1,42).
+v_i(r,i,2,42).
+v_i(r,o,2,[]).
+ 
+ 
+ 
+ 
+ 
+attri_i(42,[ 'ViajeID',int,10,0,'ZZZZZZZZZ9',0,'Viaje ID','',0,0 ]).
+attri_i(184,[ 'CVTrayectoID',int,5,0,'ZZZZ9',0,'CV Trayecto ID','',0,0 ]).
+attri_i(93,[ 'ComentarioImagen',svchar,250,0,'',0,'Comentario Imagen','',0,0 ]).
+attri_i(92,[ 'ComentarioTexto',svchar,250,0,'',0,'Comentario Texto','',0,0 ]).
+attri_i(91,[ 'ComentarioLongitud',int,18,5,'ZZZZZZZZZZZ9.99999',0,'Comentario Longitud','',0,0 ]).
+attri_i(90,[ 'ComentarioLatitud',int,18,5,'ZZZZZZZZZZZ9.99999',0,'Comentario Latitud','',0,0 ]).
+attri_i(94,[ 'ComentarioViajeID',int,8,0,'ZZZZZZZ9',0,'Comentario Viaje ID','',0,0 ]).
+attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2,0 ]).
+ 
+table_i(8,[ 'VIAJE',[ 42 ],'Viaje','Viaje' ]).
+table_i(13,[ 'COMENTARIOVIAJE',[ 94,90,91,92,93,184,42 ],'ComentarioViaje','ComentarioViaje' ]).
+ 
+index_i(13,[ 'IComentarioViaje',u,[ 94 ],'IComentarioViaje' ]).
+index_i(13,[ 'IComentarioViaje1',d,[ 42 ],'IComentarioViaje1' ]).
+index_i(8,[ 'IViaje',u,[ 42 ],'IViaje' ]).
+ 
+ 
+ 
+ 
+upd_i(13,13,i,[ [ 90,91,92,93,184,42 ],[],'IComentarioViaje',[ [ [],94,94 ] ] ]).
+upd_i(13,13,u,[ [ 90,91,92,93,184,42 ],[],'IComentarioViaje',[] ]).
+upd_i(13,13,d,[ [],[],'IComentarioViaje',[] ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+break_i(2,nvg,1,[],[ [],[],[] ]).
+ 
+b_group_i(2,1,lit,0,1,0).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ppi_i([ 96,96 ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+lit_i(2,1,button('First'),[ id(2),title([ 'GX_BtnFirst' ]),ctlname(btn_First),rect(8,2,33,25),font('MS Shell Dlg',8,[]) ]).
+lit_i(3,1,button('Previous'),[ id(3),title([ 'GX_BtnPrevious' ]),ctlname(btn_Previous),rect(34,2,59,25),font('MS Shell Dlg',8,[]) ]).
+lit_i(4,1,button('Next'),[ id(4),title([ 'GX_BtnNext' ]),ctlname(btn_Next),rect(60,2,85,25),font('MS Shell Dlg',8,[]) ]).
+lit_i(5,1,button('Last'),[ id(5),title([ 'GX_BtnLast' ]),ctlname(btn_Last),rect(86,2,111,25),font('MS Shell Dlg',8,[]) ]).
+lit_i(6,1,button('Select'),[ id(6),title([ 'GX_BtnSelect' ]),ctlname(btn_Select),rect(115,2,203,25),font('MS Shell Dlg',8,[]) ]).
+lit_i(7,1,button('Enter'),[ id(7),title([ 'GX_BtnEnter' ]),ctlname(btn_Enter),rect(609,48,697,70),font('MS Shell Dlg',8,[]) ]).
+lit_i(8,1,button('Cancel'),[ id(8),title([ 'GX_BtnCancel' ]),ctlname(btn_Cancel),rect(609,76,697,98),font('MS Shell Dlg',8,[]) ]).
+lit_i(9,1,button('Delete'),[ id(9),title([ 'GX_BtnDelete' ]),ctlname(btn_Delete),rect(609,104,697,126),font('MS Shell Dlg',8,[]) ]).
+lit_i(10,1,button('Help'),[ id(10),title([ 'GX_BtnHelp' ]),ctlname(btn_Help),rect(609,142,697,164),font('MS Shell Dlg',8,[]) ]).
+lit_i(11,1,t(94,2),[ font('Courier New',9,[]),rect(161,48,226,68),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(94),ctrltype(edit,11),ispwd(0),e2n(1) ]).
+lit_i(12,1,t('Comentario Viaje ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,48,133,60),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(13,1,t(90,2),[ font('Courier New',9,[]),rect(161,72,296,92),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(90),ctrltype(edit,13),ispwd(0),e2n(1) ]).
+lit_i(14,1,t('Comentario Latitud',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,72,127,84),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(15,1,t(91,2),[ font('Courier New',9,[]),rect(161,96,296,116),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(91),ctrltype(edit,15),ispwd(0),e2n(1) ]).
+lit_i(16,1,t('Comentario Longitud',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,96,137,108),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(17,1,t(92,2),[ font('Courier New',9,[]),rect(161,120,590,206),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(92),ctrltype(edit,17),ispwd(0),e2n(1) ]).
+lit_i(18,1,t('Comentario Texto',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,120,120,132),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(19,1,t(93,2),[ font('Courier New',9,[]),rect(161,216,590,302),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(93),ctrltype(edit,19),ispwd(0),e2n(1) ]).
+lit_i(20,1,t('Comentario Imagen',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,216,129,228),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(21,1,t(184,2),[ font('Courier New',9,[]),rect(161,312,205,332),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(184),ctrltype(edit,21),ispwd(0),e2n(1) ]).
+lit_i(22,1,t('CV Trayecto ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,312,108,324),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(23,1,t(42,2),[ font('Courier New',9,[]),rect(161,336,240,356),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(42),ctrltype(edit,23),ispwd(0),e2n(1) ]).
+lit_i(24,1,t('Viaje ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,336,66,348),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(1,1,window,[ title([]),rect(0,0,716,373),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
+ 
+grid_i(7,24).
+ 
+ 
+popup_offset_i(0,0).
+ 
+form_class_i(1,'Graphic').
+ 
+std_color_i(11,back,5).
+std_color_i(11,fore,8).
+std_color_i(12,fore,8).
+std_color_i(13,back,5).
+std_color_i(13,fore,8).
+std_color_i(14,fore,8).
+std_color_i(15,back,5).
+std_color_i(15,fore,8).
+std_color_i(16,fore,8).
+std_color_i(17,back,5).
+std_color_i(17,fore,8).
+std_color_i(18,fore,8).
+std_color_i(19,back,5).
+std_color_i(19,fore,8).
+std_color_i(20,fore,8).
+std_color_i(21,back,5).
+std_color_i(21,fore,8).
+std_color_i(22,fore,8).
+std_color_i(23,back,5).
+std_color_i(23,fore,8).
+std_color_i(24,fore,8).
+std_color_i(1,back,15).
+std_color_i(1,fore,6).
+ 
+ 
+ 
+ 
+att_prop_i(2,94,'AUTONUMBER','-1',v).
+att_prop_i(2,94,'AUTONUMBER_START','1',v).
+att_prop_i(2,94,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,94,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,94,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,94,'OBJECT_METADATA','',v).
+att_prop_i(2,94,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,94,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,94,'DKL_VERSION','2100',d).
+att_prop_i(2,94,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,94,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,94,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,94,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,94,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,94,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,94,'DKL_ISROWGUID','0',v).
+att_prop_i(2,94,'DKL_INPUT_MASK','',v).
+att_prop_i(2,94,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,94,'DKL_MIME_TYPE','',v).
+att_prop_i(2,94,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,94,'DKL_CASING','0',v).
+att_prop_i(2,94,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,94,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,94,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,94,'FullName','ComentarioViajeID',v).
+att_prop_i(2,90,'AUTONUMBER','0',v).
+att_prop_i(2,90,'AUTONUMBER_START','1',v).
+att_prop_i(2,90,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,90,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,90,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,90,'OBJECT_METADATA','',v).
+att_prop_i(2,90,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,90,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,90,'DKL_VERSION','2100',d).
+att_prop_i(2,90,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,90,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,90,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,90,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,90,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,90,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,90,'DKL_ISROWGUID','0',v).
+att_prop_i(2,90,'DKL_INPUT_MASK','',v).
+att_prop_i(2,90,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,90,'DKL_MIME_TYPE','',v).
+att_prop_i(2,90,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,90,'DKL_CASING','0',v).
+att_prop_i(2,90,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,90,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,90,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,90,'FullName','ComentarioLatitud',v).
+att_prop_i(2,91,'AUTONUMBER','0',v).
+att_prop_i(2,91,'AUTONUMBER_START','1',v).
+att_prop_i(2,91,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,91,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,91,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,91,'OBJECT_METADATA','',v).
+att_prop_i(2,91,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,91,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,91,'DKL_VERSION','2100',d).
+att_prop_i(2,91,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,91,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,91,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,91,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,91,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,91,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,91,'DKL_ISROWGUID','0',v).
+att_prop_i(2,91,'DKL_INPUT_MASK','',v).
+att_prop_i(2,91,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,91,'DKL_MIME_TYPE','',v).
+att_prop_i(2,91,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,91,'DKL_CASING','0',v).
+att_prop_i(2,91,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,91,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,91,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,91,'FullName','ComentarioLongitud',v).
+att_prop_i(2,92,'AUTONUMBER_START','1',v).
+att_prop_i(2,92,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,92,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,92,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,92,'OBJECT_METADATA','',v).
+att_prop_i(2,92,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,92,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,92,'DKL_VERSION','2100',d).
+att_prop_i(2,92,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,92,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,92,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,92,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,92,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,92,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,92,'DKL_ISROWGUID','0',v).
+att_prop_i(2,92,'DKL_INPUT_MASK','',v).
+att_prop_i(2,92,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,92,'DKL_MIME_TYPE','',v).
+att_prop_i(2,92,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,92,'DKL_CASING','0',v).
+att_prop_i(2,92,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,92,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,92,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,92,'FullName','ComentarioTexto',v).
+att_prop_i(2,93,'AUTONUMBER_START','1',v).
+att_prop_i(2,93,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,93,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,93,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,93,'OBJECT_METADATA','',v).
+att_prop_i(2,93,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,93,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,93,'DKL_VERSION','2100',d).
+att_prop_i(2,93,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,93,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,93,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,93,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,93,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,93,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,93,'DKL_ISROWGUID','0',v).
+att_prop_i(2,93,'DKL_INPUT_MASK','',v).
+att_prop_i(2,93,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,93,'DKL_MIME_TYPE','',v).
+att_prop_i(2,93,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,93,'DKL_CASING','0',v).
+att_prop_i(2,93,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,93,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,93,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,93,'FullName','ComentarioImagen',v).
+att_prop_i(2,184,'AUTONUMBER','0',v).
+att_prop_i(2,184,'AUTONUMBER_START','1',v).
+att_prop_i(2,184,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,184,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,184,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,184,'OBJECT_METADATA','',v).
+att_prop_i(2,184,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,184,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,184,'DKL_VERSION','2100',d).
+att_prop_i(2,184,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,184,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,184,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,184,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,184,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,184,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,184,'DKL_ISROWGUID','0',v).
+att_prop_i(2,184,'DKL_INPUT_MASK','',v).
+att_prop_i(2,184,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,184,'DKL_MIME_TYPE','',v).
+att_prop_i(2,184,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,184,'DKL_CASING','0',v).
+att_prop_i(2,184,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,184,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,184,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,184,'FullName','CVTrayectoID',v).
+att_prop_i(2,42,'AUTONUMBER','-1',v).
+att_prop_i(2,42,'AUTONUMBER_START','1',v).
+att_prop_i(2,42,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,42,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,42,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,42,'OBJECT_METADATA','',v).
+att_prop_i(2,42,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,42,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,42,'DKL_VERSION','2100',d).
+att_prop_i(2,42,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,42,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,42,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,42,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,42,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,42,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,42,'DKL_ISROWGUID','0',v).
+att_prop_i(2,42,'DKL_INPUT_MASK','',v).
+att_prop_i(2,42,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,42,'DKL_MIME_TYPE','',v).
+att_prop_i(2,42,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,42,'DKL_CASING','0',v).
+att_prop_i(2,42,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,42,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,42,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,42,'FullName','ViajeID',v).
+ 
+tbl_prop_i(2,13,'AllDirSuper',[ [ 8,[ 42 ] ] ],v).
+tbl_prop_i(2,8,'DirSubor',[ [ 13,[ 42 ] ] ],v).
+tbl_prop_i(2,13,'DirSuper',[ [ 8,[ 42 ] ] ],v).
+ 
+tbl_att_prop_i(2,13,94,'AllowNulls',n).
+tbl_att_prop_i(2,13,94,'AUTONUMBER',y).
+tbl_att_prop_i(2,13,90,'AllowNulls',n).
+tbl_att_prop_i(2,13,91,'AllowNulls',n).
+tbl_att_prop_i(2,13,92,'AllowNulls',n).
+tbl_att_prop_i(2,13,42,'AllowNulls',n).
+tbl_att_prop_i(2,8,42,'AllowNulls',n).
+tbl_att_prop_i(2,8,42,'AUTONUMBER',y).
+ 
+i_tbl_best_trn(13,[ 11,1,'ComentarioViaje','ComentarioViaje' ]).
+i_tbl_best_trn(8,[ 8,1,'Viaje','Viaje' ]).
+ 
+ 
+ 
+trn_level_i(13,[ [ 94,90,91,92,93,184,42 ],'ComentarioViaje','ComentarioViaje','ComentarioViaje','',92 ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+namespace_i('').
+ 

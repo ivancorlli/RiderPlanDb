@@ -2,6 +2,20 @@
  
  
  
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO','SOAP_NAMESPACE','Raiderplan1').
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idJNDI_Name,'ejb/aTrayectoComentario').
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idDEST_JNDI_Name,'').
+pgm_prop_i(trn,11,'TCOMENTARIOVIAJE','URLAccess','No').
+pgm_prop_i(trn,11,'TCOMENTARIOVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(trn,11,'TCOMENTARIOVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(trn,11,'TCOMENTARIOVIAJE',idJNDI_Name,'ejb/aComentarioViaje').
+pgm_prop_i(trn,11,'TCOMENTARIOVIAJE',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(trn,11,'TCOMENTARIOVIAJE',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(trn,11,'TCOMENTARIOVIAJE',idDEST_JNDI_Name,'').
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE','URLAccess','No').
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
@@ -93,6 +107,13 @@ pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idJNDI_Name,'ejb/adpUsua
 pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idDEST_Type,idDEST_Type_QUEUE).
 pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idCON_FACTORY_JNDI_Name,'').
 pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idDEST_JNDI_Name,'').
+pgm_prop_i(rpt,6,'RVIAJESCOMENTARIOS','SOAP_NAMESPACE','Raiderplan1').
+pgm_prop_i(rpt,6,'RVIAJESCOMENTARIOS',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(rpt,6,'RVIAJESCOMENTARIOS',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(rpt,6,'RVIAJESCOMENTARIOS',idJNDI_Name,'ejb/aViajesComentarios').
+pgm_prop_i(rpt,6,'RVIAJESCOMENTARIOS',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(rpt,6,'RVIAJESCOMENTARIOS',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(rpt,6,'RVIAJESCOMENTARIOS',idDEST_JNDI_Name,'').
 pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE','URLAccess','No').
 pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idTRN_Type,idTRN_Type_CONTAINER).
 pgm_prop_i(trn,10,'TTRAYECTOTIPODETALLE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
@@ -156,16 +177,12 @@ datastore_i(1,'HelpKeyword','23').
 datastore_i(1,'DBMS',12).
 datastore_i(1,'NAME','Default').
  
- 
-subtype_group_i(1,1,[ 'PersonaProvinciaID',[] ]).
-subtype_group_i(1,2,[ 'PersonaProvincia',[] ]).
-subtype_group_i(2,1,[ 'PersonaProvinciaID',[] ]).
-subtype_group_i(2,2,[ 'PersonaProvincia',[] ]).
- 
-forced_rebuild_i.
+subview_i(2,514,10).
  
  
  
  
-ver_stamp(date(2024,8,6),time(11,7,43,21)).
+ 
+ 
+ver_stamp(date(2024,10,3),time(18,34,50,1)).
  

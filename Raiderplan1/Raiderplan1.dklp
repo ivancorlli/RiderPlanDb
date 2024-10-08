@@ -1,10 +1,15 @@
  <DeKlaritProject>
-  <Modified>2024-08-06 15:28:00GMT</Modified>
+  <Modified>2024-10-08 18:35:06GMT</Modified>
   <Version>4000</Version>
   <General>
  <ProjectIdGuid>{989A8F7E-C6E0-4602-B021-6A4AF705541A}</ProjectIdGuid>
   </General>
   <Files>
+ <Object>
+  <Name>ComentarioViaje</Name>
+  <Class>0</Class>
+  <Folder>Vaijes</Folder>
+ </Object>
  <Object>
   <Name>dpUsuarioXEmailXusuarioIDCollection</Name>
   <Class>2</Class>
@@ -41,6 +46,11 @@
   <Folder>Usuario</Folder>
  </Object>
  <Object>
+  <Name>TrayectoComentario</Name>
+  <Class>2</Class>
+  <Folder>dpViaje</Folder>
+ </Object>
+ <Object>
   <Name>TrayectoViaje</Name>
   <Class>0</Class>
   <Folder>Vaijes</Folder>
@@ -64,6 +74,11 @@
   <Name>Viajes2</Name>
   <Class>3</Class>
   <Folder>BusinessComponents</Folder>
+ </Object>
+ <Object>
+  <Name>ViajesComentarios</Name>
+  <Class>2</Class>
+  <Folder>dpViaje</Folder>
  </Object>
  <Object>
   <Name>ViajesEliminados</Name>
@@ -126,14 +141,6 @@
   <Folder>BusinessComponents</Folder>
  </Object>
  <Object>
-  <Name>PersonaProvinciaID</Name>
-  <Class>10</Class>
- </Object>
- <Object>
-  <Name>PersonaProvincia</Name>
-  <Class>10</Class>
- </Object>
- <Object>
   <Name>Sexo</Name>
   <Class>11</Class>
  </Object>
@@ -171,6 +178,10 @@
  </Object>
  <Object>
   <Name>TrayectoViaje</Name>
+  <Class>7</Class>
+ </Object>
+ <Object>
+  <Name>ComentarioViaje</Name>
   <Class>7</Class>
  </Object>
   </Files>
@@ -435,8 +446,294 @@
  <Attribute>
   <Name>EsOrigen</Name>
  </Attribute>
+ <Attribute>
+  <Name>ComentarioLatitud</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComentarioLongitud</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComentarioTexto</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComentarioImagen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComentarioViajeID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeTayectoLatitudOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeViajeID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeInstrucciones</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeTiempoEstimado</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeTrayectoLongitudDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeEsOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeCombustibleConsumido</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeTrayectoDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeOrden</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeTrayectokm</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeEstadoCarretera</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeTrayectoOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeTrayectoDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeCombustibleConsumido</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeTiempoEstimado</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeInstrucciones</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeTrayectoLongitudOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeEstadoCarretera</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeTrayectoLatidudDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeOrden</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeViajeID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeEsOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeTrayectokm</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeTayectoLatitudOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>ComViajeTrayViajeTrayectoOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeTrayectokm</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeTiempoEstimado</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeTrayectoDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeViajeID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeEsOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeOrden</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeTrayectoLongitudOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeTayectoLatitudOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeEstadoCarretera</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeInstrucciones</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeTrayectoLatidudDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeCombustibleConsumido</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeTrayectoOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoViajeID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTayectoLatitudOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVOrden</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoLatidudDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVCombustibleConsumido</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTiempoEstimado</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVInstrucciones</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectokm</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVEstadoCarretera</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoLongitudDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoLongitudOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVEsOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaTrayectoLongitudDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaEstadoCarretera</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaViajeID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaTayectoLatitudOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaInstrucciones</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaEsOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaTrayectoOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaOrden</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaTrayectokm</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaTrayectoLongitudOrigen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaCombustibleConsumido</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaTiempoEstimado</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaTrayectoLatidudDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTraViaTrayectoDestino</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDLongitudLegada</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDFechaSalidaEfectiva</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDEstado</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDFechaLlegadaProgramada</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDUsuarioID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDLugarllegada</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDNombre</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDkmTotalesEstimado</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDFechaLlegadaEfectiva</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDFechaSalidaProgramada</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDLugarPartida</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDMotociletaModelo</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDMotocilcetaMarca</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDLatitudLlegada</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDImagen</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDID</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDLatitudPartida</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVViajeIDLongitudPartida</Name>
+ </Attribute>
+ <Attribute>
+  <Name>CVTrayectoID</Name>
+ </Attribute>
   </Attributes>
   <Globals>
+ <DklGroups>True</DklGroups>
   </Globals>
   <References>
   </References>
@@ -446,7 +743,7 @@
   <DBMS>SQLServer</DBMS>
   <LanguageSupport/>
   <DatabaseSchema/>
-  <Addins><![CDATA[&lt;DeklaritAddins&gt; &lt;Addin&gt;  &lt;Name&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Name&gt;  &lt;Path&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Path&gt;  &lt;OutputPath/&gt;  &lt;OutputProjectName&gt;RaiderPlan1BO&lt;/OutputProjectName&gt;  &lt;Language&gt;0&lt;/Language&gt;  &lt;Guid/&gt;  &lt;RunningSet&gt;BusinessComponents,Geografia,Localidad,Pais,Provincia,Persona,Persona,Usuario,RolUsuario,Usuario,Vaijes,TrayectoViaje,Viaje,DataProviders,dpUsuario,dpUsuarioXEmailXusuarioIDCollection,dpViaje,ViajesEliminados,ViajesEnPlanificacion,ViajesEnProgreso,ViajesRealizados&lt;/RunningSet&gt;  &lt;RunningDate&gt;2024-08-06 15:12:24GMT&lt;/RunningDate&gt;  &lt;InBuild&gt;0&lt;/InBuild&gt;  &lt;Hidden&gt;0&lt;/Hidden&gt;  &lt;Data&gt;&lt;![CDATA[]]&gt; &lt;/Data&gt; &lt;/Addin&gt;&lt;/DeklaritAddins&gt;]]> </Addins>
+  <Addins><![CDATA[&lt;DeklaritAddins&gt; &lt;Addin&gt;  &lt;Name&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Name&gt;  &lt;Path&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Path&gt;  &lt;OutputPath/&gt;  &lt;OutputProjectName&gt;RaiderPlan1BO&lt;/OutputProjectName&gt;  &lt;Language&gt;0&lt;/Language&gt;  &lt;Guid/&gt;  &lt;RunningSet&gt;Raiderplan1,BusinessComponents,Geografia,Localidad,Pais,Provincia,Persona,Persona,Usuario,RolUsuario,Usuario,Vaijes,ComentarioViaje,TrayectoViaje,Viaje,DataProviders,dpUsuario,dpUsuarioXEmailXusuarioIDCollection,dpViaje,ViajesComentarios,ViajesEliminados,ViajesEnPlanificacion,ViajesEnProgreso,ViajesRealizados&lt;/RunningSet&gt;  &lt;RunningDate&gt;2024-10-03 21:35:11GMT&lt;/RunningDate&gt;  &lt;InBuild&gt;0&lt;/InBuild&gt;  &lt;Hidden&gt;0&lt;/Hidden&gt;  &lt;Data&gt;&lt;![CDATA[]]&gt; &lt;/Data&gt; &lt;/Addin&gt;&lt;/DeklaritAddins&gt;]]> </Addins>
   <SQLVersion>9</SQLVersion>
   <TargetFramework>1</TargetFramework>
   <ProjectName>Raiderplan1BusinessFramework</ProjectName>

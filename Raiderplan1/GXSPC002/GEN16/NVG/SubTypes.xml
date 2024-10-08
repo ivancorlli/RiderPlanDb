@@ -13,24 +13,24 @@
 <MsgCode>spc0079</MsgCode>
 <Token>Attribute(s) </Token>
 <Attribute>
-<AttriId>75</AttriId>
-<AttriName>PersonaProvinciaIDID</AttriName>
-<Description>Provincia ID</Description></Attribute>
+<AttriId>152</AttriId>
+<AttriName>CVTraViaID</AttriName>
+<Description>Trayecto Viaje ID</Description></Attribute>
 <Token> in subtype group '</Token>
 <SubtypeGroup>
-<SubtypeGroupId>1</SubtypeGroupId>
-<SubtypeGroupName>PersonaProvinciaID</SubtypeGroupName></SubtypeGroup>
+<SubtypeGroupId>6</SubtypeGroupId>
+<SubtypeGroupName>CVTraVia</SubtypeGroupName></SubtypeGroup>
 <Token>' is(are) not associated to any table.</Token></Warning>
 <Warning>
 <MsgCode>spc0079</MsgCode>
 <Token>Attribute(s) </Token>
 <Attribute>
-<AttriId>78</AttriId>
-<AttriName>PersonaProvinciaID</AttriName>
-<Description>Provincia ID</Description></Attribute>
+<AttriId>181</AttriId>
+<AttriName>CVViajeIDID</AttriName>
+<Description>Viaje ID</Description></Attribute>
 <Token> in subtype group '</Token>
 <SubtypeGroup>
-<SubtypeGroupId>2</SubtypeGroupId>
-<SubtypeGroupName>PersonaProvincia</SubtypeGroupName></SubtypeGroup>
+<SubtypeGroupId>7</SubtypeGroupId>
+<SubtypeGroupName>CVViajeID</SubtypeGroupName></SubtypeGroup>
 <Token>' is(are) not associated to any table.</Token></Warning></Warnings>
 <Errors></Errors></ObjectSpec>

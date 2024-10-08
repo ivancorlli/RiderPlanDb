@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='iso-8859-1'?> <DeKlaritObject>
+  <Version>4.0</Version>
+  <Modified>2024-08-06 14:07:20GMT</Modified>
+  <Type>Attribute</Type>
+  <Name>ComViajeTrayectoViajeEsOrigen</Name>
+  <Description><![CDATA[Es Origen]]> </Description>
+  <Folder/>
+  <Namespace/>
+  <Content>
+ <Attribute>
+  <Name>ComViajeTrayectoViajeEsOrigen</Name>
+  <Modified>2024-08-06 14:07:20GMT</Modified>
+  <Description><![CDATA[Es Origen]]> </Description>
+  <Type>VarChar(1)</Type>
+  <ValRange/>
+  <Domain/>
+  <Supertype>EsOrigen</Supertype>
+ </Attribute>
+  </Content>
+ <Properties>
+ <Property>
+  <Type>integer</Type>
+  <Name>AUTONUMBER</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>AUTONUMBER_START</Name>
+  <Value>1</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>AUTONUMBER_STEP</Name>
+  <Value>1</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>ATT_INITIAL_VALUE</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_CUSTOM_PROPERTIES</Name>
+  <Value><![CDATA[<Properties></Properties>]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_BUILTIN_PROPERTIES</Name>
+  <Value><![CDATA[<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>IDEnumDefinedValues</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>AUTOGENERATE_GUID</Name>
+  <Value>1</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_EMPTY_ASNULL</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_RIGHT_TRIM</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_INTERNATIONAL_SUPPORT</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_REGULAR_EXPRESION</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>ATT_TIMESTAMP</Name>
+  <Value><![CDATA[2024-08-06 14:07:20GMT]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_ISROWGUID</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_INPUT_MASK</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>AUTONUMBER_FORREPLICATION</Name>
+  <Value>-1</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>OBJECT_METADATA</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_ENABLE_ATT_AUTH</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>string</Type>
+  <Name>DKL_MIME_TYPE</Name>
+  <Value><![CDATA[]]> </Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_ENCRYPTION</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_CASING</Name>
+  <Value>0</Value>
+ </Property>
+ <Property>
+  <Type>integer</Type>
+  <Name>DKL_ISPASSWORD</Name>
+  <Value>0</Value>
+ </Property>
+ </Properties>
+ </DeKlaritObject>

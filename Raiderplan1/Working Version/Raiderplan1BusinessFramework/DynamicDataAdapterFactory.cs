@@ -39,6 +39,16 @@ namespace Raiderplan1 {
 
       }
 
+      public ITrayectoComentarioDataAdapter GetTrayectoComentarioDataAdapter( )
+      {
+         return dataAdapterFactory.GetTrayectoComentarioDataAdapter( ) ;
+      }
+
+      public IComentarioViajeDataAdapter GetComentarioViajeDataAdapter( )
+      {
+         return dataAdapterFactory.GetComentarioViajeDataAdapter( ) ;
+      }
+
       public IViajeDataAdapter GetViajeDataAdapter( )
       {
          return dataAdapterFactory.GetViajeDataAdapter( ) ;

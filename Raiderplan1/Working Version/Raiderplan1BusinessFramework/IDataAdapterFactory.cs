@@ -8,6 +8,8 @@
 namespace Raiderplan1 {
    public partial interface IDataAdapterFactory
    {
+       ITrayectoComentarioDataAdapter GetTrayectoComentarioDataAdapter( );
+       IComentarioViajeDataAdapter GetComentarioViajeDataAdapter( );
        IViajeDataAdapter GetViajeDataAdapter( );
        IUsuarioDataAdapter GetUsuarioDataAdapter( );
        ITrayectoViajeDataAdapter GetTrayectoViajeDataAdapter( );
