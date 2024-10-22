@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <Objects>
    <Object>
+      <ObjName>Viaje</ObjName>
+      <ObjDesc>Viaje</ObjDesc>
+      <ObjType>BusinessComponent</ObjType>
+      <ObjDataSet>ViajeDataSet</ObjDataSet>
+      <ObjDataAdapter>ViajeDataAdapter</ObjDataAdapter>
+      <ObjDataAdapterInterface>IViajeDataAdapter</ObjDataAdapterInterface>
+      <ObjNameSpace>Raiderplan1</ObjNameSpace>
+   </Object>
+   <Object>
       <ObjName>TrayectoComentario</ObjName>
       <ObjDesc>TrayectoComentario</ObjDesc>
       <ObjType>DataProvider</ObjType>
@@ -16,15 +25,6 @@
       <ObjDataSet>ComentarioViajeDataSet</ObjDataSet>
       <ObjDataAdapter>ComentarioViajeDataAdapter</ObjDataAdapter>
       <ObjDataAdapterInterface>IComentarioViajeDataAdapter</ObjDataAdapterInterface>
-      <ObjNameSpace>Raiderplan1</ObjNameSpace>
-   </Object>
-   <Object>
-      <ObjName>Viaje</ObjName>
-      <ObjDesc>Viaje</ObjDesc>
-      <ObjType>BusinessComponent</ObjType>
-      <ObjDataSet>ViajeDataSet</ObjDataSet>
-      <ObjDataAdapter>ViajeDataAdapter</ObjDataAdapter>
-      <ObjDataAdapterInterface>IViajeDataAdapter</ObjDataAdapterInterface>
       <ObjNameSpace>Raiderplan1</ObjNameSpace>
    </Object>
    <Object>

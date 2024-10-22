@@ -1,3 +1,5 @@
-dir_subordinates_i(2,13,[]).
 dir_subordinates_i(2,8,[ [ 10,[ 42 ] ],[ 13,[ 42 ] ] ]).
+dir_subordinates_i(2,7,[ [ 3,[ 11 ] ],[ 8,[ 11 ] ] ]).
+dir_subordinates_i(2,10,[]).
+dir_subordinates_i(2,13,[]).
  

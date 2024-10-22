@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <ImportLog>
    <RowImport>
-      <Name>TrayectoComentario</Name>
-      <Description>TrayectoComentario</Description>
-      <Class>2</Class>
+      <Name>Viaje</Name>
+      <Description>Viaje</Description>
+      <Class>0</Class>
       <Status>2</Status>
       <Id>8</Id>
       <Errors>
@@ -11,7 +11,284 @@
       <Warnings>
       </Warnings>
       <Infos>
-         <Folder>dpViaje</Folder>
+         <Folder>Vaijes</Folder>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ViajeID</Name>
+      <Description>Viaje ID</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>UsuarioID</Name>
+      <Description>Usuario ID</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ViajeNombre</Name>
+      <Description>Viaje Nombre</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>FechaSalidaProgramada</Name>
+      <Description>Fecha Salida</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>FechaLlegadaProgramada</Name>
+      <Description>Fecha Llegada</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>FechaSalidaEfectiva</Name>
+      <Description>Fecha Salida Efectiva</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>FechaLlegadaEfectiva</Name>
+      <Description>Fecha Llegada Efectiva</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>LugarPartida</Name>
+      <Description>Lugar Partida</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>Lugarllegada</Name>
+      <Description>Lugarllegada</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>LongitudPartida</Name>
+      <Description>Longitud Partida</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>LatitudPartida</Name>
+      <Description>Latitud Partida</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>LongitudLegada</Name>
+      <Description>Longitud Legada</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>LatitudLlegada</Name>
+      <Description>Latitud Llegada</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>kmTotalesEstimado</Name>
+      <Description>km Totales Estimado</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>MotocilcetaMarca</Name>
+      <Description>Motocilceta</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>MotociletaModelo</Name>
+      <Description>Motocileta</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ViajeImagen</Name>
+      <Description>Viaje Imagen</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ViajeEstado</Name>
+      <Description>A = Activo (Planificacion); Z =Eliminado; P =Progreso; R = Realizado</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ViajeFechaCreacion</Name>
+      <Description>Viaje Fecha Creacion</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ViajeMeGustas</Name>
+      <Description>Viaje Me Gusta</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ViajeDescargas</Name>
+      <Description>Viaje Descargas</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ViajeParentID</Name>
+      <Description>Viaje Parent ID</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ViajePrivado</Name>
+      <Description>Viaje Privado</Description>
+      <Status>3</Status>
+      <Id>189</Id>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
       </Infos>
    </RowImport>
 </ImportLog>

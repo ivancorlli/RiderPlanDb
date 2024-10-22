@@ -2,6 +2,13 @@
  
  
  
+pgm_prop_i(trn,8,'TVIAJE','URLAccess','No').
+pgm_prop_i(trn,8,'TVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(trn,8,'TVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(trn,8,'TVIAJE',idJNDI_Name,'ejb/aViaje').
+pgm_prop_i(trn,8,'TVIAJE',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(trn,8,'TVIAJE',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(trn,8,'TVIAJE',idDEST_JNDI_Name,'').
 pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO','SOAP_NAMESPACE','Raiderplan1').
 pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idTRN_Type,idTRN_Type_CONTAINER).
 pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idTRN_Attribute,idTRN_Attribute_REQUIRED).
@@ -23,13 +30,6 @@ pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idJNDI_Name,'ejb/aTrayectoViaje').
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idDEST_Type,idDEST_Type_QUEUE).
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idCON_FACTORY_JNDI_Name,'').
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idDEST_JNDI_Name,'').
-pgm_prop_i(trn,8,'TVIAJE','URLAccess','No').
-pgm_prop_i(trn,8,'TVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(trn,8,'TVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(trn,8,'TVIAJE',idJNDI_Name,'ejb/aViaje').
-pgm_prop_i(trn,8,'TVIAJE',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(trn,8,'TVIAJE',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(trn,8,'TVIAJE',idDEST_JNDI_Name,'').
 pgm_prop_i(trn,7,'TUSUARIO','URLAccess','No').
 pgm_prop_i(trn,7,'TUSUARIO',idTRN_Type,idTRN_Type_CONTAINER).
 pgm_prop_i(trn,7,'TUSUARIO',idTRN_Attribute,idTRN_Attribute_REQUIRED).
@@ -184,5 +184,5 @@ subview_i(2,514,10).
  
  
  
-ver_stamp(date(2024,10,3),time(18,34,50,1)).
+ver_stamp(date(2024,10,22),time(18,42,9,77)).
  

@@ -1,9 +1,9 @@
  <Objects>
   <Object>
     <Id>0</Id>
-    <Class>2</Class>
+    <Class>0</Class>
     <Status>1</Status>
-    <Name>TrayectoComentario</Name>
-    <Path>GXSPC002/GEN16/NVG/RTrayectoComentario.xml</Path>
+    <Name>Viaje</Name>
+    <Path>GXSPC002/GEN16/NVG/TViaje.xml</Path>
   </Object>
  </Objects>

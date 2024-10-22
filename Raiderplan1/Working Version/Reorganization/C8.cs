@@ -222,15 +222,17 @@ namespace Raiderplan1.Reorg {
                AV18ViajeI = m_ViajeImagen ;
                nV18ViajeI = false ;
             }
-            if ( C82.IsDBNull(0) )
-            {
-               AV19ViajeE = " " ;
-            }
-            else
-            {
-               AV19ViajeE = m_ViajeEstado ;
-            }
-            cmC83 = connDefault.GetCommand("INSERT INTO [GXA0008] ([ViajeID], [FechaSalidaProgramada], [FechaLlegadaProgramada], [FechaSalidaEfectiva], [FechaLlegadaEfectiva], [LugarPartida], [Lugarllegada], [LongitudPartida], [LatitudPartida], [LongitudLegada], [LatitudLlegada], [kmTotalesEstimado], [MotocilcetaMarca], [MotociletaModelo], [UsuarioID], [ViajeNombre], [ViajeImagen], [ViajeEstado]) VALUES (@ViajeID, @FechaSalidaProgramada, @FechaLlegadaProgramada, @FechaSalidaEfectiva, @FechaLlegadaEfectiva, @LugarPartida, @Lugarllegada, @LongitudPartida, @LatitudPartida, @LongitudLegada, @LatitudLlegada, @kmTotalesEstimado, @MotocilcetaMarca, @MotociletaModelo, @UsuarioID, @ViajeNombre, @ViajeImagen, @ViajeEstado)",false);
+            AV19ViajeE = m_ViajeEstado ;
+            AV20ViajeF = DateTimeUtil.YMDToD( 1753, 1, 1) ;
+            AV21ViajeM = 0 ;
+            nV21ViajeM = true ;
+            AV22ViajeD = 0 ;
+            nV22ViajeD = true ;
+            AV23ViajeP = 0 ;
+            nV23ViajeP = true ;
+            AV24ViajeP = "" ;
+            nV24ViajeP = true ;
+            cmC83 = connDefault.GetCommand("INSERT INTO [GXA0008] ([ViajeID], [FechaSalidaProgramada], [FechaLlegadaProgramada], [FechaSalidaEfectiva], [FechaLlegadaEfectiva], [LugarPartida], [Lugarllegada], [LongitudPartida], [LatitudPartida], [LongitudLegada], [LatitudLlegada], [kmTotalesEstimado], [MotocilcetaMarca], [MotociletaModelo], [UsuarioID], [ViajeNombre], [ViajeImagen], [ViajeEstado], [ViajeFechaCreacion], [ViajeMeGustas], [ViajeDescargas], [ViajeParentID], [ViajePrivado]) VALUES (@ViajeID, @FechaSalidaProgramada, @FechaLlegadaProgramada, @FechaSalidaEfectiva, @FechaLlegadaEfectiva, @LugarPartida, @Lugarllegada, @LongitudPartida, @LatitudPartida, @LongitudLegada, @LatitudLlegada, @kmTotalesEstimado, @MotocilcetaMarca, @MotociletaModelo, @UsuarioID, @ViajeNombre, @ViajeImagen, @ViajeEstado, @ViajeFechaCreacion, @ViajeMeGustas, @ViajeDescargas, @ViajeParentID, @ViajePrivado)",false);
             if ( ( cmC83.IDbCommand.Parameters.Count == 0 ) )
             {
                cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
@@ -251,6 +253,11 @@ namespace Raiderplan1.Reorg {
                cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeNombre", System.Data.DbType.AnsiString,25));
                cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeImagen", System.Data.DbType.AnsiString,50));
                cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeEstado", System.Data.DbType.AnsiString,1));
+               cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeFechaCreacion", System.Data.DbType.DateTime));
+               cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeMeGustas", System.Data.DbType.Int32));
+               cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeDescargas", System.Data.DbType.Int32));
+               cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeParentID", System.Data.DbType.Int64));
+               cmC83.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajePrivado", System.Data.DbType.AnsiStringFixedLength,1));
             }
             cmC83.ErrorMask = cmC83.ErrorMask  |  ErrorMask.DuplicateKeyError;
             // Using cursor C83
@@ -272,6 +279,11 @@ namespace Raiderplan1.Reorg {
             cmC83.SetParameter(15, AV17ViajeN);
             cmC83.SetParameter(16, AV18ViajeI, nV18ViajeI);
             cmC83.SetParameter(17, AV19ViajeE);
+            cmC83.SetParameterDateTimeObject(18, AV20ViajeF);
+            cmC83.SetParameter(19, AV21ViajeM, nV21ViajeM);
+            cmC83.SetParameter(20, AV22ViajeD, nV22ViajeD);
+            cmC83.SetParameter(21, AV23ViajeP, nV23ViajeP);
+            cmC83.SetParameter(22, AV24ViajeP, nV24ViajeP);
             cmC83.ExecuteStmt();
             if ( cmC83.DupKey )
             {
@@ -375,6 +387,15 @@ namespace Raiderplan1.Reorg {
          AV18ViajeI = "" ;
          nV18ViajeI = false ;
          AV19ViajeE = "" ;
+         AV20ViajeF = (DateTime)(DateTime.MinValue) ;
+         AV21ViajeM = 0 ;
+         nV21ViajeM = false ;
+         AV22ViajeD = 0 ;
+         nV22ViajeD = false ;
+         AV23ViajeP = 0 ;
+         nV23ViajeP = false ;
+         AV24ViajeP = "" ;
+         nV24ViajeP = false ;
          Gx_err = 0 ;
          Gx_emsg = "" ;
          // GeneXus formulas.
@@ -385,8 +406,11 @@ namespace Raiderplan1.Reorg {
       private int m_UsuarioID ;
       private int GIGXA0008 ;
       private int AV16Usuari ;
+      private int AV21ViajeM ;
+      private int AV22ViajeD ;
       private long m_ViajeID ;
       private long AV2ViajeID ;
+      private long AV23ViajeP ;
       private decimal m_kmTotalesEstimado ;
       private decimal m_LatitudLlegada ;
       private decimal m_LongitudLegada ;
@@ -399,6 +423,7 @@ namespace Raiderplan1.Reorg {
       private decimal AV13kmTota ;
       private String cmdBuffer ;
       private String scmdbuf ;
+      private String AV24ViajeP ;
       private String Gx_emsg ;
       private DateTime m_FechaLlegadaEfectiva ;
       private DateTime m_FechaSalidaEfectiva ;
@@ -408,6 +433,7 @@ namespace Raiderplan1.Reorg {
       private DateTime AV4FechaLl ;
       private DateTime AV5FechaSa ;
       private DateTime AV6FechaLl ;
+      private DateTime AV20ViajeF ;
       private bool m__ViajeEstadoIsNull ;
       private bool m__ViajeImagenIsNull ;
       private bool m__ViajeNombreIsNull ;
@@ -440,6 +466,10 @@ namespace Raiderplan1.Reorg {
       private bool nV14Motoci ;
       private bool nV15Motoci ;
       private bool nV18ViajeI ;
+      private bool nV21ViajeM ;
+      private bool nV22ViajeD ;
+      private bool nV23ViajeP ;
+      private bool nV24ViajeP ;
       private String m_ViajeEstado ;
       private String m_ViajeImagen ;
       private String m_ViajeNombre ;

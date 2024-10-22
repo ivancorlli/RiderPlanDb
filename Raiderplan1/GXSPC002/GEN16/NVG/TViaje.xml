@@ -129,6 +129,26 @@
 <AttriName>ViajeEstado</AttriName>
 <Description>A = Activo (Planificacion); Z =Eliminado; P =Progreso; R = Realizado</Description></Attribute>
 <Attribute>
+<AttriId>185</AttriId>
+<AttriName>ViajeFechaCreacion</AttriName>
+<Description>Viaje Fecha Creacion</Description></Attribute>
+<Attribute>
+<AttriId>186</AttriId>
+<AttriName>ViajeMeGustas</AttriName>
+<Description>Viaje Me Gusta</Description></Attribute>
+<Attribute>
+<AttriId>187</AttriId>
+<AttriName>ViajeDescargas</AttriName>
+<Description>Viaje Descargas</Description></Attribute>
+<Attribute>
+<AttriId>188</AttriId>
+<AttriName>ViajeParentID</AttriName>
+<Description>Viaje Parent ID</Description></Attribute>
+<Attribute>
+<AttriId>189</AttriId>
+<AttriName>ViajePrivado</AttriName>
+<Description>Viaje Privado</Description></Attribute>
+<Attribute>
 <AttriId>11</AttriId>
 <AttriName>UsuarioID</AttriName>
 <Description>Usuario ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -204,6 +224,26 @@
 <AttriName>ViajeEstado</AttriName>
 <Description>A = Activo (Planificacion); Z =Eliminado; P =Progreso; R = Realizado</Description></Attribute>
 <Attribute>
+<AttriId>185</AttriId>
+<AttriName>ViajeFechaCreacion</AttriName>
+<Description>Viaje Fecha Creacion</Description></Attribute>
+<Attribute>
+<AttriId>186</AttriId>
+<AttriName>ViajeMeGustas</AttriName>
+<Description>Viaje Me Gusta</Description></Attribute>
+<Attribute>
+<AttriId>187</AttriId>
+<AttriName>ViajeDescargas</AttriName>
+<Description>Viaje Descargas</Description></Attribute>
+<Attribute>
+<AttriId>188</AttriId>
+<AttriName>ViajeParentID</AttriName>
+<Description>Viaje Parent ID</Description></Attribute>
+<Attribute>
+<AttriId>189</AttriId>
+<AttriName>ViajePrivado</AttriName>
+<Description>Viaje Privado</Description></Attribute>
+<Attribute>
 <AttriId>11</AttriId>
 <AttriName>UsuarioID</AttriName>
 <Description>Usuario ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -218,6 +258,16 @@
 <AfterUpdateRules></AfterUpdateRules>
 <AfterDeleteRules></AfterDeleteRules>
 <TablesToControlOnDelete>
+<Table>
+<TableId>13</TableId>
+<TableName>COMENTARIOVIAJE</TableName>
+<Description>ComentarioViaje</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>42</AttriId>
+<AttriName>ViajeID</AttriName>
+<Description>Viaje ID</Description></Attribute></KeyAttributes></Table>
 <Table>
 <TableId>10</TableId>
 <TableName>TRAYECTOVIAJE</TableName>

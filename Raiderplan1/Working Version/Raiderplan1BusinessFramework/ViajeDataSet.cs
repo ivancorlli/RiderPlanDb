@@ -259,6 +259,11 @@ namespace Raiderplan1 {
          private DataColumn columnMotociletaModelo ;
          private DataColumn columnViajeImagen ;
          private DataColumn columnViajeEstado ;
+         private DataColumn columnViajeFechaCreacion ;
+         private DataColumn columnViajeMeGustas ;
+         private DataColumn columnViajeDescargas ;
+         private DataColumn columnViajeParentID ;
+         private DataColumn columnViajePrivado ;
          public ViajeDataTable() 
          {
              this.TableName = "Viaje";
@@ -505,6 +510,46 @@ namespace Raiderplan1 {
 
          }
 
+         public DataColumn ViajeFechaCreacionColumn
+         {
+            get {
+               return this.columnViajeFechaCreacion ;
+            }
+
+         }
+
+         public DataColumn ViajeMeGustasColumn
+         {
+            get {
+               return this.columnViajeMeGustas ;
+            }
+
+         }
+
+         public DataColumn ViajeDescargasColumn
+         {
+            get {
+               return this.columnViajeDescargas ;
+            }
+
+         }
+
+         public DataColumn ViajeParentIDColumn
+         {
+            get {
+               return this.columnViajeParentID ;
+            }
+
+         }
+
+         public DataColumn ViajePrivadoColumn
+         {
+            get {
+               return this.columnViajePrivado ;
+            }
+
+         }
+
          public event ViajeRowChangeEventHandler ViajeRowChanged ;
          public event ViajeRowChangeEventHandler ViajeRowChanging ;
          public event ViajeRowChangeEventHandler ViajeRowDeleted ;
@@ -525,7 +570,12 @@ namespace Raiderplan1 {
                                       String motocilcetaMarca ,
                                       String motociletaModelo ,
                                       String viajeImagen ,
-                                      String viajeEstado )
+                                      String viajeEstado ,
+                                      DateTime viajeFechaCreacion ,
+                                      int viajeMeGustas ,
+                                      int viajeDescargas ,
+                                      long viajeParentID ,
+                                      String viajePrivado )
          {
             ViajeRow rowViajeRow = ((ViajeRow)(this.NewRow())) ;
             rowViajeRow["UsuarioID"] = usuarioID ;
@@ -545,6 +595,11 @@ namespace Raiderplan1 {
             rowViajeRow["MotociletaModelo"] = motociletaModelo ;
             rowViajeRow["ViajeImagen"] = viajeImagen ;
             rowViajeRow["ViajeEstado"] = viajeEstado ;
+            rowViajeRow["ViajeFechaCreacion"] = viajeFechaCreacion ;
+            rowViajeRow["ViajeMeGustas"] = viajeMeGustas ;
+            rowViajeRow["ViajeDescargas"] = viajeDescargas ;
+            rowViajeRow["ViajeParentID"] = viajeParentID ;
+            rowViajeRow["ViajePrivado"] = viajePrivado ;
             this.Rows.Add( rowViajeRow) ;
             return rowViajeRow ;
          }
@@ -574,6 +629,11 @@ namespace Raiderplan1 {
             this.columnMotociletaModelo = this.Columns["MotociletaModelo"] ;
             this.columnViajeImagen = this.Columns["ViajeImagen"] ;
             this.columnViajeEstado = this.Columns["ViajeEstado"] ;
+            this.columnViajeFechaCreacion = this.Columns["ViajeFechaCreacion"] ;
+            this.columnViajeMeGustas = this.Columns["ViajeMeGustas"] ;
+            this.columnViajeDescargas = this.Columns["ViajeDescargas"] ;
+            this.columnViajeParentID = this.Columns["ViajeParentID"] ;
+            this.columnViajePrivado = this.Columns["ViajePrivado"] ;
          }
 
          public void InitClass( )
@@ -931,6 +991,102 @@ namespace Raiderplan1 {
             this.columnViajeEstado.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
             this.columnViajeEstado.ExtendedProperties.Add( "Deklarit.InternalName", "ViajeEstado") ;
             this.Columns.Add( this.columnViajeEstado) ;
+            this.columnViajeFechaCreacion = new DataColumn( "ViajeFechaCreacion", typeof(DateTime), "", System.Data.MappingType.Element) ;
+            this.columnViajeFechaCreacion.AllowDBNull = false ;
+            this.columnViajeFechaCreacion.Caption = "Viaje Fecha Creacion" ;
+            this.columnViajeFechaCreacion.DefaultValue = System.Convert.DBNull ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "DeklaritType", "dtime") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "Description", "Viaje Fecha Creacion") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "Length", "7") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "Decimals", "5") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "AllowDBNulls", "false") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnViajeFechaCreacion.ExtendedProperties.Add( "Deklarit.InternalName", "ViajeFechaCreacion") ;
+            this.Columns.Add( this.columnViajeFechaCreacion) ;
+            this.columnViajeMeGustas = new DataColumn( "ViajeMeGustas", typeof(int), "", System.Data.MappingType.Element) ;
+            this.columnViajeMeGustas.AllowDBNull = true ;
+            this.columnViajeMeGustas.Caption = "Viaje Me Gusta" ;
+            this.columnViajeMeGustas.DefaultValue = System.Convert.DBNull ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "DeklaritType", "int") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "Description", "Viaje Me Gusta") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "Length", "6") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "AllowDBNulls", "true") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnViajeMeGustas.ExtendedProperties.Add( "Deklarit.InternalName", "ViajeMeGustas") ;
+            this.Columns.Add( this.columnViajeMeGustas) ;
+            this.columnViajeDescargas = new DataColumn( "ViajeDescargas", typeof(int), "", System.Data.MappingType.Element) ;
+            this.columnViajeDescargas.AllowDBNull = true ;
+            this.columnViajeDescargas.Caption = "Viaje Descargas" ;
+            this.columnViajeDescargas.DefaultValue = System.Convert.DBNull ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "DeklaritType", "int") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "Description", "Viaje Descargas") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "Length", "6") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "AllowDBNulls", "true") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnViajeDescargas.ExtendedProperties.Add( "Deklarit.InternalName", "ViajeDescargas") ;
+            this.Columns.Add( this.columnViajeDescargas) ;
+            this.columnViajeParentID = new DataColumn( "ViajeParentID", typeof(long), "", System.Data.MappingType.Element) ;
+            this.columnViajeParentID.AllowDBNull = true ;
+            this.columnViajeParentID.Caption = "Viaje Parent ID" ;
+            this.columnViajeParentID.DefaultValue = System.Convert.DBNull ;
+            this.columnViajeParentID.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "DeklaritType", "int") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "Description", "Viaje Parent ID") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "Length", "10") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "AllowDBNulls", "true") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnViajeParentID.ExtendedProperties.Add( "Deklarit.InternalName", "ViajeParentID") ;
+            this.Columns.Add( this.columnViajeParentID) ;
+            this.columnViajePrivado = new DataColumn( "ViajePrivado", typeof(String), "", System.Data.MappingType.Element) ;
+            this.columnViajePrivado.AllowDBNull = true ;
+            this.columnViajePrivado.Caption = "Viaje Privado" ;
+            this.columnViajePrivado.MaxLength = 1 ;
+            this.columnViajePrivado.DefaultValue = System.Convert.DBNull ;
+            this.columnViajePrivado.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "DeklaritType", "char") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "Description", "Viaje Privado \"S\"= SI \"N\"=NO \"null\"=NO") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "Length", "1") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "AllowDBNulls", "true") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnViajePrivado.ExtendedProperties.Add( "Deklarit.InternalName", "ViajePrivado") ;
+            this.Columns.Add( this.columnViajePrivado) ;
             this.PrimaryKey = new  DataColumn[]  {this.columnViajeID} ;
             this.ExtendedProperties.Add( "ParentLvl", "") ;
             this.ExtendedProperties.Add( "LevelName", "Viaje") ;
@@ -1550,6 +1706,166 @@ namespace Raiderplan1 {
          public void SetViajeEstadoNull( )
          {
             this[this.tableViaje.ViajeEstadoColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the Viaje Fecha Creacion.
+         ///  </summary>
+         public DateTime ViajeFechaCreacion
+         {
+            get {
+               try
+               {
+                  return ((DateTime)(this[this.tableViaje.ViajeFechaCreacionColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value ViajeFechaCreacion because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tableViaje.ViajeFechaCreacionColumn] = value ;
+            }
+
+         }
+
+         public bool IsViajeFechaCreacionNull( )
+         {
+            return this.IsNull( this.tableViaje.ViajeFechaCreacionColumn) ;
+         }
+
+         public void SetViajeFechaCreacionNull( )
+         {
+            this[this.tableViaje.ViajeFechaCreacionColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the Viaje Me Gusta.
+         ///  </summary>
+         public int ViajeMeGustas
+         {
+            get {
+               try
+               {
+                  return ((int)(this[this.tableViaje.ViajeMeGustasColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value ViajeMeGustas because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tableViaje.ViajeMeGustasColumn] = value ;
+            }
+
+         }
+
+         public bool IsViajeMeGustasNull( )
+         {
+            return this.IsNull( this.tableViaje.ViajeMeGustasColumn) ;
+         }
+
+         public void SetViajeMeGustasNull( )
+         {
+            this[this.tableViaje.ViajeMeGustasColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the Viaje Descargas.
+         ///  </summary>
+         public int ViajeDescargas
+         {
+            get {
+               try
+               {
+                  return ((int)(this[this.tableViaje.ViajeDescargasColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value ViajeDescargas because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tableViaje.ViajeDescargasColumn] = value ;
+            }
+
+         }
+
+         public bool IsViajeDescargasNull( )
+         {
+            return this.IsNull( this.tableViaje.ViajeDescargasColumn) ;
+         }
+
+         public void SetViajeDescargasNull( )
+         {
+            this[this.tableViaje.ViajeDescargasColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the Viaje Parent ID.
+         ///  </summary>
+         public long ViajeParentID
+         {
+            get {
+               try
+               {
+                  return ((long)(this[this.tableViaje.ViajeParentIDColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value ViajeParentID because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tableViaje.ViajeParentIDColumn] = value ;
+            }
+
+         }
+
+         public bool IsViajeParentIDNull( )
+         {
+            return this.IsNull( this.tableViaje.ViajeParentIDColumn) ;
+         }
+
+         public void SetViajeParentIDNull( )
+         {
+            this[this.tableViaje.ViajeParentIDColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the Viaje Privado "S"= SI "N"=NO "null"=NO.
+         ///  </summary>
+         public String ViajePrivado
+         {
+            get {
+               try
+               {
+                  return ((String)(this[this.tableViaje.ViajePrivadoColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value ViajePrivado because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tableViaje.ViajePrivadoColumn] = value ;
+            }
+
+         }
+
+         public bool IsViajePrivadoNull( )
+         {
+            return this.IsNull( this.tableViaje.ViajePrivadoColumn) ;
+         }
+
+         public void SetViajePrivadoNull( )
+         {
+            this[this.tableViaje.ViajePrivadoColumn] = System.Convert.DBNull ;
          }
 
       }

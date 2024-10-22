@@ -21,6 +21,11 @@ namespace Raiderplan1 {
 
       }
 
+      public static IViajeDataAdapter GetViajeDataAdapter( )
+      {
+         return daFactory.GetViajeDataAdapter( ) ;
+      }
+
       public static ITrayectoComentarioDataAdapter GetTrayectoComentarioDataAdapter( )
       {
          return daFactory.GetTrayectoComentarioDataAdapter( ) ;
@@ -29,11 +34,6 @@ namespace Raiderplan1 {
       public static IComentarioViajeDataAdapter GetComentarioViajeDataAdapter( )
       {
          return daFactory.GetComentarioViajeDataAdapter( ) ;
-      }
-
-      public static IViajeDataAdapter GetViajeDataAdapter( )
-      {
-         return daFactory.GetViajeDataAdapter( ) ;
       }
 
       public static IUsuarioDataAdapter GetUsuarioDataAdapter( )
