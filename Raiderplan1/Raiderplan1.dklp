@@ -1,5 +1,5 @@
  <DeKlaritProject>
-  <Modified>2024-10-22 21:43:30GMT</Modified>
+  <Modified>2024-11-09 19:07:14GMT</Modified>
   <Version>4000</Version>
   <General>
  <ProjectIdGuid>{989A8F7E-C6E0-4602-B021-6A4AF705541A}</ProjectIdGuid>
@@ -81,11 +81,6 @@
   <Folder>BusinessComponents</Folder>
  </Object>
  <Object>
-  <Name>ViajesComentarios</Name>
-  <Class>2</Class>
-  <Folder>dpViaje</Folder>
- </Object>
- <Object>
   <Name>ViajesEliminados</Name>
   <Class>2</Class>
   <Folder>dpViaje</Folder>
@@ -102,6 +97,11 @@
  </Object>
  <Object>
   <Name>ViajesRealizados</Name>
+  <Class>2</Class>
+  <Folder>dpViaje</Folder>
+ </Object>
+ <Object>
+  <Name>ViajesXUsuarioXOrigenXDestino</Name>
   <Class>2</Class>
   <Folder>dpViaje</Folder>
  </Object>
@@ -751,6 +751,9 @@
  <Attribute>
   <Name>ViajePrivado</Name>
  </Attribute>
+ <Attribute>
+  <Name>ComentarioPrivado</Name>
+ </Attribute>
   </Attributes>
   <Globals>
  <DklGroups>True</DklGroups>
@@ -763,7 +766,7 @@
   <DBMS>SQLServer</DBMS>
   <LanguageSupport/>
   <DatabaseSchema/>
-  <Addins><![CDATA[&lt;DeklaritAddins&gt; &lt;Addin&gt;  &lt;Name&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Name&gt;  &lt;Path&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Path&gt;  &lt;OutputPath/&gt;  &lt;OutputProjectName&gt;RaiderPlan1BO&lt;/OutputProjectName&gt;  &lt;Language&gt;0&lt;/Language&gt;  &lt;Guid/&gt;  &lt;RunningSet&gt;BusinessComponents,Geografia,Localidad,Pais,Provincia,Persona,Persona,Usuario,RolUsuario,Usuario,Vaijes,ComentarioViaje,TrayectoViaje,Viaje,DataProviders,dpUsuario,dpUsuarioXEmailXusuarioIDCollection,dpViaje,TrayectoComentario,ViajesComentarios,ViajesEliminados,ViajesEnPlanificacion,ViajesEnProgreso,ViajesRealizados&lt;/RunningSet&gt;  &lt;RunningDate&gt;2024-10-03 21:35:11GMT&lt;/RunningDate&gt;  &lt;InBuild&gt;0&lt;/InBuild&gt;  &lt;Hidden&gt;0&lt;/Hidden&gt;  &lt;Data&gt;&lt;![CDATA[]]&gt; &lt;/Data&gt; &lt;/Addin&gt;&lt;/DeklaritAddins&gt;]]> </Addins>
+  <Addins><![CDATA[&lt;DeklaritAddins&gt; &lt;Addin&gt;  &lt;Name&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Name&gt;  &lt;Path&gt;C:\Program Files (x86)\Deklarit 4.5.2 for VS 2008\2008\bin\..\Addins\TemplateProjects\BusinessObjects.dktp&lt;/Path&gt;  &lt;OutputPath/&gt;  &lt;OutputProjectName&gt;RaiderPlan1BO&lt;/OutputProjectName&gt;  &lt;Language&gt;0&lt;/Language&gt;  &lt;Guid/&gt;  &lt;RunningSet&gt;Raiderplan1,BusinessComponents,Geografia,Localidad,Pais,Provincia,Persona,Persona,Usuario,RolUsuario,Usuario,Vaijes,ComentarioViaje,TrayectoViaje,Viaje,DataProviders,dpUsuario,dpUsuarioXEmailXusuarioIDCollection,dpViaje,TrayectoComentario,ViajesEliminados,ViajesEnPlanificacion,ViajesEnProgreso,ViajesRealizados,ViajesXUsuarioXOrigenXDestino&lt;/RunningSet&gt;  &lt;RunningDate&gt;2024-10-30 19:33:35GMT&lt;/RunningDate&gt;  &lt;InBuild&gt;0&lt;/InBuild&gt;  &lt;Hidden&gt;0&lt;/Hidden&gt;  &lt;Data&gt;&lt;![CDATA[]]&gt; &lt;/Data&gt; &lt;/Addin&gt;&lt;/DeklaritAddins&gt;]]> </Addins>
   <SQLVersion>9</SQLVersion>
   <TargetFramework>1</TargetFramework>
   <ProjectName>Raiderplan1BusinessFramework</ProjectName>

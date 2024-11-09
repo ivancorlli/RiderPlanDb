@@ -328,6 +328,66 @@ namespace Raiderplan1
 			}
 		}
 		
+		/// <summary>
+		/// Gets or sets the Viaje Me Gusta
+		/// </summary>        
+		public System.Int32 ViajeMeGustas
+		{
+			get 
+			{
+				return m_DataRow.ViajeMeGustas;
+			}
+			set
+			{
+				m_DataRow.ViajeMeGustas = value;
+			}
+		}
+		
+		/// <summary>
+		/// Gets or sets the Viaje Descargas
+		/// </summary>        
+		public System.Int32 ViajeDescargas
+		{
+			get 
+			{
+				return m_DataRow.ViajeDescargas;
+			}
+			set
+			{
+				m_DataRow.ViajeDescargas = value;
+			}
+		}
+		
+		/// <summary>
+		/// Gets or sets the Viaje Privado
+		/// </summary>        
+		public System.String ViajePrivado
+		{
+			get 
+			{
+				return m_DataRow.ViajePrivado;
+			}
+			set
+			{
+				m_DataRow.ViajePrivado = value;
+			}
+		}
+		
+		/// <summary>
+		/// Gets or sets the Viaje Parent ID
+		/// </summary>        
+		public System.Int64 ViajeParentID
+		{
+			get 
+			{
+				return m_DataRow.ViajeParentID;
+			}
+			set
+			{
+				m_DataRow.ViajeParentID = value;
+			}
+		}
+		
 
 
 

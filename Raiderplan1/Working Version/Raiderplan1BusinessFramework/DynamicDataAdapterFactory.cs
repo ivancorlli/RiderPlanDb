@@ -39,19 +39,39 @@ namespace Raiderplan1 {
 
       }
 
-      public IViajeDataAdapter GetViajeDataAdapter( )
-      {
-         return dataAdapterFactory.GetViajeDataAdapter( ) ;
-      }
-
-      public ITrayectoComentarioDataAdapter GetTrayectoComentarioDataAdapter( )
-      {
-         return dataAdapterFactory.GetTrayectoComentarioDataAdapter( ) ;
-      }
-
       public IComentarioViajeDataAdapter GetComentarioViajeDataAdapter( )
       {
          return dataAdapterFactory.GetComentarioViajeDataAdapter( ) ;
+      }
+
+      public IViajesXUsuarioXOrigenXDestinoDataAdapter GetViajesXUsuarioXOrigenXDestinoDataAdapter( )
+      {
+         return dataAdapterFactory.GetViajesXUsuarioXOrigenXDestinoDataAdapter( ) ;
+      }
+
+      public IViajesRealizadosDataAdapter GetViajesRealizadosDataAdapter( )
+      {
+         return dataAdapterFactory.GetViajesRealizadosDataAdapter( ) ;
+      }
+
+      public IViajesEnProgresoDataAdapter GetViajesEnProgresoDataAdapter( )
+      {
+         return dataAdapterFactory.GetViajesEnProgresoDataAdapter( ) ;
+      }
+
+      public IViajesEnPlanificacionDataAdapter GetViajesEnPlanificacionDataAdapter( )
+      {
+         return dataAdapterFactory.GetViajesEnPlanificacionDataAdapter( ) ;
+      }
+
+      public IViajesEliminadosDataAdapter GetViajesEliminadosDataAdapter( )
+      {
+         return dataAdapterFactory.GetViajesEliminadosDataAdapter( ) ;
+      }
+
+      public IViajeDataAdapter GetViajeDataAdapter( )
+      {
+         return dataAdapterFactory.GetViajeDataAdapter( ) ;
       }
 
       public IUsuarioDataAdapter GetUsuarioDataAdapter( )
@@ -89,24 +109,9 @@ namespace Raiderplan1 {
          return dataAdapterFactory.GetLocalidadDataAdapter( ) ;
       }
 
-      public IViajesRealizadosDataAdapter GetViajesRealizadosDataAdapter( )
+      public ITrayectoComentarioDataAdapter GetTrayectoComentarioDataAdapter( )
       {
-         return dataAdapterFactory.GetViajesRealizadosDataAdapter( ) ;
-      }
-
-      public IViajesEnProgresoDataAdapter GetViajesEnProgresoDataAdapter( )
-      {
-         return dataAdapterFactory.GetViajesEnProgresoDataAdapter( ) ;
-      }
-
-      public IViajesEnPlanificacionDataAdapter GetViajesEnPlanificacionDataAdapter( )
-      {
-         return dataAdapterFactory.GetViajesEnPlanificacionDataAdapter( ) ;
-      }
-
-      public IViajesEliminadosDataAdapter GetViajesEliminadosDataAdapter( )
-      {
-         return dataAdapterFactory.GetViajesEliminadosDataAdapter( ) ;
+         return dataAdapterFactory.GetTrayectoComentarioDataAdapter( ) ;
       }
 
       public IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )

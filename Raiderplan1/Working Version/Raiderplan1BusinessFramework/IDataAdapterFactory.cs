@@ -8,9 +8,13 @@
 namespace Raiderplan1 {
    public partial interface IDataAdapterFactory
    {
-       IViajeDataAdapter GetViajeDataAdapter( );
-       ITrayectoComentarioDataAdapter GetTrayectoComentarioDataAdapter( );
        IComentarioViajeDataAdapter GetComentarioViajeDataAdapter( );
+       IViajesXUsuarioXOrigenXDestinoDataAdapter GetViajesXUsuarioXOrigenXDestinoDataAdapter( );
+       IViajesRealizadosDataAdapter GetViajesRealizadosDataAdapter( );
+       IViajesEnProgresoDataAdapter GetViajesEnProgresoDataAdapter( );
+       IViajesEnPlanificacionDataAdapter GetViajesEnPlanificacionDataAdapter( );
+       IViajesEliminadosDataAdapter GetViajesEliminadosDataAdapter( );
+       IViajeDataAdapter GetViajeDataAdapter( );
        IUsuarioDataAdapter GetUsuarioDataAdapter( );
        ITrayectoViajeDataAdapter GetTrayectoViajeDataAdapter( );
        IRolUsuarioDataAdapter GetRolUsuarioDataAdapter( );
@@ -18,10 +22,7 @@ namespace Raiderplan1 {
        IPersonaDataAdapter GetPersonaDataAdapter( );
        IPaisDataAdapter GetPaisDataAdapter( );
        ILocalidadDataAdapter GetLocalidadDataAdapter( );
-       IViajesRealizadosDataAdapter GetViajesRealizadosDataAdapter( );
-       IViajesEnProgresoDataAdapter GetViajesEnProgresoDataAdapter( );
-       IViajesEnPlanificacionDataAdapter GetViajesEnPlanificacionDataAdapter( );
-       IViajesEliminadosDataAdapter GetViajesEliminadosDataAdapter( );
+       ITrayectoComentarioDataAdapter GetTrayectoComentarioDataAdapter( );
        IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( );
    }
 

@@ -1,9 +1,16 @@
  <Objects>
   <Object>
     <Id>0</Id>
+    <Class>2</Class>
+    <Status>1</Status>
+    <Name>ViajesXUsuarioXOrigenXDestino</Name>
+    <Path>GXSPC002/GEN16/NVG/RViajesXUsuarioXOrigenXDestino.xml</Path>
+  </Object>
+  <Object>
+    <Id>1</Id>
     <Class>0</Class>
     <Status>1</Status>
-    <Name>Viaje</Name>
-    <Path>GXSPC002/GEN16/NVG/TViaje.xml</Path>
+    <Name>ComentarioViaje</Name>
+    <Path>GXSPC002/GEN16/NVG/TComentarioViaje.xml</Path>
   </Object>
  </Objects>

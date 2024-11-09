@@ -2,20 +2,6 @@
  
  
  
-pgm_prop_i(trn,8,'TVIAJE','URLAccess','No').
-pgm_prop_i(trn,8,'TVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(trn,8,'TVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(trn,8,'TVIAJE',idJNDI_Name,'ejb/aViaje').
-pgm_prop_i(trn,8,'TVIAJE',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(trn,8,'TVIAJE',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(trn,8,'TVIAJE',idDEST_JNDI_Name,'').
-pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO','SOAP_NAMESPACE','Raiderplan1').
-pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idJNDI_Name,'ejb/aTrayectoComentario').
-pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idDEST_JNDI_Name,'').
 pgm_prop_i(trn,11,'TCOMENTARIOVIAJE','URLAccess','No').
 pgm_prop_i(trn,11,'TCOMENTARIOVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
 pgm_prop_i(trn,11,'TCOMENTARIOVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
@@ -23,6 +9,41 @@ pgm_prop_i(trn,11,'TCOMENTARIOVIAJE',idJNDI_Name,'ejb/aComentarioViaje').
 pgm_prop_i(trn,11,'TCOMENTARIOVIAJE',idDEST_Type,idDEST_Type_QUEUE).
 pgm_prop_i(trn,11,'TCOMENTARIOVIAJE',idCON_FACTORY_JNDI_Name,'').
 pgm_prop_i(trn,11,'TCOMENTARIOVIAJE',idDEST_JNDI_Name,'').
+pgm_prop_i(rpt,9,'RVIAJESXUSUARIOXORIGENXDESTINO','SOAP_NAMESPACE','Raiderplan1').
+pgm_prop_i(rpt,9,'RVIAJESXUSUARIOXORIGENXDESTINO',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(rpt,9,'RVIAJESXUSUARIOXORIGENXDESTINO',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(rpt,9,'RVIAJESXUSUARIOXORIGENXDESTINO',idJNDI_Name,'ejb/aViajesXUsuarioXOrigenXDestino').
+pgm_prop_i(rpt,9,'RVIAJESXUSUARIOXORIGENXDESTINO',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(rpt,9,'RVIAJESXUSUARIOXORIGENXDESTINO',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(rpt,9,'RVIAJESXUSUARIOXORIGENXDESTINO',idDEST_JNDI_Name,'').
+pgm_prop_i(rpt,5,'RVIAJESELIMINADOS','SOAP_NAMESPACE','Raiderplan1').
+pgm_prop_i(rpt,5,'RVIAJESELIMINADOS',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(rpt,5,'RVIAJESELIMINADOS',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(rpt,5,'RVIAJESELIMINADOS',idJNDI_Name,'ejb/aViajesEliminados').
+pgm_prop_i(rpt,5,'RVIAJESELIMINADOS',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(rpt,5,'RVIAJESELIMINADOS',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(rpt,5,'RVIAJESELIMINADOS',idDEST_JNDI_Name,'').
+pgm_prop_i(rpt,4,'RVIAJESREALIZADOS','SOAP_NAMESPACE','Raiderplan1').
+pgm_prop_i(rpt,4,'RVIAJESREALIZADOS',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(rpt,4,'RVIAJESREALIZADOS',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(rpt,4,'RVIAJESREALIZADOS',idJNDI_Name,'ejb/aViajesRealizados').
+pgm_prop_i(rpt,4,'RVIAJESREALIZADOS',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(rpt,4,'RVIAJESREALIZADOS',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(rpt,4,'RVIAJESREALIZADOS',idDEST_JNDI_Name,'').
+pgm_prop_i(rpt,3,'RVIAJESENPROGRESO','SOAP_NAMESPACE','Raiderplan1').
+pgm_prop_i(rpt,3,'RVIAJESENPROGRESO',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(rpt,3,'RVIAJESENPROGRESO',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(rpt,3,'RVIAJESENPROGRESO',idJNDI_Name,'ejb/aViajesEnProgreso').
+pgm_prop_i(rpt,3,'RVIAJESENPROGRESO',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(rpt,3,'RVIAJESENPROGRESO',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(rpt,3,'RVIAJESENPROGRESO',idDEST_JNDI_Name,'').
+pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION','SOAP_NAMESPACE','Raiderplan1').
+pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION',idJNDI_Name,'ejb/aViajesEnPlanificacion').
+pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION',idDEST_JNDI_Name,'').
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE','URLAccess','No').
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
@@ -30,6 +51,13 @@ pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idJNDI_Name,'ejb/aTrayectoViaje').
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idDEST_Type,idDEST_Type_QUEUE).
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idCON_FACTORY_JNDI_Name,'').
 pgm_prop_i(trn,9,'TTRAYECTOVIAJE',idDEST_JNDI_Name,'').
+pgm_prop_i(trn,8,'TVIAJE','URLAccess','No').
+pgm_prop_i(trn,8,'TVIAJE',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(trn,8,'TVIAJE',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(trn,8,'TVIAJE',idJNDI_Name,'ejb/aViaje').
+pgm_prop_i(trn,8,'TVIAJE',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(trn,8,'TVIAJE',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(trn,8,'TVIAJE',idDEST_JNDI_Name,'').
 pgm_prop_i(trn,7,'TUSUARIO','URLAccess','No').
 pgm_prop_i(trn,7,'TUSUARIO',idTRN_Type,idTRN_Type_CONTAINER).
 pgm_prop_i(trn,7,'TUSUARIO',idTRN_Attribute,idTRN_Attribute_REQUIRED).
@@ -72,34 +100,13 @@ pgm_prop_i(trn,1,'TPERSONA',idJNDI_Name,'ejb/aPersona').
 pgm_prop_i(trn,1,'TPERSONA',idDEST_Type,idDEST_Type_QUEUE).
 pgm_prop_i(trn,1,'TPERSONA',idCON_FACTORY_JNDI_Name,'').
 pgm_prop_i(trn,1,'TPERSONA',idDEST_JNDI_Name,'').
-pgm_prop_i(rpt,5,'RVIAJESELIMINADOS','SOAP_NAMESPACE','Raiderplan1').
-pgm_prop_i(rpt,5,'RVIAJESELIMINADOS',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(rpt,5,'RVIAJESELIMINADOS',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(rpt,5,'RVIAJESELIMINADOS',idJNDI_Name,'ejb/aViajesEliminados').
-pgm_prop_i(rpt,5,'RVIAJESELIMINADOS',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(rpt,5,'RVIAJESELIMINADOS',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(rpt,5,'RVIAJESELIMINADOS',idDEST_JNDI_Name,'').
-pgm_prop_i(rpt,4,'RVIAJESREALIZADOS','SOAP_NAMESPACE','Raiderplan1').
-pgm_prop_i(rpt,4,'RVIAJESREALIZADOS',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(rpt,4,'RVIAJESREALIZADOS',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(rpt,4,'RVIAJESREALIZADOS',idJNDI_Name,'ejb/aViajesRealizados').
-pgm_prop_i(rpt,4,'RVIAJESREALIZADOS',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(rpt,4,'RVIAJESREALIZADOS',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(rpt,4,'RVIAJESREALIZADOS',idDEST_JNDI_Name,'').
-pgm_prop_i(rpt,3,'RVIAJESENPROGRESO','SOAP_NAMESPACE','Raiderplan1').
-pgm_prop_i(rpt,3,'RVIAJESENPROGRESO',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(rpt,3,'RVIAJESENPROGRESO',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(rpt,3,'RVIAJESENPROGRESO',idJNDI_Name,'ejb/aViajesEnProgreso').
-pgm_prop_i(rpt,3,'RVIAJESENPROGRESO',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(rpt,3,'RVIAJESENPROGRESO',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(rpt,3,'RVIAJESENPROGRESO',idDEST_JNDI_Name,'').
-pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION','SOAP_NAMESPACE','Raiderplan1').
-pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION',idTRN_Type,idTRN_Type_CONTAINER).
-pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION',idTRN_Attribute,idTRN_Attribute_REQUIRED).
-pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION',idJNDI_Name,'ejb/aViajesEnPlanificacion').
-pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION',idDEST_Type,idDEST_Type_QUEUE).
-pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION',idCON_FACTORY_JNDI_Name,'').
-pgm_prop_i(rpt,2,'RVIAJESENPLANIFICACION',idDEST_JNDI_Name,'').
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO','SOAP_NAMESPACE','Raiderplan1').
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idTRN_Type,idTRN_Type_CONTAINER).
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idTRN_Attribute,idTRN_Attribute_REQUIRED).
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idJNDI_Name,'ejb/aTrayectoComentario').
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idDEST_Type,idDEST_Type_QUEUE).
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idCON_FACTORY_JNDI_Name,'').
+pgm_prop_i(rpt,8,'RTRAYECTOCOMENTARIO',idDEST_JNDI_Name,'').
 pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION','SOAP_NAMESPACE','Raiderplan1').
 pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idTRN_Type,idTRN_Type_CONTAINER).
 pgm_prop_i(rpt,1,'RDPUSUARIOXEMAILXUSUARIOIDCOLLECTION',idTRN_Attribute,idTRN_Attribute_REQUIRED).
@@ -184,5 +191,5 @@ subview_i(2,514,10).
  
  
  
-ver_stamp(date(2024,10,22),time(18,42,9,77)).
+ver_stamp(date(2024,11,9),time(16,6,7,58)).
  

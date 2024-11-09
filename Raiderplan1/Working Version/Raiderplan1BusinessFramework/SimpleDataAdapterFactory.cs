@@ -12,19 +12,39 @@ namespace Raiderplan1 {
    using Microsoft.Practices.EnterpriseLibrary.PolicyInjection;
    public partial class SimpleDataAdapterFactory : IDataAdapterFactory, IConnectedDataAdapterFactory
    {
-      public virtual IViajeDataAdapter GetViajeDataAdapter( )
-      {
-         return PolicyInjection.Create<ViajeDataAdapter, IViajeDataAdapter>( ) ;
-      }
-
-      public virtual ITrayectoComentarioDataAdapter GetTrayectoComentarioDataAdapter( )
-      {
-         return PolicyInjection.Create<TrayectoComentarioDataAdapter, ITrayectoComentarioDataAdapter>( ) ;
-      }
-
       public virtual IComentarioViajeDataAdapter GetComentarioViajeDataAdapter( )
       {
          return PolicyInjection.Create<ComentarioViajeDataAdapter, IComentarioViajeDataAdapter>( ) ;
+      }
+
+      public virtual IViajesXUsuarioXOrigenXDestinoDataAdapter GetViajesXUsuarioXOrigenXDestinoDataAdapter( )
+      {
+         return PolicyInjection.Create<ViajesXUsuarioXOrigenXDestinoDataAdapter, IViajesXUsuarioXOrigenXDestinoDataAdapter>( ) ;
+      }
+
+      public virtual IViajesRealizadosDataAdapter GetViajesRealizadosDataAdapter( )
+      {
+         return PolicyInjection.Create<ViajesRealizadosDataAdapter, IViajesRealizadosDataAdapter>( ) ;
+      }
+
+      public virtual IViajesEnProgresoDataAdapter GetViajesEnProgresoDataAdapter( )
+      {
+         return PolicyInjection.Create<ViajesEnProgresoDataAdapter, IViajesEnProgresoDataAdapter>( ) ;
+      }
+
+      public virtual IViajesEnPlanificacionDataAdapter GetViajesEnPlanificacionDataAdapter( )
+      {
+         return PolicyInjection.Create<ViajesEnPlanificacionDataAdapter, IViajesEnPlanificacionDataAdapter>( ) ;
+      }
+
+      public virtual IViajesEliminadosDataAdapter GetViajesEliminadosDataAdapter( )
+      {
+         return PolicyInjection.Create<ViajesEliminadosDataAdapter, IViajesEliminadosDataAdapter>( ) ;
+      }
+
+      public virtual IViajeDataAdapter GetViajeDataAdapter( )
+      {
+         return PolicyInjection.Create<ViajeDataAdapter, IViajeDataAdapter>( ) ;
       }
 
       public virtual IUsuarioDataAdapter GetUsuarioDataAdapter( )
@@ -62,24 +82,9 @@ namespace Raiderplan1 {
          return PolicyInjection.Create<LocalidadDataAdapter, ILocalidadDataAdapter>( ) ;
       }
 
-      public virtual IViajesRealizadosDataAdapter GetViajesRealizadosDataAdapter( )
+      public virtual ITrayectoComentarioDataAdapter GetTrayectoComentarioDataAdapter( )
       {
-         return PolicyInjection.Create<ViajesRealizadosDataAdapter, IViajesRealizadosDataAdapter>( ) ;
-      }
-
-      public virtual IViajesEnProgresoDataAdapter GetViajesEnProgresoDataAdapter( )
-      {
-         return PolicyInjection.Create<ViajesEnProgresoDataAdapter, IViajesEnProgresoDataAdapter>( ) ;
-      }
-
-      public virtual IViajesEnPlanificacionDataAdapter GetViajesEnPlanificacionDataAdapter( )
-      {
-         return PolicyInjection.Create<ViajesEnPlanificacionDataAdapter, IViajesEnPlanificacionDataAdapter>( ) ;
-      }
-
-      public virtual IViajesEliminadosDataAdapter GetViajesEliminadosDataAdapter( )
-      {
-         return PolicyInjection.Create<ViajesEliminadosDataAdapter, IViajesEliminadosDataAdapter>( ) ;
+         return PolicyInjection.Create<TrayectoComentarioDataAdapter, ITrayectoComentarioDataAdapter>( ) ;
       }
 
       public virtual IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )

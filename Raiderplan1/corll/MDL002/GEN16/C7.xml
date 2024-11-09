@@ -6,26 +6,16 @@
 <TableName>Usuario</TableName>
 <Description>Usuario</Description></Table>
 <ReorgCls>c</ReorgCls>
-<ReorgCode>pk</ReorgCode>
-<ReorgMsg>Usuario needs conversion</ReorgMsg>
-<ReorgAction>#</ReorgAction>
+<ReorgCode>new</ReorgCode>
+<ReorgMsg>Usuario is new</ReorgMsg>
+<ReorgAction>*</ReorgAction>
 <TableAttributes>
 <AttrisInTable>
 <Attribute>
 <AttriId>11</AttriId>
 <AttriName>UsuarioID</AttriName>
 <Description>Usuario ID</Description>
-<TakesValueFrom>
-<Table>
-<TableId>7</TableId>
-<TableName>USUARIO</TableName>
-<Description>Usuario</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>11</AttriId>
-<AttriName>UsuarioID</AttriName>
-<Description>Usuario ID</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <OnPrimaryKey>Yes</OnPrimaryKey>
 <AttriType>
 <DataType>N</DataType>
@@ -42,17 +32,7 @@
 <AttriId>7</AttriId>
 <AttriName>UsuarioNombre</AttriName>
 <Description>Usuario Nombre</Description>
-<TakesValueFrom>
-<Table>
-<TableId>7</TableId>
-<TableName>USUARIO</TableName>
-<Description>Usuario</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>7</AttriId>
-<AttriName>UsuarioNombre</AttriName>
-<Description>Usuario Nombre</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>50</Presicion>
@@ -68,17 +48,7 @@
 <AttriId>10</AttriId>
 <AttriName>UsuarioActivo</AttriName>
 <Description>Usuario Activo</Description>
-<TakesValueFrom>
-<Table>
-<TableId>7</TableId>
-<TableName>USUARIO</TableName>
-<Description>Usuario</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>10</AttriId>
-<AttriName>UsuarioActivo</AttriName>
-<Description>Usuario Activo</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>1</Presicion>
@@ -94,17 +64,7 @@
 <AttriId>8</AttriId>
 <AttriName>UsuarioEmail</AttriName>
 <Description>Usuario Email</Description>
-<TakesValueFrom>
-<Table>
-<TableId>7</TableId>
-<TableName>USUARIO</TableName>
-<Description>Usuario</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>8</AttriId>
-<AttriName>UsuarioEmail</AttriName>
-<Description>Usuario Email</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>60</Presicion>
@@ -120,17 +80,7 @@
 <AttriId>9</AttriId>
 <AttriName>UsuarioPasword</AttriName>
 <Description>Usuario Pasword</Description>
-<TakesValueFrom>
-<Table>
-<TableId>7</TableId>
-<TableName>USUARIO</TableName>
-<Description>Usuario</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>9</AttriId>
-<AttriName>UsuarioPasword</AttriName>
-<Description>Usuario Pasword</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>70</Presicion>
@@ -146,17 +96,7 @@
 <AttriId>24</AttriId>
 <AttriName>UsuarioFechaAlta</AttriName>
 <Description>Usuario Fecha Alta</Description>
-<TakesValueFrom>
-<Table>
-<TableId>7</TableId>
-<TableName>USUARIO</TableName>
-<Description>Usuario</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>24</AttriId>
-<AttriName>UsuarioFechaAlta</AttriName>
-<Description>Usuario Fecha Alta</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>D</DataType>
 <Presicion>8</Presicion>
@@ -172,17 +112,7 @@
 <AttriId>4</AttriId>
 <AttriName>PersonaID</AttriName>
 <Description>Persona ID</Description>
-<TakesValueFrom>
-<Table>
-<TableId>7</TableId>
-<TableName>USUARIO</TableName>
-<Description>Usuario</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>4</AttriId>
-<AttriName>PersonaID</AttriName>
-<Description>Persona ID</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>8</Presicion>
@@ -198,17 +128,7 @@
 <AttriId>28</AttriId>
 <AttriName>CodigoValidation</AttriName>
 <Description>Codigo Validation</Description>
-<TakesValueFrom>
-<Table>
-<TableId>7</TableId>
-<TableName>USUARIO</TableName>
-<Description>Usuario</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>28</AttriId>
-<AttriName>CodigoValidation</AttriName>
-<Description>Codigo Validation</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>4</Presicion>
@@ -224,9 +144,7 @@
 <AttriId>71</AttriId>
 <AttriName>CodigoRecuperacion</AttriName>
 <Description>Codigo Recuperacion</Description>
-<TakesValueFrom>
-<FromValue>
-<Token>Null</Token></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>4</Presicion>
@@ -237,23 +155,9 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>Yes</Value></Property></Properties></AttriType>
-<AttriChangeType>nn</AttriChangeType></Attribute></AttrisInTable>
+<Value>Yes</Value></Property></Properties></AttriType></Attribute></AttrisInTable>
 <AttrisNoLongerInTable></AttrisNoLongerInTable>
 <AttrisInManyTables></AttrisInManyTables></TableAttributes>
-<NavigationTree>
-<Table>
-<TableId>7</TableId>
-<TableName>USUARIO</TableName>
-<Description>Usuario</Description>
-<RecordsToRead>many</RecordsToRead>
-<KeyAttributes>
-<Attribute>
-<AttriId>11</AttriId>
-<AttriName>UsuarioID</AttriName>
-<Description>Usuario ID</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></NavigationTree>
-<TablesToUpdate></TablesToUpdate>
 <TableIndices>
 <Indices>
 <Index>
@@ -265,7 +169,7 @@
 <AttriName>UsuarioID</AttriName>
 <Description>Usuario ID</Description></Attribute></IndexAttris>
 <IndexExistance>AlreadyExist</IndexExistance>
-<Clustered>Yes</Clustered></Index>
+<Clustered>No</Clustered></Index>
 <Index>
 <IndexName>IUsuario1</IndexName>
 <IndexType>d</IndexType>

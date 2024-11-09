@@ -11,11 +11,11 @@ lwi_i(13,[ [] ]).
  
  
  
-ta_i(13,[ [ [ 13,94 ],[ 13,90 ],[ 13,91 ],[ 13,92 ],[ 13,93 ],[ 13,184 ],[ 13,42 ] ] ]).
+ta_i(13,[ [ [ 13,94 ],[ 13,90 ],[ 13,91 ],[ 13,92 ],[ 13,93 ],[ 13,184 ],[ 13,190 ],[ 13,42 ] ] ]).
  
-las_i(13,[ [ 94,90,91,92,93,184,42 ] ]).
+las_i(13,[ [ 94,90,91,92,93,184,42,190 ] ]).
  
-lac_i(13,[ [ 94,90,91,92,93,184,42 ] ]).
+lac_i(13,[ [ 94,90,91,92,93,184,42,190 ] ]).
  
  
 lits_i('Comentario Viaje ID',2,3).
@@ -25,8 +25,9 @@ lits_i('Comentario Texto',5,3).
 lits_i('Comentario Imagen',9,3).
 lits_i('CV Trayecto ID',13,3).
 lits_i('Viaje ID',14,3).
+lits_i('Comentario Privado',15,3).
  
-cls_i([ 2,3 ],[ 14,272 ]).
+cls_i([ 2,3 ],[ 15,272 ]).
  
 pos_i(94,[ 2,2,23 ]).
 pos_i(90,[ 3,3,23 ]).
@@ -35,6 +36,7 @@ pos_i(92,[ 5,5,23 ]).
 pos_i(93,[ 9,9,23 ]).
 pos_i(184,[ 13,13,23 ]).
 pos_i(42,[ 14,14,23 ]).
+pos_i(190,[ 15,15,23 ]).
  
  
  
@@ -172,6 +174,11 @@ rule_i(0,prop('DKL_DEPENDENCIES_PROPS','<Items xmlns:xsd="http://www.w3.org/2001
 				<Type>string</Type>
 				<Name>Description</Name>
 				<Value>Trayecto Viaje ID</Value>
+			</Property></Properties></Item><Item><gx:Object><Class>5</Class><Id>190</Id></gx:Object><Properties>
+			<Property>
+				<Type>string</Type>
+				<Name>Description</Name>
+				<Value>"S"= Privado; Null = Privado; N ="Publico"</Value>
 			</Property></Properties></Item></Items>')).
 rule_i(0,prop('OBJECT_METADATA',' ')).
 rule_i(0,prop('DEKLARIT_METADATA','')).
@@ -223,6 +230,7 @@ v_i(t,o,1,91).
 v_i(t,o,1,92).
 v_i(t,o,1,93).
 v_i(t,o,1,184).
+v_i(t,o,1,190).
 v_i(t,o,1,42).
 v_i(r,i,2,42).
 v_i(r,o,2,[]).
@@ -231,6 +239,7 @@ v_i(r,o,2,[]).
  
  
  
+attri_i(190,[ 'ComentarioPrivado',svchar,1,0,'',0,'Comentario Privado','',0,0 ]).
 attri_i(42,[ 'ViajeID',int,10,0,'ZZZZZZZZZ9',0,'Viaje ID','',0,0 ]).
 attri_i(184,[ 'CVTrayectoID',int,5,0,'ZZZZ9',0,'CV Trayecto ID','',0,0 ]).
 attri_i(93,[ 'ComentarioImagen',svchar,250,0,'',0,'Comentario Imagen','',0,0 ]).
@@ -241,7 +250,7 @@ attri_i(94,[ 'ComentarioViajeID',int,8,0,'ZZZZZZZ9',0,'Comentario Viaje ID','',0
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2,0 ]).
  
 table_i(8,[ 'VIAJE',[ 42 ],'Viaje','Viaje' ]).
-table_i(13,[ 'COMENTARIOVIAJE',[ 94,90,91,92,93,184,42 ],'ComentarioViaje','ComentarioViaje' ]).
+table_i(13,[ 'COMENTARIOVIAJE',[ 94,90,91,92,93,184,42,190 ],'ComentarioViaje','ComentarioViaje' ]).
  
 index_i(13,[ 'IComentarioViaje',u,[ 94 ],'IComentarioViaje' ]).
 index_i(13,[ 'IComentarioViaje1',d,[ 42 ],'IComentarioViaje1' ]).
@@ -250,8 +259,8 @@ index_i(8,[ 'IViaje',u,[ 42 ],'IViaje' ]).
  
  
  
-upd_i(13,13,i,[ [ 90,91,92,93,184,42 ],[],'IComentarioViaje',[ [ [],94,94 ] ] ]).
-upd_i(13,13,u,[ [ 90,91,92,93,184,42 ],[],'IComentarioViaje',[] ]).
+upd_i(13,13,i,[ [ 90,91,92,93,184,190,42 ],[],'IComentarioViaje',[ [ [],94,94 ] ] ]).
+upd_i(13,13,u,[ [ 90,91,92,93,184,190,42 ],[],'IComentarioViaje',[] ]).
 upd_i(13,13,d,[ [],[],'IComentarioViaje',[] ]).
  
  
@@ -313,7 +322,9 @@ lit_i(21,1,t(184,2),[ font('Courier New',9,[]),rect(161,312,205,332),outstyle('3
 lit_i(22,1,t('CV Trayecto ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,312,108,324),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
 lit_i(23,1,t(42,2),[ font('Courier New',9,[]),rect(161,336,240,356),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(42),ctrltype(edit,23),ispwd(0),e2n(1) ]).
 lit_i(24,1,t('Viaje ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,336,66,348),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(1,1,window,[ title([]),rect(0,0,716,373),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
+lit_i(25,1,t(190,2),[ font('Courier New',9,[]),rect(161,360,177,380),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(190),ctrltype(edit,25),ispwd(0),e2n(1) ]).
+lit_i(26,1,t('Comentario Privado',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,360,131,372),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(1,1,window,[ title([]),rect(0,0,716,397),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
  
 grid_i(7,24).
  
@@ -343,6 +354,9 @@ std_color_i(22,fore,8).
 std_color_i(23,back,5).
 std_color_i(23,fore,8).
 std_color_i(24,fore,8).
+std_color_i(25,back,5).
+std_color_i(25,fore,8).
+std_color_i(26,fore,8).
 std_color_i(1,back,15).
 std_color_i(1,fore,6).
  
@@ -522,6 +536,30 @@ att_prop_i(2,42,'DKL_ISPASSWORD','0',v).
 att_prop_i(2,42,idDATEFORMAT,idDATEFORMAT_SHORT,d).
 att_prop_i(2,42,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
 att_prop_i(2,42,'FullName','ViajeID',v).
+att_prop_i(2,190,'AUTONUMBER_START','1',v).
+att_prop_i(2,190,'AUTONUMBER_STEP','1',v).
+att_prop_i(2,190,'AUTONUMBER_FORREPLICATION','-1',v).
+att_prop_i(2,190,'ATT_INITIAL_VALUE','',v).
+att_prop_i(2,190,'OBJECT_METADATA','',v).
+att_prop_i(2,190,'DKL_DEPENDENCIES_PROPS','',d).
+att_prop_i(2,190,'DKL_CUSTOM_PROPERTIES','<Properties></Properties>',v).
+att_prop_i(2,190,'DKL_VERSION','2100',d).
+att_prop_i(2,190,'DKL_BUILTIN_PROPERTIES','<Properties><Property><Name>IsDescription</Name><Description>The value of this attribute describes the object</Description><Value>false</Value><Type>Boolean</Type><Default>false</Default></Property><Property><Name>IsVisibleOnForm</Name><Description>Specifies if the attribute is visible in addins-generated forms</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property><Property><Name>IsVisibleOnWorkWith</Name><Description>Specifies if the attribute is visible in addins-generate Work With grids</Description><Value>true</Value><Type>Boolean</Type><Default>true</Default></Property></Properties>',v).
+att_prop_i(2,190,'AUTOGENERATE_GUID','-1',v).
+att_prop_i(2,190,'DKL_EMPTY_ASNULL','0',v).
+att_prop_i(2,190,'DKL_RIGHT_TRIM','0',v).
+att_prop_i(2,190,'DKL_INTERNATIONAL_SUPPORT','0',v).
+att_prop_i(2,190,'DKL_REGULAR_EXPRESION','',v).
+att_prop_i(2,190,'DKL_ISROWGUID','0',v).
+att_prop_i(2,190,'DKL_INPUT_MASK','',v).
+att_prop_i(2,190,'DKL_ENABLE_ATT_AUTH','0',v).
+att_prop_i(2,190,'DKL_MIME_TYPE','',v).
+att_prop_i(2,190,'DKL_ENCRYPTION','0',v).
+att_prop_i(2,190,'DKL_CASING','0',v).
+att_prop_i(2,190,'DKL_ISPASSWORD','0',v).
+att_prop_i(2,190,idDATEFORMAT,idDATEFORMAT_SHORT,d).
+att_prop_i(2,190,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
+att_prop_i(2,190,'FullName','ComentarioPrivado',v).
  
 tbl_prop_i(2,13,'AllDirSuper',[ [ 8,[ 42 ] ] ],v).
 tbl_prop_i(2,8,'DirSubor',[ [ 13,[ 42 ] ] ],v).
@@ -541,7 +579,7 @@ i_tbl_best_trn(8,[ 8,1,'Viaje','Viaje' ]).
  
  
  
-trn_level_i(13,[ [ 94,90,91,92,93,184,42 ],'ComentarioViaje','ComentarioViaje','ComentarioViaje','',92 ]).
+trn_level_i(13,[ [ 94,90,91,92,93,184,42,190 ],'ComentarioViaje','ComentarioViaje','ComentarioViaje','',92 ]).
  
  
  

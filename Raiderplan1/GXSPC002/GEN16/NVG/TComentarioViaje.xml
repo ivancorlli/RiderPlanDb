@@ -85,6 +85,10 @@
 <AttriName>CVTrayectoID</AttriName>
 <Description>CV Trayecto ID</Description></Attribute>
 <Attribute>
+<AttriId>190</AttriId>
+<AttriName>ComentarioPrivado</AttriName>
+<Description>Comentario Privado</Description></Attribute>
+<Attribute>
 <AttriId>42</AttriId>
 <AttriName>ViajeID</AttriName>
 <Description>Viaje ID</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -115,6 +119,10 @@
 <AttriId>184</AttriId>
 <AttriName>CVTrayectoID</AttriName>
 <Description>CV Trayecto ID</Description></Attribute>
+<Attribute>
+<AttriId>190</AttriId>
+<AttriName>ComentarioPrivado</AttriName>
+<Description>Comentario Privado</Description></Attribute>
 <Attribute>
 <AttriId>42</AttriId>
 <AttriName>ViajeID</AttriName>

@@ -21,19 +21,39 @@ namespace Raiderplan1 {
 
       }
 
-      public static IViajeDataAdapter GetViajeDataAdapter( )
-      {
-         return daFactory.GetViajeDataAdapter( ) ;
-      }
-
-      public static ITrayectoComentarioDataAdapter GetTrayectoComentarioDataAdapter( )
-      {
-         return daFactory.GetTrayectoComentarioDataAdapter( ) ;
-      }
-
       public static IComentarioViajeDataAdapter GetComentarioViajeDataAdapter( )
       {
          return daFactory.GetComentarioViajeDataAdapter( ) ;
+      }
+
+      public static IViajesXUsuarioXOrigenXDestinoDataAdapter GetViajesXUsuarioXOrigenXDestinoDataAdapter( )
+      {
+         return daFactory.GetViajesXUsuarioXOrigenXDestinoDataAdapter( ) ;
+      }
+
+      public static IViajesRealizadosDataAdapter GetViajesRealizadosDataAdapter( )
+      {
+         return daFactory.GetViajesRealizadosDataAdapter( ) ;
+      }
+
+      public static IViajesEnProgresoDataAdapter GetViajesEnProgresoDataAdapter( )
+      {
+         return daFactory.GetViajesEnProgresoDataAdapter( ) ;
+      }
+
+      public static IViajesEnPlanificacionDataAdapter GetViajesEnPlanificacionDataAdapter( )
+      {
+         return daFactory.GetViajesEnPlanificacionDataAdapter( ) ;
+      }
+
+      public static IViajesEliminadosDataAdapter GetViajesEliminadosDataAdapter( )
+      {
+         return daFactory.GetViajesEliminadosDataAdapter( ) ;
+      }
+
+      public static IViajeDataAdapter GetViajeDataAdapter( )
+      {
+         return daFactory.GetViajeDataAdapter( ) ;
       }
 
       public static IUsuarioDataAdapter GetUsuarioDataAdapter( )
@@ -71,24 +91,9 @@ namespace Raiderplan1 {
          return daFactory.GetLocalidadDataAdapter( ) ;
       }
 
-      public static IViajesRealizadosDataAdapter GetViajesRealizadosDataAdapter( )
+      public static ITrayectoComentarioDataAdapter GetTrayectoComentarioDataAdapter( )
       {
-         return daFactory.GetViajesRealizadosDataAdapter( ) ;
-      }
-
-      public static IViajesEnProgresoDataAdapter GetViajesEnProgresoDataAdapter( )
-      {
-         return daFactory.GetViajesEnProgresoDataAdapter( ) ;
-      }
-
-      public static IViajesEnPlanificacionDataAdapter GetViajesEnPlanificacionDataAdapter( )
-      {
-         return daFactory.GetViajesEnPlanificacionDataAdapter( ) ;
-      }
-
-      public static IViajesEliminadosDataAdapter GetViajesEliminadosDataAdapter( )
-      {
-         return daFactory.GetViajesEliminadosDataAdapter( ) ;
+         return daFactory.GetTrayectoComentarioDataAdapter( ) ;
       }
 
       public static IdpUsuarioXEmailXusuarioIDCollectionDataAdapter GetdpUsuarioXEmailXusuarioIDCollectionDataAdapter( )

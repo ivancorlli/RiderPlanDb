@@ -44,3 +44,4 @@ C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\Raiderplan1Busine
 C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\Raiderplan1BusinessFramework\obj\Release\Raiderplan1BusinessFramework.csproj.GenerateResource.Cache
 C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\Raiderplan1BusinessFramework\obj\Release\Raiderplan1BusinessFramework.dll
 C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\Raiderplan1BusinessFramework\obj\Release\Raiderplan1BusinessFramework.pdb
+C:\Users\corll\Desktop\RiderPlanDb\Raiderplan1\Working Version\Raiderplan1BusinessFramework\bin\Release\DeklaritLibraryMySQLConnector.dll

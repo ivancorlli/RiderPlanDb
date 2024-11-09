@@ -212,6 +212,21 @@ namespace Raiderplan1
 			}
 		}
 		
+		/// <summary>
+		/// Gets or sets the "S"= Privado; Null = Privado; N ="Publico"
+		/// </summary>        
+		public System.String ComentarioPrivado
+		{
+			get 
+			{
+				return m_DataRow.ComentarioPrivado;
+			}
+			set
+			{
+				m_DataRow.ComentarioPrivado = value;
+			}
+		}
+		
 
 
 

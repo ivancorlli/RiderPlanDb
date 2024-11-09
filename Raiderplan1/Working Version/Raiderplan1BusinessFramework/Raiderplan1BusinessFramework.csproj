@@ -34,6 +34,10 @@
     <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DeklaritLibraryMySQLConnector, Version=4.5.2008.0, Culture=neutral, PublicKeyToken=387f38cffbc45540, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\DeklaritLibraryMySQLConnector.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -94,6 +98,7 @@
     <Compile Include="IViajesEnPlanificacionDataAdapter.cs" />
     <Compile Include="IViajesEnProgresoDataAdapter.cs" />
     <Compile Include="IViajesRealizadosDataAdapter.cs" />
+    <Compile Include="IViajesXUsuarioXOrigenXDestinoDataAdapter.cs" />
     <Compile Include="LocalidadDataAdapter.cs" />
     <Compile Include="LocalidadDataSet.cs">
       <DependentUpon>LocalidadDataSet.xsd</DependentUpon>
@@ -166,6 +171,11 @@
     <Compile Include="ViajesRealizadosDataAdapter.cs" />
     <Compile Include="ViajesRealizadosDataSet.cs">
       <DependentUpon>ViajesRealizadosDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViajesXUsuarioXOrigenXDestinoDataAdapter.cs" />
+    <Compile Include="ViajesXUsuarioXOrigenXDestinoDataSet.cs">
+      <DependentUpon>ViajesXUsuarioXOrigenXDestinoDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -247,6 +257,11 @@
   <ItemGroup>
     <EmbeddedResource Include="TrayectoComentarioDataSet.xsd">
       <LastGenOutput>TrayectoComentarioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ViajesXUsuarioXOrigenXDestinoDataSet.xsd">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

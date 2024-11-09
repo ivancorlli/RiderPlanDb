@@ -6,26 +6,16 @@
 <TableName>Persona</TableName>
 <Description>Persona</Description></Table>
 <ReorgCls>c</ReorgCls>
-<ReorgCode>pk</ReorgCode>
-<ReorgMsg>Persona needs conversion</ReorgMsg>
-<ReorgAction>#</ReorgAction>
+<ReorgCode>new</ReorgCode>
+<ReorgMsg>Persona is new</ReorgMsg>
+<ReorgAction>*</ReorgAction>
 <TableAttributes>
 <AttrisInTable>
 <Attribute>
 <AttriId>4</AttriId>
 <AttriName>PersonaID</AttriName>
 <Description>Persona ID</Description>
-<TakesValueFrom>
-<Table>
-<TableId>1</TableId>
-<TableName>PERSONA</TableName>
-<Description>Persona</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>4</AttriId>
-<AttriName>PersonaID</AttriName>
-<Description>Persona ID</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <OnPrimaryKey>Yes</OnPrimaryKey>
 <AttriType>
 <DataType>N</DataType>
@@ -42,17 +32,7 @@
 <AttriId>1</AttriId>
 <AttriName>PersonaNombre</AttriName>
 <Description>Persona Nombre</Description>
-<TakesValueFrom>
-<Table>
-<TableId>1</TableId>
-<TableName>PERSONA</TableName>
-<Description>Persona</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>1</AttriId>
-<AttriName>PersonaNombre</AttriName>
-<Description>Persona Nombre</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>120</Presicion>
@@ -68,17 +48,7 @@
 <AttriId>2</AttriId>
 <AttriName>PersonaApellido</AttriName>
 <Description>Persona Apellido</Description>
-<TakesValueFrom>
-<Table>
-<TableId>1</TableId>
-<TableName>PERSONA</TableName>
-<Description>Persona</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>2</AttriId>
-<AttriName>PersonaApellido</AttriName>
-<Description>Persona Apellido</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>120</Presicion>
@@ -94,17 +64,7 @@
 <AttriId>3</AttriId>
 <AttriName>PersonaFechaNacimiento</AttriName>
 <Description>Perosna</Description>
-<TakesValueFrom>
-<Table>
-<TableId>1</TableId>
-<TableName>PERSONA</TableName>
-<Description>Persona</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>3</AttriId>
-<AttriName>PersonaFechaNacimiento</AttriName>
-<Description>Perosna</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>D</DataType>
 <Presicion>8</Presicion>
@@ -120,17 +80,7 @@
 <AttriId>6</AttriId>
 <AttriName>PersonaSexo</AttriName>
 <Description>Persona Sexo</Description>
-<TakesValueFrom>
-<Table>
-<TableId>1</TableId>
-<TableName>PERSONA</TableName>
-<Description>Persona</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>6</AttriId>
-<AttriName>PersonaSexo</AttriName>
-<Description>Persona Sexo</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>3</Presicion>
@@ -146,17 +96,7 @@
 <AttriId>29</AttriId>
 <AttriName>ImagenPerfil</AttriName>
 <Description>Imagen Perfil</Description>
-<TakesValueFrom>
-<Table>
-<TableId>1</TableId>
-<TableName>PERSONA</TableName>
-<Description>Persona</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>29</AttriId>
-<AttriName>ImagenPerfil</AttriName>
-<Description>Imagen Perfil</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>50</Presicion>
@@ -167,34 +107,12 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>Yes</Value></Property></Properties></AttriType>
-<AttriOldType>
-<DataType>V</DataType>
-<Presicion>25</Presicion>
-<Scale>0</Scale>
-<Properties>
-<Property>
-<Name>Autonumber</Name>
-<Value>No</Value></Property>
-<Property>
-<Name>AllowNulls</Name>
-<Value>Yes</Value></Property></Properties></AttriOldType>
-<AttriChangeType>upd</AttriChangeType></Attribute>
+<Value>Yes</Value></Property></Properties></AttriType></Attribute>
 <Attribute>
 <AttriId>81</AttriId>
 <AttriName>PProvinciaID</AttriName>
 <Description>P Provincia ID</Description>
-<TakesValueFrom>
-<Table>
-<TableId>1</TableId>
-<TableName>PERSONA</TableName>
-<Description>Persona</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>81</AttriId>
-<AttriName>PProvinciaID</AttriName>
-<Description>P Provincia ID</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>5</Presicion>
@@ -210,17 +128,7 @@
 <AttriId>84</AttriId>
 <AttriName>PLocalidadID</AttriName>
 <Description>P Localidad ID</Description>
-<TakesValueFrom>
-<Table>
-<TableId>1</TableId>
-<TableName>PERSONA</TableName>
-<Description>Persona</Description></Table>
-<FromValue>
-<Token>.</Token>
-<Attribute>
-<AttriId>84</AttriId>
-<AttriName>PLocalidadID</AttriName>
-<Description>P Localidad ID</Description></Attribute></FromValue></TakesValueFrom>
+<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>5</Presicion>
@@ -234,19 +142,6 @@
 <Value>Yes</Value></Property></Properties></AttriType></Attribute></AttrisInTable>
 <AttrisNoLongerInTable></AttrisNoLongerInTable>
 <AttrisInManyTables></AttrisInManyTables></TableAttributes>
-<NavigationTree>
-<Table>
-<TableId>1</TableId>
-<TableName>PERSONA</TableName>
-<Description>Persona</Description>
-<RecordsToRead>many</RecordsToRead>
-<KeyAttributes>
-<Attribute>
-<AttriId>4</AttriId>
-<AttriName>PersonaID</AttriName>
-<Description>Persona ID</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></NavigationTree>
-<TablesToUpdate></TablesToUpdate>
 <TableIndices>
 <Indices>
 <Index>
@@ -258,7 +153,7 @@
 <AttriName>PersonaID</AttriName>
 <Description>Persona ID</Description></Attribute></IndexAttris>
 <IndexExistance>AlreadyExist</IndexExistance>
-<Clustered>Yes</Clustered></Index></Indices></TableIndices>
+<Clustered>No</Clustered></Index></Indices></TableIndices>
 <FKConstraints></FKConstraints>
 <Warnings></Warnings>
 <Errors></Errors></ReorgSpec>

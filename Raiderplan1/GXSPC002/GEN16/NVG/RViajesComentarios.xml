@@ -40,12 +40,12 @@
 <AttriId>93</AttriId>
 <AttriName>ComentarioImagen</AttriName>
 <Description>Comentario Imagen</Description></Attribute>
-<Token>, </Token>
+<Token> are incompatible with: </Token>
 <Attribute>
 <AttriId>47</AttriId>
 <AttriName>TrayectoViajeID</AttriName>
 <Description>Trayecto Viaje ID</Description></Attribute>
-<Token> are incompatible with: </Token>
+<Token>, </Token>
 <Attribute>
 <AttriId>42</AttriId>
 <AttriName>ViajeID</AttriName>

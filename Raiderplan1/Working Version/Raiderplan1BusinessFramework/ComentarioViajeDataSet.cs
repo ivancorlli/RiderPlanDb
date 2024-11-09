@@ -248,6 +248,7 @@ namespace Raiderplan1 {
          private DataColumn columnComentarioImagen ;
          private DataColumn columnCVTrayectoID ;
          private DataColumn columnViajeID ;
+         private DataColumn columnComentarioPrivado ;
          public ComentarioViajeDataTable() 
          {
              this.TableName = "ComentarioViaje";
@@ -406,6 +407,14 @@ namespace Raiderplan1 {
 
          }
 
+         public DataColumn ComentarioPrivadoColumn
+         {
+            get {
+               return this.columnComentarioPrivado ;
+            }
+
+         }
+
          public event ComentarioViajeRowChangeEventHandler ComentarioViajeRowChanged ;
          public event ComentarioViajeRowChangeEventHandler ComentarioViajeRowChanging ;
          public event ComentarioViajeRowChangeEventHandler ComentarioViajeRowDeleted ;
@@ -415,7 +424,8 @@ namespace Raiderplan1 {
                                                           String comentarioTexto ,
                                                           String comentarioImagen ,
                                                           int cVTrayectoID ,
-                                                          long viajeID )
+                                                          long viajeID ,
+                                                          String comentarioPrivado )
          {
             ComentarioViajeRow rowComentarioViajeRow = ((ComentarioViajeRow)(this.NewRow())) ;
             rowComentarioViajeRow["ComentarioLatitud"] = comentarioLatitud ;
@@ -424,6 +434,7 @@ namespace Raiderplan1 {
             rowComentarioViajeRow["ComentarioImagen"] = comentarioImagen ;
             rowComentarioViajeRow["CVTrayectoID"] = cVTrayectoID ;
             rowComentarioViajeRow["ViajeID"] = viajeID ;
+            rowComentarioViajeRow["ComentarioPrivado"] = comentarioPrivado ;
             this.Rows.Add( rowComentarioViajeRow) ;
             return rowComentarioViajeRow ;
          }
@@ -442,6 +453,7 @@ namespace Raiderplan1 {
             this.columnComentarioImagen = this.Columns["ComentarioImagen"] ;
             this.columnCVTrayectoID = this.Columns["CVTrayectoID"] ;
             this.columnViajeID = this.Columns["ViajeID"] ;
+            this.columnComentarioPrivado = this.Columns["ComentarioPrivado"] ;
          }
 
          public void InitClass( )
@@ -585,6 +597,26 @@ namespace Raiderplan1 {
             this.columnViajeID.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
             this.columnViajeID.ExtendedProperties.Add( "Deklarit.InternalName", "ViajeID") ;
             this.Columns.Add( this.columnViajeID) ;
+            this.columnComentarioPrivado = new DataColumn( "ComentarioPrivado", typeof(String), "", System.Data.MappingType.Element) ;
+            this.columnComentarioPrivado.AllowDBNull = true ;
+            this.columnComentarioPrivado.Caption = "Comentario Privado" ;
+            this.columnComentarioPrivado.MaxLength = 1 ;
+            this.columnComentarioPrivado.DefaultValue = System.Convert.DBNull ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "Deklarit.IsVisibleOnWorkWith", "true") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "IsKey", "false") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "ReadOnly", "false") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "DeklaritType", "svchar") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "Description", "\"S\"= Privado; Null = Privado; N =\"Publico\"") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "Length", "1") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "Decimals", "0") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "AllowDBNulls", "true") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "IsInReader", "true") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
+            this.columnComentarioPrivado.ExtendedProperties.Add( "Deklarit.InternalName", "ComentarioPrivado") ;
+            this.Columns.Add( this.columnComentarioPrivado) ;
             this.PrimaryKey = new  DataColumn[]  {this.columnComentarioViajeID} ;
             this.ExtendedProperties.Add( "ParentLvl", "") ;
             this.ExtendedProperties.Add( "LevelName", "ComentarioViaje") ;
@@ -851,6 +883,38 @@ namespace Raiderplan1 {
          public void SetViajeIDNull( )
          {
             this[this.tableComentarioViaje.ViajeIDColumn] = System.Convert.DBNull ;
+         }
+
+         ///  <summary>
+         ///   Gets or sets the "S"= Privado; Null = Privado; N ="Publico".
+         ///  </summary>
+         public String ComentarioPrivado
+         {
+            get {
+               try
+               {
+                  return ((String)(this[this.tableComentarioViaje.ComentarioPrivadoColumn])) ;
+               }
+               catch ( InvalidCastException deklaritException )
+               {
+                  throw new StrongTypingException( "Cannot get value ComentarioPrivado because it is DBNull.", deklaritException) ;
+               }
+            }
+
+            set {
+               this[this.tableComentarioViaje.ComentarioPrivadoColumn] = value ;
+            }
+
+         }
+
+         public bool IsComentarioPrivadoNull( )
+         {
+            return this.IsNull( this.tableComentarioViaje.ComentarioPrivadoColumn) ;
+         }
+
+         public void SetComentarioPrivadoNull( )
+         {
+            this[this.tableComentarioViaje.ComentarioPrivadoColumn] = System.Convert.DBNull ;
          }
 
       }

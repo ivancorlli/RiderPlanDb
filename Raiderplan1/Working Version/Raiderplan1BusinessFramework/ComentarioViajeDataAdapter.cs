@@ -468,6 +468,7 @@ namespace Raiderplan1 {
             m__ComentarioTextoOriginal = rowComentarioViaje["ComentarioTexto", System.Data.DataRowVersion.Original] ;
             m__ComentarioImagenOriginal = rowComentarioViaje["ComentarioImagen", System.Data.DataRowVersion.Original] ;
             m__CVTrayectoIDOriginal = rowComentarioViaje["CVTrayectoID", System.Data.DataRowVersion.Original] ;
+            m__ComentarioPrivadoOriginal = rowComentarioViaje["ComentarioPrivado", System.Data.DataRowVersion.Original] ;
             m__ViajeIDOriginal = rowComentarioViaje["ViajeID", System.Data.DataRowVersion.Original] ;
          }
          else
@@ -477,6 +478,7 @@ namespace Raiderplan1 {
             m__ComentarioTextoOriginal = rowComentarioViaje["ComentarioTexto"] ;
             m__ComentarioImagenOriginal = rowComentarioViaje["ComentarioImagen"] ;
             m__CVTrayectoIDOriginal = rowComentarioViaje["CVTrayectoID"] ;
+            m__ComentarioPrivadoOriginal = rowComentarioViaje["ComentarioPrivado"] ;
             m__ViajeIDOriginal = rowComentarioViaje["ViajeID"] ;
          }
          _Gxremove = (bool)((rowComentarioViaje.RowState==System.Data.DataRowState.Deleted)) ;
@@ -510,7 +512,7 @@ namespace Raiderplan1 {
       {
           IDataReader ComentarioViajeSelect3 ;
           ReadWriteCommand cmComentarioViajeSelect3 ;
-         cmComentarioViajeSelect3 = connDefault.GetCommand("SELECT [ComentarioViajeID], [ComentarioLatitud], [ComentarioLongitud], [ComentarioTexto], [ComentarioImagen], [CVTrayectoID], [ViajeID] FROM [ComentarioViaje] WITH (NOLOCK) WHERE [ComentarioViajeID] = @ComentarioViajeID ", false) ;
+         cmComentarioViajeSelect3 = connDefault.GetCommand("SELECT [ComentarioViajeID], [ComentarioLatitud], [ComentarioLongitud], [ComentarioTexto], [ComentarioImagen], [CVTrayectoID], [ComentarioPrivado], [ViajeID] FROM [ComentarioViaje] WITH (NOLOCK) WHERE [ComentarioViajeID] = @ComentarioViajeID ", false) ;
          if ( ( cmComentarioViajeSelect3.IDbCommand.Parameters.Count == 0 ) )
          {
             cmComentarioViajeSelect3.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioViajeID", System.Data.DbType.Int32));
@@ -526,7 +528,8 @@ namespace Raiderplan1 {
             rowComentarioViaje["ComentarioTexto"] = dsDefault.Db.GetString(ComentarioViajeSelect3, 3) ;
             rowComentarioViaje["ComentarioImagen"] = dsDefault.Db.GetString(ComentarioViajeSelect3, 4) ;
             rowComentarioViaje["CVTrayectoID"] = dsDefault.Db.GetInt32(ComentarioViajeSelect3, 5) ;
-            rowComentarioViaje["ViajeID"] = dsDefault.Db.GetInt64(ComentarioViajeSelect3, 6) ;
+            rowComentarioViaje["ComentarioPrivado"] = dsDefault.Db.GetString(ComentarioViajeSelect3, 6) ;
+            rowComentarioViaje["ViajeID"] = dsDefault.Db.GetInt64(ComentarioViajeSelect3, 7) ;
             sMode13 = Gx_mode ;
             Gx_mode = Mode.Display ;
             Gx_mode = sMode13 ;
@@ -544,7 +547,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmComentarioViajeSelect4 ;
          if ( ( Gx_mode != Mode.Insert ) )
          {
-            cmComentarioViajeSelect4 = connDefault.GetCommand("SELECT [ComentarioViajeID], [ComentarioLatitud], [ComentarioLongitud], [ComentarioTexto], [ComentarioImagen], [CVTrayectoID], [ViajeID] FROM [ComentarioViaje] WITH (UPDLOCK) WHERE [ComentarioViajeID] = @ComentarioViajeID ", false) ;
+            cmComentarioViajeSelect4 = connDefault.GetCommand("SELECT [ComentarioViajeID], [ComentarioLatitud], [ComentarioLongitud], [ComentarioTexto], [ComentarioImagen], [CVTrayectoID], [ComentarioPrivado], [ViajeID] FROM [ComentarioViaje] WITH (UPDLOCK) WHERE [ComentarioViajeID] = @ComentarioViajeID ", false) ;
             if ( ( cmComentarioViajeSelect4.IDbCommand.Parameters.Count == 0 ) )
             {
                cmComentarioViajeSelect4.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioViajeID", System.Data.DbType.Int32));
@@ -561,7 +564,7 @@ namespace Raiderplan1 {
             {
                _Condition = true ;
             }
-            if ( _Condition || ( ! m__ViajeIDOriginal.Equals(dsDefault.Db.GetInt64(ComentarioViajeSelect4, 6)) ) )
+            if ( _Condition || ( ! StringUtil.ObjectStringEquals(m__ComentarioPrivadoOriginal,dsDefault.Db.GetString(ComentarioViajeSelect4, 6)) ) || ( ! m__ViajeIDOriginal.Equals(dsDefault.Db.GetInt64(ComentarioViajeSelect4, 7)) ) )
             {
                ComentarioViajeSelect4.Close();
                throw new ComentarioViajeDataChangedException( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("waschg"), new   object[]  {resourceManagerTables.GetString("ComentarioViaje")})) ;
@@ -576,7 +579,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmComentarioViajeInsert1 ;
          CheckOptimisticConcurrencyComentarioviaje( ) ;
          AfterConfirmComentarioviaje( ) ;
-         cmComentarioViajeInsert1 = connDefault.GetCommand("INSERT INTO [ComentarioViaje] ([ComentarioLatitud], [ComentarioLongitud], [ComentarioTexto], [ComentarioImagen], [CVTrayectoID], [ViajeID]) VALUES (@ComentarioLatitud, @ComentarioLongitud, @ComentarioTexto, @ComentarioImagen, @CVTrayectoID, @ViajeID); SELECT SCOPE_IDENTITY()", false) ;
+         cmComentarioViajeInsert1 = connDefault.GetCommand("INSERT INTO [ComentarioViaje] ([ComentarioLatitud], [ComentarioLongitud], [ComentarioTexto], [ComentarioImagen], [CVTrayectoID], [ComentarioPrivado], [ViajeID]) VALUES (@ComentarioLatitud, @ComentarioLongitud, @ComentarioTexto, @ComentarioImagen, @CVTrayectoID, @ComentarioPrivado, @ViajeID); SELECT SCOPE_IDENTITY()", false) ;
          if ( ( cmComentarioViajeInsert1.IDbCommand.Parameters.Count == 0 ) )
          {
             cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioLatitud", System.Data.DbType.Decimal));
@@ -584,6 +587,7 @@ namespace Raiderplan1 {
             cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioTexto", System.Data.DbType.AnsiString,250));
             cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioImagen", System.Data.DbType.AnsiString,250));
             cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@CVTrayectoID", System.Data.DbType.Int32));
+            cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioPrivado", System.Data.DbType.AnsiString,1));
             cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
          }
          cmComentarioViajeInsert1.ErrorMask = cmComentarioViajeInsert1.ErrorMask  |  ErrorMask.ForeignKeyError;
@@ -593,7 +597,8 @@ namespace Raiderplan1 {
          cmComentarioViajeInsert1.SetParameter(2, rowComentarioViaje["ComentarioTexto"]);
          cmComentarioViajeInsert1.SetParameter(3, rowComentarioViaje["ComentarioImagen"]);
          cmComentarioViajeInsert1.SetParameter(4, rowComentarioViaje["CVTrayectoID"]);
-         cmComentarioViajeInsert1.SetParameter(5, rowComentarioViaje["ViajeID"]);
+         cmComentarioViajeInsert1.SetParameter(5, rowComentarioViaje["ComentarioPrivado"]);
+         cmComentarioViajeInsert1.SetParameter(6, rowComentarioViaje["ViajeID"]);
          ComentarioViajeInsert1 = cmComentarioViajeInsert1.FetchData() ;
          if ( ! ( cmComentarioViajeInsert1.ForeignKeyError || cmComentarioViajeInsert1.DupKey ) )
          {
@@ -616,7 +621,7 @@ namespace Raiderplan1 {
           ReadWriteCommand cmComentarioViajeUpdate1 ;
          CheckOptimisticConcurrencyComentarioviaje( ) ;
          AfterConfirmComentarioviaje( ) ;
-         cmComentarioViajeUpdate1 = connDefault.GetCommand("UPDATE [ComentarioViaje] SET [ComentarioLatitud]=@ComentarioLatitud, [ComentarioLongitud]=@ComentarioLongitud, [ComentarioTexto]=@ComentarioTexto, [ComentarioImagen]=@ComentarioImagen, [CVTrayectoID]=@CVTrayectoID, [ViajeID]=@ViajeID  WHERE [ComentarioViajeID] = @ComentarioViajeID", false) ;
+         cmComentarioViajeUpdate1 = connDefault.GetCommand("UPDATE [ComentarioViaje] SET [ComentarioLatitud]=@ComentarioLatitud, [ComentarioLongitud]=@ComentarioLongitud, [ComentarioTexto]=@ComentarioTexto, [ComentarioImagen]=@ComentarioImagen, [CVTrayectoID]=@CVTrayectoID, [ComentarioPrivado]=@ComentarioPrivado, [ViajeID]=@ViajeID  WHERE [ComentarioViajeID] = @ComentarioViajeID", false) ;
          if ( ( cmComentarioViajeUpdate1.IDbCommand.Parameters.Count == 0 ) )
          {
             cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioLatitud", System.Data.DbType.Decimal));
@@ -624,6 +629,7 @@ namespace Raiderplan1 {
             cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioTexto", System.Data.DbType.AnsiString,250));
             cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioImagen", System.Data.DbType.AnsiString,250));
             cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@CVTrayectoID", System.Data.DbType.Int32));
+            cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioPrivado", System.Data.DbType.AnsiString,1));
             cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
             cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioViajeID", System.Data.DbType.Int32));
          }
@@ -634,8 +640,9 @@ namespace Raiderplan1 {
          cmComentarioViajeUpdate1.SetParameter(2, rowComentarioViaje["ComentarioTexto"]);
          cmComentarioViajeUpdate1.SetParameter(3, rowComentarioViaje["ComentarioImagen"]);
          cmComentarioViajeUpdate1.SetParameter(4, rowComentarioViaje["CVTrayectoID"]);
-         cmComentarioViajeUpdate1.SetParameter(5, rowComentarioViaje["ViajeID"]);
-         cmComentarioViajeUpdate1.SetParameter(6, rowComentarioViaje["ComentarioViajeID"]);
+         cmComentarioViajeUpdate1.SetParameter(5, rowComentarioViaje["ComentarioPrivado"]);
+         cmComentarioViajeUpdate1.SetParameter(6, rowComentarioViaje["ViajeID"]);
+         cmComentarioViajeUpdate1.SetParameter(7, rowComentarioViaje["ComentarioViajeID"]);
          cmComentarioViajeUpdate1.ExecuteStmt();
          if ( cmComentarioViajeUpdate1.ForeignKeyError )
          {
@@ -789,7 +796,8 @@ namespace Raiderplan1 {
             rowComentarioViaje["ComentarioTexto"] = dsDefault.Db.GetString(ComentarioViajeSelect5, 3) ;
             rowComentarioViaje["ComentarioImagen"] = dsDefault.Db.GetString(ComentarioViajeSelect5, 4) ;
             rowComentarioViaje["CVTrayectoID"] = dsDefault.Db.GetInt32(ComentarioViajeSelect5, 5) ;
-            rowComentarioViaje["ViajeID"] = dsDefault.Db.GetInt64(ComentarioViajeSelect5, 6) ;
+            rowComentarioViaje["ComentarioPrivado"] = dsDefault.Db.GetString(ComentarioViajeSelect5, 6) ;
+            rowComentarioViaje["ViajeID"] = dsDefault.Db.GetInt64(ComentarioViajeSelect5, 7) ;
          }
       }
 
@@ -878,7 +886,7 @@ namespace Raiderplan1 {
          ComentarioViajeSet.ComentarioViaje.AddComentarioViajeRow( rowComentarioViaje) ;
       }
 
-      private readonly string m_SelectString13 = "TM1.[ComentarioViajeID], TM1.[ComentarioLatitud], TM1.[ComentarioLongitud], TM1.[ComentarioTexto], TM1.[ComentarioImagen], TM1.[CVTrayectoID], TM1.[ViajeID]" ;
+      private readonly string m_SelectString13 = "TM1.[ComentarioViajeID], TM1.[ComentarioLatitud], TM1.[ComentarioLongitud], TM1.[ComentarioTexto], TM1.[ComentarioImagen], TM1.[CVTrayectoID], TM1.[ComentarioPrivado], TM1.[ViajeID]" ;
 
 
       public delegate  void ComentarioViajeUpdateEventHandler( object sender ,
@@ -1071,6 +1079,7 @@ namespace Raiderplan1 {
          m__ComentarioTextoOriginal = new object();
          m__ComentarioImagenOriginal = new object();
          m__CVTrayectoIDOriginal = new object();
+         m__ComentarioPrivadoOriginal = new object();
          m__ViajeIDOriginal = new object();
          _Condition = false ;
          IsModified = 0 ;
@@ -1105,6 +1114,7 @@ namespace Raiderplan1 {
       private object m__ComentarioTextoOriginal ;
       private object m__ComentarioImagenOriginal ;
       private object m__CVTrayectoIDOriginal ;
+      private object m__ComentarioPrivadoOriginal ;
       private object m__ViajeIDOriginal ;
    }
 
@@ -1144,7 +1154,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmComentarioViajeSelect6 = connDefault.GetCommand("SELECT TM1.[ComentarioViajeID], TM1.[ComentarioLatitud], TM1.[ComentarioLongitud], TM1.[ComentarioTexto], TM1.[ComentarioImagen], TM1.[CVTrayectoID], TM1.[ViajeID] FROM [ComentarioViaje] TM1 WITH (NOLOCK) ORDER BY TM1.[ComentarioViajeID] ", false) ;
+         cmComentarioViajeSelect6 = connDefault.GetCommand("SELECT TM1.[ComentarioViajeID], TM1.[ComentarioLatitud], TM1.[ComentarioLongitud], TM1.[ComentarioTexto], TM1.[ComentarioImagen], TM1.[CVTrayectoID], TM1.[ComentarioPrivado], TM1.[ViajeID] FROM [ComentarioViaje] TM1 WITH (NOLOCK) ORDER BY TM1.[ComentarioViajeID] ", false) ;
          ComentarioViajeSelect6 = cmComentarioViajeSelect6.ExecuteReader(((daCurrentTransaction==null) ? Configuration.ReaderCommandBehavior : CommandBehavior.Default)) ;
          return ComentarioViajeSelect6 ;
       }
@@ -1154,7 +1164,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmComentarioViajeSelect6 = connDefault.GetCommand("SELECT TM1.[ComentarioViajeID], TM1.[ComentarioLatitud], TM1.[ComentarioLongitud], TM1.[ComentarioTexto], TM1.[ComentarioImagen], TM1.[CVTrayectoID], TM1.[ViajeID] FROM [ComentarioViaje] TM1 WITH (NOLOCK) WHERE TM1.[ComentarioViajeID] = @ComentarioViajeID ORDER BY TM1.[ComentarioViajeID] ", false) ;
+         cmComentarioViajeSelect6 = connDefault.GetCommand("SELECT TM1.[ComentarioViajeID], TM1.[ComentarioLatitud], TM1.[ComentarioLongitud], TM1.[ComentarioTexto], TM1.[ComentarioImagen], TM1.[CVTrayectoID], TM1.[ComentarioPrivado], TM1.[ViajeID] FROM [ComentarioViaje] TM1 WITH (NOLOCK) WHERE TM1.[ComentarioViajeID] = @ComentarioViajeID ORDER BY TM1.[ComentarioViajeID] ", false) ;
          if ( ( cmComentarioViajeSelect6.IDbCommand.Parameters.Count == 0 ) )
          {
             cmComentarioViajeSelect6.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioViajeID", System.Data.DbType.Int32));
@@ -1169,7 +1179,7 @@ namespace Raiderplan1 {
          init_reader( ) ;
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
-         cmComentarioViajeSelect6 = connDefault.GetCommand("SELECT TM1.[ComentarioViajeID], TM1.[ComentarioLatitud], TM1.[ComentarioLongitud], TM1.[ComentarioTexto], TM1.[ComentarioImagen], TM1.[CVTrayectoID], TM1.[ViajeID] FROM [ComentarioViaje] TM1 WITH (NOLOCK) WHERE TM1.[ViajeID] = @ViajeID ORDER BY TM1.[ComentarioViajeID] ", false) ;
+         cmComentarioViajeSelect6 = connDefault.GetCommand("SELECT TM1.[ComentarioViajeID], TM1.[ComentarioLatitud], TM1.[ComentarioLongitud], TM1.[ComentarioTexto], TM1.[ComentarioImagen], TM1.[CVTrayectoID], TM1.[ComentarioPrivado], TM1.[ViajeID] FROM [ComentarioViaje] TM1 WITH (NOLOCK) WHERE TM1.[ViajeID] = @ViajeID ORDER BY TM1.[ComentarioViajeID] ", false) ;
          if ( ( cmComentarioViajeSelect6.IDbCommand.Parameters.Count == 0 ) )
          {
             cmComentarioViajeSelect6.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));

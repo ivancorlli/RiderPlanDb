@@ -366,7 +366,7 @@ namespace Raiderplan1 {
          {
             if ( ( startRow == 0 ) )
             {
-               scmdbuf = "SELECT TOP " + maxRows.ToString() + "  TM1.[ViajeID], TM1.[UsuarioID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado] FROM [Viaje] TM1" + m_WhereString + "" + orderString + "" ;
+               scmdbuf = "SELECT TOP " + maxRows.ToString() + "  TM1.[ViajeID], TM1.[UsuarioID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado], TM1.[ViajeParentID], TM1.[ViajePrivado], TM1.[ViajeMeGustas], TM1.[ViajeDescargas] FROM [Viaje] TM1" + m_WhereString + "" + orderString + "" ;
             }
             else
             {
@@ -384,12 +384,12 @@ namespace Raiderplan1 {
                {
                   return  ;
                }
-               scmdbuf = "SELECT TM1.[ViajeID], TM1.[UsuarioID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado] FROM [Viaje] TM1 WHERE TM1.[ViajeID] IN ( SELECT TOP " + maxRows.ToString() + " TM1.[ViajeID]  FROM [Viaje] TM1" + m_WhereString + "" + sWhereSep + "TM1.[ViajeID] NOT IN ( SELECT TOP " + startRow.ToString() + " TM1.[ViajeID]  FROM [Viaje] TM1" + m_WhereString + "" + orderString + ")" + orderString + ")" + orderString + "" ;
+               scmdbuf = "SELECT TM1.[ViajeID], TM1.[UsuarioID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado], TM1.[ViajeParentID], TM1.[ViajePrivado], TM1.[ViajeMeGustas], TM1.[ViajeDescargas] FROM [Viaje] TM1 WHERE TM1.[ViajeID] IN ( SELECT TOP " + maxRows.ToString() + " TM1.[ViajeID]  FROM [Viaje] TM1" + m_WhereString + "" + sWhereSep + "TM1.[ViajeID] NOT IN ( SELECT TOP " + startRow.ToString() + " TM1.[ViajeID]  FROM [Viaje] TM1" + m_WhereString + "" + orderString + ")" + orderString + ")" + orderString + "" ;
             }
          }
          else
          {
-            scmdbuf = "SELECT TM1.[ViajeID], TM1.[UsuarioID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado] FROM [Viaje] TM1" + m_WhereString + "" + orderString + " " ;
+            scmdbuf = "SELECT TM1.[ViajeID], TM1.[UsuarioID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado], TM1.[ViajeParentID], TM1.[ViajePrivado], TM1.[ViajeMeGustas], TM1.[ViajeDescargas] FROM [Viaje] TM1" + m_WhereString + "" + orderString + " " ;
          }
          cmViajeSelect2 = connDefault.GetCommand(scmdbuf,false);
          if ( ( cmViajeSelect2.IDbCommand.Parameters.Count == 0 ) )
@@ -420,6 +420,10 @@ namespace Raiderplan1 {
             m_MotociletaModelo = dsDefault.Db.GetString(ViajeSelect2, 15, ref m__MotociletaModeloIsNull) ;
             m_ViajeImagen = dsDefault.Db.GetString(ViajeSelect2, 16, ref m__ViajeImagenIsNull) ;
             m_ViajeEstado = dsDefault.Db.GetString(ViajeSelect2, 17, ref m__ViajeEstadoIsNull) ;
+            m_ViajeParentID = dsDefault.Db.GetInt64(ViajeSelect2, 18, ref m__ViajeParentIDIsNull) ;
+            m_ViajePrivado = dsDefault.Db.GetString(ViajeSelect2, 19, ref m__ViajePrivadoIsNull) ;
+            m_ViajeMeGustas = dsDefault.Db.GetInt32(ViajeSelect2, 20, ref m__ViajeMeGustasIsNull) ;
+            m_ViajeDescargas = dsDefault.Db.GetInt32(ViajeSelect2, 21, ref m__ViajeDescargasIsNull) ;
             rowViaje = ViajesEnProgresoSet.Viaje.NewViajeRow() ;
             rowViaje["ViajeID"] = ( ( m__ViajeIDIsNull )  ? System.Convert.DBNull : m_ViajeID ) ;
             rowViaje["UsuarioID"] = ( ( m__UsuarioIDIsNull )  ? System.Convert.DBNull : m_UsuarioID ) ;
@@ -439,6 +443,10 @@ namespace Raiderplan1 {
             rowViaje["MotociletaModelo"] = ( ( m__MotociletaModeloIsNull )  ? System.Convert.DBNull : m_MotociletaModelo ) ;
             rowViaje["ViajeImagen"] = ( ( m__ViajeImagenIsNull )  ? System.Convert.DBNull : m_ViajeImagen ) ;
             rowViaje["ViajeEstado"] = ( ( m__ViajeEstadoIsNull )  ? System.Convert.DBNull : m_ViajeEstado ) ;
+            rowViaje["ViajeParentID"] = ( ( m__ViajeParentIDIsNull )  ? System.Convert.DBNull : m_ViajeParentID ) ;
+            rowViaje["ViajePrivado"] = ( ( m__ViajePrivadoIsNull )  ? System.Convert.DBNull : m_ViajePrivado ) ;
+            rowViaje["ViajeMeGustas"] = ( ( m__ViajeMeGustasIsNull )  ? System.Convert.DBNull : m_ViajeMeGustas ) ;
+            rowViaje["ViajeDescargas"] = ( ( m__ViajeDescargasIsNull )  ? System.Convert.DBNull : m_ViajeDescargas ) ;
             AddRowViaje( ) ;
             loadedRows++ ;
             cmViajeSelect2.HasMoreRows = ViajeSelect2.Read();
@@ -476,8 +484,8 @@ namespace Raiderplan1 {
 
       }
 
-      public enum Attribute {ViajeID, UsuarioID, ViajeNombre, FechaSalidaProgramada, FechaLlegadaProgramada, FechaSalidaEfectiva, FechaLlegadaEfectiva, LugarPartida, Lugarllegada, LongitudPartida, LatitudPartida, LongitudLegada, LatitudLlegada, kmTotalesEstimado, MotocilcetaMarca, MotociletaModelo, ViajeImagen, ViajeEstado};
-      private static String[] attributeNames = new String[]  {"TM1.[ViajeID]", "TM1.[UsuarioID]", "TM1.[ViajeNombre]", "TM1.[FechaSalidaProgramada]", "TM1.[FechaLlegadaProgramada]", "TM1.[FechaSalidaEfectiva]", "TM1.[FechaLlegadaEfectiva]", "TM1.[LugarPartida]", "TM1.[Lugarllegada]", "TM1.[LongitudPartida]", "TM1.[LatitudPartida]", "TM1.[LongitudLegada]", "TM1.[LatitudLlegada]", "TM1.[kmTotalesEstimado]", "TM1.[MotocilcetaMarca]", "TM1.[MotociletaModelo]", "TM1.[ViajeImagen]", "TM1.[ViajeEstado]"} ;
+      public enum Attribute {ViajeID, UsuarioID, ViajeNombre, FechaSalidaProgramada, FechaLlegadaProgramada, FechaSalidaEfectiva, FechaLlegadaEfectiva, LugarPartida, Lugarllegada, LongitudPartida, LatitudPartida, LongitudLegada, LatitudLlegada, kmTotalesEstimado, MotocilcetaMarca, MotociletaModelo, ViajeImagen, ViajeEstado, ViajeParentID, ViajePrivado, ViajeMeGustas, ViajeDescargas};
+      private static String[] attributeNames = new String[]  {"TM1.[ViajeID]", "TM1.[UsuarioID]", "TM1.[ViajeNombre]", "TM1.[FechaSalidaProgramada]", "TM1.[FechaLlegadaProgramada]", "TM1.[FechaSalidaEfectiva]", "TM1.[FechaLlegadaEfectiva]", "TM1.[LugarPartida]", "TM1.[Lugarllegada]", "TM1.[LongitudPartida]", "TM1.[LatitudPartida]", "TM1.[LongitudLegada]", "TM1.[LatitudLlegada]", "TM1.[kmTotalesEstimado]", "TM1.[MotocilcetaMarca]", "TM1.[MotociletaModelo]", "TM1.[ViajeImagen]", "TM1.[ViajeEstado]", "TM1.[ViajeParentID]", "TM1.[ViajePrivado]", "TM1.[ViajeMeGustas]", "TM1.[ViajeDescargas]"} ;
       private void Init_order_Viaje( )
       {
          this.Order = new ArrayList() ;
@@ -535,6 +543,14 @@ namespace Raiderplan1 {
          m_ViajeImagen = "" ;
          m__ViajeEstadoIsNull = false ;
          m_ViajeEstado = "" ;
+         m__ViajeParentIDIsNull = false ;
+         m_ViajeParentID = 0 ;
+         m__ViajePrivadoIsNull = false ;
+         m_ViajePrivado = "" ;
+         m__ViajeMeGustasIsNull = false ;
+         m_ViajeMeGustas = 0 ;
+         m__ViajeDescargasIsNull = false ;
+         m_ViajeDescargas = 0 ;
          // GeneXus formulas.
          if ( ( this.Transaction == null ) )
          {
@@ -546,7 +562,10 @@ namespace Raiderplan1 {
       private int m_RecordCount ;
       private int m_TopRowCount ;
       private int m_UsuarioID ;
+      private int m_ViajeMeGustas ;
+      private int m_ViajeDescargas ;
       private long m_ViajeID ;
+      private long m_ViajeParentID ;
       private decimal m_LongitudPartida ;
       private decimal m_LatitudPartida ;
       private decimal m_LongitudLegada ;
@@ -555,6 +574,7 @@ namespace Raiderplan1 {
       private String scmdbuf ;
       private String m_WhereString ;
       private String sWhereSep ;
+      private String m_ViajePrivado ;
       private DateTime m_FechaSalidaProgramada ;
       private DateTime m_FechaLlegadaProgramada ;
       private DateTime m_FechaSalidaEfectiva ;
@@ -577,6 +597,10 @@ namespace Raiderplan1 {
       private bool m__MotociletaModeloIsNull ;
       private bool m__ViajeImagenIsNull ;
       private bool m__ViajeEstadoIsNull ;
+      private bool m__ViajeParentIDIsNull ;
+      private bool m__ViajePrivadoIsNull ;
+      private bool m__ViajeMeGustasIsNull ;
+      private bool m__ViajeDescargasIsNull ;
       private String m_ViajeNombre ;
       private String m_LugarPartida ;
       private String m_Lugarllegada ;
@@ -636,7 +660,7 @@ namespace Raiderplan1 {
          m_Closed = false ;
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
          m_WhereString = " WHERE " + filterString + "  (@UsuarioID = TM1.[UsuarioID]) AND (TM1.[ViajeEstado] = 'P')" ;
-         scmdbuf = "SELECT TM1.[ViajeID], TM1.[UsuarioID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado] FROM [Viaje] TM1" + m_WhereString + " " + orderString + "  " ;
+         scmdbuf = "SELECT TM1.[ViajeID], TM1.[UsuarioID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado], TM1.[ViajeParentID], TM1.[ViajePrivado], TM1.[ViajeMeGustas], TM1.[ViajeDescargas] FROM [Viaje] TM1" + m_WhereString + " " + orderString + "  " ;
          cmViajeSelect3 = connDefault.GetCommand(scmdbuf,false);
          if ( ( cmViajeSelect3.IDbCommand.Parameters.Count == 0 ) )
          {
@@ -758,8 +782,8 @@ namespace Raiderplan1 {
 
       }
 
-      public enum Attribute {ViajeID, UsuarioID, ViajeNombre, FechaSalidaProgramada, FechaLlegadaProgramada, FechaSalidaEfectiva, FechaLlegadaEfectiva, LugarPartida, Lugarllegada, LongitudPartida, LatitudPartida, LongitudLegada, LatitudLlegada, kmTotalesEstimado, MotocilcetaMarca, MotociletaModelo, ViajeImagen, ViajeEstado};
-      private static String[] attributeNames = new String[]  {"TM1.[ViajeID]", "TM1.[UsuarioID]", "TM1.[ViajeNombre]", "TM1.[FechaSalidaProgramada]", "TM1.[FechaLlegadaProgramada]", "TM1.[FechaSalidaEfectiva]", "TM1.[FechaLlegadaEfectiva]", "TM1.[LugarPartida]", "TM1.[Lugarllegada]", "TM1.[LongitudPartida]", "TM1.[LatitudPartida]", "TM1.[LongitudLegada]", "TM1.[LatitudLlegada]", "TM1.[kmTotalesEstimado]", "TM1.[MotocilcetaMarca]", "TM1.[MotociletaModelo]", "TM1.[ViajeImagen]", "TM1.[ViajeEstado]"} ;
+      public enum Attribute {ViajeID, UsuarioID, ViajeNombre, FechaSalidaProgramada, FechaLlegadaProgramada, FechaSalidaEfectiva, FechaLlegadaEfectiva, LugarPartida, Lugarllegada, LongitudPartida, LatitudPartida, LongitudLegada, LatitudLlegada, kmTotalesEstimado, MotocilcetaMarca, MotociletaModelo, ViajeImagen, ViajeEstado, ViajeParentID, ViajePrivado, ViajeMeGustas, ViajeDescargas};
+      private static String[] attributeNames = new String[]  {"TM1.[ViajeID]", "TM1.[UsuarioID]", "TM1.[ViajeNombre]", "TM1.[FechaSalidaProgramada]", "TM1.[FechaLlegadaProgramada]", "TM1.[FechaSalidaEfectiva]", "TM1.[FechaLlegadaEfectiva]", "TM1.[LugarPartida]", "TM1.[Lugarllegada]", "TM1.[LongitudPartida]", "TM1.[LatitudPartida]", "TM1.[LongitudLegada]", "TM1.[LatitudLlegada]", "TM1.[kmTotalesEstimado]", "TM1.[MotocilcetaMarca]", "TM1.[MotociletaModelo]", "TM1.[ViajeImagen]", "TM1.[ViajeEstado]", "TM1.[ViajeParentID]", "TM1.[ViajePrivado]", "TM1.[ViajeMeGustas]", "TM1.[ViajeDescargas]"} ;
       private void Init_order_Viaje( )
       {
          this.Order = new ArrayList() ;

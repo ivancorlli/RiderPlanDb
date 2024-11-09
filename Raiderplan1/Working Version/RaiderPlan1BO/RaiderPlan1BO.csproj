@@ -67,5 +67,6 @@
     <Compile Include="ViajesEnPlanificacion.cs" />
     <Compile Include="ViajesEnProgreso.cs" />
     <Compile Include="ViajesRealizados.cs" />
+    <Compile Include="ViajesXUsuarioXOrigenXDestino.cs" />
   </ItemGroup>
 </Project>
