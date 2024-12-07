@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ObjectSpec>
+<SpecVersion>4_5_0-002</SpecVersion>
+<Object>
+<ObjCls>2</ObjCls>
+<ObjId>10</ObjId>
+<ObjName>ViajesPublicos</ObjName>
+<ObjDesc>ViajesPublicos</ObjDesc>
+<ObjPgmName>RViajesPublicos</ObjPgmName>
+<ObjClsName>Report</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings>
+<Warning>
+<MsgCode>spc0038</MsgCode>
+<Token>There is no index for order </Token>
+<Attribute>
+<AttriId>186</AttriId>
+<AttriName>ViajeMeGustas</AttriName>
+<Description>Viaje Me Gusta</Description>
+<AttriOrder>Descending</AttriOrder></Attribute>
+<Token>, </Token>
+<Attribute>
+<AttriId>187</AttriId>
+<AttriName>ViajeDescargas</AttriName>
+<Description>Viaje Descargas</Description>
+<AttriOrder>Descending</AttriOrder></Attribute>
+<Token>, </Token>
+<Attribute>
+<AttriId>82</AttriId>
+<AttriName>ViajeNombre</AttriName>
+<Description>Viaje Nombre</Description></Attribute>
+<Token>; poor performance may be noticed</Token>
+<Token> at level ViajesPublicos</Token>
+<Token>.</Token></Warning></Warnings>
+<Errors></Errors>
+<OutputDevices>
+<Device>File</Device></OutputDevices>
+<Generator>
+<GenId>16</GenId>
+<GenName>Deklarit</GenName></Generator>
+<FormClass>Graphic</FormClass>
+<Parameters></Parameters>
+<Levels>
+<Level>
+<LevelNumber>2</LevelNumber>
+<Optimizations></Optimizations>
+<LevelType>For Each</LevelType>
+<LevelBeginRow>2</LevelBeginRow>
+<BaseTable>
+<Table>
+<TableId>8</TableId>
+<TableName>VIAJE</TableName>
+<Description>Viaje</Description></Table></BaseTable>
+<Order>
+<Attribute>
+<AttriId>186</AttriId>
+<AttriName>ViajeMeGustas</AttriName>
+<Description>Viaje Me Gusta</Description>
+<AttriOrder>Descending</AttriOrder></Attribute>
+<Token>,</Token>
+<Attribute>
+<AttriId>187</AttriId>
+<AttriName>ViajeDescargas</AttriName>
+<Description>Viaje Descargas</Description>
+<AttriOrder>Descending</AttriOrder></Attribute>
+<Token>,</Token>
+<Attribute>
+<AttriId>82</AttriId>
+<AttriName>ViajeNombre</AttriName>
+<Description>Viaje Nombre</Description></Attribute></Order>
+<Condition></Condition>
+<LevelOptions></LevelOptions>
+<OptimizedWhere>
+<StartFrom>
+<Condition>
+<Token>FirstRecord</Token></Condition></StartFrom>
+<LoopWhile>
+<Condition>
+<Token>NotEndOfTable</Token></Condition></LoopWhile></OptimizedWhere>
+<NonOptimizedWhere>
+<Condition>
+<Attribute>
+<AttriId>189</AttriId>
+<AttriName>ViajePrivado</AttriName>
+<Description>Viaje Privado</Description></Attribute>
+<Token>.</Token>
+<Token>isnull(</Token>
+<Token>)</Token>
+<Token>or</Token>
+<Attribute>
+<AttriId>189</AttriId>
+<AttriName>ViajePrivado</AttriName>
+<Description>Viaje Privado</Description></Attribute>
+<Token>=</Token>
+<Token>'N'</Token></Condition>
+<Condition>
+<Token>.NOT.</Token>
+<Attribute>
+<AttriId>34</AttriId>
+<AttriName>LugarPartida</AttriName>
+<Description>Lugar Partida</Description></Attribute>
+<Token>.</Token>
+<Token>isnull(</Token>
+<Token>)</Token></Condition>
+<Condition>
+<Token>.NOT.</Token>
+<Attribute>
+<AttriId>35</AttriId>
+<AttriName>Lugarllegada</AttriName>
+<Description>Lugarllegada</Description></Attribute>
+<Token>.</Token>
+<Token>isnull(</Token>
+<Token>)</Token></Condition>
+<Condition>
+<Token>.NOT.</Token>
+<Attribute>
+<AttriId>186</AttriId>
+<AttriName>ViajeMeGustas</AttriName>
+<Description>Viaje Me Gusta</Description></Attribute>
+<Token>.</Token>
+<Token>isnull(</Token>
+<Token>)</Token></Condition>
+<Condition>
+<Token>.NOT.</Token>
+<Attribute>
+<AttriId>187</AttriId>
+<AttriName>ViajeDescargas</AttriName>
+<Description>Viaje Descargas</Description></Attribute>
+<Token>.</Token>
+<Token>isnull(</Token>
+<Token>)</Token></Condition></NonOptimizedWhere>
+<NavigationTree>
+<Table>
+<TableId>8</TableId>
+<TableName>VIAJE</TableName>
+<Description>Viaje</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>42</AttriId>
+<AttriName>ViajeID</AttriName>
+<Description>Viaje ID</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<Levels></Levels></Level></Levels></ObjectSpec>

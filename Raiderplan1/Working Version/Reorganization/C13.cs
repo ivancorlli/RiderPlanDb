@@ -52,18 +52,19 @@ namespace Raiderplan1.Reorg {
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
          RGZ.ExecuteStmt() ;
-         cmC132 = connDefault.GetCommand("SELECT [ViajeID], [CVTrayectoID], [ComentarioImagen], [ComentarioTexto], [ComentarioLongitud], [ComentarioLatitud], [ComentarioViajeID] FROM [ComentarioViaje] ",false);
+         cmC132 = connDefault.GetCommand("SELECT [ComentarioPrivado], [ViajeID], [CVTrayectoID], [ComentarioImagen], [ComentarioTexto], [ComentarioLongitud], [ComentarioLatitud], [ComentarioViajeID] FROM [ComentarioViaje] ",false);
          cmC132.ErrorMask = cmC132.ErrorMask  |  ErrorMask.Lock;
          C132 = cmC132.FetchData();
          while ( cmC132.HasMoreRows )
          {
-            m_ViajeID = dsDefault.Db.GetInt64(C132, 0, ref m__ViajeIDIsNull) ;
-            m_CVTrayectoID = dsDefault.Db.GetInt32(C132, 1, ref m__CVTrayectoIDIsNull) ;
-            m_ComentarioImagen = dsDefault.Db.GetString(C132, 2, ref m__ComentarioImagenIsNull) ;
-            m_ComentarioTexto = dsDefault.Db.GetString(C132, 3, ref m__ComentarioTextoIsNull) ;
-            m_ComentarioLongitud = dsDefault.Db.GetDecimal(C132, 4, ref m__ComentarioLongitudIsNull) ;
-            m_ComentarioLatitud = dsDefault.Db.GetDecimal(C132, 5, ref m__ComentarioLatitudIsNull) ;
-            m_ComentarioViajeID = dsDefault.Db.GetInt32(C132, 6, ref m__ComentarioViajeIDIsNull) ;
+            m_ComentarioPrivado = dsDefault.Db.GetString(C132, 0, ref m__ComentarioPrivadoIsNull) ;
+            m_ViajeID = dsDefault.Db.GetInt64(C132, 1, ref m__ViajeIDIsNull) ;
+            m_CVTrayectoID = dsDefault.Db.GetInt32(C132, 2, ref m__CVTrayectoIDIsNull) ;
+            m_ComentarioImagen = dsDefault.Db.GetString(C132, 3, ref m__ComentarioImagenIsNull) ;
+            m_ComentarioTexto = dsDefault.Db.GetString(C132, 4, ref m__ComentarioTextoIsNull) ;
+            m_ComentarioLongitud = dsDefault.Db.GetDecimal(C132, 5, ref m__ComentarioLongitudIsNull) ;
+            m_ComentarioLatitud = dsDefault.Db.GetDecimal(C132, 6, ref m__ComentarioLatitudIsNull) ;
+            m_ComentarioViajeID = dsDefault.Db.GetInt32(C132, 7, ref m__ComentarioViajeIDIsNull) ;
             //
                // INSERT RECORD ON TABLE GXA0013
                //
@@ -71,8 +72,17 @@ namespace Raiderplan1.Reorg {
             AV2Comenta = m_ComentarioViajeID ;
             AV3Comenta = m_ComentarioLatitud ;
             AV4Comenta = m_ComentarioLongitud ;
-            AV5Comenta = m_ComentarioTexto ;
-            if ( C132.IsDBNull(2) )
+            if ( C132.IsDBNull(4) )
+            {
+               AV5Comenta = "" ;
+               nV5Comenta = true ;
+            }
+            else
+            {
+               AV5Comenta = m_ComentarioTexto ;
+               nV5Comenta = false ;
+            }
+            if ( C132.IsDBNull(3) )
             {
                AV6Comenta = "" ;
                nV6Comenta = true ;
@@ -82,7 +92,7 @@ namespace Raiderplan1.Reorg {
                AV6Comenta = m_ComentarioImagen ;
                nV6Comenta = false ;
             }
-            if ( C132.IsDBNull(1) )
+            if ( C132.IsDBNull(2) )
             {
                AV7CVTraye = 0 ;
                nV7CVTraye = true ;
@@ -93,16 +103,24 @@ namespace Raiderplan1.Reorg {
                nV7CVTraye = false ;
             }
             AV8ViajeID = m_ViajeID ;
-            AV9Comenta = "" ;
-            nV9Comenta = true ;
+            if ( C132.IsDBNull(0) )
+            {
+               AV9Comenta = "" ;
+               nV9Comenta = true ;
+            }
+            else
+            {
+               AV9Comenta = m_ComentarioPrivado ;
+               nV9Comenta = false ;
+            }
             cmC133 = connDefault.GetCommand("INSERT INTO [GXA0013] ([ComentarioViajeID], [ComentarioLatitud], [ComentarioLongitud], [ComentarioTexto], [ComentarioImagen], [CVTrayectoID], [ViajeID], [ComentarioPrivado]) VALUES (@ComentarioViajeID, @ComentarioLatitud, @ComentarioLongitud, @ComentarioTexto, @ComentarioImagen, @CVTrayectoID, @ViajeID, @ComentarioPrivado)",false);
             if ( ( cmC133.IDbCommand.Parameters.Count == 0 ) )
             {
                cmC133.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioViajeID", System.Data.DbType.Int32));
                cmC133.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioLatitud", System.Data.DbType.Decimal));
                cmC133.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioLongitud", System.Data.DbType.Decimal));
-               cmC133.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioTexto", System.Data.DbType.AnsiString,250));
-               cmC133.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioImagen", System.Data.DbType.AnsiString,250));
+               cmC133.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioTexto", System.Data.DbType.AnsiString,500));
+               cmC133.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioImagen", System.Data.DbType.AnsiString,500));
                cmC133.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@CVTrayectoID", System.Data.DbType.Int32));
                cmC133.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
                cmC133.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioPrivado", System.Data.DbType.AnsiString,1));
@@ -112,7 +130,7 @@ namespace Raiderplan1.Reorg {
             cmC133.SetParameter(0, AV2Comenta);
             cmC133.SetParameter(1, AV3Comenta);
             cmC133.SetParameter(2, AV4Comenta);
-            cmC133.SetParameter(3, AV5Comenta);
+            cmC133.SetParameter(3, AV5Comenta, nV5Comenta);
             cmC133.SetParameter(4, AV6Comenta, nV6Comenta);
             cmC133.SetParameter(5, AV7CVTraye, nV7CVTraye);
             cmC133.SetParameter(6, AV8ViajeID);
@@ -151,6 +169,8 @@ namespace Raiderplan1.Reorg {
          resourceManagerTables = new System.Resources.ResourceManager( "Deklarit.Tables", System.Reflection.Assembly.GetExecutingAssembly()) ;
          cmdBuffer = "" ;
          scmdbuf = "" ;
+         m__ComentarioPrivadoIsNull = false ;
+         m_ComentarioPrivado = "" ;
          m__ViajeIDIsNull = false ;
          m_ViajeID = 0 ;
          m__CVTrayectoIDIsNull = false ;
@@ -170,6 +190,7 @@ namespace Raiderplan1.Reorg {
          AV3Comenta = (decimal)(0M) ;
          AV4Comenta = (decimal)(0M) ;
          AV5Comenta = "" ;
+         nV5Comenta = false ;
          AV6Comenta = "" ;
          nV6Comenta = false ;
          AV7CVTraye = 0 ;
@@ -198,6 +219,7 @@ namespace Raiderplan1.Reorg {
       private String cmdBuffer ;
       private String scmdbuf ;
       private String Gx_emsg ;
+      private bool m__ComentarioPrivadoIsNull ;
       private bool m__ViajeIDIsNull ;
       private bool m__CVTrayectoIDIsNull ;
       private bool m__ComentarioImagenIsNull ;
@@ -205,9 +227,11 @@ namespace Raiderplan1.Reorg {
       private bool m__ComentarioLongitudIsNull ;
       private bool m__ComentarioLatitudIsNull ;
       private bool m__ComentarioViajeIDIsNull ;
+      private bool nV5Comenta ;
       private bool nV6Comenta ;
       private bool nV7CVTraye ;
       private bool nV9Comenta ;
+      private String m_ComentarioPrivado ;
       private String m_ComentarioImagen ;
       private String m_ComentarioTexto ;
       private String AV5Comenta ;

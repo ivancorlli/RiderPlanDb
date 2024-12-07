@@ -27,7 +27,7 @@ lits_i('CV Trayecto ID',13,3).
 lits_i('Viaje ID',14,3).
 lits_i('Comentario Privado',15,3).
  
-cls_i([ 2,3 ],[ 15,272 ]).
+cls_i([ 2,3 ],[ 15,522 ]).
  
 pos_i(94,[ 2,2,23 ]).
 pos_i(90,[ 3,3,23 ]).
@@ -242,8 +242,8 @@ v_i(r,o,2,[]).
 attri_i(190,[ 'ComentarioPrivado',svchar,1,0,'',0,'Comentario Privado','',0,0 ]).
 attri_i(42,[ 'ViajeID',int,10,0,'ZZZZZZZZZ9',0,'Viaje ID','',0,0 ]).
 attri_i(184,[ 'CVTrayectoID',int,5,0,'ZZZZ9',0,'CV Trayecto ID','',0,0 ]).
-attri_i(93,[ 'ComentarioImagen',svchar,250,0,'',0,'Comentario Imagen','',0,0 ]).
-attri_i(92,[ 'ComentarioTexto',svchar,250,0,'',0,'Comentario Texto','',0,0 ]).
+attri_i(93,[ 'ComentarioImagen',svchar,500,0,'',0,'Comentario Imagen','',0,0 ]).
+attri_i(92,[ 'ComentarioTexto',svchar,500,0,'',0,'Comentario Texto','',0,0 ]).
 attri_i(91,[ 'ComentarioLongitud',int,18,5,'ZZZZZZZZZZZ9.99999',0,'Comentario Longitud','',0,0 ]).
 attri_i(90,[ 'ComentarioLatitud',int,18,5,'ZZZZZZZZZZZ9.99999',0,'Comentario Latitud','',0,0 ]).
 attri_i(94,[ 'ComentarioViajeID',int,8,0,'ZZZZZZZ9',0,'Comentario Viaje ID','',0,0 ]).
@@ -569,7 +569,6 @@ tbl_att_prop_i(2,13,94,'AllowNulls',n).
 tbl_att_prop_i(2,13,94,'AUTONUMBER',y).
 tbl_att_prop_i(2,13,90,'AllowNulls',n).
 tbl_att_prop_i(2,13,91,'AllowNulls',n).
-tbl_att_prop_i(2,13,92,'AllowNulls',n).
 tbl_att_prop_i(2,13,42,'AllowNulls',n).
 tbl_att_prop_i(2,8,42,'AllowNulls',n).
 tbl_att_prop_i(2,8,42,'AUTONUMBER',y).

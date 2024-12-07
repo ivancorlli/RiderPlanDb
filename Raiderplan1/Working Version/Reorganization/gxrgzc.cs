@@ -49,7 +49,17 @@ namespace Raiderplan1.Reorg {
          //
          AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("rgzrnmtbl"), new   object[]  {"6"}) );
          // Adding attributes to tables' structure.
-         cmdBuffer=" ALTER TABLE [ComentarioViaje] ADD [ComentarioPrivado] varchar(1) null  "
+         cmdBuffer=" ALTER TABLE [ComentarioViaje] ALTER COLUMN [ComentarioImagen] varchar(500) null  "
+         ;
+         RGZ = connDefault.GetCommand(cmdBuffer,false);
+         RGZ.IDbCommand.CommandTimeout = 0;
+         RGZ.ExecuteStmt() ;
+         cmdBuffer=" ALTER TABLE [ComentarioViaje] ALTER COLUMN [ComentarioTexto] varchar(500) null  "
+         ;
+         RGZ = connDefault.GetCommand(cmdBuffer,false);
+         RGZ.IDbCommand.CommandTimeout = 0;
+         RGZ.ExecuteStmt() ;
+         cmdBuffer=" ALTER TABLE [TrayectoViaje] ALTER COLUMN [TrayectoDestino] varchar(150) NOT null  "
          ;
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
@@ -64,6 +74,19 @@ namespace Raiderplan1.Reorg {
          RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
          RGZ.ExecuteStmt() ;
          cmdBuffer=" ALTER TABLE [ComentarioViaje] ADD CONSTRAINT IComentarioViaje1 FOREIGN KEY ([ViajeID]) REFERENCES [Viaje] ([ViajeID]) "
+         ;
+         RGZ = connDefault.GetCommand(cmdBuffer,false);
+         RGZ.IDbCommand.CommandTimeout = 0;
+         RGZ.ExecuteStmt() ;
+         // Indices for table TrayectoViaje
+         // Referential constraints on table TrayectoViaje
+         cmdBuffer=" ALTER TABLE [TrayectoViaje] DROP CONSTRAINT ITrayectoViaje2 "
+         ;
+         RGZ = connDefault.GetCommand(cmdBuffer,false);
+         RGZ.IDbCommand.CommandTimeout = 0;
+         RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
+         RGZ.ExecuteStmt() ;
+         cmdBuffer=" ALTER TABLE [TrayectoViaje] ADD CONSTRAINT ITrayectoViaje2 FOREIGN KEY ([ViajeID]) REFERENCES [Viaje] ([ViajeID]) "
          ;
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;

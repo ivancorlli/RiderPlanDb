@@ -97,6 +97,7 @@
     <Compile Include="IViajesEliminadosDataAdapter.cs" />
     <Compile Include="IViajesEnPlanificacionDataAdapter.cs" />
     <Compile Include="IViajesEnProgresoDataAdapter.cs" />
+    <Compile Include="IViajesPublicosDataAdapter.cs" />
     <Compile Include="IViajesRealizadosDataAdapter.cs" />
     <Compile Include="IViajesXUsuarioXOrigenXDestinoDataAdapter.cs" />
     <Compile Include="LocalidadDataAdapter.cs" />
@@ -166,6 +167,11 @@
     <Compile Include="ViajesEnProgresoDataAdapter.cs" />
     <Compile Include="ViajesEnProgresoDataSet.cs">
       <DependentUpon>ViajesEnProgresoDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViajesPublicosDataAdapter.cs" />
+    <Compile Include="ViajesPublicosDataSet.cs">
+      <DependentUpon>ViajesPublicosDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ViajesRealizadosDataAdapter.cs" />
@@ -262,6 +268,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ViajesXUsuarioXOrigenXDestinoDataSet.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ViajesPublicosDataSet.xsd">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

@@ -47,9 +47,9 @@
             </dkdata:manyToOne>
          </dkdata:relations>
          <dkdata:parameters>
-            <dkdata:parameter  name="UsuarioID" type="xs:int" dkdata:length="8" dkdata:decimals="0" dkdata:description="Usuario ID " dkdata:type="int" dkdata:basedon="UsuarioID" msprop:Deklarit.DataProviderForValueList="" msprop:Deklarit.FixedValue="" msprop:Deklarit.DefaultValue=""/>
-            <dkdata:parameter  name="Origen" type="xs:string" dkdata:length="150" dkdata:decimals="0" dkdata:description="Origen " dkdata:type="svchar" msprop:Deklarit.DataProviderForValueList="" msprop:Deklarit.FixedValue="" msprop:Deklarit.DefaultValue=""/>
-            <dkdata:parameter  name="Destino" type="xs:string" dkdata:length="150" dkdata:decimals="0" dkdata:description="Destino " dkdata:type="svchar" msprop:Deklarit.DataProviderForValueList="" msprop:Deklarit.FixedValue="" msprop:Deklarit.DefaultValue=""/>
+            <dkdata:parameter  name="UsuarioID" type="xs:int" dkdata:length="8" dkdata:decimals="0" dkdata:description="Usuario ID   " dkdata:type="int" dkdata:basedon="UsuarioID" msprop:Deklarit.DataProviderForValueList="" msprop:Deklarit.FixedValue="" msprop:Deklarit.DefaultValue=""/>
+            <dkdata:parameter  name="Origen" type="xs:string" dkdata:length="150" dkdata:decimals="0" dkdata:description="Origen   " dkdata:type="svchar" msprop:Deklarit.DataProviderForValueList="" msprop:Deklarit.FixedValue="" msprop:Deklarit.DefaultValue=""/>
+            <dkdata:parameter  name="Destino" type="xs:string" dkdata:length="150" dkdata:decimals="0" dkdata:description="Destino   " dkdata:type="svchar" msprop:Deklarit.DataProviderForValueList="" msprop:Deklarit.FixedValue="" msprop:Deklarit.DefaultValue=""/>
          </dkdata:parameters>
          <dkdata:Dependencies>
          </dkdata:Dependencies>

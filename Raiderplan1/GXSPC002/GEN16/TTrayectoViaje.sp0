@@ -22,35 +22,35 @@ lits_i('Trayecto Viaje ID',2,3).
 lits_i('Viaje ID',3,3).
 lits_i('Trayecto Origen',4,3).
 lits_i('Trayecto Destino',7,3).
-lits_i('Tayecto Latitud Origen',8,3).
-lits_i('Trayecto Longitud Origen',9,3).
-lits_i('Trayecto Latidud Destino',10,3).
-lits_i('Trayecto Longitud Destino',11,3).
-lits_i('Trayectokm',12,3).
-lits_i('Tiempo Estimado',13,3).
-lits_i('Combustible Consumido',14,3).
-lits_i('Estado Carretera',15,3).
-lits_i('Instrucciones',16,3).
-lits_i('Orden',17,3).
-lits_i('Es Origen',18,3).
+lits_i('Tayecto Latitud Origen',10,3).
+lits_i('Trayecto Longitud Origen',11,3).
+lits_i('Trayecto Latidud Destino',12,3).
+lits_i('Trayecto Longitud Destino',13,3).
+lits_i('Trayectokm',14,3).
+lits_i('Tiempo Estimado',15,3).
+lits_i('Combustible Consumido',16,3).
+lits_i('Estado Carretera',17,3).
+lits_i('Instrucciones',18,3).
+lits_i('Orden',19,3).
+lits_i('Es Origen',20,3).
  
-cls_i([ 2,3 ],[ 18,177 ]).
+cls_i([ 2,3 ],[ 20,177 ]).
  
 pos_i(47,[ 2,2,28 ]).
 pos_i(42,[ 3,3,28 ]).
 pos_i(46,[ 4,4,28 ]).
 pos_i(62,[ 7,7,28 ]).
-pos_i(50,[ 8,8,28 ]).
-pos_i(51,[ 9,9,28 ]).
-pos_i(52,[ 10,10,28 ]).
-pos_i(53,[ 11,11,28 ]).
-pos_i(54,[ 12,12,28 ]).
-pos_i(55,[ 13,13,28 ]).
-pos_i(56,[ 14,14,28 ]).
-pos_i(57,[ 15,15,28 ]).
-pos_i(85,[ 16,16,28 ]).
-pos_i(86,[ 17,17,28 ]).
-pos_i(89,[ 18,18,28 ]).
+pos_i(50,[ 10,10,28 ]).
+pos_i(51,[ 11,11,28 ]).
+pos_i(52,[ 12,12,28 ]).
+pos_i(53,[ 13,13,28 ]).
+pos_i(54,[ 14,14,28 ]).
+pos_i(55,[ 15,15,28 ]).
+pos_i(56,[ 16,16,28 ]).
+pos_i(57,[ 17,17,28 ]).
+pos_i(85,[ 18,18,28 ]).
+pos_i(86,[ 19,19,28 ]).
+pos_i(89,[ 20,20,28 ]).
  
  
  
@@ -281,7 +281,7 @@ attri_i(53,[ 'TrayectoLongitudDestino',int,18,15,'Z9.999999999999999',0,'Trayect
 attri_i(52,[ 'TrayectoLatidudDestino',int,18,15,'Z9.999999999999999',0,'Trayecto Latidud Destino','',0,0 ]).
 attri_i(51,[ 'TrayectoLongitudOrigen',int,18,15,'Z9.999999999999999',0,'Trayecto Longitud Origen','',0,0 ]).
 attri_i(50,[ 'TayectoLatitudOrigen',int,18,15,'Z9.999999999999999',0,'Tayecto Latitud Origen','',0,0 ]).
-attri_i(62,[ 'TrayectoDestino',svchar,50,0,'',0,'Trayecto Destino','',0,0 ]).
+attri_i(62,[ 'TrayectoDestino',svchar,150,0,'',0,'Trayecto Destino','',0,0 ]).
 attri_i(46,[ 'TrayectoOrigen',svchar,150,0,'',0,'Trayecto Origen','',0,0 ]).
 attri_i(42,[ 'ViajeID',int,10,0,'ZZZZZZZZZ9',0,'Viaje ID','',0,0 ]).
 attri_i(47,[ 'TrayectoViajeID',int,8,0,'ZZZZZZZ9',0,'Trayecto Viaje ID','',0,0 ]).
@@ -352,31 +352,31 @@ lit_i(13,1,t(42,2),[ font('Courier New',9,[]),rect(196,72,275,92),outstyle('3d')
 lit_i(14,1,t('Viaje ID',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,72,66,84),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
 lit_i(15,1,t(46,2),[ font('Courier New',9,[]),rect(196,96,625,149),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(46),ctrltype(edit,15),ispwd(0),e2n(1) ]).
 lit_i(16,1,t('Trayecto Origen',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,96,112,108),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(17,1,t(62,2),[ font('Courier New',9,[]),rect(196,168,555,188),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(62),ctrltype(edit,17),ispwd(0),e2n(1) ]).
+lit_i(17,1,t(62,2),[ font('Courier New',9,[]),rect(196,168,625,221),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(62),ctrltype(edit,17),ispwd(0),e2n(1) ]).
 lit_i(18,1,t('Trayecto Destino',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,168,118,180),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(19,1,t(50,2),[ font('Courier New',9,[]),rect(196,192,331,212),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(50),ctrltype(edit,19),ispwd(0),e2n(1) ]).
-lit_i(20,1,t('Tayecto Latitud Origen',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,192,151,204),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(21,1,t(51,2),[ font('Courier New',9,[]),rect(196,216,331,236),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(51),ctrltype(edit,21),ispwd(0),e2n(1) ]).
-lit_i(22,1,t('Trayecto Longitud Origen',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,216,165,228),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(23,1,t(52,2),[ font('Courier New',9,[]),rect(196,240,331,260),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(52),ctrltype(edit,23),ispwd(0),e2n(1) ]).
-lit_i(24,1,t('Trayecto Latidud Destino',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,240,164,252),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(25,1,t(53,2),[ font('Courier New',9,[]),rect(196,264,331,284),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(53),ctrltype(edit,25),ispwd(0),e2n(1) ]).
-lit_i(26,1,t('Trayecto Longitud Destino',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,264,171,276),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(27,1,t(54,2),[ font('Courier New',9,[]),rect(196,288,247,308),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(54),ctrltype(edit,27),ispwd(0),e2n(1) ]).
-lit_i(28,1,t('Trayectokm',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,288,87,300),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(29,1,t(55,2),[ font('Courier New',9,[]),rect(196,312,240,332),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(55),ctrltype(edit,29),ispwd(0),e2n(1) ]).
-lit_i(30,1,t('Tiempo Estimado',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,312,117,324),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(31,1,t(56,2),[ font('Courier New',9,[]),rect(196,336,247,356),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(56),ctrltype(edit,31),ispwd(0),e2n(1) ]).
-lit_i(32,1,t('Combustible Consumido',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,336,154,348),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(33,1,t(57,2),[ font('Courier New',9,[]),rect(196,360,625,380),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(57),ctrltype(edit,33),ispwd(0),e2n(1) ]).
-lit_i(34,1,t('Estado Carretera',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,360,116,372),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(35,1,t(85,2),[ font('Courier New',9,[]),rect(196,384,240,404),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(85),ctrltype(edit,35),ispwd(0),e2n(1) ]).
-lit_i(36,1,t('Instrucciones',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,384,97,396),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(37,1,t(86,2),[ font('Courier New',9,[]),rect(196,408,240,428),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(86),ctrltype(edit,37),ispwd(0),e2n(1) ]).
-lit_i(38,1,t('Orden',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,408,55,420),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(39,1,t(89,2),[ font('Courier New',9,[]),rect(196,432,212,452),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(89),ctrltype(edit,39),ispwd(0),e2n(1) ]).
-lit_i(40,1,t('Es Origen',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,432,76,444),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
-lit_i(1,1,window,[ title([]),rect(0,0,751,469),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
+lit_i(19,1,t(50,2),[ font('Courier New',9,[]),rect(196,240,331,260),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(50),ctrltype(edit,19),ispwd(0),e2n(1) ]).
+lit_i(20,1,t('Tayecto Latitud Origen',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,240,151,252),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(21,1,t(51,2),[ font('Courier New',9,[]),rect(196,264,331,284),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(51),ctrltype(edit,21),ispwd(0),e2n(1) ]).
+lit_i(22,1,t('Trayecto Longitud Origen',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,264,165,276),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(23,1,t(52,2),[ font('Courier New',9,[]),rect(196,288,331,308),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(52),ctrltype(edit,23),ispwd(0),e2n(1) ]).
+lit_i(24,1,t('Trayecto Latidud Destino',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,288,164,300),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(25,1,t(53,2),[ font('Courier New',9,[]),rect(196,312,331,332),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(53),ctrltype(edit,25),ispwd(0),e2n(1) ]).
+lit_i(26,1,t('Trayecto Longitud Destino',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,312,171,324),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(27,1,t(54,2),[ font('Courier New',9,[]),rect(196,336,247,356),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(54),ctrltype(edit,27),ispwd(0),e2n(1) ]).
+lit_i(28,1,t('Trayectokm',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,336,87,348),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(29,1,t(55,2),[ font('Courier New',9,[]),rect(196,360,240,380),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(55),ctrltype(edit,29),ispwd(0),e2n(1) ]).
+lit_i(30,1,t('Tiempo Estimado',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,360,117,372),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(31,1,t(56,2),[ font('Courier New',9,[]),rect(196,384,247,404),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(56),ctrltype(edit,31),ispwd(0),e2n(1) ]).
+lit_i(32,1,t('Combustible Consumido',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,384,154,396),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(33,1,t(57,2),[ font('Courier New',9,[]),rect(196,408,625,428),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(57),ctrltype(edit,33),ispwd(0),e2n(1) ]).
+lit_i(34,1,t('Estado Carretera',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,408,116,420),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(35,1,t(85,2),[ font('Courier New',9,[]),rect(196,432,240,452),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(85),ctrltype(edit,35),ispwd(0),e2n(1) ]).
+lit_i(36,1,t('Instrucciones',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,432,97,444),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(37,1,t(86,2),[ font('Courier New',9,[]),rect(196,456,240,476),outstyle('3d'),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(86),ctrltype(edit,37),ispwd(0),e2n(1) ]).
+lit_i(38,1,t('Orden',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,456,55,468),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(39,1,t(89,2),[ font('Courier New',9,[]),rect(196,480,212,500),outstyle('3d'),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(89),ctrltype(edit,39),ispwd(0),e2n(1) ]).
+lit_i(40,1,t('Es Origen',3),[ font('MS Sans Serif',8,[ bold ]),rect(21,480,76,492),outstyle(none),align(left),noclip,fore(rgb(0,0,0)),border(1),ctlname(''),gxcolor('BLK','WHT+') ]).
+lit_i(1,1,window,[ title([]),rect(0,0,751,517),outstyle(single),fill,graph,back(rgb(240,240,240)),fore(rgb(100,100,100)),border(2),ctlname('Form'),gxcolor([]),defgxcolor('BLK','WHT') ]).
  
 grid_i(7,24).
  

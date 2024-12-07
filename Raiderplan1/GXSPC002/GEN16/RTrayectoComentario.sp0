@@ -169,8 +169,8 @@ attri_i('Output',[ 'Gx_out',char,3,0,'',1,'','',15,0 ]).
 attri_i('Page',[ 'Gx_page',int,6,0,'ZZZZZ9',0,'Page number','',14,0 ]).
 attri_i('Line',[ 'Gx_line',int,6,0,'ZZZZZ9',0,'Line number','',13,0 ]).
 attri_i(184,[ 'CVTrayectoID',int,5,0,'ZZZZ9',0,'CV Trayecto ID','',0,0 ]).
-attri_i(93,[ 'ComentarioImagen',svchar,250,0,'',0,'Comentario Imagen','',0,0 ]).
-attri_i(92,[ 'ComentarioTexto',svchar,250,0,'',0,'Comentario Texto','',0,0 ]).
+attri_i(93,[ 'ComentarioImagen',svchar,500,0,'',0,'Comentario Imagen','',0,0 ]).
+attri_i(92,[ 'ComentarioTexto',svchar,500,0,'',0,'Comentario Texto','',0,0 ]).
 attri_i(91,[ 'ComentarioLongitud',int,18,5,'ZZZZZZZZZZZ9.99999',0,'Comentario Longitud','',0,0 ]).
 attri_i(90,[ 'ComentarioLatitud',int,18,5,'ZZZZZZZZZZZ9.99999',0,'Comentario Latitud','',0,0 ]).
 attri_i(94,[ 'ComentarioViajeID',int,8,0,'ZZZZZZZ9',0,'Comentario Viaje ID','',0,0 ]).
@@ -246,11 +246,11 @@ ppi_i([ 96,96 ]).
 lit_i(2,6,t(94,2),[ font('Courier New',9,[]),rect(0,11,55,25),outstyle(none),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(94),ctrltype(edit,2),ispwd(0),e2n(1) ]).
 lit_i(3,6,t(90,2),[ font('Courier New',9,[]),rect(0,12,125,26),outstyle(none),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(90),ctrltype(edit,3),ispwd(0),e2n(1) ]).
 lit_i(4,6,t(91,2),[ font('Courier New',9,[]),rect(0,13,125,27),outstyle(none),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(91),ctrltype(edit,4),ispwd(0),e2n(1) ]).
-lit_i(5,6,t(92,2),[ font('Courier New',9,[]),rect(0,14,1749,28),outstyle(none),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(92),ctrltype(edit,5),ispwd(0),e2n(1) ]).
-lit_i(6,6,t(93,2),[ font('Courier New',9,[]),rect(0,15,1749,29),outstyle(none),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(93),ctrltype(edit,6),ispwd(0),e2n(1) ]).
+lit_i(5,6,t(92,2),[ font('Courier New',9,[]),rect(0,14,1784,28),outstyle(none),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(92),ctrltype(edit,5),ispwd(0),e2n(1) ]).
+lit_i(6,6,t(93,2),[ font('Courier New',9,[]),rect(0,15,1784,29),outstyle(none),fill,align(left),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(93),ctrltype(edit,6),ispwd(0),e2n(1) ]).
 lit_i(7,6,t(184,2),[ font('Courier New',9,[]),rect(0,16,34,30),outstyle(none),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(184),ctrltype(edit,7),ispwd(0),e2n(1) ]).
 lit_i(8,6,t(42,2),[ font('Courier New',9,[]),rect(0,17,69,31),outstyle(none),fill,align(right),noclip,back(rgb(255,255,255)),fore(rgb(0,0,0)),gxcolor('BLK','WHT+'),border(1),ctlname(42),ctrltype(edit,8),ispwd(0),e2n(1) ]).
-lit_i(1,6,window,[ title([]),rect(18,1,1767,32),outstyle(single),fill,graph,back(rgb(255,255,255)),fore(rgb(100,100,100)),border(1),ctlname('TrayectoComentario'),gxcolor([]),defgxcolor('BLK','WHT') ]).
+lit_i(1,6,window,[ title([]),rect(18,1,1802,32),outstyle(single),fill,graph,back(rgb(255,255,255)),fore(rgb(100,100,100)),border(1),ctlname('TrayectoComentario'),gxcolor([]),defgxcolor('BLK','WHT') ]).
  
 grid_i(5,13).
  
@@ -452,7 +452,6 @@ tbl_att_prop_i(2,13,94,'AllowNulls',n).
 tbl_att_prop_i(2,13,94,'AUTONUMBER',y).
 tbl_att_prop_i(2,13,90,'AllowNulls',n).
 tbl_att_prop_i(2,13,91,'AllowNulls',n).
-tbl_att_prop_i(2,13,92,'AllowNulls',n).
 tbl_att_prop_i(2,13,42,'AllowNulls',n).
 tbl_att_prop_i(2,8,42,'AllowNulls',n).
 tbl_att_prop_i(2,8,42,'AUTONUMBER',y).

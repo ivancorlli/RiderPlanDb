@@ -1,9 +1,3 @@
-deklarit_object_i(trn,11,[$ComentarioViaje$,$ComentarioViaje$] , $$).
-deklarit_object_i(rpt,9,[$ViajesXUsuarioXOrigenXDestino$,$ViajesXUsuarioXOrigenXDestino$] , $$).
-deklarit_object_i(rpt,4,[$ViajesRealizados$,$ViajesRealizados$] , $$).
-deklarit_object_i(rpt,3,[$ViajesEnProgreso$,$ViajesEnProgreso$] , $$).
-deklarit_object_i(rpt,2,[$ViajesEnPlanificacion$,$ViajesEnPlanificacion$] , $$).
-deklarit_object_i(rpt,5,[$ViajesEliminados$,$ViajesEliminados$] , $$).
 deklarit_object_i(trn,8,[$Viaje$,$Viaje$] , $$).
 deklarit_object_i(trn,7,[$Usuario$,$Usuario$] , $$).
 deklarit_object_i(trn,9,[$TrayectoViaje$,$TrayectoViaje$] , $$).
@@ -12,6 +6,13 @@ deklarit_object_i(trn,6,[$Provincia$,$Provincia$] , $$).
 deklarit_object_i(trn,1,[$Persona$,$Persona$] , $$).
 deklarit_object_i(trn,4,[$Pais$,$Pais$] , $$).
 deklarit_object_i(trn,5,[$Localidad$,$Localidad$] , $$).
+deklarit_object_i(trn,11,[$ComentarioViaje$,$ComentarioViaje$] , $$).
+deklarit_object_i(rpt,9,[$ViajesXUsuarioXOrigenXDestino$,$ViajesXUsuarioXOrigenXDestino$] , $$).
+deklarit_object_i(rpt,4,[$ViajesRealizados$,$ViajesRealizados$] , $$).
+deklarit_object_i(rpt,10,[$ViajesPublicos$,$ViajesPublicos$] , $$).
+deklarit_object_i(rpt,3,[$ViajesEnProgreso$,$ViajesEnProgreso$] , $$).
+deklarit_object_i(rpt,2,[$ViajesEnPlanificacion$,$ViajesEnPlanificacion$] , $$).
+deklarit_object_i(rpt,5,[$ViajesEliminados$,$ViajesEliminados$] , $$).
 deklarit_object_i(rpt,8,[$TrayectoComentario$,$TrayectoComentario$] , $$).
 deklarit_object_i(rpt,1,[$dpUsuarioXEmailXusuarioIDCollection$,$dpUsuarioXEmailXusuarioIDCollection$] , $$).
 deklarit_object_i(proc,0,[$Load redundancy procedure$,$GXLRED$] , $$).

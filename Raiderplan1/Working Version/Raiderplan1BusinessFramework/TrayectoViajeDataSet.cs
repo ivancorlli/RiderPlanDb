@@ -607,7 +607,7 @@ namespace Raiderplan1 {
             this.columnTrayectoDestino = new DataColumn( "TrayectoDestino", typeof(String), "", System.Data.MappingType.Element) ;
             this.columnTrayectoDestino.AllowDBNull = false ;
             this.columnTrayectoDestino.Caption = "Trayecto Destino" ;
-            this.columnTrayectoDestino.MaxLength = 50 ;
+            this.columnTrayectoDestino.MaxLength = 150 ;
             this.columnTrayectoDestino.DefaultValue = System.Convert.DBNull ;
             this.columnTrayectoDestino.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
             this.columnTrayectoDestino.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
@@ -616,7 +616,7 @@ namespace Raiderplan1 {
             this.columnTrayectoDestino.ExtendedProperties.Add( "ReadOnly", "false") ;
             this.columnTrayectoDestino.ExtendedProperties.Add( "DeklaritType", "svchar") ;
             this.columnTrayectoDestino.ExtendedProperties.Add( "Description", "Trayecto Destino") ;
-            this.columnTrayectoDestino.ExtendedProperties.Add( "Length", "50") ;
+            this.columnTrayectoDestino.ExtendedProperties.Add( "Length", "150") ;
             this.columnTrayectoDestino.ExtendedProperties.Add( "Decimals", "0") ;
             this.columnTrayectoDestino.ExtendedProperties.Add( "AllowDBNulls", "false") ;
             this.columnTrayectoDestino.ExtendedProperties.Add( "IsInReader", "true") ;

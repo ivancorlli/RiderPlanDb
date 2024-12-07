@@ -584,8 +584,8 @@ namespace Raiderplan1 {
          {
             cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioLatitud", System.Data.DbType.Decimal));
             cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioLongitud", System.Data.DbType.Decimal));
-            cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioTexto", System.Data.DbType.AnsiString,250));
-            cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioImagen", System.Data.DbType.AnsiString,250));
+            cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioTexto", System.Data.DbType.AnsiString,500));
+            cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioImagen", System.Data.DbType.AnsiString,500));
             cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@CVTrayectoID", System.Data.DbType.Int32));
             cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioPrivado", System.Data.DbType.AnsiString,1));
             cmComentarioViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));
@@ -626,8 +626,8 @@ namespace Raiderplan1 {
          {
             cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioLatitud", System.Data.DbType.Decimal));
             cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioLongitud", System.Data.DbType.Decimal));
-            cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioTexto", System.Data.DbType.AnsiString,250));
-            cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioImagen", System.Data.DbType.AnsiString,250));
+            cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioTexto", System.Data.DbType.AnsiString,500));
+            cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioImagen", System.Data.DbType.AnsiString,500));
             cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@CVTrayectoID", System.Data.DbType.Int32));
             cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ComentarioPrivado", System.Data.DbType.AnsiString,1));
             cmComentarioViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@ViajeID", System.Data.DbType.Int64));

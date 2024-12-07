@@ -608,7 +608,7 @@ namespace Raiderplan1 {
          if ( ( cmTrayectoViajeInsert1.IDbCommand.Parameters.Count == 0 ) )
          {
             cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoOrigen", System.Data.DbType.AnsiString,150));
-            cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoDestino", System.Data.DbType.AnsiString,50));
+            cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoDestino", System.Data.DbType.AnsiString,150));
             cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TayectoLatitudOrigen", System.Data.DbType.Decimal));
             cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoLongitudOrigen", System.Data.DbType.Decimal));
             cmTrayectoViajeInsert1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoLatidudDestino", System.Data.DbType.Decimal));
@@ -664,7 +664,7 @@ namespace Raiderplan1 {
          if ( ( cmTrayectoViajeUpdate1.IDbCommand.Parameters.Count == 0 ) )
          {
             cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoOrigen", System.Data.DbType.AnsiString,150));
-            cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoDestino", System.Data.DbType.AnsiString,50));
+            cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoDestino", System.Data.DbType.AnsiString,150));
             cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TayectoLatitudOrigen", System.Data.DbType.Decimal));
             cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoLongitudOrigen", System.Data.DbType.Decimal));
             cmTrayectoViajeUpdate1.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoLatidudDestino", System.Data.DbType.Decimal));

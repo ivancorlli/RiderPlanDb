@@ -4,6 +4,16 @@
 <Mod>1</Mod>
 <OldMod>2</OldMod>
 <Table>
+<TableId>10</TableId>
+<TableName>TrayectoViaje</TableName>
+<Description>TrayectoViaje</Description></Table>
+<ReorgAction>#</ReorgAction>
+<ObjNavig>corll\MDL002\GEN16\C10.xml</ObjNavig></Object>
+<Object>
+<ReorgCls>c</ReorgCls>
+<Mod>1</Mod>
+<OldMod>2</OldMod>
+<Table>
 <TableId>13</TableId>
 <TableName>ComentarioViaje</TableName>
 <Description>ComentarioViaje</Description></Table>

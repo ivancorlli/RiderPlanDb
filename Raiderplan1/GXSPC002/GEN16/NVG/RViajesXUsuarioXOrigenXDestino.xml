@@ -70,13 +70,31 @@
 <Description>Viaje Privado</Description></Attribute>
 <Token>=</Token>
 <Token>'N'</Token></Condition>
+<Condition>
+<Token>.NOT.</Token>
+<Attribute>
+<AttriId>34</AttriId>
+<AttriName>LugarPartida</AttriName>
+<Description>Lugar Partida</Description></Attribute>
+<Token>.</Token>
+<Token>isnull(</Token>
+<Token>)</Token></Condition>
+<Condition>
+<Token>.NOT.</Token>
+<Attribute>
+<AttriId>35</AttriId>
+<AttriName>Lugarllegada</AttriName>
+<Description>Lugarllegada</Description></Attribute>
+<Token>.</Token>
+<Token>isnull(</Token>
+<Token>)</Token></Condition>
 <ConditionalConstraint>
 <Constraint>
 <Attribute>
 <AttriId>11</AttriId>
 <AttriName>UsuarioID</AttriName>
 <Description>Usuario ID</Description></Attribute>
-<Token>=</Token>
+<Token>&lt;&gt;</Token>
 <Variable>
 <VarId>UsuarioID</VarId>
 <VarName>@UsuarioID</VarName></Variable></Constraint>

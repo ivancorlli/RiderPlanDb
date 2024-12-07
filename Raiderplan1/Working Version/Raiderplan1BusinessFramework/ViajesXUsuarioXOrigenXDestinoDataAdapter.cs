@@ -291,10 +291,12 @@ namespace Raiderplan1 {
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
          scmdbuf = "SELECT COUNT(*) FROM [Viaje]" ;
          scmdbuf = scmdbuf + " WHERE ([ViajePrivado] IS NULL or [ViajePrivado] = 'N')" ;
+         scmdbuf = scmdbuf + " and (Not [LugarPartida] IS NULL)" ;
+         scmdbuf = scmdbuf + " and (Not [Lugarllegada] IS NULL)" ;
          sWhereString = "" ;
          if ( ( usuarioID > 0 ) )
          {
-            sWhereString = sWhereString + " and ([UsuarioID] = " + StringUtil.Str( (decimal)(usuarioID), 8, 0) + ")" ;
+            sWhereString = sWhereString + " and ([UsuarioID] <> " + StringUtil.Str( (decimal)(usuarioID), 8, 0) + ")" ;
          }
          if ( ( String.Compare(origen.TrimEnd(' '), "".TrimEnd(' '), false, System.Globalization.CultureInfo.CurrentCulture) != 0 ) )
          {
@@ -395,10 +397,12 @@ namespace Raiderplan1 {
          // DeKlarit formulas
          m_WhereString = "" ;
          m_WhereString = m_WhereString + " WHERE (TM1.[ViajePrivado] IS NULL or TM1.[ViajePrivado] = 'N')" ;
+         m_WhereString = m_WhereString + " and (Not TM1.[LugarPartida] IS NULL)" ;
+         m_WhereString = m_WhereString + " and (Not TM1.[Lugarllegada] IS NULL)" ;
          sWhereString = "" ;
          if ( ( AV8Usuario > 0 ) )
          {
-            sWhereString = sWhereString + " and (TM1.[UsuarioID] = " + StringUtil.Str( (decimal)(AV8Usuario), 8, 0) + ")" ;
+            sWhereString = sWhereString + " and (TM1.[UsuarioID] <> " + StringUtil.Str( (decimal)(AV8Usuario), 8, 0) + ")" ;
          }
          if ( ( String.Compare(AV9Origen.TrimEnd(' '), "".TrimEnd(' '), false, System.Globalization.CultureInfo.CurrentCulture) != 0 ) )
          {
@@ -704,10 +708,12 @@ namespace Raiderplan1 {
          connDefault = dsDefault.GetReadWriteConnection( daCurrentTransaction) ;
          scmdbuf = "SELECT TM1.[ViajeID], TM1.[UsuarioID], TM1.[ViajeNombre], TM1.[FechaSalidaProgramada], TM1.[FechaLlegadaProgramada], TM1.[FechaSalidaEfectiva], TM1.[FechaLlegadaEfectiva], TM1.[LugarPartida], TM1.[Lugarllegada], TM1.[LongitudPartida], TM1.[LatitudPartida], TM1.[LongitudLegada], TM1.[LatitudLlegada], TM1.[kmTotalesEstimado], TM1.[MotocilcetaMarca], TM1.[MotociletaModelo], TM1.[ViajeImagen], TM1.[ViajeEstado], TM1.[ViajeFechaCreacion], TM1.[ViajeMeGustas], TM1.[ViajeDescargas], TM1.[ViajeParentID], TM1.[ViajePrivado] FROM [Viaje] TM1" ;
          scmdbuf = scmdbuf + " WHERE (TM1.[ViajePrivado] IS NULL or TM1.[ViajePrivado] = 'N')" ;
+         scmdbuf = scmdbuf + " and (Not TM1.[LugarPartida] IS NULL)" ;
+         scmdbuf = scmdbuf + " and (Not TM1.[Lugarllegada] IS NULL)" ;
          sWhereString = "" ;
          if ( ( usuarioID > 0 ) )
          {
-            sWhereString = sWhereString + " and (TM1.[UsuarioID] = " + StringUtil.Str( (decimal)(usuarioID), 8, 0) + ")" ;
+            sWhereString = sWhereString + " and (TM1.[UsuarioID] <> " + StringUtil.Str( (decimal)(usuarioID), 8, 0) + ")" ;
          }
          if ( ( String.Compare(origen.TrimEnd(' '), "".TrimEnd(' '), false, System.Globalization.CultureInfo.CurrentCulture) != 0 ) )
          {

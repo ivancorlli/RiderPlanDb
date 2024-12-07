@@ -520,9 +520,8 @@ namespace Raiderplan1 {
             this.columnComentarioLongitud.ExtendedProperties.Add( "Deklarit.InternalName", "ComentarioLongitud") ;
             this.Columns.Add( this.columnComentarioLongitud) ;
             this.columnComentarioTexto = new DataColumn( "ComentarioTexto", typeof(String), "", System.Data.MappingType.Element) ;
-            this.columnComentarioTexto.AllowDBNull = false ;
+            this.columnComentarioTexto.AllowDBNull = true ;
             this.columnComentarioTexto.Caption = "Comentario Texto" ;
-            this.columnComentarioTexto.MaxLength = 250 ;
             this.columnComentarioTexto.DefaultValue = System.Convert.DBNull ;
             this.columnComentarioTexto.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
             this.columnComentarioTexto.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
@@ -531,9 +530,9 @@ namespace Raiderplan1 {
             this.columnComentarioTexto.ExtendedProperties.Add( "ReadOnly", "false") ;
             this.columnComentarioTexto.ExtendedProperties.Add( "DeklaritType", "svchar") ;
             this.columnComentarioTexto.ExtendedProperties.Add( "Description", "Comentario Texto") ;
-            this.columnComentarioTexto.ExtendedProperties.Add( "Length", "250") ;
+            this.columnComentarioTexto.ExtendedProperties.Add( "Length", "500") ;
             this.columnComentarioTexto.ExtendedProperties.Add( "Decimals", "0") ;
-            this.columnComentarioTexto.ExtendedProperties.Add( "AllowDBNulls", "false") ;
+            this.columnComentarioTexto.ExtendedProperties.Add( "AllowDBNulls", "true") ;
             this.columnComentarioTexto.ExtendedProperties.Add( "IsInReader", "true") ;
             this.columnComentarioTexto.ExtendedProperties.Add( "Deklarit.Casing", "default") ;
             this.columnComentarioTexto.ExtendedProperties.Add( "Deklarit.IsPassword", "false") ;
@@ -542,7 +541,6 @@ namespace Raiderplan1 {
             this.columnComentarioImagen = new DataColumn( "ComentarioImagen", typeof(String), "", System.Data.MappingType.Element) ;
             this.columnComentarioImagen.AllowDBNull = true ;
             this.columnComentarioImagen.Caption = "Comentario Imagen" ;
-            this.columnComentarioImagen.MaxLength = 250 ;
             this.columnComentarioImagen.DefaultValue = System.Convert.DBNull ;
             this.columnComentarioImagen.ExtendedProperties.Add( "Deklarit.IsDescription", "false") ;
             this.columnComentarioImagen.ExtendedProperties.Add( "Deklarit.IsVisibleOnForm", "true") ;
@@ -551,7 +549,7 @@ namespace Raiderplan1 {
             this.columnComentarioImagen.ExtendedProperties.Add( "ReadOnly", "false") ;
             this.columnComentarioImagen.ExtendedProperties.Add( "DeklaritType", "svchar") ;
             this.columnComentarioImagen.ExtendedProperties.Add( "Description", "Comentario Imagen") ;
-            this.columnComentarioImagen.ExtendedProperties.Add( "Length", "250") ;
+            this.columnComentarioImagen.ExtendedProperties.Add( "Length", "500") ;
             this.columnComentarioImagen.ExtendedProperties.Add( "Decimals", "0") ;
             this.columnComentarioImagen.ExtendedProperties.Add( "AllowDBNulls", "true") ;
             this.columnComentarioImagen.ExtendedProperties.Add( "IsInReader", "true") ;

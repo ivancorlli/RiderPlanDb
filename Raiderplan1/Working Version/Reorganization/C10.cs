@@ -52,32 +52,33 @@ namespace Raiderplan1.Reorg {
          RGZ = connDefault.GetCommand(cmdBuffer,false);
          RGZ.IDbCommand.CommandTimeout = 0;
          RGZ.ExecuteStmt() ;
-         cmC102 = connDefault.GetCommand("SELECT [Orden], [Instrucciones], [TrayectoDestino], [EstadoCarretera], [CombustibleConsumido], [TiempoEstimado], [Trayectokm], [TrayectoLongitudDestino], [TrayectoLatidudDestino], [TrayectoLongitudOrigen], [TayectoLatitudOrigen], [TrayectoOrigen], [ViajeID], [TrayectoViajeID] FROM [TrayectoViaje] ",false);
+         cmC102 = connDefault.GetCommand("SELECT [EsOrigen], [Orden], [Instrucciones], [TrayectoDestino], [EstadoCarretera], [CombustibleConsumido], [TiempoEstimado], [Trayectokm], [TrayectoLongitudDestino], [TrayectoLatidudDestino], [TrayectoLongitudOrigen], [TayectoLatitudOrigen], [TrayectoOrigen], [ViajeID], [TrayectoViajeID] FROM [TrayectoViaje] ",false);
          cmC102.ErrorMask = cmC102.ErrorMask  |  ErrorMask.Lock;
          C102 = cmC102.FetchData();
          while ( cmC102.HasMoreRows )
          {
-            m_Orden = dsDefault.Db.GetInt32(C102, 0, ref m__OrdenIsNull) ;
-            m_Instrucciones = dsDefault.Db.GetString(C102, 1, ref m__InstruccionesIsNull) ;
-            m_TrayectoDestino = dsDefault.Db.GetString(C102, 2, ref m__TrayectoDestinoIsNull) ;
-            m_EstadoCarretera = dsDefault.Db.GetString(C102, 3, ref m__EstadoCarreteraIsNull) ;
-            m_CombustibleConsumido = dsDefault.Db.GetDecimal(C102, 4, ref m__CombustibleConsumidoIsNull) ;
-            m_TiempoEstimado = dsDefault.Db.GetDecimal(C102, 5, ref m__TiempoEstimadoIsNull) ;
-            m_Trayectokm = dsDefault.Db.GetDecimal(C102, 6, ref m__TrayectokmIsNull) ;
-            m_TrayectoLongitudDestino = dsDefault.Db.GetDecimal(C102, 7, ref m__TrayectoLongitudDestinoIsNull) ;
-            m_TrayectoLatidudDestino = dsDefault.Db.GetDecimal(C102, 8, ref m__TrayectoLatidudDestinoIsNull) ;
-            m_TrayectoLongitudOrigen = dsDefault.Db.GetDecimal(C102, 9, ref m__TrayectoLongitudOrigenIsNull) ;
-            m_TayectoLatitudOrigen = dsDefault.Db.GetDecimal(C102, 10, ref m__TayectoLatitudOrigenIsNull) ;
-            m_TrayectoOrigen = dsDefault.Db.GetString(C102, 11, ref m__TrayectoOrigenIsNull) ;
-            m_ViajeID = dsDefault.Db.GetInt64(C102, 12, ref m__ViajeIDIsNull) ;
-            m_TrayectoViajeID = dsDefault.Db.GetInt32(C102, 13, ref m__TrayectoViajeIDIsNull) ;
+            m_EsOrigen = dsDefault.Db.GetString(C102, 0, ref m__EsOrigenIsNull) ;
+            m_Orden = dsDefault.Db.GetInt32(C102, 1, ref m__OrdenIsNull) ;
+            m_Instrucciones = dsDefault.Db.GetString(C102, 2, ref m__InstruccionesIsNull) ;
+            m_TrayectoDestino = dsDefault.Db.GetString(C102, 3, ref m__TrayectoDestinoIsNull) ;
+            m_EstadoCarretera = dsDefault.Db.GetString(C102, 4, ref m__EstadoCarreteraIsNull) ;
+            m_CombustibleConsumido = dsDefault.Db.GetDecimal(C102, 5, ref m__CombustibleConsumidoIsNull) ;
+            m_TiempoEstimado = dsDefault.Db.GetDecimal(C102, 6, ref m__TiempoEstimadoIsNull) ;
+            m_Trayectokm = dsDefault.Db.GetDecimal(C102, 7, ref m__TrayectokmIsNull) ;
+            m_TrayectoLongitudDestino = dsDefault.Db.GetDecimal(C102, 8, ref m__TrayectoLongitudDestinoIsNull) ;
+            m_TrayectoLatidudDestino = dsDefault.Db.GetDecimal(C102, 9, ref m__TrayectoLatidudDestinoIsNull) ;
+            m_TrayectoLongitudOrigen = dsDefault.Db.GetDecimal(C102, 10, ref m__TrayectoLongitudOrigenIsNull) ;
+            m_TayectoLatitudOrigen = dsDefault.Db.GetDecimal(C102, 11, ref m__TayectoLatitudOrigenIsNull) ;
+            m_TrayectoOrigen = dsDefault.Db.GetString(C102, 12, ref m__TrayectoOrigenIsNull) ;
+            m_ViajeID = dsDefault.Db.GetInt64(C102, 13, ref m__ViajeIDIsNull) ;
+            m_TrayectoViajeID = dsDefault.Db.GetInt32(C102, 14, ref m__TrayectoViajeIDIsNull) ;
             //
                // INSERT RECORD ON TABLE GXA0010
                //
             //
             AV2Trayect = m_TrayectoViajeID ;
             AV3ViajeID = m_ViajeID ;
-            if ( C102.IsDBNull(11) )
+            if ( C102.IsDBNull(12) )
             {
                AV4Trayect = "" ;
                nV4Trayect = true ;
@@ -87,7 +88,7 @@ namespace Raiderplan1.Reorg {
                AV4Trayect = m_TrayectoOrigen ;
                nV4Trayect = false ;
             }
-            if ( C102.IsDBNull(10) )
+            if ( C102.IsDBNull(11) )
             {
                AV5Tayecto = (decimal)(0M) ;
                nV5Tayecto = true ;
@@ -97,7 +98,7 @@ namespace Raiderplan1.Reorg {
                AV5Tayecto = m_TayectoLatitudOrigen ;
                nV5Tayecto = false ;
             }
-            if ( C102.IsDBNull(9) )
+            if ( C102.IsDBNull(10) )
             {
                AV6Trayect = (decimal)(0M) ;
                nV6Trayect = true ;
@@ -107,7 +108,7 @@ namespace Raiderplan1.Reorg {
                AV6Trayect = m_TrayectoLongitudOrigen ;
                nV6Trayect = false ;
             }
-            if ( C102.IsDBNull(8) )
+            if ( C102.IsDBNull(9) )
             {
                AV7Trayect = (decimal)(0M) ;
                nV7Trayect = true ;
@@ -117,7 +118,7 @@ namespace Raiderplan1.Reorg {
                AV7Trayect = m_TrayectoLatidudDestino ;
                nV7Trayect = false ;
             }
-            if ( C102.IsDBNull(7) )
+            if ( C102.IsDBNull(8) )
             {
                AV8Trayect = (decimal)(0M) ;
                nV8Trayect = true ;
@@ -127,7 +128,7 @@ namespace Raiderplan1.Reorg {
                AV8Trayect = m_TrayectoLongitudDestino ;
                nV8Trayect = false ;
             }
-            if ( C102.IsDBNull(6) )
+            if ( C102.IsDBNull(7) )
             {
                AV9Trayect = (decimal)(0M) ;
                nV9Trayect = true ;
@@ -137,7 +138,7 @@ namespace Raiderplan1.Reorg {
                AV9Trayect = m_Trayectokm ;
                nV9Trayect = false ;
             }
-            if ( C102.IsDBNull(5) )
+            if ( C102.IsDBNull(6) )
             {
                AV10Tiempo = (decimal)(0M) ;
                nV10Tiempo = true ;
@@ -147,7 +148,7 @@ namespace Raiderplan1.Reorg {
                AV10Tiempo = m_TiempoEstimado ;
                nV10Tiempo = false ;
             }
-            if ( C102.IsDBNull(4) )
+            if ( C102.IsDBNull(5) )
             {
                AV11Combus = (decimal)(0M) ;
                nV11Combus = true ;
@@ -157,7 +158,7 @@ namespace Raiderplan1.Reorg {
                AV11Combus = m_CombustibleConsumido ;
                nV11Combus = false ;
             }
-            if ( C102.IsDBNull(3) )
+            if ( C102.IsDBNull(4) )
             {
                AV12Estado = "" ;
                nV12Estado = true ;
@@ -168,7 +169,7 @@ namespace Raiderplan1.Reorg {
                nV12Estado = false ;
             }
             AV13Trayec = m_TrayectoDestino ;
-            if ( C102.IsDBNull(1) )
+            if ( C102.IsDBNull(2) )
             {
                AV14Instru = "" ;
                nV14Instru = true ;
@@ -178,7 +179,7 @@ namespace Raiderplan1.Reorg {
                AV14Instru = m_Instrucciones ;
                nV14Instru = false ;
             }
-            if ( C102.IsDBNull(0) )
+            if ( C102.IsDBNull(1) )
             {
                AV15Orden = 0 ;
                nV15Orden = true ;
@@ -188,7 +189,7 @@ namespace Raiderplan1.Reorg {
                AV15Orden = m_Orden ;
                nV15Orden = false ;
             }
-            AV16EsOrig = " " ;
+            AV16EsOrig = m_EsOrigen ;
             cmC103 = connDefault.GetCommand("INSERT INTO [GXA0010] ([TrayectoViajeID], [ViajeID], [TrayectoOrigen], [TayectoLatitudOrigen], [TrayectoLongitudOrigen], [TrayectoLatidudDestino], [TrayectoLongitudDestino], [Trayectokm], [TiempoEstimado], [CombustibleConsumido], [EstadoCarretera], [TrayectoDestino], [Instrucciones], [Orden], [EsOrigen]) VALUES (@TrayectoViajeID, @ViajeID, @TrayectoOrigen, @TayectoLatitudOrigen, @TrayectoLongitudOrigen, @TrayectoLatidudDestino, @TrayectoLongitudDestino, @Trayectokm, @TiempoEstimado, @CombustibleConsumido, @EstadoCarretera, @TrayectoDestino, @Instrucciones, @Orden, @EsOrigen)",false);
             if ( ( cmC103.IDbCommand.Parameters.Count == 0 ) )
             {
@@ -203,7 +204,7 @@ namespace Raiderplan1.Reorg {
                cmC103.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TiempoEstimado", System.Data.DbType.Currency));
                cmC103.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@CombustibleConsumido", System.Data.DbType.Currency));
                cmC103.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@EstadoCarretera", System.Data.DbType.AnsiString,100));
-               cmC103.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoDestino", System.Data.DbType.AnsiString,50));
+               cmC103.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@TrayectoDestino", System.Data.DbType.AnsiString,150));
                cmC103.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@Instrucciones", System.Data.DbType.AnsiString));
                cmC103.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@Orden", System.Data.DbType.Int32));
                cmC103.IDbCommand.Parameters.Add(  dsDefault.GetDbParameter( "@EsOrigen", System.Data.DbType.AnsiString,1));
@@ -259,6 +260,8 @@ namespace Raiderplan1.Reorg {
          resourceManagerTables = new System.Resources.ResourceManager( "Deklarit.Tables", System.Reflection.Assembly.GetExecutingAssembly()) ;
          cmdBuffer = "" ;
          scmdbuf = "" ;
+         m__EsOrigenIsNull = false ;
+         m_EsOrigen = "" ;
          m__OrdenIsNull = false ;
          m_Orden = 0 ;
          m__InstruccionesIsNull = false ;
@@ -345,6 +348,7 @@ namespace Raiderplan1.Reorg {
       private String cmdBuffer ;
       private String scmdbuf ;
       private String Gx_emsg ;
+      private bool m__EsOrigenIsNull ;
       private bool m__OrdenIsNull ;
       private bool m__InstruccionesIsNull ;
       private bool m__TrayectoDestinoIsNull ;
@@ -372,6 +376,7 @@ namespace Raiderplan1.Reorg {
       private bool nV15Orden ;
       private String m_Instrucciones ;
       private String AV14Instru ;
+      private String m_EsOrigen ;
       private String m_TrayectoDestino ;
       private String m_EstadoCarretera ;
       private String m_TrayectoOrigen ;

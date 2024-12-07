@@ -107,6 +107,17 @@
 <Description>Comentario Texto</Description></Attribute></FromValue></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
+<Presicion>500</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>Yes</Value></Property></Properties></AttriType>
+<AttriOldType>
+<DataType>V</DataType>
 <Presicion>250</Presicion>
 <Scale>0</Scale>
 <Properties>
@@ -115,7 +126,8 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>No</Value></Property></Properties></AttriType></Attribute>
+<Value>Yes</Value></Property></Properties></AttriOldType>
+<AttriChangeType>upd</AttriChangeType></Attribute>
 <Attribute>
 <AttriId>93</AttriId>
 <AttriName>ComentarioImagen</AttriName>
@@ -133,6 +145,17 @@
 <Description>Comentario Imagen</Description></Attribute></FromValue></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
+<Presicion>500</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>Yes</Value></Property></Properties></AttriType>
+<AttriOldType>
+<DataType>V</DataType>
 <Presicion>250</Presicion>
 <Scale>0</Scale>
 <Properties>
@@ -141,7 +164,8 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>Yes</Value></Property></Properties></AttriType></Attribute>
+<Value>Yes</Value></Property></Properties></AttriOldType>
+<AttriChangeType>upd</AttriChangeType></Attribute>
 <Attribute>
 <AttriId>184</AttriId>
 <AttriName>CVTrayectoID</AttriName>
@@ -199,8 +223,16 @@
 <AttriName>ComentarioPrivado</AttriName>
 <Description>Comentario Privado</Description>
 <TakesValueFrom>
+<Table>
+<TableId>13</TableId>
+<TableName>COMENTARIOVIAJE</TableName>
+<Description>ComentarioViaje</Description></Table>
 <FromValue>
-<Token>Null</Token></FromValue></TakesValueFrom>
+<Token>.</Token>
+<Attribute>
+<AttriId>190</AttriId>
+<AttriName>ComentarioPrivado</AttriName>
+<Description>Comentario Privado</Description></Attribute></FromValue></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>1</Presicion>
@@ -211,8 +243,7 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>Yes</Value></Property></Properties></AttriType>
-<AttriChangeType>nn</AttriChangeType></Attribute></AttrisInTable>
+<Value>Yes</Value></Property></Properties></AttriType></Attribute></AttrisInTable>
 <AttrisNoLongerInTable></AttrisNoLongerInTable>
 <AttrisInManyTables></AttrisInManyTables></TableAttributes>
 <NavigationTree>

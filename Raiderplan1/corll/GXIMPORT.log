@@ -1,17 +1,115 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
 <ImportLog>
    <RowImport>
-      <Name>ViajesXUsuarioXOrigenXDestino</Name>
-      <Description>ViajesXUsuarioXOrigenXDestino</Description>
-      <Class>2</Class>
+      <Name>ComentarioViaje</Name>
+      <Description>ComentarioViaje</Description>
+      <Class>0</Class>
       <Status>2</Status>
-      <Id>9</Id>
+      <Id>11</Id>
       <Errors>
       </Errors>
       <Warnings>
       </Warnings>
       <Infos>
-         <Folder>dpViaje</Folder>
+         <Folder>Vaijes</Folder>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ComentarioViajeID</Name>
+      <Description>Comentario Viaje ID</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ComentarioLatitud</Name>
+      <Description>Comentario Latitud</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ComentarioLongitud</Name>
+      <Description>Comentario Longitud</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ComentarioTexto</Name>
+      <Description>Comentario Texto</Description>
+      <Status>2</Status>
+      <Id>92</Id>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ComentarioImagen</Name>
+      <Description>Comentario Imagen</Description>
+      <Status>2</Status>
+      <Id>93</Id>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>CVTrayectoID</Name>
+      <Description>CV Trayecto ID</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ViajeID</Name>
+      <Description>Viaje ID</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
+      </Infos>
+   </RowImport>
+   <RowImport>
+      <Class>5</Class>
+      <Name>ComentarioPrivado</Name>
+      <Description>Comentario Privado</Description>
+      <Status>0</Status>
+      <Errors>
+      </Errors>
+      <Warnings>
+      </Warnings>
+      <Infos>
       </Infos>
    </RowImport>
 </ImportLog>

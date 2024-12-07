@@ -128,7 +128,7 @@ namespace Raiderplan1 {
             {
                if ( ( m_ConnectionString == null ) || (m_ConnectionString.Length==0) )
                {
-                  m_CurrentConnectionString = "Data Source=ICORLLI\\SQLEXPRESS01;Integrated Security=SSPI;Initial Catalog=RiderPlanDB1" ;
+                   m_CurrentConnectionString = "workstation id=RiderPlanDb.mssql.somee.com;packet size=4096;user id=ivancorlli_SQLLogin_1;pwd=bgaf3qxhil;data source=RiderPlanDb.mssql.somee.com;persist security info=False;initial catalog=RiderPlanDb;TrustServerCertificate=True";
                }
                else
                {

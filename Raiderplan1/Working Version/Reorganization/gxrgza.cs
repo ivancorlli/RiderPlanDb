@@ -60,6 +60,13 @@ namespace Raiderplan1.Reorg {
          RGZ.IDbCommand.CommandTimeout = 0;
          RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
          RGZ.ExecuteStmt() ;
+         AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("rgzd1c"), new   object[]  {"TrayectoViaje"}) );
+         cmdBuffer=" ALTER TABLE [TrayectoViaje] DROP CONSTRAINT ITrayectoViaje2 "
+         ;
+         RGZ = connDefault.GetCommand(cmdBuffer,false);
+         RGZ.IDbCommand.CommandTimeout = 0;
+         RGZ.ErrorMask = RGZ.ErrorMask  |  ErrorMask.FileNotFound;
+         RGZ.ExecuteStmt() ;
          // Create new and temporary tables.
          AddMsg( string.Format( System.Globalization.CultureInfo.InvariantCulture, resourceManager.GetString("rgzctnt"), new   object[]  {"3"}) );
          // Creating temporary indexes.
